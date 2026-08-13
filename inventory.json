@@ -11,7 +11,8 @@
       "year": 2027,
       "price": null,
       "weight": 10960,
-      "length": "34' 11\""
+      "length": "34' 11\"",
+      "imagePath": "alliance-avenue-5th-wheel/avenue5thwheel-32rls.png"
     },
     {
       "id": "alliance-avenue-33rks",
@@ -463,7 +464,8 @@
       "year": 2026,
       "price": null,
       "weight": 15278,
-      "length": "42' 6\""
+      "length": "42' 6\"",
+      "imagePath": "alliance-paradigm/paradigm-395ds.png"
     },
     {
       "id": "alliance-valor-44v14",
@@ -772,7 +774,8 @@
       "year": 2026,
       "price": null,
       "weight": 12100,
-      "length": "34' 5\""
+      "length": "34' 5\"",
+      "imagePath": "grand-design-influence/influence-2903rl.png"
     },
     {
       "id": "grand-design-influence-3003rl",
