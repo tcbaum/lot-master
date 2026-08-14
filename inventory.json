@@ -1311,17 +1311,6 @@
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-270bn.png"
     },
     {
-      "id": "grand-design-reflection-150-series-280rl",
-      "manufacturer": "Grand Design",
-      "brand": "Reflection 150 Series",
-      "model": "280RL",
-      "type": "Fifth Wheel",
-      "year": 2026,
-      "price": null,
-      "weight": null,
-      "length": "32' 8\""
-    },
-    {
       "id": "grand-design-reflection-150-series-295rl",
       "manufacturer": "Grand Design",
       "brand": "Reflection 150 Series",
@@ -1378,7 +1367,8 @@
       "year": 2026,
       "price": null,
       "weight": 15400,
-      "length": "42' 6\""
+      "length": "42' 6\"",
+      "imagePath": "grand-design-solitude-1of2/solitude-376rd.png"
     },
     {
       "id": "grand-design-solitude-380fl",
@@ -1569,7 +1559,8 @@
       "year": 2027,
       "price": null,
       "weight": null,
-      "length": "TBD"
+      "length": "TBD",
+      "imagePath": "grand-design-transcend-lite/transcend-lite-121rbl.png"
     },
     {
       "id": "grand-design-transcend-one-131dl",
