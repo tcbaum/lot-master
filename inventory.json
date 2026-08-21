@@ -38,7 +38,8 @@
       "price": null,
       "weight": 0,
       "length": "37'",
-      "status": "CS"
+      "status": "A",
+      "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-34rls.png"
     },
     {
       "id": "alliance-avenue-fifth-wheel-35rks",
@@ -154,7 +155,8 @@
       "price": null,
       "weight": 8760,
       "length": "30'11\"",
-      "status": "CS"
+      "status": "A",
+      "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-26re.png"
     },
     {
       "id": "alliance-avenue-all-access-series-26rd",
@@ -179,7 +181,8 @@
       "price": null,
       "weight": 9375,
       "length": "31' 0\"",
-      "status": "CS"
+      "status": "A"
+      "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-27rk.png"
     },
     {
       "id": "alliance-avenue-all-access-series-29rl",
