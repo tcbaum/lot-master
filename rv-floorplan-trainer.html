@@ -536,17 +536,20 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .kf-label{font-size:11.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
 .kf-list{display:flex;flex-wrap:wrap;gap:6px}
 .kf-tag{background:var(--card-2);color:var(--text);border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12.5px}
-/* Browse-mode glass chips — a separate, more decorative treatment from the
-   plain .kf-tag above, scoped to the customer-facing detail modal specifically.
-   Uses --sky/--sky-soft (already defined for both light and dark themes)
-   rather than fixed hex/rgba values, so this reads correctly in either theme
-   instead of only the dark one it was originally specced against. */
-.key-features-section{margin:16px 0}
-.key-features-header{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sky);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.key-features-container{display:flex;flex-wrap:wrap;gap:8px}
-.key-feature-chip{background:color-mix(in srgb,var(--sky) 12%,transparent);border:1px solid color-mix(in srgb,var(--sky) 35%,transparent);color:var(--text);font-size:.82rem;font-weight:500;padding:6px 12px;border-radius:8px;display:inline-flex;align-items:center;gap:6px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);transition:background-color .2s ease,border-color .2s ease,transform .1s ease}
-.key-feature-chip:hover{background:color-mix(in srgb,var(--sky) 20%,transparent);border-color:color-mix(in srgb,var(--sky) 55%,transparent);transform:translateY(-1px)}
-@media (prefers-reduced-motion: reduce){ .key-feature-chip{transition:none} .key-feature-chip:hover{transform:none} }
+/* Browse-mode scannable micro-grid — a separate, more decorative treatment from
+   the plain .kf-tag above, scoped to the customer-facing detail modal
+   specifically. Uses theme tokens throughout (--sky/--brand-soft/--line-2,
+   already defined for both light and dark themes) rather than fixed hex/rgba
+   values. Designed as a fast checklist for a rep standing next to a customer. */
+.key-features-section{margin:0 0 16px 0;padding-bottom:14px;border-bottom:1px dashed var(--line-2)}
+.key-features-header{font-family:var(--display);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sky);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.key-features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.key-feature-card{background:var(--brand-soft);border-left:3px solid var(--sky);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:8px 10px;display:flex;align-items:center;gap:8px;min-width:0;transition:transform .15s ease,background-color .15s ease}
+.key-feature-card:hover{transform:translateX(2px);background:color-mix(in srgb,var(--brand-soft) 80%,var(--sky-soft))}
+.key-feature-icon{font-size:.9rem;line-height:1;flex-shrink:0}
+.key-feature-text{font-family:var(--display);font-size:.82rem;font-weight:600;color:var(--text);line-height:1.25;word-break:break-word}
+.key-feature-card:last-child:nth-child(odd){grid-column:1/-1}
+@media (prefers-reduced-motion: reduce){ .key-feature-card{transition:none} .key-feature-card:hover{transform:none} }
 .lf-head .lf-cv{margin-left:8px;color:var(--brand);transition:transform .15s}
 .lf[open] .lf-head .lf-cv{transform:rotate(180deg)}
 .lf-body{padding:2px 13px 12px;background:var(--card)}
@@ -2947,16 +2950,23 @@ function getKeyFeatureIcon(featureText){
   if(t.includes('shower')||t.includes('bath')||t.includes('vanity')) return '🚿';
   return '✨';
 }
-// Browse-mode-specific glass-chip treatment — deliberately a separate renderer
+// Browse-mode-specific micro-grid treatment — deliberately a separate renderer
 // from keyFeaturesBlock rather than a shared/parameterized one, since this is a
 // presentation choice for the customer-facing Browse modal specifically; the
 // Study flashcard's plain version stays exactly as it already is, untouched.
-function keyFeaturesGlass(u){
+function keyFeaturesGrid(u){
   const kf=(u&&u.keyFeatures)||[];
   if(!kf.length) return '';
   return `<div class="key-features-section">
     <div class="key-features-header"><span>🔑</span> Key Highlights</div>
-    <div class="key-features-container">${kf.map(x=>`<span class="key-feature-chip"><span class="chip-icon">${getKeyFeatureIcon(x)}</span><span class="chip-text">${esc(x)}</span></span>`).join('')}</div>
+    <div class="key-features-grid">
+      ${kf.map(x=>`
+        <div class="key-feature-card">
+          <span class="key-feature-icon">${getKeyFeatureIcon(x)}</span>
+          <span class="key-feature-text">${esc(x)}</span>
+        </div>
+      `).join('')}
+    </div>
   </div>`;
 }
 function answerBack(u){
@@ -3653,7 +3663,7 @@ function openDetail(id){ detailId=id; activeBrowseTab='specs'; const u=state.uni
       </div>
 
       <div class="seg-panel" id="segPanelSpecs">
-        ${keyFeaturesGlass(u)}
+        ${keyFeaturesGrid(u)}
         <dl class="kv">
           ${u.rvType?`<dt>Type</dt><dd>${esc(u.rvType)}</dd>`:''}
           ${u.length?`<dt>Length</dt><dd>${esc(fmtLength(u))}</dd>`:''}
