@@ -11,7 +11,7 @@
       "year": 2027,
       "price": null,
       "weight": 10960,
-      "length": "34' 11\"",
+      "length": "35'",
       "status": "A",
       "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-32rls.png",
       "keyFeatures": [
@@ -54,7 +54,7 @@
       "price": null,
       "weight": 0,
       "length": "37'",
-      "status": "CS",
+      "status": "A",
       "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-34rls.png",
       "keyFeatures": [
         "Island Kitchen",
@@ -70,7 +70,7 @@
       "brand": "Avenue Fifth Wheel",
       "model": "35RKS",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 11450,
       "length": "36' 10\"",
@@ -91,7 +91,7 @@
       "brand": "Avenue Fifth Wheel",
       "model": "38DBL",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 12890,
       "length": "41' 11\"",
@@ -112,7 +112,7 @@
       "brand": "Avenue Fifth Wheel",
       "model": "39MBR",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 13400,
       "length": "41' 10\"",
@@ -133,7 +133,7 @@
       "brand": "Avenue Travel-Trailer",
       "model": "298RL",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 8990,
       "length": "34'",
@@ -154,7 +154,7 @@
       "brand": "Avenue Travel-Trailer",
       "model": "332RL",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 10100,
       "length": "37' 11\"",
@@ -175,7 +175,7 @@
       "brand": "Avenue Travel-Trailer",
       "model": "333BH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 10500,
       "length": "38' 6\"",
@@ -196,7 +196,7 @@
       "brand": "Avenue All-Access Series",
       "model": "23ML",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 8270,
       "length": "27' 11\"",
@@ -217,7 +217,7 @@
       "brand": "Avenue All-Access Series",
       "model": "25RL",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 8700,
       "length": "29' 11\"",
@@ -242,7 +242,7 @@
       "price": null,
       "weight": 8760,
       "length": "30'11\"",
-      "status": "CS",
+      "status": "A",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-26re.png",
       "keyFeatures": [
         "Swivel Table",
@@ -275,7 +275,7 @@
       "price": null,
       "weight": 9375,
       "length": "31' 0\"",
-      "status": "CS",
+      "status": "A",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-27rk.png",
       "keyFeatures": [
         "Island Kitchen",
@@ -291,7 +291,7 @@
       "brand": "Avenue All-Access Series",
       "model": "29RL",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 9650,
       "length": "32' 11\"",
@@ -312,7 +312,7 @@
       "brand": "Avenue All-Access Series",
       "model": "29BH",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 9554,
       "length": "34' 11\"",
@@ -351,7 +351,15 @@
       "weight": 6545,
       "length": "29' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta/delta-252rl.png"
+      "imagePath": "alliance-delta/delta-252rl.png",
+      "keyFeatures": [
+        "Rear Living",
+        "Booth Dinette",
+        "Theater Seating",
+        "L-Shaped Kitchen",
+        "Outdoor Griddle",
+        "60\" x 80\" Bed"
+      ]
     },
     {
       "id": "alliance-delta-262rb",
@@ -364,7 +372,15 @@
       "weight": 6408,
       "length": "29' 7\"",
       "status": "A",
-      "imagePath": "alliance-delta/delta-262rb.png"
+      "imagePath": "alliance-delta/delta-262rb.png",
+      "keyFeatures": [
+        "Rear Bath",
+        "Theater Seating",
+        "Dinette Table",
+        "L-Shaped Kitchen",
+        "Outdoor Griddle",
+        "60\" x 80\" Bed"
+      ]
     },
     {
       "id": "alliance-delta-274rkw",
@@ -377,7 +393,15 @@
       "weight": 7420,
       "length": "31' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta/delta-274rkw.png"
+      "imagePath": "alliance-delta/delta-274rkw.png",
+      "keyFeatures": [
+        "Rear Kitchen",
+        "Ample Countertop Space",
+        "Dinette Booth",
+        "L-Shaped Kitchen",
+        "Outdoor Griddle",
+        "60\" x 80\" Bed"
+      ]
     },
     {
       "id": "alliance-delta-281bh",
@@ -390,7 +414,15 @@
       "weight": 6882,
       "length": "31' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta/delta-281bh.png"
+      "imagePath": "alliance-delta/delta-281bh.png",
+      "keyFeatures": [
+        "Bunk House",
+        "Theater Seating",
+        "Dinette Booth",
+        "L-Shaped Kitchen",
+        "Outdoor Griddle",
+        "60\" x 80\" Bed"
+      ]
     },
     {
       "id": "alliance-delta-284rk",
@@ -403,7 +435,15 @@
       "weight": 7536,
       "length": "32' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta/delta-284rk.png"
+      "imagePath": "alliance-delta/delta-284rk.png",
+      "keyFeatures": [
+        "Wrap-Around Rear Kitchen",
+        "L-Shaped Couch",
+        "Dinette Table",
+        "Pull-Out Pantry",
+        "Dual-Living Slides",
+        "60\" x 80\" Bed"
+      ]
     },
     {
       "id": "alliance-delta-291bh",
@@ -465,7 +505,7 @@
       "type": "Travel Trailer",
       "year": 2026,
       "price": null,
-      "weight": 4992,
+      "weight": 5190.0,
       "length": "23' 11\"",
       "status": "A",
       "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml206.png"
@@ -489,7 +529,7 @@
       "brand": "Delta Ultra Lite",
       "model": "RK234",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 5600,
       "length": "27' 11\"",
@@ -669,7 +709,7 @@
       "brand": "Foundation",
       "model": "42GD",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": null,
       "length": null,
@@ -681,12 +721,20 @@
       "brand": "Imagine",
       "model": "2300MK",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6012,
       "length": "26’ 6”",
       "status": "A",
-      "imagePath": "grand-design-imagine-1of2/imagine-2300mk.png"
+      "imagePath": "grand-design-imagine-1of2/imagine-2300mk.png",
+      "keyFeatures": [
+        "Mid-Kitchen",
+        "U-Shaped Kitchen",
+        "Rear Bathroom",
+        "Theater Seating",
+        "Pull-Out Pantry",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-2470bh",
@@ -694,12 +742,20 @@
       "brand": "Imagine",
       "model": "2470BH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6406,
       "length": "29’",
       "status": "A",
-      "imagePath": "grand-design-imagine-1of2/imagine-2470bh.png"
+      "imagePath": "grand-design-imagine-1of2/imagine-2470bh.png",
+      "keyFeatures": [
+        "Bunkhouse",
+        "Ample Counter Space",
+        "U-Shaped Dinette",
+        "Bar-Seating",
+        "Outdoor Kitchen",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-2500rl",
@@ -707,12 +763,20 @@
       "brand": "Imagine",
       "model": "2500RL",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6569,
       "length": "29’ 7”",
       "status": "A",
-      "imagePath": "grand-design-imagine-1of2/imagine-2500rl.png"
+      "imagePath": "grand-design-imagine-1of2/imagine-2500rl.png",
+      "keyFeatures": [
+        "Rear-Living",
+        "Theater Seating",
+        "U-Shaped Dinette",
+        "Pass-Thru Bathroom",
+        "Dual-Entry",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-2600rb",
@@ -720,12 +784,20 @@
       "brand": "Imagine",
       "model": "2600RB",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6487,
       "length": "29’ 8”",
       "status": "A",
-      "imagePath": "grand-design-imagine-1of2/imagine-2600rb.png"
+      "imagePath": "grand-design-imagine-1of2/imagine-2600rb.png",
+      "keyFeatures": [
+        "Rear-Bathroom",
+        "Theater Seating",
+        "U-Shaped Dinette",
+        "Solid Doors",
+        "Outdoor Griddle",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-2670mk",
@@ -733,12 +805,20 @@
       "brand": "Imagine",
       "model": "2670MK",
       "type": "Travel Trailer",
-      "year": 2025,
+      "year": 2027.0,
       "price": null,
       "weight": 6884,
       "length": "32’",
       "status": "A",
-      "imagePath": "grand-design-imagine-1of2/imagine-2670mk.png"
+      "imagePath": "grand-design-imagine-1of2/imagine-2670mk.png",
+      "keyFeatures": [
+        "Mid-Kitchen",
+        "Rear-Desk",
+        "Booth-Dinette",
+        "Theater Seating",
+        "Kitchen Island",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-2700bs",
@@ -746,12 +826,20 @@
       "brand": "Imagine",
       "model": "2700BS",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 7138,
       "length": "31’ 8”",
       "status": "A",
-      "imagePath": "grand-design-imagine-2of2/imagine-2700bs.png"
+      "imagePath": "grand-design-imagine-2of2/imagine-2700bs.png",
+      "keyFeatures": [
+        "Bedroom-Slide",
+        "L-Shaped Kitchen",
+        "Theater Seating",
+        "Pass-Thru Bathroom",
+        "Washer/Dryer Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-2800bh",
@@ -759,12 +847,20 @@
       "brand": "Imagine",
       "model": "2800BH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6996,
       "length": "31’ 9”",
       "status": "A",
-      "imagePath": "grand-design-imagine-2of2/imagine-2800bh.png"
+      "imagePath": "grand-design-imagine-2of2/imagine-2800bh.png",
+      "keyFeatures": [
+        "Bunkhouse",
+        "Theater Seating",
+        "U-Shaped Dinette",
+        "Solid Doors",
+        "Dual-Entry",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-2810bh",
@@ -772,12 +868,20 @@
       "brand": "Imagine",
       "model": "2810BH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 7215,
       "length": "32’",
       "status": "A",
-      "imagePath": "grand-design-imagine-2of2/imagine-2810bh.png"
+      "imagePath": "grand-design-imagine-2of2/imagine-2810bh.png",
+      "keyFeatures": [
+        "Bunkhouse",
+        "Private Bunk Room",
+        "Quad-Theater Seating",
+        "Solid Doors",
+        "Oversize Bathroom",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-2970rl",
@@ -790,7 +894,15 @@
       "weight": 7880,
       "length": "33’ 11”",
       "status": "A",
-      "imagePath": "grand-design-imagine-2of2/imagine-2970rl.png"
+      "imagePath": "grand-design-imagine-2of2/imagine-2970rl.png",
+      "keyFeatures": [
+        "Rear-Living",
+        "Kitchen Island",
+        "Tri-fold Sofa",
+        "Theater Seating",
+        "Ample Pantry Space",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-3100rd",
@@ -824,12 +936,20 @@
       "brand": "Imagine AIM",
       "model": "15RBA",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 3547,
       "length": "19' 8\"",
       "status": "A",
-      "imagePath": "grand-design-imagine-aim/imagine-aim-15rba.png"
+      "imagePath": "grand-design-imagine-aim/imagine-aim-15rba.png",
+      "keyFeatures": [
+        "Rear-Bathroom",
+        "Booth Dinette",
+        "Ample Pantry Space",
+        "LED TV",
+        "Bedroom Wardrobe",
+        "Murphy Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-aim-16mla",
@@ -842,7 +962,15 @@
       "weight": 3813,
       "length": "19' 8\"",
       "status": "A",
-      "imagePath": "grand-design-imagine-aim/imagine-aim-16mla.png"
+      "imagePath": "grand-design-imagine-aim/imagine-aim-16mla.png",
+      "keyFeatures": [
+        "Mid-Living",
+        "Rear Bathroom",
+        "Rollover Sofa",
+        "LED TV",
+        "Bedroom Wardrobe",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-aim-19mla",
@@ -855,7 +983,15 @@
       "weight": 4306,
       "length": "22'",
       "status": "A",
-      "imagePath": "grand-design-imagine-aim/imagine-aim-19mla.png"
+      "imagePath": "grand-design-imagine-aim/imagine-aim-19mla.png",
+      "keyFeatures": [
+        "Mid-Living",
+        "Theater Seating",
+        "Desk Space",
+        "LED TV",
+        "Ample Counter Space",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-aim-20bha",
@@ -868,7 +1004,15 @@
       "weight": 4462,
       "length": "23' 10\"",
       "status": "A",
-      "imagePath": "grand-design-imagine-aim/imagine-aim-20bha.png"
+      "imagePath": "grand-design-imagine-aim/imagine-aim-20bha.png",
+      "keyFeatures": [
+        "Bunkhouse",
+        "Booth Dinette/Theater Seating",
+        "Ample Pantry Space",
+        "LED TV",
+        "Bedroom Wardrobe",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-xls-17mke",
@@ -902,12 +1046,20 @@
       "brand": "Imagine XLS",
       "model": "22BHE",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 5698,
-      "length": "10' 10\"",
+      "length": "24' 4\"",
       "status": "A",
-      "imagePath": "grand-design-imagine-xls/imagine-xls-22bhe.png"
+      "imagePath": "grand-design-imagine-xls/imagine-xls-22bhe.png",
+      "keyFeatures": [
+        "Bunkhouse Entertainment",
+        "Dual Slides",
+        "Rollover Sofa",
+        "Private Bunkroom",
+        "Oversized Pantry",
+        "Murphy Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-xls-22mle",
@@ -915,12 +1067,20 @@
       "brand": "Imagine XLS",
       "model": "22MLE",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 5423,
       "length": "25' 11\"",
       "status": "A",
-      "imagePath": "grand-design-imagine-xls/imagine-xls-22mle.png"
+      "imagePath": "grand-design-imagine-xls/imagine-xls-22mle.png",
+      "keyFeatures": [
+        "Mid-Living",
+        "Booth Dinette",
+        "Theater Seating",
+        "LED TV",
+        "Oversized Pantry",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-xls-22rbe",
@@ -933,7 +1093,15 @@
       "weight": 5379,
       "length": "25' 8\"",
       "status": "A",
-      "imagePath": "grand-design-imagine-xls/imagine-xls-22rbe.png"
+      "imagePath": "grand-design-imagine-xls/imagine-xls-22rbe.png",
+      "keyFeatures": [
+        "Rear-Bathroom",
+        "Single Slide",
+        "Theater Seating",
+        "LED TV",
+        "Ample Counter Space",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-xls-23lde",
@@ -946,7 +1114,15 @@
       "weight": 5831,
       "length": "28' 2\"",
       "status": "A",
-      "imagePath": "grand-design-imagine-xls/imagine-xls-23lde.png"
+      "imagePath": "grand-design-imagine-xls/imagine-xls-23lde.png",
+      "keyFeatures": [
+        "Living-Dining-Entertainment",
+        "Theater Seating",
+        "Booth Dinette",
+        "LED TV",
+        "Pass-Thru Bathroom",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-xls-25dbe",
@@ -954,12 +1130,20 @@
       "brand": "Imagine XLS",
       "model": "25DBE",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6313,
       "length": "29' 9\"",
       "status": "A",
-      "imagePath": "grand-design-imagine-xls/imagine-xls-25dbe.png"
+      "imagePath": "grand-design-imagine-xls/imagine-xls-25dbe.png",
+      "keyFeatures": [
+        "Bunkhouse Entertainment",
+        "Theater Seating",
+        "U-Shaped Dinette",
+        "Private Sleeping",
+        "Outdoor Kitchen",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-xls-25rle",
@@ -967,12 +1151,20 @@
       "brand": "Imagine XLS",
       "model": "25RLE",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6186,
       "length": "29' 9\"",
       "status": "A",
-      "imagePath": "grand-design-imagine-xls/imagine-xls-25rle.png"
+      "imagePath": "grand-design-imagine-xls/imagine-xls-25rle.png",
+      "keyFeatures": [
+        "Rear-Living-Entertainment",
+        "U-Shaped Kitchen",
+        "Theater Seating",
+        "Booth Dinette",
+        "Master Wardrobe",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-influence-2903rl",
@@ -1220,7 +1412,7 @@
       "manufacturer": "Grand Design",
       "brand": "Momentum G-Class Travel Trailer",
       "model": "21G",
-      "type": "TTTH",
+      "type": "Travel Trailer Toy Hauler",
       "year": 2026,
       "price": null,
       "weight": null,
@@ -1232,7 +1424,7 @@
       "manufacturer": "Grand Design",
       "brand": "Momentum G-Class Travel Trailer",
       "model": "25G",
-      "type": "TTTH",
+      "type": "Travel Trailer Toy Hauler",
       "year": 2026,
       "price": null,
       "weight": null,
@@ -1244,7 +1436,7 @@
       "manufacturer": "Grand Design",
       "brand": "Momentum G-Class Travel Trailer",
       "model": "27G",
-      "type": "TTTH",
+      "type": "Travel Trailer Toy Hauler",
       "year": 2026,
       "price": null,
       "weight": null,
@@ -1256,7 +1448,7 @@
       "manufacturer": "Grand Design",
       "brand": "Momentum G-Class Travel Trailer",
       "model": "29GS",
-      "type": "TTTH",
+      "type": "Travel Trailer Toy Hauler",
       "year": 2026,
       "price": null,
       "weight": null,
@@ -1268,7 +1460,7 @@
       "manufacturer": "Grand Design",
       "brand": "Momentum G-Class Travel Trailer",
       "model": "31G",
-      "type": "TTTH",
+      "type": "Travel Trailer Toy Hauler",
       "year": 2026,
       "price": null,
       "weight": null,
@@ -1280,7 +1472,7 @@
       "manufacturer": "Grand Design",
       "brand": "Momentum MAV Travel Trailer",
       "model": "17MAV",
-      "type": "TTTH",
+      "type": "Travel Trailer Toy Hauler",
       "year": 2026,
       "price": null,
       "weight": null,
@@ -1292,7 +1484,7 @@
       "manufacturer": "Grand Design",
       "brand": "Momentum MAV Travel Trailer",
       "model": "22MAV",
-      "type": "TTTH",
+      "type": "Travel Trailer Toy Hauler",
       "year": 2026,
       "price": null,
       "weight": null,
@@ -1304,7 +1496,7 @@
       "manufacturer": "Grand Design",
       "brand": "Momentum MAV Travel Trailer",
       "model": "24MAV",
-      "type": "TTTH",
+      "type": "Travel Trailer Toy Hauler",
       "year": 2026,
       "price": null,
       "weight": null,
@@ -1316,7 +1508,7 @@
       "manufacturer": "Grand Design",
       "brand": "Momentum MAV Travel Trailer",
       "model": "27MAV",
-      "type": "TTTH",
+      "type": "Travel Trailer Toy Hauler",
       "year": 2026,
       "price": null,
       "weight": null,
@@ -1328,7 +1520,7 @@
       "manufacturer": "Grand Design",
       "brand": "Momentum MAV Travel Trailer",
       "model": "28MAV",
-      "type": "TTTH",
+      "type": "Travel Trailer Toy Hauler",
       "year": 2026,
       "price": null,
       "weight": null,
@@ -1444,7 +1636,7 @@
       "brand": "Reflection Travel Trailer",
       "model": "322FKTS",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 8800,
       "length": "35' 9\"",
@@ -1457,7 +1649,7 @@
       "brand": "Reflection Travel Trailer",
       "model": "342BHTS",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 10300,
       "length": "37' 9\"",
@@ -1470,7 +1662,7 @@
       "brand": "Reflection Travel Trailer",
       "model": "345RLTS",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 10275,
       "length": "38' 10\"",
@@ -1483,12 +1675,20 @@
       "brand": "Reflection",
       "model": "324MBS",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 11200,
       "length": "37'",
       "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-324mbs.png"
+      "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-324mbs.png",
+      "keyFeatures": [
+        "Mid-Bunk",
+        "92\" U-Shaped Dinette",
+        "Theater Seating",
+        "Kitchen Island",
+        "Versatile Bunkroom",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-reflection-320mks",
@@ -1514,7 +1714,15 @@
       "weight": 12388,
       "length": "39' 2\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-360fls.png"
+      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-360fls.png",
+      "keyFeatures": [
+        "Front Living",
+        "Kitchen Island",
+        "Dual Entry",
+        "Kitchen Island",
+        "Washer/Dryer Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "grand-design-reflection-311bhs",
@@ -1522,12 +1730,20 @@
       "brand": "Reflection",
       "model": "311BHS",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 11700,
       "length": "36' 11\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-311bhs.png"
+      "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-311bhs.png",
+      "keyFeatures": [
+        "Bunkhouse",
+        "Bunkroom Sofa",
+        "Theater Seating",
+        "Kitchen Island",
+        "Wardrobe Slide",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-reflection-303rls",
@@ -1535,12 +1751,20 @@
       "brand": "Reflection",
       "model": "303RLS",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 10100,
       "length": "32' 10\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-303rls.png"
+      "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-303rls.png",
+      "keyFeatures": [
+        "Rear Living",
+        "Trifold Sofa",
+        "Theater Seating",
+        "40\" TV",
+        "Wardrobe Slide",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-reflection-362tbs",
@@ -1553,7 +1777,15 @@
       "weight": 12500,
       "length": "39' 11\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-362tbs.png"
+      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-362tbs.png",
+      "keyFeatures": [
+        "Top Bunk",
+        "Dual Bedroom",
+        "Queen Bunk",
+        "Closed Access",
+        "Half-Bath",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-reflection-337rls",
@@ -1566,7 +1798,15 @@
       "weight": 11200,
       "length": "35' 7\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-337rls.png"
+      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-337rls.png",
+      "keyFeatures": [
+        "Rear Living",
+        "Trifold Sofa",
+        "Theater Seating",
+        "Kitchen Island",
+        "Swivel TV",
+        "King Bed"
+      ]
     },
     {
       "id": "grand-design-reflection-367bhs",
@@ -1579,7 +1819,15 @@
       "weight": 12900,
       "length": "41' 1\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-367bhs.png"
+      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-367bhs.png",
+      "keyFeatures": [
+        "Bunkhouse",
+        "Large Pantry Space",
+        "Middle Room",
+        "Upper Bunk",
+        "Washer/Dryer Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "grand-design-reflection-100-series-22rk",
@@ -1587,12 +1835,15 @@
       "brand": "Reflection 100 Series",
       "model": "22RK",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 7000,
       "length": "26' 11\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-100-series/reflection-100-series-22rk.png"
+      "imagePath": "grand-design-reflection-100-series/reflection-100-series-22rk.png",
+      "keyFeatures": [
+        "Rear Kitchen"
+      ]
     },
     {
       "id": "grand-design-reflection-100-series-24rl",
@@ -1600,12 +1851,15 @@
       "brand": "Reflection 100 Series",
       "model": "24RL",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 7739,
       "length": "30'",
       "status": "A",
-      "imagePath": "grand-design-reflection-100-series/reflection-100-series-24rl.png"
+      "imagePath": "grand-design-reflection-100-series/reflection-100-series-24rl.png",
+      "keyFeatures": [
+        "Rear Living"
+      ]
     },
     {
       "id": "grand-design-reflection-100-series-27bh",
@@ -1613,12 +1867,15 @@
       "brand": "Reflection 100 Series",
       "model": "27BH",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 8200,
       "length": "32' 3\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-100-series/reflection-100-series-27bh.png"
+      "imagePath": "grand-design-reflection-100-series/reflection-100-series-27bh.png",
+      "keyFeatures": [
+        "Bunkhouse"
+      ]
     },
     {
       "id": "grand-design-reflection-100-series-29rl",
@@ -1626,12 +1883,15 @@
       "brand": "Reflection 100 Series",
       "model": "29RL",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": null,
       "length": "31'",
       "status": "A",
-      "imagePath": "grand-design-reflection-100-series/reflection-100-series-29rl.png"
+      "imagePath": "grand-design-reflection-100-series/reflection-100-series-29rl.png",
+      "keyFeatures": [
+        "Rear Living"
+      ]
     },
     {
       "id": "grand-design-reflection-100-series-32bh",
@@ -1639,12 +1899,15 @@
       "brand": "Reflection 100 Series",
       "model": "32BH",
       "type": "Fifth Wheel",
-      "year": 2025,
+      "year": 2027.0,
       "price": null,
       "weight": 9468,
       "length": "35' 10\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-100-series/reflection-100-series-32bh.png"
+      "imagePath": "grand-design-reflection-100-series/reflection-100-series-32bh.png",
+      "keyFeatures": [
+        "Bunkhouse"
+      ]
     },
     {
       "id": "grand-design-reflection-150-series-250ml",
@@ -1652,12 +1915,15 @@
       "brand": "Reflection 150 Series",
       "model": "250ML",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 8220,
       "length": "29' 9\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-150-series/reflection-150-series-250ml.png"
+      "imagePath": "grand-design-reflection-150-series/reflection-150-series-250ml.png",
+      "keyFeatures": [
+        "Mid-Living"
+      ]
     },
     {
       "id": "grand-design-reflection-150-series-260rd",
@@ -1665,12 +1931,15 @@
       "brand": "Reflection 150 Series",
       "model": "260RD",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 7534,
       "length": "29' 10\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-150-series/reflection-150-series-260rd.png"
+      "imagePath": "grand-design-reflection-150-series/reflection-150-series-260rd.png",
+      "keyFeatures": [
+        "Rear Dining"
+      ]
     },
     {
       "id": "grand-design-reflection-150-series-270bn",
@@ -1678,12 +1947,15 @@
       "brand": "Reflection 150 Series",
       "model": "270BN",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 8050,
       "length": "29' 11\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-150-series/reflection-150-series-270bn.png"
+      "imagePath": "grand-design-reflection-150-series/reflection-150-series-270bn.png",
+      "keyFeatures": [
+        "Breakfast Nook"
+      ]
     },
     {
       "id": "grand-design-reflection-150-series-295rl",
@@ -1691,12 +1963,15 @@
       "brand": "Reflection 150 Series",
       "model": "295RL",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": null,
       "length": null,
       "status": "A",
-      "imagePath": "grand-design-reflection-150-series/reflection-150-series-295rl.png"
+      "imagePath": "grand-design-reflection-150-series/reflection-150-series-295rl.png",
+      "keyFeatures": [
+        "Rear Living"
+      ]
     },
     {
       "id": "grand-design-reflection-150-series-298bh",
@@ -1704,12 +1979,15 @@
       "brand": "Reflection 150 Series",
       "model": "298BH",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 9050,
       "length": "34' 9\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-150-series/reflection-150-series-298bh.png"
+      "imagePath": "grand-design-reflection-150-series/reflection-150-series-298bh.png",
+      "keyFeatures": [
+        "Bunkhouse"
+      ]
     },
     {
       "id": "grand-design-solitude-310gk",
@@ -1847,7 +2125,7 @@
       "brand": "Transcend",
       "model": "245RLT",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6456,
       "length": "30’ 8”",
@@ -1868,7 +2146,7 @@
       "brand": "Transcend",
       "model": "265BHT",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6327,
       "length": "32’ 9”",
@@ -1889,7 +2167,7 @@
       "brand": "Transcend",
       "model": "295QBT",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 7383,
       "length": "35’ 11”",
@@ -1910,9 +2188,9 @@
       "brand": "Transcend",
       "model": "285RKT",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
-      "weight": null,
+      "weight": 7166.0,
       "length": "33’ 11”",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-285rkt.png",
@@ -2009,7 +2287,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": null,
+      "weight": "TBD",
       "length": "TBD",
       "status": "A",
       "imagePath": "grand-design-transcend-lite/transcend-lite-121rbl.png"
@@ -2033,12 +2311,19 @@
       "brand": "Transcend One",
       "model": "151BH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 3550,
       "length": "19’ 8”",
       "status": "A",
-      "imagePath": "grand-design-transcend-one/transcend-one-151bh.png"
+      "imagePath": "grand-design-transcend-one/transcend-one-151bh.png",
+      "keyFeatures": [
+        "Bunk House",
+        "Jack-Knife Sofa",
+        "Camp Table",
+        "Queen Bed",
+        "Sleeps 5"
+      ]
     },
     {
       "id": "grand-design-transcend-one-151rb",
@@ -2046,12 +2331,19 @@
       "brand": "Transcend One",
       "model": "151RB",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 3600,
       "length": "19’ 8”",
       "status": "A",
-      "imagePath": "grand-design-transcend-one/transcend-one-151rb.png"
+      "imagePath": "grand-design-transcend-one/transcend-one-151rb.png",
+      "keyFeatures": [
+        "Rear Bath",
+        "Booth Dinette",
+        "Camp Table",
+        "Murphy Queen Bed",
+        "Sleeps 4"
+      ]
     },
     {
       "id": "grand-design-transcend-one-161bh",
@@ -2059,12 +2351,20 @@
       "brand": "Transcend One",
       "model": "161BH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 4784,
       "length": "23’",
       "status": "A",
-      "imagePath": "grand-design-transcend-one/transcend-one-161bh.png"
+      "imagePath": "grand-design-transcend-one/transcend-one-161bh.png",
+      "keyFeatures": [
+        "Bunk House",
+        "Murphy Queen Bed",
+        "Booth Dinette",
+        "Camp Table",
+        "Outdoor Kitchen",
+        "Sleeps 6"
+      ]
     },
     {
       "id": "grand-design-transcend-one-161db",
@@ -2072,12 +2372,20 @@
       "brand": "Transcend One",
       "model": "161DB",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 4446,
       "length": "23'",
       "status": "A",
-      "imagePath": "grand-design-transcend-one/transcend-one-161db.png"
+      "imagePath": "grand-design-transcend-one/transcend-one-161db.png",
+      "keyFeatures": [
+        "Bunk House",
+        "Booth Dinette",
+        "Camp Table",
+        "Queen Bed",
+        "Baggage Door Access",
+        "Sleeps 7"
+      ]
     },
     {
       "id": "grand-design-transcend-xplor-19bhx",
@@ -2085,7 +2393,7 @@
       "brand": "Transcend XPLOR",
       "model": "19BHX",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 4894,
       "length": "26’ 3”",
@@ -2106,7 +2414,7 @@
       "brand": "Transcend XPLOR",
       "model": "20MKX",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 5397,
       "length": "24’ 11”",
@@ -2127,7 +2435,7 @@
       "brand": "Transcend XPLOR",
       "model": "21RLX",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 4978,
       "length": "25’ 10”",
@@ -2169,7 +2477,7 @@
       "brand": "Transcend XPLOR",
       "model": "23BHX",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 5580,
       "length": "26’ 11”",
@@ -2190,12 +2498,20 @@
       "brand": "Transcend XPLOR",
       "model": "24BHX",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 5756,
       "length": "29’ 11”",
       "status": "A",
-      "imagePath": "grand-design-transcend-xplor/transcend-xplor-24bhx.png"
+      "imagePath": "grand-design-transcend-xplor/transcend-xplor-24bhx.png",
+      "keyFeatures": [
+        "Bunk House",
+        "Private Bathroom",
+        "No Slide",
+        "15' Awning",
+        "Queen Bed",
+        "13.5K A/C"
+      ]
     },
     {
       "id": "grand-design-transcend-xplor-25mlx",
@@ -2203,12 +2519,20 @@
       "brand": "Transcend XPLOR",
       "model": "25MLX",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6335,
       "length": "29’ 9”",
       "status": "A",
-      "imagePath": "grand-design-transcend-xplor/transcend-xplor-25mlx.png"
+      "imagePath": "grand-design-transcend-xplor/transcend-xplor-25mlx.png",
+      "keyFeatures": [
+        "Mid-Living",
+        "Closed-Slide Access",
+        "Abundant Counter Space",
+        "17' Awning",
+        "Queen Bed",
+        "13.5K A/C"
+      ]
     },
     {
       "id": "grand-design-transcend-xplor-26bhx",
@@ -2216,12 +2540,20 @@
       "brand": "Transcend XPLOR",
       "model": "26BHX",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6505,
       "length": "30’ 11”",
       "status": "A",
-      "imagePath": "grand-design-transcend-xplor/transcend-xplor-26bhx.png"
+      "imagePath": "grand-design-transcend-xplor/transcend-xplor-26bhx.png",
+      "keyFeatures": [
+        "Bunk House",
+        "Ample-Counter Space",
+        "Outdoor Kitchen",
+        "17' Awning",
+        "Queen Bed",
+        "13.5K A/C"
+      ]
     },
     {
       "id": "grand-design-transcend-xplor-26rbx",
@@ -2229,7 +2561,7 @@
       "brand": "Transcend XPLOR",
       "model": "26RBX",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6147,
       "length": "31’ 6”",
@@ -2242,12 +2574,20 @@
       "brand": "Transcend XPLOR",
       "model": "27DBX",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6820,
       "length": "31’ 9”",
       "status": "A",
-      "imagePath": "grand-design-transcend-xplor/transcend-xplor-27dbx.png"
+      "imagePath": "grand-design-transcend-xplor/transcend-xplor-27dbx.png",
+      "keyFeatures": [
+        "Bunk-House",
+        "Dual Entry",
+        "Outdoor Kitchen",
+        "19' Awning",
+        "Queen Bed",
+        "13.5K A/C"
+      ]
     },
     {
       "id": "winnebago-access-16bh",
@@ -2322,7 +2662,7 @@
       "type": "Travel Trailer",
       "year": 2026,
       "price": null,
-      "weight": null,
+      "weight": "TBD",
       "length": "30'6\"",
       "status": "A",
       "imagePath": "winnebago-access/winnebago-access-24rl.jpeg"
@@ -2569,8 +2909,8 @@
       "type": "Travel Trailer",
       "year": 2026,
       "price": null,
-      "weight": null,
-      "length": null,
+      "weight": 6122.0,
+      "length": "26' 7\"",
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-22rbs.jpeg"
     },
@@ -2595,8 +2935,8 @@
       "type": "Travel Trailer",
       "year": 2026,
       "price": null,
-      "weight": null,
-      "length": null,
+      "weight": 6512.0,
+      "length": "30' 2\"",
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-25rls.jpeg"
     },
@@ -2608,8 +2948,8 @@
       "type": "Travel Trailer",
       "year": 2026,
       "price": null,
-      "weight": null,
-      "length": null,
+      "weight": 7470.0,
+      "length": "30' 11\"",
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-26fkd.jpeg"
     },
@@ -2621,8 +2961,8 @@
       "type": "Travel Trailer",
       "year": 2026,
       "price": null,
-      "weight": null,
-      "length": null,
+      "weight": 7234.0,
+      "length": "32' 8\"",
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-28bhs.jpeg"
     },
@@ -2634,8 +2974,8 @@
       "type": "Travel Trailer",
       "year": 2026,
       "price": null,
-      "weight": null,
-      "length": null,
+      "weight": 8426.0,
+      "length": "36' 3\"",
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-29rlo.jpeg"
     },
@@ -2673,10 +3013,18 @@
       "type": "Travel Trailer",
       "year": 2027.0,
       "price": null,
-      "weight": null,
-      "length": null,
+      "weight": 4945.0,
+      "length": "21' 8\"",
       "status": "A",
-      "imagePath": "grand-design-imagine-aim/imagine-aim-17mka.png"
+      "imagePath": "grand-design-imagine-aim/imagine-aim-17mka.png",
+      "keyFeatures": [
+        "Mid-Kitchen",
+        "Ample Counter Space",
+        "Theater Seating",
+        "LED TV",
+        "Bedroom Wardrobe",
+        "Murphy Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-aim-21mba",
@@ -2686,8 +3034,8 @@
       "type": "Travel Trailer",
       "year": 2027.0,
       "price": null,
-      "weight": null,
-      "length": null,
+      "weight": 5361.0,
+      "length": "24' 11\"",
       "status": "A",
       "imagePath": "grand-design-imagine-aim/imagine-aim-21mba.png"
     },
@@ -2702,7 +3050,15 @@
       "weight": null,
       "length": null,
       "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-340rks.png"
+      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-340rks.png",
+      "keyFeatures": [
+        "Rear Kitchen",
+        "Ample Countertop Space",
+        "L-Shaped Furniture",
+        "Dinette",
+        "Washer/Dryer Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "grand-design-reflection-346rls",
@@ -2710,7 +3066,7 @@
       "brand": "Reflection",
       "model": "346RLS",
       "type": "Fifth Wheel",
-      "year": 2027.0,
+      "year": 2026.0,
       "price": null,
       "weight": null,
       "length": null,
@@ -2725,10 +3081,18 @@
       "type": "Fifth Wheel",
       "year": 2027.0,
       "price": null,
-      "weight": null,
-      "length": null,
+      "weight": 12250.0,
+      "length": "39' 3\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-350rds.png"
+      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-350rds.png",
+      "keyFeatures": [
+        "Rear Den",
+        "L-Shaped Sofa",
+        "Dinette/Desk",
+        "65\" TV",
+        "Washer/Dryer Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "grand-design-reflection-100-series-28rl",
@@ -2820,7 +3184,7 @@
       "year": 2027.0,
       "price": null,
       "weight": null,
-      "length": null,
+      "length": "24'",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-18fqx.png",
       "keyFeatures": [
