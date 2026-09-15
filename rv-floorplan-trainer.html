@@ -532,15 +532,10 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .lf-head::-webkit-details-marker{display:none}
 .lf-head svg{width:15px;height:15px;flex:none}
 .lf-head em{margin-left:auto;font-style:normal;font-weight:600;font-size:11.5px;color:var(--brand);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:42%}
-.key-features-block{margin:12px 0}
-.kf-label{font-size:11.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
-.kf-list{display:flex;flex-wrap:wrap;gap:6px}
-.kf-tag{background:var(--card-2);color:var(--text);border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12.5px}
-/* Browse-mode scannable micro-grid — a separate, more decorative treatment from
-   the plain .kf-tag above, scoped to the customer-facing detail modal
-   specifically. Uses theme tokens throughout (--sky/--brand-soft/--line-2,
-   already defined for both light and dark themes) rather than fixed hex/rgba
-   values. Designed as a fast checklist for a rep standing next to a customer. */
+/* Scannable micro-grid — shared by both Study's flashcard (wrapped with its own
+   horizontal padding at the call site, since this has none of its own) and
+   Browse's detail modal. Uses theme tokens throughout (--sky/--brand-soft/
+   --line-2, already defined for both light and dark themes). */
 .key-features-section{margin:0 0 16px 0;padding-bottom:14px;border-bottom:1px dashed var(--line-2)}
 .key-features-header{font-family:var(--display);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sky);margin-bottom:10px;display:flex;align-items:center;gap:6px}
 .key-features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
@@ -2930,19 +2925,6 @@ function scopeLabel(s){
   if(s.startsWith('line:')) return s.slice(5);
   if(s.startsWith('cat:')) return CAT_LABEL[s.slice(4)]||'Type'; return s;
 }
-// Per-floorplan distinguishing highlights. Deliberately plain — no icon, no
-// visual-priority decisions over the existing Top Features panel, since those
-// were separate, incidental choices last time, not the actual idea being
-// evaluated. Gracefully absent for the large majority of units without data,
-// same as lineFeaturesFor already does for lines with no sheet.
-function keyFeaturesBlock(u){
-  const kf=(u&&u.keyFeatures)||[];
-  if(!kf.length) return '';
-  return `<div class="key-features-block">
-    <div class="kf-label">Key Features</div>
-    <div class="kf-list">${kf.map(x=>`<span class="kf-tag">${esc(x)}</span>`).join('')}</div>
-  </div>`;
-}
 // Keyword-matched metadata per chip — returns {icon, text}, with icon===null for
 // abstract spatial/layout phrases that don't have a good physical-object icon
 // (rendered as clean text-only cards instead of forcing a weak match).
@@ -2967,10 +2949,9 @@ function getKeyFeatureMeta(featureText){
   if(t.includes('shower')||t.includes('bath')||t.includes('vanity')) return {icon:'🚿',text:raw};
   return {icon:'✨',text:raw};
 }
-// Browse-mode-specific micro-grid treatment — deliberately a separate renderer
-// from keyFeaturesBlock rather than a shared/parameterized one, since this is a
-// presentation choice for the customer-facing Browse modal specifically; the
-// Study flashcard's plain version stays exactly as it already is, untouched.
+// Scannable micro-grid — shared by both the Study flashcard's revealed side and
+// Browse's detail modal, so any future icon/category tweak applies identically
+// to both without needing to touch two separate renderers.
 function keyFeaturesGrid(u){
   const kf=(u&&u.keyFeatures)||[];
   if(!kf.length) return '';
@@ -3066,7 +3047,7 @@ function stageFlashOrQuiz(u){
     return `<div class="flashcard" id="flashcardEl">${front}<div class="fc-prompt"><div class="fc-q">${state.settings.frontImage&&im?'Which model is this floorplan?':'Recall manufacturer · line · model'}</div></div>
       <button class="reveal-btn" onclick="reveal()">Show answer</button></div>`;
   }
-  return `<div class="flashcard" id="flashcardEl">${figBlock(u)}${answerBack(u)}${keyFeaturesBlock(u)}${featuresPanel(u)}
+  return `<div class="flashcard" id="flashcardEl">${figBlock(u)}${answerBack(u)}<div style="padding:0 20px">${keyFeaturesGrid(u)}</div>${featuresPanel(u)}
     <div class="desktop-rate-pills">
       <button class="rate-pill again" onclick="rate('again')">[1] WRONG</button>
       <button class="rate-pill hard" onclick="rate('hard')">[2] NEEDS WORK</button>
