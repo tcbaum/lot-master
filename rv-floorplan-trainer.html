@@ -3439,7 +3439,7 @@ function viewBrowse(){
   <div class="view-head"><div><div class="eyebrow">${list.length} of ${state.units.length} units</div><h1>Browse the lot</h1>
   <p>Search and filter to match a customer to the right floorplan — then see exactly where it's parked.</p></div></div>
   <div class="toolbar">
-    <div class="search">${svg(I.browse)}<input id="bq" placeholder="Search model, line, stock #, location…" value="${esc(filt.q)}"></div>
+    <div class="search">${svg(I.browse)}<input id="bq" placeholder="Search model, line, features, location…" value="${esc(filt.q)}"></div>
   </div>
   <div class="chips">
     <button class="chip ${!filt.cat?'on':''}" onclick="setCat('')">All types</button>
@@ -3623,7 +3623,7 @@ function filteredUnits(){
   return state.units.filter(u=>{
     if(filt.line&&u.productLine!==filt.line) return false;
     if(filt.cat&&!(u.tags||[]).includes(filt.cat)) return false;
-    if(q){ const hay=norm([u.model,u.productLine,u.manufacturer,u.stock,u.location,u.rvType,(u.tags||[]).map(t=>CAT_LABEL[t]).join(' ')].join(' ')); if(!hay.includes(q)) return false; }
+    if(q){ const hay=norm([u.model,u.productLine,u.manufacturer,u.stock,u.location,u.rvType,(u.tags||[]).map(t=>CAT_LABEL[t]).join(' '),(u.keyFeatures||[]).join(' ')].join(' ')); if(!hay.includes(q)) return false; }
     return true;
   });
 }
