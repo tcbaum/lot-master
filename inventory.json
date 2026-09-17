@@ -1,6 +1,6 @@
 {
-  "version": "inv-2026.08-201-img",
-  "unitCount": 201,
+  "version": "inv-2026.09-206-img",
+  "unitCount": 206,
   "units": [
     {
       "id": "alliance-avenue-fifth-wheel-32rls",
@@ -15,12 +15,12 @@
       "status": "A",
       "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-32rls.png",
       "keyFeatures": [
-        "Open Concept Living",
+        "Rear Living",
         "Island Kitchen",
         "Sleeper Sofa",
         "Theater Seats",
         "Washer/Dryer Prep",
-        "50\" Smart TV with Hidden Storage"
+        "King Bed"
       ]
     },
     {
@@ -36,12 +36,12 @@
       "status": "A",
       "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-33rks.png",
       "keyFeatures": [
-        "Open Concept Rear Kitchen",
+        "Rear Kitchen",
         "U-Shaped Kitchen",
         "Central Lounge",
         "Recliners & Tri-fold Sofa",
         "Washer/Dryer Prep",
-        "50\" Smart TV"
+        "King Bed"
       ]
     },
     {
@@ -52,16 +52,17 @@
       "type": "Fifth Wheel",
       "year": 2027,
       "price": null,
-      "weight": 0,
+      "weight": 11500.0,
       "length": "37'",
       "status": "A",
       "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-34rls.png",
       "keyFeatures": [
-        "Island Kitchen",
+        "Rear Living",
         "76\" Tri-fold Sofa",
         "50\" Smart TV",
         "Dual Awnings",
-        "Washer/Dryer Prep"
+        "Washer/Dryer Prep",
+        "King Bed"
       ]
     },
     {
@@ -77,12 +78,12 @@
       "status": "A",
       "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-35rks.png",
       "keyFeatures": [
-        "Open Concept Rear Kitchen",
+        "Rear Kitchen",
         "U-Shaped Kitchen",
         "Central Lounge",
         "Recliners & Tri-fold Sofas",
         "Washer/Dryer Prep",
-        "65\" Smart TV"
+        "King Bed"
       ]
     },
     {
@@ -98,12 +99,12 @@
       "status": "A",
       "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-38dbl.png",
       "keyFeatures": [
-        "Open Concept Living",
+        "Dual Bedroom",
         "Private Rear Suite with Loft",
         "Private Half-Bath",
         "U-Shaped Kitchen",
         "Washer/Dryer Prep",
-        "50\" Smart TV"
+        "King Bed"
       ]
     },
     {
@@ -119,12 +120,12 @@
       "status": "A",
       "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-39mbr.png",
       "keyFeatures": [
-        "Open Concept Rear Lounge",
+        "Mid-bunk",
         "Mid-Bonus Room",
         "Bunk Above & Trundle",
         "Flipout Sofa & Desk",
         "Washer/Dryer Prep",
-        "50\" Smart TV"
+        "King Bed"
       ]
     },
     {
@@ -140,12 +141,12 @@
       "status": "A",
       "imagePath": "alliance-avenue-travel-trailer/avenue-travel-trailer-298rl.png",
       "keyFeatures": [
-        "Open Concept Rear Lounge",
+        "Rear Living",
         "Island Kitchen",
         "Floating Dinette",
         "Tri-fold Sofa & Dual Recliner",
         "Dedicated Hutch",
-        "50\" Smart TV w/ Hidden Storage"
+        "Olympic Queen Bed"
       ]
     },
     {
@@ -161,12 +162,12 @@
       "status": "A",
       "imagePath": "alliance-avenue-travel-trailer/avenue-travel-trailer-332rl.png",
       "keyFeatures": [
-        "Open Concept Rear Lounge",
+        "Rear Living",
         "Island Kitchen",
         "Floating Dinette",
         "Tri-fold Sofa & Dual Recliner",
-        "Dedicated Hutch",
-        "50\" Smart TV w/ Hidden Storage"
+        "Washer/Dryer Prep",
+        "King Bed"
       ]
     },
     {
@@ -182,7 +183,7 @@
       "status": "A",
       "imagePath": "alliance-avenue-travel-trailer/avenue-travel-trailer-333bh.png",
       "keyFeatures": [
-        "Rear Family Bunkhouse",
+        "Family Bunkhouse",
         "Island Kitchen",
         "Dual Recliner Theater Seats",
         "Flip Bunk | Cube Sofa | Pull-out Trundle",
@@ -203,7 +204,7 @@
       "status": "A",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-acces-23ml.png",
       "keyFeatures": [
-        "Open Concept Rear Kitchen",
+        "Mid-Living",
         "L-Shaped Counter Space",
         "Dual Recliner Theater Seats",
         "Dedicated Hutch",
@@ -224,7 +225,7 @@
       "status": "A",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-25rl.png",
       "keyFeatures": [
-        "Open Concept Living",
+        "Rear Living",
         "Island Kitchen",
         "Floating Dinette",
         "Fireplace w/ Hutch Bar",
@@ -245,11 +246,12 @@
       "status": "A",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-26re.png",
       "keyFeatures": [
-        "Swivel Table",
+        "Rear Entertainment",
         "Hidden Pantry",
         "L-Shaped Sofa",
-        "66\" x 80\" Bed",
-        "Washer Dryer Prep"
+        "Dinette/Desk",
+        "Washer Dryer Prep",
+        "Olympic Queen Bed"
       ]
     },
     {
@@ -278,11 +280,12 @@
       "status": "A",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-27rk.png",
       "keyFeatures": [
-        "Island Kitchen",
+        "Rear Kitchen",
         "Rear Desk",
         "50\" Motorized TV",
         "Dual Awnings",
-        "66\" x 80\" Bed"
+        "Washer/Dryer Prep",
+        "Olympic Queen Bed"
       ]
     },
     {
@@ -298,12 +301,12 @@
       "status": "A",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-29rl.png",
       "keyFeatures": [
-        "Open Concept Living",
+        "Rear Living",
         "Island Kitchen",
-        "Tri-fold Sofa & Dual Recliner",
+        "Tri-fold Sofa | Dual Recliner",
         "50\" Smart TV w/ Hidden Storage",
         "Washer/Dryer Prep",
-        "50\" Smart TV w/ Hidden Storage"
+        "Olympic Queen Bed"
       ]
     },
     {
@@ -317,7 +320,15 @@
       "weight": 9554,
       "length": "34' 11\"",
       "status": "A",
-      "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-29bh.png"
+      "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-29bh.png",
+      "keyFeatures": [
+        "Bunk House",
+        "Double-Bunk",
+        "L-Shaped Dinette",
+        "Outdoor Kitchen",
+        "Washer/Dryer Prep",
+        "Olympic Queen Bed"
+      ]
     },
     {
       "id": "alliance-avenue-all-access-series-30bh",
@@ -332,12 +343,12 @@
       "status": "A",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-30bh.png",
       "keyFeatures": [
-        "Open Concept",
+        "Bunk House",
         "U-Shaped Kitchen",
-        "Rear Family Bunkhouse suite",
-        "Cube Sofa",
-        "66\" x 80\" Bed",
-        "Pull-Out Trundle"
+        "Flip Bunk | Cube Sofa | Trundle",
+        "Outdoor Kitchen",
+        "Washer/Dryer Prep",
+        "Olympic Queen Bed"
       ]
     },
     {
@@ -346,7 +357,7 @@
       "brand": "Delta",
       "model": "252RL",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6545,
       "length": "29' 11\"",
@@ -358,7 +369,7 @@
         "Theater Seating",
         "L-Shaped Kitchen",
         "Outdoor Griddle",
-        "60\" x 80\" Bed"
+        "Queen Bed"
       ]
     },
     {
@@ -367,7 +378,7 @@
       "brand": "Delta",
       "model": "262RB",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6408,
       "length": "29' 7\"",
@@ -379,7 +390,7 @@
         "Dinette Table",
         "L-Shaped Kitchen",
         "Outdoor Griddle",
-        "60\" x 80\" Bed"
+        "Queen Bed"
       ]
     },
     {
@@ -388,7 +399,7 @@
       "brand": "Delta",
       "model": "274RKW",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 7420,
       "length": "31' 11\"",
@@ -400,7 +411,7 @@
         "Dinette Booth",
         "L-Shaped Kitchen",
         "Outdoor Griddle",
-        "60\" x 80\" Bed"
+        "Queen Bed"
       ]
     },
     {
@@ -409,7 +420,7 @@
       "brand": "Delta",
       "model": "281BH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 6882,
       "length": "31' 11\"",
@@ -421,7 +432,7 @@
         "Dinette Booth",
         "L-Shaped Kitchen",
         "Outdoor Griddle",
-        "60\" x 80\" Bed"
+        "Queen Bed"
       ]
     },
     {
@@ -430,19 +441,19 @@
       "brand": "Delta",
       "model": "284RK",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 7536,
       "length": "32' 11\"",
       "status": "A",
       "imagePath": "alliance-delta/delta-284rk.png",
       "keyFeatures": [
-        "Wrap-Around Rear Kitchen",
+        "Rear Kitchen",
         "L-Shaped Couch",
         "Dinette Table",
         "Pull-Out Pantry",
         "Dual-Living Slides",
-        "60\" x 80\" Bed"
+        "Queen Bed"
       ]
     },
     {
@@ -451,12 +462,20 @@
       "brand": "Delta",
       "model": "291BH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 7388,
       "length": "33' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta/delta-291bh.png"
+      "imagePath": "alliance-delta/delta-291bh.png",
+      "keyFeatures": [
+        "Bunk House",
+        "L-Shaped Dinette",
+        "Double-Bunk",
+        "Pass-Thru Bathroom",
+        "Dual-Entry",
+        "Queen Bed"
+      ]
     },
     {
       "id": "alliance-delta-292rl",
@@ -464,12 +483,20 @@
       "brand": "Delta",
       "model": "292RL",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 7486,
       "length": "33' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta/delta-292rl.png"
+      "imagePath": "alliance-delta/delta-292rl.png",
+      "keyFeatures": [
+        "Rear Living",
+        "Theater Seating",
+        "Dinette Booth",
+        "Dedicated Hutch",
+        "50\" TV with Fireplace",
+        "Queen Bed"
+      ]
     },
     {
       "id": "alliance-delta-294rk",
@@ -477,7 +504,7 @@
       "brand": "Delta",
       "model": "294RK",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 7316,
       "length": "33' 11\"",
@@ -495,7 +522,15 @@
       "weight": 8253,
       "length": "36' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta/delta-321bh.png"
+      "imagePath": "alliance-delta/delta-321bh.png",
+      "keyFeatures": [
+        "Bunk House",
+        "Flip Bunk | Cube Sofa",
+        "Dinette Booth",
+        "Tri-Fold Sofa",
+        "U-Shaped Kitchen",
+        "Queen Bed"
+      ]
     },
     {
       "id": "alliance-delta-ultra-lite-ml206",
@@ -505,10 +540,18 @@
       "type": "Travel Trailer",
       "year": 2026,
       "price": null,
-      "weight": 5190.0,
+      "weight": 4992.0,
       "length": "23' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml206.png"
+      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml206.png",
+      "keyFeatures": [
+        "Mid Living",
+        "Pull-Out Pantry",
+        "Theater Seating",
+        "Fireplace",
+        "18K A/C",
+        "Queen Bed"
+      ]
     },
     {
       "id": "alliance-delta-ultra-lite-bh271",
@@ -534,7 +577,15 @@
       "weight": 5600,
       "length": "27' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-rk234.png"
+      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-rk234.png",
+      "keyFeatures": [
+        "Rear Kitchen",
+        "Theater Seating",
+        "Dinette",
+        "Pass-Thru Bathroom",
+        "18K A/C",
+        "Queen Bed"
+      ]
     },
     {
       "id": "alliance-delta-ultra-lite-ml226",
@@ -547,7 +598,10 @@
       "weight": 5202,
       "length": "26' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml226.png"
+      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml226.png",
+      "keyFeatures": [
+        "Mid Living"
+      ]
     },
     {
       "id": "alliance-delta-ultra-lite-bh241",
@@ -559,7 +613,10 @@
       "price": null,
       "weight": 5893,
       "length": "29' 11\"",
-      "status": "A"
+      "status": "A",
+      "keyFeatures": [
+        "Bunk House"
+      ]
     },
     {
       "id": "alliance-delta-ultra-lite-re250",
@@ -572,7 +629,15 @@
       "weight": 6175,
       "length": "29' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-re250.png"
+      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-re250.png",
+      "keyFeatures": [
+        "Rear Entertainment",
+        "Theater Seating",
+        "Dinette",
+        "50\" TV",
+        "18K A/C",
+        "Queen Bed"
+      ]
     },
     {
       "id": "alliance-paradigm-310rl",
@@ -580,12 +645,20 @@
       "brand": "Paradigm",
       "model": "310RL",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 13525,
       "length": "34' 11\"",
       "status": "A",
-      "imagePath": "alliance-paradigm/paradigm-310rl.png"
+      "imagePath": "alliance-paradigm/paradigm-310rl.png",
+      "keyFeatures": [
+        "Rear Living",
+        "Sleeper Sofa",
+        "Turn Table Dinette",
+        "Theater Seating",
+        "W/D Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "alliance-paradigm-312rk",
@@ -593,12 +666,20 @@
       "brand": "Paradigm",
       "model": "312RK",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 13560,
       "length": "34' 11\"",
       "status": "A",
-      "imagePath": "alliance-paradigm/paradigm-312rk.png"
+      "imagePath": "alliance-paradigm/paradigm-312rk.png",
+      "keyFeatures": [
+        "Rear Kitchen",
+        "Ample Counter Space",
+        "Turn Table Dinette",
+        "Theater Seating | Sleeper Sofa",
+        "W/D Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "alliance-paradigm-340rl",
@@ -606,12 +687,20 @@
       "brand": "Paradigm",
       "model": "340RL",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 14072,
       "length": "37' 10\"",
       "status": "A",
-      "imagePath": "alliance-paradigm/paradigm-340rl.png"
+      "imagePath": "alliance-paradigm/paradigm-340rl.png",
+      "keyFeatures": [
+        "Rear Living",
+        "Sleeper Sofa | Dual Recliner",
+        "Turn Table Dinette",
+        "Hidden Pantry",
+        "W/D Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "alliance-paradigm-370fb",
@@ -619,12 +708,20 @@
       "brand": "Paradigm",
       "model": "370FB",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 14908,
       "length": "40' 4\"",
       "status": "A",
-      "imagePath": "alliance-paradigm/paradigm-370fb.png"
+      "imagePath": "alliance-paradigm/paradigm-370fb.png",
+      "keyFeatures": [
+        "Front Bath",
+        "Spa Bathroom | Walk-In Closet",
+        "Sleeper Sofa | Dual Recliner",
+        "Bath and a Half",
+        "W/D Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "alliance-paradigm-375rd",
@@ -632,12 +729,20 @@
       "brand": "Paradigm",
       "model": "375RD",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 15300,
       "length": "41' 9\"",
       "status": "A",
-      "imagePath": "alliance-paradigm/paradigm-375rd.png"
+      "imagePath": "alliance-paradigm/paradigm-375rd.png",
+      "keyFeatures": [
+        "Rear Den",
+        "Entertainment Space",
+        "Dual Sleeper Sofa | Theater Seating",
+        "XL Kitchen",
+        "W/D Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "alliance-paradigm-382rk",
@@ -645,12 +750,20 @@
       "brand": "Paradigm",
       "model": "382RK",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 14812,
       "length": "41' 4\"",
       "status": "A",
-      "imagePath": "alliance-paradigm/paradigm-382rk.png"
+      "imagePath": "alliance-paradigm/paradigm-382rk.png",
+      "keyFeatures": [
+        "Rear Kitchen",
+        "Ample Counter Space",
+        "Sleeper Sofa | Dual Recliner",
+        "Walk-In Closet",
+        "W/D Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "alliance-paradigm-385fl",
@@ -658,7 +771,7 @@
       "brand": "Paradigm",
       "model": "385FL",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 15636,
       "length": "41' 4\"",
@@ -671,12 +784,20 @@
       "brand": "Paradigm",
       "model": "388SP",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 15528,
       "length": "40' 11\"",
       "status": "A",
-      "imagePath": "alliance-paradigm/paradigm-388sp.png"
+      "imagePath": "alliance-paradigm/paradigm-388sp.png",
+      "keyFeatures": [
+        "Side Patio",
+        "Ample Counter Space",
+        "Sleeper Sofa | Theater Seating",
+        "Outdoor Patio Kitchen",
+        "W/D Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "alliance-paradigm-395ds",
@@ -684,12 +805,20 @@
       "brand": "Paradigm",
       "model": "395DS",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 15278,
       "length": "42' 6\"",
       "status": "A",
-      "imagePath": "alliance-paradigm/paradigm-395ds.png"
+      "imagePath": "alliance-paradigm/paradigm-395ds.png",
+      "keyFeatures": [
+        "Dual Suite",
+        "Sleeper Sofa | Dual Recliner",
+        "Loft",
+        "2 Full Bathrooms",
+        "W/D Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "alliance-valor-44v14",
@@ -728,7 +857,7 @@
       "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2300mk.png",
       "keyFeatures": [
-        "Mid-Kitchen",
+        "Mid Kitchen",
         "U-Shaped Kitchen",
         "Rear Bathroom",
         "Theater Seating",
@@ -770,7 +899,7 @@
       "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2500rl.png",
       "keyFeatures": [
-        "Rear-Living",
+        "Rear Living",
         "Theater Seating",
         "U-Shaped Dinette",
         "Pass-Thru Bathroom",
@@ -791,7 +920,7 @@
       "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2600rb.png",
       "keyFeatures": [
-        "Rear-Bathroom",
+        "Rear Bathroom",
         "Theater Seating",
         "U-Shaped Dinette",
         "Solid Doors",
@@ -812,7 +941,7 @@
       "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2670mk.png",
       "keyFeatures": [
-        "Mid-Kitchen",
+        "Mid Kitchen",
         "Rear-Desk",
         "Booth-Dinette",
         "Theater Seating",
@@ -896,7 +1025,7 @@
       "status": "A",
       "imagePath": "grand-design-imagine-2of2/imagine-2970rl.png",
       "keyFeatures": [
-        "Rear-Living",
+        "Rear Living",
         "Kitchen Island",
         "Tri-fold Sofa",
         "Theater Seating",
@@ -915,7 +1044,10 @@
       "weight": 8030,
       "length": "35’ 8”",
       "status": "A",
-      "imagePath": "grand-design-imagine-2of2/imagine-3100rd.png"
+      "imagePath": "grand-design-imagine-2of2/imagine-3100rd.png",
+      "keyFeatures": [
+        "Rear Den"
+      ]
     },
     {
       "id": "grand-design-imagine-3210bh",
@@ -928,7 +1060,10 @@
       "weight": 8725,
       "length": "36’ 8”",
       "status": "A",
-      "imagePath": "grand-design-imagine-2of2/imagine-3210bh.png"
+      "imagePath": "grand-design-imagine-2of2/imagine-3210bh.png",
+      "keyFeatures": [
+        "Bunkhouse"
+      ]
     },
     {
       "id": "grand-design-imagine-aim-15rba",
@@ -1116,7 +1251,7 @@
       "status": "A",
       "imagePath": "grand-design-imagine-xls/imagine-xls-23lde.png",
       "keyFeatures": [
-        "Living-Dining-Entertainment",
+        "Living Dining Entertainment",
         "Theater Seating",
         "Booth Dinette",
         "LED TV",
@@ -1158,7 +1293,7 @@
       "status": "A",
       "imagePath": "grand-design-imagine-xls/imagine-xls-25rle.png",
       "keyFeatures": [
-        "Rear-Living-Entertainment",
+        "Rear Living Entertainment",
         "U-Shaped Kitchen",
         "Theater Seating",
         "Booth Dinette",
@@ -1172,12 +1307,20 @@
       "brand": "Influence",
       "model": "2903RL",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
-      "weight": 12100,
+      "weight": 12500.0,
       "length": "34' 5\"",
       "status": "A",
-      "imagePath": "grand-design-influence/influence-2903rl.png"
+      "imagePath": "grand-design-influence/influence-2903rl.png",
+      "keyFeatures": [
+        "Rear Living",
+        "Ample Counter Space",
+        "Theater Seating | Tri-Fold Sofa",
+        "Kitchen Island",
+        "Master Wardrobe",
+        "King Bed"
+      ]
     },
     {
       "id": "grand-design-influence-3003rl",
@@ -1185,12 +1328,20 @@
       "brand": "Influence",
       "model": "3003RL",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
-      "weight": 12500,
+      "weight": 12800.0,
       "length": "34' 11\"",
       "status": "A",
-      "imagePath": "grand-design-influence/influence-3003rl.png"
+      "imagePath": "grand-design-influence/influence-3003rl.png",
+      "keyFeatures": [
+        "Rear Living",
+        "Theater Seating | Tri-Fold Sofa",
+        "Kitchen Island",
+        "Sunken Shower",
+        "Washer/Dryer Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "grand-design-influence-3203gk",
@@ -1198,12 +1349,20 @@
       "brand": "Influence",
       "model": "3203GK",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
-      "weight": 12712,
+      "weight": 13200.0,
       "length": "35' 11\"",
       "status": "A",
-      "imagePath": "grand-design-influence/influence-3203gk.png"
+      "imagePath": "grand-design-influence/influence-3203gk.png",
+      "keyFeatures": [
+        "Rear Kitchen",
+        "Wrap-around Kitchen",
+        "L-Shaped Sofa",
+        "XL Bathroom",
+        "Washer/Dryer Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "grand-design-influence-3503gk",
@@ -1211,12 +1370,20 @@
       "brand": "Influence",
       "model": "3503GK",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
-      "weight": 13500,
+      "weight": 13700.0,
       "length": "38' 3\"",
       "status": "A",
-      "imagePath": "grand-design-influence/influence-3503gk.png"
+      "imagePath": "grand-design-influence/influence-3503gk.png",
+      "keyFeatures": [
+        "Rear Living",
+        "Theater Seating | Tri-Fold Sofa",
+        "Kitchen Island",
+        "XL Bathroom",
+        "Washer/Dryer Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "grand-design-influence-3804ds",
@@ -1224,12 +1391,20 @@
       "brand": "Influence",
       "model": "3804DS",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
-      "weight": 14800,
+      "weight": 15000.0,
       "length": "42' 6\"",
       "status": "A",
-      "imagePath": "grand-design-influence/influence-3804ds.png"
+      "imagePath": "grand-design-influence/influence-3804ds.png",
+      "keyFeatures": [
+        "Dual Suite",
+        "L-Shaped Sofa",
+        "Dinette",
+        "Bath and a Half",
+        "XL Bathroom",
+        "King Bed"
+      ]
     },
     {
       "id": "grand-design-influence-3904bh",
@@ -1237,12 +1412,20 @@
       "brand": "Influence",
       "model": "3904BH",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 16000,
       "length": "42' 8\"",
       "status": "A",
-      "imagePath": "grand-design-influence/influence-3904bh.png"
+      "imagePath": "grand-design-influence/influence-3904bh.png",
+      "keyFeatures": [
+        "Bunkhouse",
+        "L-Shaped Sofa",
+        "U-Shaped Kitchen",
+        "Bath and a Half",
+        "Washer/Dryer Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "grand-design-lineage-series-f-31zw",
@@ -1625,10 +1808,18 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 9200,
+      "weight": 9518.0,
       "length": "35' 5\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-travel-trailer/reflection-travel-trailer-317rsts.png"
+      "imagePath": "grand-design-reflection-travel-trailer/reflection-travel-trailer-317rsts.png",
+      "keyFeatures": [
+        "Rear Living",
+        "Theater Seating",
+        "Tri-Fold Sofa",
+        "Kitchen Island",
+        "Washer/Dryer Prep",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-reflection-travel-trailer-322fkts",
@@ -1638,10 +1829,18 @@
       "type": "Travel Trailer",
       "year": 2027.0,
       "price": null,
-      "weight": 8800,
+      "weight": 9158.0,
       "length": "35' 9\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-travel-trailer/reflection-travel-trailer-322fkts.png"
+      "imagePath": "grand-design-reflection-travel-trailer/reflection-travel-trailer-322fkts.png",
+      "keyFeatures": [
+        "Front Kitchen",
+        "Bar Seating",
+        "Ample Pantry space",
+        "Dual Vanity",
+        "Washer/Dryer Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "grand-design-reflection-travel-trailer-342bhts",
@@ -1654,7 +1853,15 @@
       "weight": 10300,
       "length": "37' 9\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-travel-trailer/reflection-travel-trailer-342bhts.png"
+      "imagePath": "grand-design-reflection-travel-trailer/reflection-travel-trailer-342bhts.png",
+      "keyFeatures": [
+        "Bunkhouse",
+        "Flip Bunk | Cube Sofa | Trundle",
+        "Kitchen Island",
+        "Outdoor Kitchen",
+        "Washer/Dryer Prep",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-reflection-travel-trailer-345rlts",
@@ -1664,10 +1871,18 @@
       "type": "Travel Trailer",
       "year": 2027.0,
       "price": null,
-      "weight": 10275,
+      "weight": 10425.0,
       "length": "38' 10\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-travel-trailer/reflection-travel-trailer-345rlts.png"
+      "imagePath": "grand-design-reflection-travel-trailer/reflection-travel-trailer-345rlts.png",
+      "keyFeatures": [
+        "Rear Living",
+        "Theater Seating | Tri-fold sofe",
+        "Kitchen Island",
+        "Bedroom Slide",
+        "Washer/Dryer Prep",
+        "Kind Bed"
+      ]
     },
     {
       "id": "grand-design-reflection-324mbs",
@@ -1842,7 +2057,12 @@
       "status": "A",
       "imagePath": "grand-design-reflection-100-series/reflection-100-series-22rk.png",
       "keyFeatures": [
-        "Rear Kitchen"
+        "Rear Kitchen",
+        "U-Shaped Dinette",
+        "Theater Seating",
+        "Closed Access",
+        "Washer/Dryer Prep",
+        "Queen Bed"
       ]
     },
     {
@@ -1858,7 +2078,12 @@
       "status": "A",
       "imagePath": "grand-design-reflection-100-series/reflection-100-series-24rl.png",
       "keyFeatures": [
-        "Rear Living"
+        "Rear Living",
+        "Theater Seated",
+        "Dinette Booth",
+        "Hidden Pantry",
+        "Washer/Dryer Prep",
+        "Queen Bed"
       ]
     },
     {
@@ -1869,12 +2094,17 @@
       "type": "Fifth Wheel",
       "year": 2027.0,
       "price": null,
-      "weight": 8200,
+      "weight": 8315.0,
       "length": "32' 3\"",
       "status": "A",
       "imagePath": "grand-design-reflection-100-series/reflection-100-series-27bh.png",
       "keyFeatures": [
-        "Bunkhouse"
+        "Bunkhouse",
+        "80\" U-Shaped Dinette",
+        "Tri-Fold Sofa",
+        "Bunk Storage",
+        "Washer/Dryer Prep",
+        "Queen Bed"
       ]
     },
     {
@@ -1885,12 +2115,17 @@
       "type": "Fifth Wheel",
       "year": 2027.0,
       "price": null,
-      "weight": null,
-      "length": "31'",
+      "weight": 9045.0,
+      "length": "32' 9\"",
       "status": "A",
       "imagePath": "grand-design-reflection-100-series/reflection-100-series-29rl.png",
       "keyFeatures": [
-        "Rear Living"
+        "Rear Living",
+        "Theater Seating",
+        "Sleeper Sofa",
+        "Kitchen Island",
+        "Washer/Dryer Prep",
+        "Queen Bed"
       ]
     },
     {
@@ -1906,7 +2141,12 @@
       "status": "A",
       "imagePath": "grand-design-reflection-100-series/reflection-100-series-32bh.png",
       "keyFeatures": [
-        "Bunkhouse"
+        "Bunkhouse",
+        "Flip Bunk | Trundle",
+        "Dinette Booth",
+        "Outdoor Kitchen",
+        "Washer/Dryer Prep",
+        "Queen Bed"
       ]
     },
     {
@@ -1922,7 +2162,12 @@
       "status": "A",
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-250ml.png",
       "keyFeatures": [
-        "Mid-Living"
+        "Mid-Living",
+        "Wrap-around Kitchen",
+        "Dinette Booth",
+        "Closed Access",
+        "Washer/Dryer Prep",
+        "Queen Bed"
       ]
     },
     {
@@ -1938,7 +2183,12 @@
       "status": "A",
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-260rd.png",
       "keyFeatures": [
-        "Rear Dining"
+        "Rear Dining",
+        "U-Shaped Dinette",
+        "Theater Seating",
+        "Ample Counter Space",
+        "Washer/Dryer Prep",
+        "Queen Bed"
       ]
     },
     {
@@ -1954,7 +2204,12 @@
       "status": "A",
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-270bn.png",
       "keyFeatures": [
-        "Breakfast Nook"
+        "Breakfast Nook",
+        "Theater Seating",
+        "Ample Counter Space",
+        "Outdoor Kitchen",
+        "Washer/Dryer Prep",
+        "Queen Bed"
       ]
     },
     {
@@ -1986,7 +2241,12 @@
       "status": "A",
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-298bh.png",
       "keyFeatures": [
-        "Bunkhouse"
+        "Bunkhouse",
+        "80\" U-Shaped Dinette",
+        "Outdoor Kitchen",
+        "Closed Access",
+        "Washer/Dryer Prep",
+        "Queen Bed"
       ]
     },
     {
@@ -2153,7 +2413,7 @@
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-265bht.png",
       "keyFeatures": [
-        "Mid-Living",
+        "Mid Living",
         "Bunkhouse",
         "16' Power Awning",
         "Outdoor Kitchen",
@@ -2318,7 +2578,7 @@
       "status": "A",
       "imagePath": "grand-design-transcend-one/transcend-one-151bh.png",
       "keyFeatures": [
-        "Bunk House",
+        "Bunkhouse",
         "Jack-Knife Sofa",
         "Camp Table",
         "Queen Bed",
@@ -2358,7 +2618,7 @@
       "status": "A",
       "imagePath": "grand-design-transcend-one/transcend-one-161bh.png",
       "keyFeatures": [
-        "Bunk House",
+        "Bunkhouse",
         "Murphy Queen Bed",
         "Booth Dinette",
         "Camp Table",
@@ -2379,7 +2639,7 @@
       "status": "A",
       "imagePath": "grand-design-transcend-one/transcend-one-161db.png",
       "keyFeatures": [
-        "Bunk House",
+        "Bunkhouse",
         "Booth Dinette",
         "Camp Table",
         "Queen Bed",
@@ -2400,7 +2660,7 @@
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-19bhx.png",
       "keyFeatures": [
-        "Bunk House",
+        "Bunkhouse",
         "Rear Bath",
         "Smart RV Kitchen Storage",
         "17' Awning",
@@ -2421,7 +2681,7 @@
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-20mkx.png",
       "keyFeatures": [
-        "Food Prep Space",
+        "Mid Kitchen",
         "Closed-Slide Access",
         "Theater Seating Option",
         "17' Awning",
@@ -2484,7 +2744,7 @@
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-23bhx.png",
       "keyFeatures": [
-        "Bunk House",
+        "Bunkhouse",
         "Tandem Axel",
         "Dual Entry",
         "Queen Bed",
@@ -2505,7 +2765,7 @@
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-24bhx.png",
       "keyFeatures": [
-        "Bunk House",
+        "Bunkhouse",
         "Private Bathroom",
         "No Slide",
         "15' Awning",
@@ -2526,7 +2786,7 @@
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-25mlx.png",
       "keyFeatures": [
-        "Mid-Living",
+        "Mid Living",
         "Closed-Slide Access",
         "Abundant Counter Space",
         "17' Awning",
@@ -2547,7 +2807,7 @@
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-26bhx.png",
       "keyFeatures": [
-        "Bunk House",
+        "Bunkhouse",
         "Ample-Counter Space",
         "Outdoor Kitchen",
         "17' Awning",
@@ -2581,7 +2841,7 @@
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-27dbx.png",
       "keyFeatures": [
-        "Bunk-House",
+        "Bunkhouse",
         "Dual Entry",
         "Outdoor Kitchen",
         "19' Awning",
@@ -2600,7 +2860,15 @@
       "weight": 3772,
       "length": "21'2\"",
       "status": "A",
-      "imagePath": "winnebago-access/winnebago-access-16bh.jpeg"
+      "imagePath": "winnebago-access/winnebago-access-16bh.jpeg",
+      "keyFeatures": [
+        "Bunkhouse",
+        "No Slide-Outs",
+        "Wardrobe",
+        "32\" x 74\" Bunks",
+        "8K A/C",
+        "Queen Bed"
+      ]
     },
     {
       "id": "winnebago-access-16rb",
@@ -2613,7 +2881,15 @@
       "weight": 3770,
       "length": "21'2\"",
       "status": "A",
-      "imagePath": "winnebago-access/winnebago-access-16rb.jpeg"
+      "imagePath": "winnebago-access/winnebago-access-16rb.jpeg",
+      "keyFeatures": [
+        "Rear Bath",
+        "No Slide-Outs",
+        "Dinette Booth",
+        "Wardrobe",
+        "8K A/C",
+        "Queen Bed"
+      ]
     },
     {
       "id": "winnebago-access-18dbh",
@@ -2626,7 +2902,15 @@
       "weight": 3850,
       "length": "22' 6\"",
       "status": "A",
-      "imagePath": "winnebago-access/winnebago-access-18dbh.jpeg"
+      "imagePath": "winnebago-access/winnebago-access-18dbh.jpeg",
+      "keyFeatures": [
+        "Bunkhouse",
+        "No Slide-Outs",
+        "Dinette Booth",
+        "48\" x 68\" Bunks",
+        "8K A/C",
+        "Queen Bed"
+      ]
     },
     {
       "id": "winnebago-access-18rk",
@@ -2639,7 +2923,15 @@
       "weight": 3900,
       "length": "22' 6\"",
       "status": "A",
-      "imagePath": "winnebago-access/winnebago-access-18rk.jpeg"
+      "imagePath": "winnebago-access/winnebago-access-18rk.jpeg",
+      "keyFeatures": [
+        "Rear Kitchen",
+        "No Slide-Outs",
+        "Dinette Booth",
+        "Flip-out Sofa",
+        "8K A/C",
+        "Queen Bed"
+      ]
     },
     {
       "id": "winnebago-access-24rb",
@@ -2652,7 +2944,15 @@
       "weight": 6592,
       "length": "29'11\"",
       "status": "A",
-      "imagePath": "winnebago-access/winnebago-access-24rb.jpeg"
+      "imagePath": "winnebago-access/winnebago-access-24rb.jpeg",
+      "keyFeatures": [
+        "Rear Bath",
+        "Private Bedroom",
+        "Dinette Booth",
+        "Theater Seating",
+        "13.5K A/C",
+        "Olympic Queen Bed"
+      ]
     },
     {
       "id": "winnebago-access-24rl",
@@ -2665,7 +2965,15 @@
       "weight": "TBD",
       "length": "30'6\"",
       "status": "A",
-      "imagePath": "winnebago-access/winnebago-access-24rl.jpeg"
+      "imagePath": "winnebago-access/winnebago-access-24rl.jpeg",
+      "keyFeatures": [
+        "Rear Living",
+        "Pass-Through Bathroom",
+        "U-Shaped Dinette",
+        "Theater Seating",
+        "13.5K A/C",
+        "Olympic Queen Bed"
+      ]
     },
     {
       "id": "winnebago-access-25bh",
@@ -2678,7 +2986,15 @@
       "weight": 6456,
       "length": "29' 11\"",
       "status": "A",
-      "imagePath": "winnebago-access/winnebago-access-25bh.jpeg"
+      "imagePath": "winnebago-access/winnebago-access-25bh.jpeg",
+      "keyFeatures": [
+        "Bunkhouse",
+        "48\" x 74\" Bunk",
+        "Dinette Booth",
+        "Theater Seating",
+        "13.5K A/C",
+        "Olympic Queen Bed"
+      ]
     },
     {
       "id": "winnebago-access-25rk",
@@ -2691,7 +3007,15 @@
       "weight": 6520,
       "length": "29' 4\"",
       "status": "A",
-      "imagePath": "winnebago-access/winnebago-access-25rk.jpeg"
+      "imagePath": "winnebago-access/winnebago-access-25rk.jpeg",
+      "keyFeatures": [
+        "Rear Kitchen",
+        "Dual Entry",
+        "Dinette Booth",
+        "Theater Seating",
+        "13.5K A/C",
+        "Olympic Queen Bed"
+      ]
     },
     {
       "id": "winnebago-access-27bh",
@@ -2704,7 +3028,15 @@
       "weight": 7292,
       "length": "33'4\"",
       "status": "A",
-      "imagePath": "winnebago-access/winnebago-access-27bh.jpeg"
+      "imagePath": "winnebago-access/winnebago-access-27bh.jpeg",
+      "keyFeatures": [
+        "Bunkhouse",
+        "Dual Entry",
+        "U-Shaped Dinette",
+        "Thater Seating",
+        "13.5K A/C",
+        "Olympic Queen Bed"
+      ]
     },
     {
       "id": "winnebago-access-32br",
@@ -2717,7 +3049,15 @@
       "weight": 8008,
       "length": "37' 11\"",
       "status": "A",
-      "imagePath": "winnebago-access/winnebago-access-32br.jpeg"
+      "imagePath": "winnebago-access/winnebago-access-32br.jpeg",
+      "keyFeatures": [
+        "Bunkhouse",
+        "Dual Entry",
+        "Dinette Booth",
+        "Theater Seating",
+        "13.5K A/C",
+        "Olympic Queen Bed"
+      ]
     },
     {
       "id": "winnebago-micro-minnie-1800bh",
@@ -2987,10 +3327,18 @@
       "type": "Travel Trailer",
       "year": 2027.0,
       "price": null,
-      "weight": null,
+      "weight": 5372.0,
       "length": "25' 11\"",
       "status": "A",
-      "imagePath": null
+      "imagePath": null,
+      "keyFeatures": [
+        "Mid Living",
+        "Spacious Rear Kitchen",
+        "Theater Seating",
+        "Pull-Out Dinette",
+        "18K A/C",
+        "Queen Bed"
+      ]
     },
     {
       "id": "alliance-delta-ultra-lite-lk254",
@@ -3003,7 +3351,15 @@
       "weight": 6230.0,
       "length": "29' 11\"",
       "status": "A",
-      "imagePath": null
+      "imagePath": null,
+      "keyFeatures": [
+        "L Kitchen",
+        "Thater Seating",
+        "Dinette",
+        "Ample Counter Space",
+        "18K A/C",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-imagine-aim-17mka",
@@ -3102,10 +3458,18 @@
       "type": "Fifth Wheel",
       "year": 2027.0,
       "price": null,
-      "weight": null,
-      "length": null,
+      "weight": 8626.0,
+      "length": "31'",
       "status": "A",
-      "imagePath": "grand-design-reflection-100-series/reflection-100-series-28rl.png"
+      "imagePath": "grand-design-reflection-100-series/reflection-100-series-28rl.png",
+      "keyFeatures": [
+        "Rear Living",
+        "Theater Seating",
+        "Sleeper Sofa",
+        "Outdoor Kitchen",
+        "Washer/Dryer Prep",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-reflection-150-series-299mb",
@@ -3118,7 +3482,15 @@
       "weight": null,
       "length": null,
       "status": "A",
-      "imagePath": "grand-design-reflection-150-series/reflection-150-series-299mb.png"
+      "imagePath": "grand-design-reflection-150-series/reflection-150-series-299mb.png",
+      "keyFeatures": [
+        "Mid-Bunk",
+        "Theater Seating",
+        "Flip-Up Desk",
+        "Double Bunk",
+        "Washer/Dryer Prep",
+        "Queen Bed"
+      ]
     },
     {
       "id": "grand-design-reflection-150-series-310rl",
@@ -3131,7 +3503,15 @@
       "weight": null,
       "length": null,
       "status": "A",
-      "imagePath": "grand-design-reflection-150-series/reflection-150-series-310rl.png"
+      "imagePath": "grand-design-reflection-150-series/reflection-150-series-310rl.png",
+      "keyFeatures": [
+        "Rear Living",
+        "L-Shaped Sofa",
+        "Outdoor Kitchen",
+        "Ample Counter Space",
+        "Washer/Dryer Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "grand-design-transcend-275fkt",
@@ -3194,6 +3574,103 @@
         "16' Awning",
         "Queen Bed",
         "13.5K A/C"
+      ]
+    },
+    {
+      "id": "alliance-delta-258fk",
+      "manufacturer": "Alliance",
+      "brand": "Delta",
+      "model": "258FK",
+      "type": "Travel Trailer",
+      "year": 2027.0,
+      "price": null,
+      "weight": 6608.0,
+      "length": "29' 11\"",
+      "status": "A",
+      "imagePath": null
+    },
+    {
+      "id": "alliance-delta-ultra-lite-fk218",
+      "manufacturer": "Alliance",
+      "brand": "Delta Ultra Lite",
+      "model": "FK218",
+      "type": "Travel Trailer",
+      "year": 2027.0,
+      "price": null,
+      "weight": null,
+      "length": "25' 11\"",
+      "status": "A",
+      "imagePath": null,
+      "keyFeatures": [
+        "Front Kitchen",
+        "Rear Bath",
+        "Theater Seating",
+        "Ample Counter Space",
+        "Couples Wardrobe",
+        "Queen Bed"
+      ]
+    },
+    {
+      "id": "alliance-delta-ultra-lite-bh255",
+      "manufacturer": "Alliance",
+      "brand": "Delta Ultra Lite",
+      "model": "BH255",
+      "type": "Travel Trailer",
+      "year": 2026.0,
+      "price": null,
+      "weight": 6190.0,
+      "length": "29' 11\"",
+      "status": "A",
+      "imagePath": null,
+      "keyFeatures": [
+        "Bunk House",
+        "Private Bedroom",
+        "Thater Seating",
+        "Dinette",
+        "Dual Entry",
+        "Queen Bed"
+      ]
+    },
+    {
+      "id": "alliance-paradigm-373fb",
+      "manufacturer": "Alliance",
+      "brand": "Paradigm",
+      "model": "373FB",
+      "type": "Fifth Wheel",
+      "year": 2027.0,
+      "price": null,
+      "weight": 15222.0,
+      "length": "40' 11\"",
+      "status": "A",
+      "imagePath": null,
+      "keyFeatures": [
+        "Front Bath",
+        "Spa Bathroom | Walk-In Closet",
+        "His & Hers Wardrobe",
+        "Bath and a Half",
+        "W/D Prep",
+        "King Bed"
+      ]
+    },
+    {
+      "id": "grand-design-influence-3705rd",
+      "manufacturer": "Grand Design",
+      "brand": "Influence",
+      "model": "3705RD",
+      "type": "Fifth Wheel",
+      "year": 2027.0,
+      "price": null,
+      "weight": null,
+      "length": "41' 10\"",
+      "status": "A",
+      "imagePath": null,
+      "keyFeatures": [
+        "Rear Den",
+        "L-Shaped Sofa",
+        "Theater Seating | Desk",
+        "XL Bathroom",
+        "Washer/Dryer Prep",
+        "King Bed"
       ]
     }
   ]
