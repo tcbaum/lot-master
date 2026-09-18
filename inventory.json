@@ -1,6 +1,6 @@
 {
-  "version": "inv-2026.09-205-img",
-  "unitCount": 205,
+  "version": "inv-2026.09-204-img",
+  "unitCount": 204,
   "units": [
     {
       "id": "alliance-avenue-fifth-wheel-32rls",
@@ -33,7 +33,7 @@
       "price": null,
       "weight": 10730,
       "length": "34' 5\"",
-      "status": "A",
+      "status": "D",
       "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-33rks.png",
       "keyFeatures": [
         "Rear Kitchen",
@@ -264,7 +264,7 @@
       "price": null,
       "weight": 7800,
       "length": "28' 10\"",
-      "status": "A",
+      "status": "D",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-26rd.png"
     },
     {
@@ -383,7 +383,7 @@
       "weight": 6608.0,
       "length": "29' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta/delta-258fk.png",
+      "imagePath": null,
       "keyFeatures": [
         "Front Kitchen"
       ]
@@ -524,7 +524,7 @@
       "price": null,
       "weight": 7316,
       "length": "33' 11\"",
-      "status": "A",
+      "status": "D",
       "imagePath": "alliance-delta/delta-294rk.png"
     },
     {
@@ -558,7 +558,7 @@
       "price": null,
       "weight": 4992.0,
       "length": "23' 11\"",
-      "status": "A",
+      "status": "D",
       "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml206.png",
       "keyFeatures": [
         "Mid Living",
@@ -580,7 +580,7 @@
       "weight": 5372.0,
       "length": "25' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml216.png",
+      "imagePath": null,
       "keyFeatures": [
         "Mid Living",
         "Spacious Rear Kitchen",
@@ -601,7 +601,7 @@
       "weight": null,
       "length": "25' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-fk218.png",
+      "imagePath": null,
       "keyFeatures": [
         "Front Kitchen",
         "Rear Bath",
@@ -621,7 +621,7 @@
       "price": null,
       "weight": 5202,
       "length": "26' 11\"",
-      "status": "A",
+      "status": "D",
       "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml226.png",
       "keyFeatures": [
         "Mid Living"
@@ -680,7 +680,7 @@
       "weight": 6230.0,
       "length": "29' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-lk254.png",
+      "imagePath": null,
       "keyFeatures": [
         "L Kitchen",
         "Thater Seating",
@@ -701,7 +701,7 @@
       "weight": 6190.0,
       "length": "29' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-bh255.png",
+      "imagePath": null,
       "keyFeatures": [
         "Bunk House",
         "Private Bedroom",
@@ -721,7 +721,7 @@
       "price": null,
       "weight": 6295,
       "length": "31' 11\"",
-      "status": "A",
+      "status": "D",
       "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-bh271.png",
       "keyFeatures": [
         "Bunk House"
@@ -822,7 +822,7 @@
       "weight": 15222.0,
       "length": "40' 11\"",
       "status": "A",
-      "imagePath": "alliance-paradigm/paradigm-373fb.png",
+      "imagePath": null,
       "keyFeatures": [
         "Front Bath",
         "Spa Bathroom | Walk-In Closet",
@@ -957,10 +957,9 @@
       "type": "Travel Trailer",
       "year": 2027.0,
       "price": null,
-      "weight": 15308,
+      "weight": null,
       "length": null,
-      "status": "A",
-      "imagePath": "grand-design-foundation/foundation-42gd.jpeg",
+      "status": "A"
     },
     {
       "id": "grand-design-imagine-2300mk",
@@ -1161,7 +1160,7 @@
       "price": null,
       "weight": 8030,
       "length": "35’ 8”",
-      "status": "A",
+      "status": "D",
       "imagePath": "grand-design-imagine-2of2/imagine-3100rd.png",
       "keyFeatures": [
         "Rear Den"
@@ -1177,7 +1176,7 @@
       "price": null,
       "weight": 8725,
       "length": "36’ 8”",
-      "status": "A",
+      "status": "D",
       "imagePath": "grand-design-imagine-2of2/imagine-3210bh.png",
       "keyFeatures": [
         "Bunkhouse"
@@ -1319,7 +1318,7 @@
       "price": null,
       "weight": 4921,
       "length": "21' 8\"",
-      "status": "A",
+      "status": "D",
       "imagePath": "grand-design-imagine-xls/imagine-xls-17mke.png"
     },
     {
@@ -1332,7 +1331,7 @@
       "price": null,
       "weight": 5334,
       "length": "24' 11\"",
-      "status": "A",
+      "status": "D",
       "imagePath": "grand-design-imagine-xls/imagine-xls-21mbe.png"
     },
     {
@@ -1556,7 +1555,7 @@
       "weight": null,
       "length": "41' 10\"",
       "status": "A",
-      "imagePath": "grand-design-influence/influence-3705rd.png",
+      "imagePath": null,
       "keyFeatures": [
         "Rear Den",
         "L-Shaped Sofa",
@@ -1757,7 +1756,6 @@
       "weight": 14250,
       "length": "41' 6\"",
       "status": "A"
-      "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-363g.png"
     },
     {
       "id": "grand-design-momentum-g-class-394g",
@@ -2074,7 +2072,7 @@
       "type": "Fifth Wheel",
       "year": 2027.0,
       "price": null,
-      "weight": 10100,
+      "weight": 10325.0,
       "length": "32' 10\"",
       "status": "A",
       "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-303rls.png",
@@ -2118,7 +2116,7 @@
       "price": null,
       "weight": 11100,
       "length": "34' 9\"",
-      "status": "A",
+      "status": "D",
       "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-320mk.png"
     },
     {
@@ -2172,7 +2170,7 @@
       "year": 2027.0,
       "price": null,
       "weight": null,
-      "length": null,
+      "length": "38' 7\"",
       "status": "A",
       "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-340rks.png",
       "keyFeatures": [
@@ -2467,7 +2465,7 @@
       "price": null,
       "weight": 9577.0,
       "length": "33' 9\"",
-      "status": "A",
+      "status": "D",
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-295rl.png",
       "keyFeatures": [
         "Rear Living"
@@ -2542,7 +2540,7 @@
       "brand": "Solitude",
       "model": "310GK",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 12500,
       "length": "34' 4\"",
@@ -2555,7 +2553,7 @@
       "brand": "Solitude",
       "model": "370DV",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 13800,
       "length": "37' 10\"",
@@ -2568,7 +2566,7 @@
       "brand": "Solitude",
       "model": "376RD",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 15400,
       "length": "42' 6\"",
@@ -2581,7 +2579,7 @@
       "brand": "Solitude",
       "model": "380FL",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 15000,
       "length": "41' 4\"",
@@ -2594,7 +2592,7 @@
       "brand": "Solitude",
       "model": "382WB",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 15200,
       "length": "41' 4\"",
@@ -2611,7 +2609,7 @@
       "price": null,
       "weight": 15600,
       "length": "42' 11\"",
-      "status": "A",
+      "status": "D",
       "imagePath": "grand-design-solitude-2of2/solitude-388mbs.png"
     },
     {
@@ -2620,7 +2618,7 @@
       "brand": "Solitude",
       "model": "390RK",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 15000,
       "length": "42' 5\"",
@@ -2633,7 +2631,7 @@
       "brand": "Solitude",
       "model": "414LJMJ",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 19000,
       "length": "42' 10\"",
@@ -2650,7 +2648,7 @@
       "price": null,
       "weight": 15500,
       "length": "42' 5\"",
-      "status": "A",
+      "status": "D",
       "imagePath": "grand-design-solitude-2of2/solitude-391dl.png"
     },
     {
@@ -2659,7 +2657,7 @@
       "brand": "Solitude",
       "model": "417KB",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 15500,
       "length": "41' 8\"",
@@ -2781,7 +2779,7 @@
       "price": null,
       "weight": 7735,
       "length": "36’ 11”",
-      "status": "A",
+      "status": "D",
       "imagePath": "grand-design-transcend/transcend-305bht.png"
     },
     {
@@ -3175,7 +3173,7 @@
       "price": null,
       "weight": 6147,
       "length": "31’ 6”",
-      "status": "A",
+      "status": "D",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-26rbx.png"
     },
     {
@@ -3668,19 +3666,6 @@
       "length": "36' 3\"",
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-29rlo.jpeg"
-    },
-    {
-      "id": "grand-design-reflection-346rls",
-      "manufacturer": "Grand Design",
-      "brand": "Reflection",
-      "model": "346RLS",
-      "type": "Fifth Wheel",
-      "year": 2026.0,
-      "price": null,
-      "weight": null,
-      "length": null,
-      "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-346rls.png"
     }
   ]
 }
