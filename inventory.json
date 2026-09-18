@@ -957,9 +957,10 @@
       "type": "Travel Trailer",
       "year": 2027.0,
       "price": null,
-      "weight": null,
-      "length": null,
-      "status": "A"
+      "weight": 15308,
+      "length": "48’ 6”",
+      "status": "A",
+      "imagePath": "grand-design-foundation/foundation-42gd.jpeg",
     },
     {
       "id": "grand-design-imagine-2300mk",
