@@ -383,7 +383,7 @@
       "weight": 6608.0,
       "length": "29' 11\"",
       "status": "A",
-      "imagePath": null,
+      "imagePath": "alliance-delta/delta-258fk.png",
       "keyFeatures": [
         "Front Kitchen"
       ]
@@ -580,7 +580,7 @@
       "weight": 5372.0,
       "length": "25' 11\"",
       "status": "A",
-      "imagePath": null,
+      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml216.png",
       "keyFeatures": [
         "Mid Living",
         "Spacious Rear Kitchen",
@@ -601,7 +601,7 @@
       "weight": null,
       "length": "25' 11\"",
       "status": "A",
-      "imagePath": null,
+      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-fk218.png",
       "keyFeatures": [
         "Front Kitchen",
         "Rear Bath",
@@ -680,7 +680,7 @@
       "weight": 6230.0,
       "length": "29' 11\"",
       "status": "A",
-      "imagePath": null,
+      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-lk254.png",
       "keyFeatures": [
         "L Kitchen",
         "Thater Seating",
@@ -701,7 +701,7 @@
       "weight": 6190.0,
       "length": "29' 11\"",
       "status": "A",
-      "imagePath": null,
+      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-bh255.png",
       "keyFeatures": [
         "Bunk House",
         "Private Bedroom",
@@ -822,7 +822,7 @@
       "weight": 15222.0,
       "length": "40' 11\"",
       "status": "A",
-      "imagePath": null,
+      "imagePath": "alliance-paradigm/paradigm-373fb.png",
       "keyFeatures": [
         "Front Bath",
         "Spa Bathroom | Walk-In Closet",
@@ -959,7 +959,8 @@
       "price": null,
       "weight": null,
       "length": null,
-      "status": "A"
+      "status": "A",
+      "imagePath": "grand-design-foundation/foundation-42GD.jpeg"
     },
     {
       "id": "grand-design-imagine-2300mk",
@@ -1555,7 +1556,7 @@
       "weight": null,
       "length": "41' 10\"",
       "status": "A",
-      "imagePath": null,
+      "imagePath": "grand-design-influence/influence-3705rd.png",
       "keyFeatures": [
         "Rear Den",
         "L-Shaped Sofa",
@@ -1755,7 +1756,8 @@
       "price": null,
       "weight": 14250,
       "length": "41' 6\"",
-      "status": "A"
+      "status": "A",
+      "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-363g.png"
     },
     {
       "id": "grand-design-momentum-g-class-394g",
@@ -1978,7 +1980,8 @@
       "price": null,
       "weight": null,
       "length": "44' 10\"",
-      "status": "A"
+      "status": "A",
+      "imagePath": "grand-design-momentum-luxury-2of2/momentum-luxury-399m.png"
     },
     {
       "id": "grand-design-reflection-travel-trailer-317rsts",
