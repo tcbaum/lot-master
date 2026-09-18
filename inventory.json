@@ -1,6 +1,6 @@
 {
-  "version": "inv-2026.09-206-img",
-  "unitCount": 206,
+  "version": "inv-2026.09-205-img",
+  "unitCount": 205,
   "units": [
     {
       "id": "alliance-avenue-fifth-wheel-32rls",
@@ -373,6 +373,22 @@
       ]
     },
     {
+      "id": "alliance-delta-258fk",
+      "manufacturer": "Alliance",
+      "brand": "Delta",
+      "model": "258FK",
+      "type": "Travel Trailer",
+      "year": 2027.0,
+      "price": null,
+      "weight": 6608.0,
+      "length": "29' 11\"",
+      "status": "A",
+      "imagePath": null,
+      "keyFeatures": [
+        "Front Kitchen"
+      ]
+    },
+    {
       "id": "alliance-delta-262rb",
       "manufacturer": "Alliance",
       "brand": "Delta",
@@ -504,7 +520,7 @@
       "brand": "Delta",
       "model": "294RK",
       "type": "Travel Trailer",
-      "year": 2027.0,
+      "year": 2026.0,
       "price": null,
       "weight": 7316,
       "length": "33' 11\"",
@@ -554,17 +570,62 @@
       ]
     },
     {
-      "id": "alliance-delta-ultra-lite-bh271",
+      "id": "alliance-delta-ultra-lite-ml216",
       "manufacturer": "Alliance",
       "brand": "Delta Ultra Lite",
-      "model": "BH271",
+      "model": "ML216",
+      "type": "Travel Trailer",
+      "year": 2027.0,
+      "price": null,
+      "weight": 5372.0,
+      "length": "25' 11\"",
+      "status": "A",
+      "imagePath": null,
+      "keyFeatures": [
+        "Mid Living",
+        "Spacious Rear Kitchen",
+        "Theater Seating",
+        "Pull-Out Dinette",
+        "18K A/C",
+        "Queen Bed"
+      ]
+    },
+    {
+      "id": "alliance-delta-ultra-lite-fk218",
+      "manufacturer": "Alliance",
+      "brand": "Delta Ultra Lite",
+      "model": "FK218",
+      "type": "Travel Trailer",
+      "year": 2027.0,
+      "price": null,
+      "weight": null,
+      "length": "25' 11\"",
+      "status": "A",
+      "imagePath": null,
+      "keyFeatures": [
+        "Front Kitchen",
+        "Rear Bath",
+        "Theater Seating",
+        "Ample Counter Space",
+        "Couples Wardrobe",
+        "Queen Bed"
+      ]
+    },
+    {
+      "id": "alliance-delta-ultra-lite-ml226",
+      "manufacturer": "Alliance",
+      "brand": "Delta Ultra Lite",
+      "model": "ML226",
       "type": "Travel Trailer",
       "year": 2026,
       "price": null,
-      "weight": 6295,
-      "length": "31' 11\"",
+      "weight": 5202,
+      "length": "26' 11\"",
       "status": "A",
-      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-bh271.png"
+      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml226.png",
+      "keyFeatures": [
+        "Mid Living"
+      ]
     },
     {
       "id": "alliance-delta-ultra-lite-rk234",
@@ -588,37 +649,6 @@
       ]
     },
     {
-      "id": "alliance-delta-ultra-lite-ml226",
-      "manufacturer": "Alliance",
-      "brand": "Delta Ultra Lite",
-      "model": "ML226",
-      "type": "Travel Trailer",
-      "year": 2026,
-      "price": null,
-      "weight": 5202,
-      "length": "26' 11\"",
-      "status": "A",
-      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml226.png",
-      "keyFeatures": [
-        "Mid Living"
-      ]
-    },
-    {
-      "id": "alliance-delta-ultra-lite-bh241",
-      "manufacturer": "Alliance",
-      "brand": "Delta Ultra Lite",
-      "model": "BH241",
-      "type": "Travel Trailer",
-      "year": 2026,
-      "price": null,
-      "weight": 5893,
-      "length": "29' 11\"",
-      "status": "A",
-      "keyFeatures": [
-        "Bunk House"
-      ]
-    },
-    {
       "id": "alliance-delta-ultra-lite-re250",
       "manufacturer": "Alliance",
       "brand": "Delta Ultra Lite",
@@ -637,6 +667,64 @@
         "50\" TV",
         "18K A/C",
         "Queen Bed"
+      ]
+    },
+    {
+      "id": "alliance-delta-ultra-lite-lk254",
+      "manufacturer": "Alliance",
+      "brand": "Delta Ultra Lite",
+      "model": "LK254",
+      "type": "Travel Trailer",
+      "year": 2027.0,
+      "price": null,
+      "weight": 6230.0,
+      "length": "29' 11\"",
+      "status": "A",
+      "imagePath": null,
+      "keyFeatures": [
+        "L Kitchen",
+        "Thater Seating",
+        "Dinette",
+        "Ample Counter Space",
+        "18K A/C",
+        "Queen Bed"
+      ]
+    },
+    {
+      "id": "alliance-delta-ultra-lite-bh255",
+      "manufacturer": "Alliance",
+      "brand": "Delta Ultra Lite",
+      "model": "BH255",
+      "type": "Travel Trailer",
+      "year": 2027.0,
+      "price": null,
+      "weight": 6190.0,
+      "length": "29' 11\"",
+      "status": "A",
+      "imagePath": null,
+      "keyFeatures": [
+        "Bunk House",
+        "Private Bedroom",
+        "Thater Seating",
+        "Dinette",
+        "Dual Entry",
+        "Queen Bed"
+      ]
+    },
+    {
+      "id": "alliance-delta-ultra-lite-bh271",
+      "manufacturer": "Alliance",
+      "brand": "Delta Ultra Lite",
+      "model": "BH271",
+      "type": "Travel Trailer",
+      "year": 2026,
+      "price": null,
+      "weight": 6295,
+      "length": "31' 11\"",
+      "status": "A",
+      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-bh271.png",
+      "keyFeatures": [
+        "Bunk House"
       ]
     },
     {
@@ -724,6 +812,27 @@
       ]
     },
     {
+      "id": "alliance-paradigm-373fb",
+      "manufacturer": "Alliance",
+      "brand": "Paradigm",
+      "model": "373FB",
+      "type": "Fifth Wheel",
+      "year": 2027.0,
+      "price": null,
+      "weight": 15222.0,
+      "length": "40' 11\"",
+      "status": "A",
+      "imagePath": null,
+      "keyFeatures": [
+        "Front Bath",
+        "Spa Bathroom | Walk-In Closet",
+        "His & Hers Wardrobe",
+        "Bath and a Half",
+        "W/D Prep",
+        "King Bed"
+      ]
+    },
+    {
       "id": "alliance-paradigm-375rd",
       "manufacturer": "Alliance",
       "brand": "Paradigm",
@@ -776,7 +885,15 @@
       "weight": 15636,
       "length": "41' 4\"",
       "status": "A",
-      "imagePath": "alliance-paradigm/paradigm-385fl.png"
+      "imagePath": "alliance-paradigm/paradigm-385fl.png",
+      "keyFeatures": [
+        "Front Living",
+        "L-Shape Sofa",
+        "Turn Table Dinette",
+        "Waterfall Countertops",
+        "W/D Prep",
+        "King Bed"
+      ]
     },
     {
       "id": "alliance-paradigm-388sp",
@@ -1108,6 +1225,27 @@
       ]
     },
     {
+      "id": "grand-design-imagine-aim-17mka",
+      "manufacturer": "Grand Design",
+      "brand": "Imagine AIM",
+      "model": "17MKA",
+      "type": "Travel Trailer",
+      "year": 2027.0,
+      "price": null,
+      "weight": 4945.0,
+      "length": "21' 8\"",
+      "status": "A",
+      "imagePath": "grand-design-imagine-aim/imagine-aim-17mka.png",
+      "keyFeatures": [
+        "Mid-Kitchen",
+        "Ample Counter Space",
+        "Theater Seating",
+        "LED TV",
+        "Bedroom Wardrobe",
+        "Murphy Bed"
+      ]
+    },
+    {
       "id": "grand-design-imagine-aim-19mla",
       "manufacturer": "Grand Design",
       "brand": "Imagine AIM",
@@ -1147,6 +1285,27 @@
         "LED TV",
         "Bedroom Wardrobe",
         "Queen Bed"
+      ]
+    },
+    {
+      "id": "grand-design-imagine-aim-21mba",
+      "manufacturer": "Grand Design",
+      "brand": "Imagine AIM",
+      "model": "21MBA",
+      "type": "Travel Trailer",
+      "year": 2027.0,
+      "price": null,
+      "weight": 5361.0,
+      "length": "24' 11\"",
+      "status": "A",
+      "imagePath": "grand-design-imagine-aim/imagine-aim-21mba.png",
+      "keyFeatures": [
+        "Bunkhouse",
+        "U-Shaped Dinette",
+        "Ample Counter Space",
+        "LED TV",
+        "Outdoor Kitchen",
+        "Murphy Bed"
       ]
     },
     {
@@ -1380,6 +1539,27 @@
         "Rear Living",
         "Theater Seating | Tri-Fold Sofa",
         "Kitchen Island",
+        "XL Bathroom",
+        "Washer/Dryer Prep",
+        "King Bed"
+      ]
+    },
+    {
+      "id": "grand-design-influence-3705rd",
+      "manufacturer": "Grand Design",
+      "brand": "Influence",
+      "model": "3705RD",
+      "type": "Fifth Wheel",
+      "year": 2027.0,
+      "price": null,
+      "weight": null,
+      "length": "41' 10\"",
+      "status": "A",
+      "imagePath": null,
+      "keyFeatures": [
+        "Rear Den",
+        "L-Shaped Sofa",
+        "Theater Seating | Desk",
         "XL Bathroom",
         "Washer/Dryer Prep",
         "King Bed"
@@ -1885,58 +2065,24 @@
       ]
     },
     {
-      "id": "grand-design-reflection-324mbs",
+      "id": "grand-design-reflection-303rls",
       "manufacturer": "Grand Design",
       "brand": "Reflection",
-      "model": "324MBS",
+      "model": "303RLS",
       "type": "Fifth Wheel",
       "year": 2027.0,
       "price": null,
-      "weight": 11200,
-      "length": "37'",
+      "weight": 10100,
+      "length": "32' 10\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-324mbs.png",
+      "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-303rls.png",
       "keyFeatures": [
-        "Mid-Bunk",
-        "92\" U-Shaped Dinette",
+        "Rear Living",
+        "Trifold Sofa",
         "Theater Seating",
-        "Kitchen Island",
-        "Versatile Bunkroom",
+        "40\" TV",
+        "Wardrobe Slide",
         "Queen Bed"
-      ]
-    },
-    {
-      "id": "grand-design-reflection-320mks",
-      "manufacturer": "Grand Design",
-      "brand": "Reflection",
-      "model": "320MKS",
-      "type": "Fifth Wheel",
-      "year": 2026,
-      "price": null,
-      "weight": 11100,
-      "length": "34' 9\"",
-      "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-320mk.png"
-    },
-    {
-      "id": "grand-design-reflection-360fls",
-      "manufacturer": "Grand Design",
-      "brand": "Reflection",
-      "model": "360FLS",
-      "type": "Fifth Wheel",
-      "year": 2026,
-      "price": null,
-      "weight": 12388,
-      "length": "39' 2\"",
-      "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-360fls.png",
-      "keyFeatures": [
-        "Front Living",
-        "Kitchen Island",
-        "Dual Entry",
-        "Kitchen Island",
-        "Washer/Dryer Prep",
-        "King Bed"
       ]
     },
     {
@@ -1961,44 +2107,36 @@
       ]
     },
     {
-      "id": "grand-design-reflection-303rls",
+      "id": "grand-design-reflection-320mks",
       "manufacturer": "Grand Design",
       "brand": "Reflection",
-      "model": "303RLS",
-      "type": "Fifth Wheel",
-      "year": 2027.0,
-      "price": null,
-      "weight": 10100,
-      "length": "32' 10\"",
-      "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-303rls.png",
-      "keyFeatures": [
-        "Rear Living",
-        "Trifold Sofa",
-        "Theater Seating",
-        "40\" TV",
-        "Wardrobe Slide",
-        "Queen Bed"
-      ]
-    },
-    {
-      "id": "grand-design-reflection-362tbs",
-      "manufacturer": "Grand Design",
-      "brand": "Reflection",
-      "model": "362TBS",
+      "model": "320MKS",
       "type": "Fifth Wheel",
       "year": 2026,
       "price": null,
-      "weight": 12500,
-      "length": "39' 11\"",
+      "weight": 11100,
+      "length": "34' 9\"",
       "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-362tbs.png",
+      "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-320mk.png"
+    },
+    {
+      "id": "grand-design-reflection-324mbs",
+      "manufacturer": "Grand Design",
+      "brand": "Reflection",
+      "model": "324MBS",
+      "type": "Fifth Wheel",
+      "year": 2027.0,
+      "price": null,
+      "weight": 11200,
+      "length": "37'",
+      "status": "A",
+      "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-324mbs.png",
       "keyFeatures": [
-        "Top Bunk",
-        "Dual Bedroom",
-        "Queen Bunk",
-        "Closed Access",
-        "Half-Bath",
+        "Mid-Bunk",
+        "92\" U-Shaped Dinette",
+        "Theater Seating",
+        "Kitchen Island",
+        "Versatile Bunkroom",
         "Queen Bed"
       ]
     },
@@ -2021,6 +2159,90 @@
         "Kitchen Island",
         "Swivel TV",
         "King Bed"
+      ]
+    },
+    {
+      "id": "grand-design-reflection-340rks",
+      "manufacturer": "Grand Design",
+      "brand": "Reflection",
+      "model": "340RKS",
+      "type": "Fifth Wheel",
+      "year": 2027.0,
+      "price": null,
+      "weight": null,
+      "length": null,
+      "status": "A",
+      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-340rks.png",
+      "keyFeatures": [
+        "Rear Kitchen",
+        "Ample Countertop Space",
+        "L-Shaped Furniture",
+        "Dinette",
+        "Washer/Dryer Prep",
+        "King Bed"
+      ]
+    },
+    {
+      "id": "grand-design-reflection-350rds",
+      "manufacturer": "Grand Design",
+      "brand": "Reflection",
+      "model": "350RDS",
+      "type": "Fifth Wheel",
+      "year": 2027.0,
+      "price": null,
+      "weight": 12250.0,
+      "length": "39' 3\"",
+      "status": "A",
+      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-350rds.png",
+      "keyFeatures": [
+        "Rear Den",
+        "L-Shaped Sofa",
+        "Dinette/Desk",
+        "65\" TV",
+        "Washer/Dryer Prep",
+        "King Bed"
+      ]
+    },
+    {
+      "id": "grand-design-reflection-360fls",
+      "manufacturer": "Grand Design",
+      "brand": "Reflection",
+      "model": "360FLS",
+      "type": "Fifth Wheel",
+      "year": 2026,
+      "price": null,
+      "weight": 12388,
+      "length": "39' 2\"",
+      "status": "A",
+      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-360fls.png",
+      "keyFeatures": [
+        "Front Living",
+        "Kitchen Island",
+        "Dual Entry",
+        "Kitchen Island",
+        "Washer/Dryer Prep",
+        "King Bed"
+      ]
+    },
+    {
+      "id": "grand-design-reflection-362tbs",
+      "manufacturer": "Grand Design",
+      "brand": "Reflection",
+      "model": "362TBS",
+      "type": "Fifth Wheel",
+      "year": 2027.0,
+      "price": null,
+      "weight": 12500,
+      "length": "39' 11\"",
+      "status": "A",
+      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-362tbs.png",
+      "keyFeatures": [
+        "Top Bunk",
+        "Dual Bedroom",
+        "Queen Bunk",
+        "Closed Access",
+        "Half-Bath",
+        "Queen Bed"
       ]
     },
     {
@@ -2103,6 +2325,27 @@
         "80\" U-Shaped Dinette",
         "Tri-Fold Sofa",
         "Bunk Storage",
+        "Washer/Dryer Prep",
+        "Queen Bed"
+      ]
+    },
+    {
+      "id": "grand-design-reflection-100-series-28rl",
+      "manufacturer": "Grand Design",
+      "brand": "Reflection 100 Series",
+      "model": "28RL",
+      "type": "Fifth Wheel",
+      "year": 2027.0,
+      "price": null,
+      "weight": 8626.0,
+      "length": "31'",
+      "status": "A",
+      "imagePath": "grand-design-reflection-100-series/reflection-100-series-28rl.png",
+      "keyFeatures": [
+        "Rear Living",
+        "Theater Seating",
+        "Sleeper Sofa",
+        "Outdoor Kitchen",
         "Washer/Dryer Prep",
         "Queen Bed"
       ]
@@ -2218,10 +2461,10 @@
       "brand": "Reflection 150 Series",
       "model": "295RL",
       "type": "Fifth Wheel",
-      "year": 2027.0,
+      "year": 2026.0,
       "price": null,
-      "weight": null,
-      "length": null,
+      "weight": 9577.0,
+      "length": "33' 9\"",
       "status": "A",
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-295rl.png",
       "keyFeatures": [
@@ -2247,6 +2490,48 @@
         "Closed Access",
         "Washer/Dryer Prep",
         "Queen Bed"
+      ]
+    },
+    {
+      "id": "grand-design-reflection-150-series-299mb",
+      "manufacturer": "Grand Design",
+      "brand": "Reflection 150 Series",
+      "model": "299MB",
+      "type": "Fifth Wheel",
+      "year": 2027.0,
+      "price": null,
+      "weight": null,
+      "length": null,
+      "status": "A",
+      "imagePath": "grand-design-reflection-150-series/reflection-150-series-299mb.png",
+      "keyFeatures": [
+        "Mid-Bunk",
+        "Theater Seating",
+        "Flip-Up Desk",
+        "Double Bunk",
+        "Washer/Dryer Prep",
+        "Queen Bed"
+      ]
+    },
+    {
+      "id": "grand-design-reflection-150-series-310rl",
+      "manufacturer": "Grand Design",
+      "brand": "Reflection 150 Series",
+      "model": "310RL",
+      "type": "Fifth Wheel",
+      "year": 2027.0,
+      "price": null,
+      "weight": null,
+      "length": null,
+      "status": "A",
+      "imagePath": "grand-design-reflection-150-series/reflection-150-series-310rl.png",
+      "keyFeatures": [
+        "Rear Living",
+        "L-Shaped Sofa",
+        "Outdoor Kitchen",
+        "Ample Counter Space",
+        "Washer/Dryer Prep",
+        "King Bed"
       ]
     },
     {
@@ -2422,24 +2707,24 @@
       ]
     },
     {
-      "id": "grand-design-transcend-295qbt",
+      "id": "grand-design-transcend-275fkt",
       "manufacturer": "Grand Design",
       "brand": "Transcend",
-      "model": "295QBT",
+      "model": "275FKT",
       "type": "Travel Trailer",
       "year": 2027.0,
       "price": null,
-      "weight": 7383,
-      "length": "35’ 11”",
+      "weight": null,
+      "length": "31' 11\"",
       "status": "A",
-      "imagePath": "grand-design-transcend/transcend-295qbt.png",
+      "imagePath": "grand-design-transcend/transcend-275fkt.png",
       "keyFeatures": [
-        "Queen Bunk",
-        "Theater Seating",
-        "Double Bunk over Queen",
+        "Front Kitchen",
+        "Large Kitchen Pantry",
+        "Coffee Bar",
         "Outdoor Kitchen",
-        "50 Amp w/ 2nd A/C Prep",
-        "Sleeps 10"
+        "Grand King Bed",
+        "Washer/Dryer Prep"
       ]
     },
     {
@@ -2464,6 +2749,27 @@
       ]
     },
     {
+      "id": "grand-design-transcend-295qbt",
+      "manufacturer": "Grand Design",
+      "brand": "Transcend",
+      "model": "295QBT",
+      "type": "Travel Trailer",
+      "year": 2027.0,
+      "price": null,
+      "weight": 7383,
+      "length": "35’ 11”",
+      "status": "A",
+      "imagePath": "grand-design-transcend/transcend-295qbt.png",
+      "keyFeatures": [
+        "Queen Bunk",
+        "Theater Seating",
+        "Double Bunk over Queen",
+        "Outdoor Kitchen",
+        "50 Amp w/ 2nd A/C Prep",
+        "Sleeps 10"
+      ]
+    },
+    {
       "id": "grand-design-transcend-305bht",
       "manufacturer": "Grand Design",
       "brand": "Transcend",
@@ -2482,7 +2788,7 @@
       "brand": "Transcend",
       "model": "315RKT",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 8400,
       "length": "36’ 10”",
@@ -2503,7 +2809,7 @@
       "brand": "Transcend",
       "model": "325BHT",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 8672,
       "length": "37’ 3”",
@@ -2524,7 +2830,7 @@
       "brand": "Transcend",
       "model": "335BHT",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027.0,
       "price": null,
       "weight": 9400,
       "length": "37’ 3”",
@@ -2537,6 +2843,27 @@
         "Washer/Dryer Prep",
         "50 Amp w/ 2nd A/C Prep",
         "Sleeps 12"
+      ]
+    },
+    {
+      "id": "grand-design-transcend-345dqt",
+      "manufacturer": "Grand Design",
+      "brand": "Transcend",
+      "model": "345DQT",
+      "type": "Travel Trailer",
+      "year": 2027.0,
+      "price": null,
+      "weight": 9345.0,
+      "length": "38' 11\"",
+      "status": "A",
+      "imagePath": "grand-design-transcend/transcend-345dqt.png",
+      "keyFeatures": [
+        "Dual Queen Bedroom",
+        "Coffee Bar",
+        "Dual Entry",
+        "Rear Desk/Flex Space",
+        "Sleeps up to 8",
+        "Washer/Dryer Prep"
       ]
     },
     {
@@ -2558,7 +2885,7 @@
       "brand": "Transcend One",
       "model": "131DL",
       "type": "Travel Trailer",
-      "year": null,
+      "year": 2027.0,
       "price": null,
       "weight": 2950,
       "length": "15' 10\"",
@@ -2645,6 +2972,27 @@
         "Queen Bed",
         "Baggage Door Access",
         "Sleeps 7"
+      ]
+    },
+    {
+      "id": "grand-design-transcend-xplor-18fqx",
+      "manufacturer": "Grand Design",
+      "brand": "Transcend XPLOR",
+      "model": "18FQX",
+      "type": "Travel Trailer",
+      "year": 2027.0,
+      "price": null,
+      "weight": null,
+      "length": "24'",
+      "status": "A",
+      "imagePath": "grand-design-transcend-xplor/transcend-18fqx.png",
+      "keyFeatures": [
+        "Sub 5000 lb UVW",
+        "Jack-Knife Sofa",
+        "Large Pantry/Closet",
+        "16' Awning",
+        "Queen Bed",
+        "13.5K A/C"
       ]
     },
     {
@@ -2821,7 +3169,7 @@
       "brand": "Transcend XPLOR",
       "model": "26RBX",
       "type": "Travel Trailer",
-      "year": 2027.0,
+      "year": 2026.0,
       "price": null,
       "weight": 6147,
       "length": "31’ 6”",
@@ -3320,103 +3668,6 @@
       "imagePath": "winnebago-thrive/winnebago-thrive-29rlo.jpeg"
     },
     {
-      "id": "alliance-delta-ultra-lite-ml216",
-      "manufacturer": "Alliance",
-      "brand": "Delta Ultra Lite",
-      "model": "ML216",
-      "type": "Travel Trailer",
-      "year": 2027.0,
-      "price": null,
-      "weight": 5372.0,
-      "length": "25' 11\"",
-      "status": "A",
-      "imagePath": null,
-      "keyFeatures": [
-        "Mid Living",
-        "Spacious Rear Kitchen",
-        "Theater Seating",
-        "Pull-Out Dinette",
-        "18K A/C",
-        "Queen Bed"
-      ]
-    },
-    {
-      "id": "alliance-delta-ultra-lite-lk254",
-      "manufacturer": "Alliance",
-      "brand": "Delta Ultra Lite",
-      "model": "LK254",
-      "type": "Travel Trailer",
-      "year": 2027.0,
-      "price": null,
-      "weight": 6230.0,
-      "length": "29' 11\"",
-      "status": "A",
-      "imagePath": null,
-      "keyFeatures": [
-        "L Kitchen",
-        "Thater Seating",
-        "Dinette",
-        "Ample Counter Space",
-        "18K A/C",
-        "Queen Bed"
-      ]
-    },
-    {
-      "id": "grand-design-imagine-aim-17mka",
-      "manufacturer": "Grand Design",
-      "brand": "Imagine AIM",
-      "model": "17MKA",
-      "type": "Travel Trailer",
-      "year": 2027.0,
-      "price": null,
-      "weight": 4945.0,
-      "length": "21' 8\"",
-      "status": "A",
-      "imagePath": "grand-design-imagine-aim/imagine-aim-17mka.png",
-      "keyFeatures": [
-        "Mid-Kitchen",
-        "Ample Counter Space",
-        "Theater Seating",
-        "LED TV",
-        "Bedroom Wardrobe",
-        "Murphy Bed"
-      ]
-    },
-    {
-      "id": "grand-design-imagine-aim-21mba",
-      "manufacturer": "Grand Design",
-      "brand": "Imagine AIM",
-      "model": "21MBA",
-      "type": "Travel Trailer",
-      "year": 2027.0,
-      "price": null,
-      "weight": 5361.0,
-      "length": "24' 11\"",
-      "status": "A",
-      "imagePath": "grand-design-imagine-aim/imagine-aim-21mba.png"
-    },
-    {
-      "id": "grand-design-reflection-340rks",
-      "manufacturer": "Grand Design",
-      "brand": "Reflection",
-      "model": "340RKS",
-      "type": "Fifth Wheel",
-      "year": 2027.0,
-      "price": null,
-      "weight": null,
-      "length": null,
-      "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-340rks.png",
-      "keyFeatures": [
-        "Rear Kitchen",
-        "Ample Countertop Space",
-        "L-Shaped Furniture",
-        "Dinette",
-        "Washer/Dryer Prep",
-        "King Bed"
-      ]
-    },
-    {
       "id": "grand-design-reflection-346rls",
       "manufacturer": "Grand Design",
       "brand": "Reflection",
@@ -3428,250 +3679,6 @@
       "length": null,
       "status": "A",
       "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-346rls.png"
-    },
-    {
-      "id": "grand-design-reflection-350rds",
-      "manufacturer": "Grand Design",
-      "brand": "Reflection",
-      "model": "350RDS",
-      "type": "Fifth Wheel",
-      "year": 2027.0,
-      "price": null,
-      "weight": 12250.0,
-      "length": "39' 3\"",
-      "status": "A",
-      "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-350rds.png",
-      "keyFeatures": [
-        "Rear Den",
-        "L-Shaped Sofa",
-        "Dinette/Desk",
-        "65\" TV",
-        "Washer/Dryer Prep",
-        "King Bed"
-      ]
-    },
-    {
-      "id": "grand-design-reflection-100-series-28rl",
-      "manufacturer": "Grand Design",
-      "brand": "Reflection 100 Series",
-      "model": "28RL",
-      "type": "Fifth Wheel",
-      "year": 2027.0,
-      "price": null,
-      "weight": 8626.0,
-      "length": "31'",
-      "status": "A",
-      "imagePath": "grand-design-reflection-100-series/reflection-100-series-28rl.png",
-      "keyFeatures": [
-        "Rear Living",
-        "Theater Seating",
-        "Sleeper Sofa",
-        "Outdoor Kitchen",
-        "Washer/Dryer Prep",
-        "Queen Bed"
-      ]
-    },
-    {
-      "id": "grand-design-reflection-150-series-299mb",
-      "manufacturer": "Grand Design",
-      "brand": "Reflection 150 Series",
-      "model": "299MB",
-      "type": "Fifth Wheel",
-      "year": 2027.0,
-      "price": null,
-      "weight": null,
-      "length": null,
-      "status": "A",
-      "imagePath": "grand-design-reflection-150-series/reflection-150-series-299mb.png",
-      "keyFeatures": [
-        "Mid-Bunk",
-        "Theater Seating",
-        "Flip-Up Desk",
-        "Double Bunk",
-        "Washer/Dryer Prep",
-        "Queen Bed"
-      ]
-    },
-    {
-      "id": "grand-design-reflection-150-series-310rl",
-      "manufacturer": "Grand Design",
-      "brand": "Reflection 150 Series",
-      "model": "310RL",
-      "type": "Fifth Wheel",
-      "year": 2027.0,
-      "price": null,
-      "weight": null,
-      "length": null,
-      "status": "A",
-      "imagePath": "grand-design-reflection-150-series/reflection-150-series-310rl.png",
-      "keyFeatures": [
-        "Rear Living",
-        "L-Shaped Sofa",
-        "Outdoor Kitchen",
-        "Ample Counter Space",
-        "Washer/Dryer Prep",
-        "King Bed"
-      ]
-    },
-    {
-      "id": "grand-design-transcend-275fkt",
-      "manufacturer": "Grand Design",
-      "brand": "Transcend",
-      "model": "275FKT",
-      "type": "Travel Trailer",
-      "year": 2027.0,
-      "price": null,
-      "weight": null,
-      "length": "31' 11\"",
-      "status": "A",
-      "imagePath": "grand-design-transcend/transcend-275fkt.png",
-      "keyFeatures": [
-        "Front Kitchen",
-        "Large Kitchen Pantry",
-        "Coffee Bar",
-        "Outdoor Kitchen",
-        "Grand King Bed",
-        "Washer/Dryer Prep"
-      ]
-    },
-    {
-      "id": "grand-design-transcend-345dqt",
-      "manufacturer": "Grand Design",
-      "brand": "Transcend",
-      "model": "345DQT",
-      "type": "Travel Trailer",
-      "year": 2027.0,
-      "price": null,
-      "weight": 9345.0,
-      "length": "38' 11\"",
-      "status": "A",
-      "imagePath": "grand-design-transcend/transcend-345dqt.png",
-      "keyFeatures": [
-        "Dual Queen Bedroom",
-        "Coffee Bar",
-        "Dual Entry",
-        "Rear Desk/Flex Space",
-        "Sleeps up to 8",
-        "Washer/Dryer Prep"
-      ]
-    },
-    {
-      "id": "grand-design-transcend-xplor-18fqx",
-      "manufacturer": "Grand Design",
-      "brand": "Transcend XPLOR",
-      "model": "18FQX",
-      "type": "Travel Trailer",
-      "year": 2027.0,
-      "price": null,
-      "weight": null,
-      "length": "24'",
-      "status": "A",
-      "imagePath": "grand-design-transcend-xplor/transcend-18fqx.png",
-      "keyFeatures": [
-        "Sub 5000 lb UVW",
-        "Jack-Knife Sofa",
-        "Large Pantry/Closet",
-        "16' Awning",
-        "Queen Bed",
-        "13.5K A/C"
-      ]
-    },
-    {
-      "id": "alliance-delta-258fk",
-      "manufacturer": "Alliance",
-      "brand": "Delta",
-      "model": "258FK",
-      "type": "Travel Trailer",
-      "year": 2027.0,
-      "price": null,
-      "weight": 6608.0,
-      "length": "29' 11\"",
-      "status": "A",
-      "imagePath": null
-    },
-    {
-      "id": "alliance-delta-ultra-lite-fk218",
-      "manufacturer": "Alliance",
-      "brand": "Delta Ultra Lite",
-      "model": "FK218",
-      "type": "Travel Trailer",
-      "year": 2027.0,
-      "price": null,
-      "weight": null,
-      "length": "25' 11\"",
-      "status": "A",
-      "imagePath": null,
-      "keyFeatures": [
-        "Front Kitchen",
-        "Rear Bath",
-        "Theater Seating",
-        "Ample Counter Space",
-        "Couples Wardrobe",
-        "Queen Bed"
-      ]
-    },
-    {
-      "id": "alliance-delta-ultra-lite-bh255",
-      "manufacturer": "Alliance",
-      "brand": "Delta Ultra Lite",
-      "model": "BH255",
-      "type": "Travel Trailer",
-      "year": 2026.0,
-      "price": null,
-      "weight": 6190.0,
-      "length": "29' 11\"",
-      "status": "A",
-      "imagePath": "alliance-delta-ultra-lite/alliance-delta-ultra-lite-bh255",
-      "keyFeatures": [
-        "Bunk House",
-        "Private Bedroom",
-        "Thater Seating",
-        "Dinette",
-        "Dual Entry",
-        "Queen Bed"
-      ]
-    },
-    {
-      "id": "alliance-paradigm-373fb",
-      "manufacturer": "Alliance",
-      "brand": "Paradigm",
-      "model": "373FB",
-      "type": "Fifth Wheel",
-      "year": 2027.0,
-      "price": null,
-      "weight": 15222.0,
-      "length": "40' 11\"",
-      "status": "A",
-      "imagePath": "alliance-paradigm/paradigm-373fb.png",
-      "keyFeatures": [
-        "Front Bath",
-        "Spa Bathroom | Walk-In Closet",
-        "His & Hers Wardrobe",
-        "Bath and a Half",
-        "W/D Prep",
-        "King Bed"
-      ]
-    },
-    {
-      "id": "grand-design-influence-3705rd",
-      "manufacturer": "Grand Design",
-      "brand": "Influence",
-      "model": "3705RD",
-      "type": "Fifth Wheel",
-      "year": 2027.0,
-      "price": null,
-      "weight": null,
-      "length": "41' 10\"",
-      "status": "A",
-      "imagePath": "grand-design-influence/grand-design-influence-3705rd",
-      "keyFeatures": [
-        "Rear Den",
-        "L-Shaped Sofa",
-        "Theater Seating | Desk",
-        "XL Bathroom",
-        "Washer/Dryer Prep",
-        "King Bed"
-      ]
     }
   ]
 }
