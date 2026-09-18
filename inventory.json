@@ -958,7 +958,7 @@
       "year": 2027.0,
       "price": null,
       "weight": 15308,
-      "length": "48’ 6”",
+      "length": null,
       "status": "A",
       "imagePath": "grand-design-foundation/foundation-42gd.jpeg",
     },
@@ -1757,6 +1757,7 @@
       "weight": 14250,
       "length": "41' 6\"",
       "status": "A"
+      "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-363g.png"
     },
     {
       "id": "grand-design-momentum-g-class-394g",
