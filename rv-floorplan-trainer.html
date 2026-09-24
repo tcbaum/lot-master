@@ -300,6 +300,10 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .unit-model{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:-.01em;color:var(--text)}
 .unit-line{font-size:12.5px;color:var(--muted)}
 .unit-specs{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:2px}
+.unit-pricing{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13.5px;margin-top:4px}
+.chip-avail{display:inline-flex;align-items:center;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
+.chip-pending{background:var(--amber-soft);color:var(--amber)}
+.chip-onorder{background:var(--card-2);color:var(--muted);border:1px solid var(--line)}
 .unit-specs b{font-family:var(--display);font-weight:600}
 .unit-loc{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--sky);font-weight:600;margin-top:2px}
 .unit-loc svg{width:14px;height:14px}
@@ -1815,15 +1819,17 @@ function reconcileGithubInventory(payload){
     if(removed.has(removedKey(su.brand,su.model))) continue;
     const u={manufacturer:su.manufacturer, productLine:su.brand, model:su.model,
       rvType:su.type||'', year:su.year||'', price:(su.price??''), weight:su.weight||'', length:su.length||'',
-      sleeps:'',slides:'',location:'',stock:'',vin:'',description:'', status:su.status||'',
+      sleeps:'',slides:'',location:'',stock:su.stock||'',vin:'',description:'', status:su.status||'',
+      webPrice:su.webPrice||'', unlockPrice:su.unlockPrice||'', availability:su.availability||'',
       seed:true, seedKey:su.image||su.imageFileName||'', imageUrl: resolveImageUrl(su)||'',
       keyFeatures: Array.isArray(su.keyFeatures)?su.keyFeatures:[]};
     const prev=prevByKey.get(matchKey(su.manufacturer,su.brand,su.model));
     if(prev){
       u.id=prev.id; u.srs=prev.srs||newSRS(); if(prev.mastery) u.mastery=prev.mastery;
-      u.sleeps=prev.sleeps||''; u.slides=prev.slides||''; u.location=prev.location||''; u.stock=prev.stock||''; u.vin=prev.vin||''; u.description=prev.description||'';
+      u.sleeps=prev.sleeps||''; u.slides=prev.slides||''; u.location=prev.location||''; u.vin=prev.vin||''; u.description=prev.description||'';
       if(prev.manufacturer!==u.manufacturer||prev.productLine!==u.productLine||prev.rvType!==u.rvType||prev.year!==u.year
         ||prev.price!==u.price||prev.weight!==u.weight||prev.length!==u.length||prev.imageUrl!==u.imageUrl||prev.status!==u.status
+        ||prev.stock!==u.stock||prev.webPrice!==u.webPrice||prev.unlockPrice!==u.unlockPrice||prev.availability!==u.availability
         ||JSON.stringify(prev.keyFeatures||[])!==JSON.stringify(u.keyFeatures)) changed=true;
     } else { u.id=su.id||uid(); u.srs=newSRS(); changed=true; }   // prefer the stable id already in inventory.json — a random uid() here would never match across devices, breaking cross-device progress sync entirely
     u.tags=inferTags(u); next.push(u); seenIds.add(u.id);
@@ -3612,9 +3618,18 @@ function refreshBrowsePanel(anim){
 // Identifies discontinued inventory (per the "D" status now tracked in inv.xlsx) —
 // missing/null/anything else defaults to active, no dimming.
 function isDiscontinued(u){ return u && u.status==='D'; }
+// Renders nothing for 'active' (implied by simply having a price/stock #) or
+// unset availability — only on-order and pending get a visible chip.
+function availabilityChip(u){
+  const a=u&&u.availability;
+  if(a==='pending') return '<span class="chip-avail chip-pending">Pending</span>';
+  if(a==='on-order') return '<span class="chip-avail chip-onorder">On Order</span>';
+  return '';
+}
 function unitCard(u){
   const im=unitImg(u);
   const discontinued=isDiscontinued(u);
+  const hasPricing=u.webPrice||u.unlockPrice;
   return `<button class="unit-card${discontinued?' is-discontinued':''}" onclick="openDetail('${u.id}')">
     <div class="unit-fig">${discontinued?'<span class="corner-left badge-discontinued">Discontinued</span>':''}${im?`${ghImg(im,'loading="lazy"')}`:`<div class="noimg">${svg(I.bed)}<span>No floorplan image</span></div>`}</div>
     <div class="unit-body">
@@ -3622,6 +3637,7 @@ function unitCard(u){
       <div class="unit-model">${esc(unitTitle(u))}</div>
       ${u.productLine?`<div class="unit-line">${esc(u.productLine)}${u.year?' · '+esc(u.year):''}</div>`:''}
       <div class="unit-specs">${u.length?`<span><b>${esc(fmtLength(u))}</b></span>`:''}${u.weight?`<span><b>${esc(typeof u.weight==='number'?u.weight.toLocaleString():u.weight)}</b> lbs</span>`:''}${u.sleeps?`<span>Sleeps <b>${esc(u.sleeps)}</b></span>`:''}${u.slides?`<span><b>${esc(u.slides)}</b> slide${u.slides==1?'':'s'}</span>`:''}</div>
+      ${hasPricing?`<div class="unit-pricing">${u.webPrice?`<span style="color:var(--sky);font-weight:700">${esc(formatPrice(u.webPrice))}</span>`:''}${u.unlockPrice?`<span style="color:var(--mint);font-weight:700">${esc(formatPrice(u.unlockPrice))}</span>`:''}${availabilityChip(u)}</div>`:''}
       ${u.location?`<div class="unit-loc">${svg(I.pin)} ${esc(u.location)}</div>`:''}
       <div class="unit-tags">${(u.tags||[]).slice(0,4).map(t=>`<span class="tag">${CAT_LABEL[t]}</span>`).join('')}</div>
     </div></button>`;
@@ -3673,12 +3689,15 @@ function openDetail(id){ detailId=id; activeBrowseTab='specs'; const u=state.uni
 
       <div class="seg-panel" id="segPanelSpecs">
         ${keyFeaturesGrid(u)}
+        ${availabilityChip(u)}
         <dl class="kv">
           ${u.rvType?`<dt>Type</dt><dd>${esc(u.rvType)}</dd>`:''}
           ${u.length?`<dt>Length</dt><dd>${esc(fmtLength(u))}</dd>`:''}
           ${u.sleeps?`<dt>Sleeps</dt><dd>${esc(u.sleeps)}</dd>`:''}
           ${u.slides?`<dt>Slides</dt><dd>${esc(u.slides)}</dd>`:''}
           ${u.price?`<dt>Price</dt><dd>${esc(formatPrice(u.price))}</dd>`:''}
+          ${u.webPrice?`<dt>Web Price</dt><dd style="color:var(--sky);font-weight:700">${esc(formatPrice(u.webPrice))}</dd>`:''}
+          ${u.unlockPrice?`<dt>Unlock Price</dt><dd style="color:var(--mint);font-weight:700">${esc(formatPrice(u.unlockPrice))}</dd>`:''}
           ${u.stock?`<dt>Stock #</dt><dd>${esc(u.stock)}</dd>`:''}
           ${u.vin?`<dt>VIN</dt><dd style="font-family:var(--display);font-size:13px">${esc(u.vin)}</dd>`:''}
         </dl>

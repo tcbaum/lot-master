@@ -23,8 +23,8 @@
         "King Bed"
       ],
       "stock": "3503",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 94039.0,
+      "unlockPrice": 92939.0,
       "availability": "active"
     },
     {
@@ -56,7 +56,7 @@
       "type": "Fifth Wheel",
       "year": 2027,
       "price": null,
-      "weight": 11500,
+      "weight": 11500.0,
       "length": "37'",
       "status": "A",
       "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-34rls.png",
@@ -75,7 +75,7 @@
       "brand": "Avenue Fifth Wheel",
       "model": "35RKS",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 11450,
       "length": "36' 10\"",
@@ -96,7 +96,7 @@
       "brand": "Avenue Fifth Wheel",
       "model": "38DBL",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 12890,
       "length": "41' 11\"",
@@ -117,7 +117,7 @@
       "brand": "Avenue Fifth Wheel",
       "model": "39MBR",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 13400,
       "length": "41' 10\"",
@@ -138,7 +138,7 @@
       "brand": "Avenue Travel-Trailer",
       "model": "298RL",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 8990,
       "length": "34'",
@@ -159,7 +159,7 @@
       "brand": "Avenue Travel-Trailer",
       "model": "332RL",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 10100,
       "length": "37' 11\"",
@@ -180,7 +180,7 @@
       "brand": "Avenue Travel-Trailer",
       "model": "333BH",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 10500,
       "length": "38' 6\"",
@@ -201,7 +201,7 @@
       "brand": "Avenue All-Access Series",
       "model": "23ML",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 8270,
       "length": "27' 11\"",
@@ -216,8 +216,8 @@
         "50\" Smart TV"
       ],
       "stock": "3371",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 55295.0,
+      "unlockPrice": 54695.0,
       "availability": "active"
     },
     {
@@ -226,7 +226,7 @@
       "brand": "Avenue All-Access Series",
       "model": "25RL",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 8700,
       "length": "29' 11\"",
@@ -241,8 +241,8 @@
         "65\" Smart TV"
       ],
       "stock": "3263",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 56745.0,
+      "unlockPrice": 55795.0,
       "availability": "active"
     },
     {
@@ -306,7 +306,7 @@
       "brand": "Avenue All-Access Series",
       "model": "29RL",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 9650,
       "length": "32' 11\"",
@@ -327,7 +327,7 @@
       "brand": "Avenue All-Access Series",
       "model": "29BH",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 9554,
       "length": "34' 11\"",
@@ -363,8 +363,8 @@
         "Olympic Queen Bed"
       ],
       "stock": "3452",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 84192.0,
+      "unlockPrice": 83392.0,
       "availability": "active"
     },
     {
@@ -373,7 +373,7 @@
       "brand": "Delta",
       "model": "252RL",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6545,
       "length": "29' 11\"",
@@ -388,8 +388,8 @@
         "Queen Bed"
       ],
       "stock": "3492",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 57714.0,
+      "unlockPrice": 56614.0,
       "availability": "active"
     },
     {
@@ -398,9 +398,9 @@
       "brand": "Delta",
       "model": "258FK",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 6608,
+      "weight": 6608.0,
       "length": "29' 11\"",
       "status": "A",
       "imagePath": "alliance-delta/delta-258fk.png",
@@ -414,7 +414,7 @@
       "brand": "Delta",
       "model": "262RB",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6408,
       "length": "29' 7\"",
@@ -429,8 +429,8 @@
         "Queen Bed"
       ],
       "stock": "3491",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 45945.0,
+      "unlockPrice": 44995.0,
       "availability": "active"
     },
     {
@@ -439,7 +439,7 @@
       "brand": "Delta",
       "model": "274RKW",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 7420,
       "length": "31' 11\"",
@@ -454,8 +454,8 @@
         "Queen Bed"
       ],
       "stock": "3241",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 45695.0,
+      "unlockPrice": 44995.0,
       "availability": "active"
     },
     {
@@ -464,7 +464,7 @@
       "brand": "Delta",
       "model": "281BH",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6882,
       "length": "31' 11\"",
@@ -485,7 +485,7 @@
       "brand": "Delta",
       "model": "284RK",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 7536,
       "length": "32' 11\"",
@@ -506,7 +506,7 @@
       "brand": "Delta",
       "model": "291BH",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 7388,
       "length": "33' 11\"",
@@ -527,7 +527,7 @@
       "brand": "Delta",
       "model": "292RL",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 7486,
       "length": "33' 11\"",
@@ -548,7 +548,7 @@
       "brand": "Delta",
       "model": "294RK",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2026.0,
       "price": null,
       "weight": 7316,
       "length": "33' 11\"",
@@ -584,7 +584,7 @@
       "type": "Travel Trailer",
       "year": 2026,
       "price": null,
-      "weight": 4992,
+      "weight": 4992.0,
       "length": "23' 11\"",
       "status": "D",
       "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml206.png",
@@ -603,9 +603,9 @@
       "brand": "Delta Ultra Lite",
       "model": "ML216",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 5372,
+      "weight": 5372.0,
       "length": "25' 11\"",
       "status": "A",
       "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml216.png",
@@ -624,7 +624,7 @@
       "brand": "Delta Ultra Lite",
       "model": "FK218",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": null,
       "length": "25' 11\"",
@@ -661,7 +661,7 @@
       "brand": "Delta Ultra Lite",
       "model": "RK234",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 5600,
       "length": "27' 11\"",
@@ -697,8 +697,8 @@
         "Queen Bed"
       ],
       "stock": "3432",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 47684.0,
+      "unlockPrice": 46684.0,
       "availability": "active"
     },
     {
@@ -707,9 +707,9 @@
       "brand": "Delta Ultra Lite",
       "model": "LK254",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 6230,
+      "weight": 6230.0,
       "length": "29' 11\"",
       "status": "A",
       "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-lk254.png",
@@ -728,9 +728,9 @@
       "brand": "Delta Ultra Lite",
       "model": "BH255",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 6190,
+      "weight": 6190.0,
       "length": "29' 11\"",
       "status": "A",
       "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-bh255.png",
@@ -759,8 +759,8 @@
         "Bunk House"
       ],
       "stock": "3223",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 38095.0,
+      "unlockPrice": 36995.0,
       "availability": "active"
     },
     {
@@ -769,7 +769,7 @@
       "brand": "Paradigm",
       "model": "310RL",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 13525,
       "length": "34' 11\"",
@@ -784,8 +784,8 @@
         "King Bed"
       ],
       "stock": "3497",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 130242.0,
+      "unlockPrice": 128892.0,
       "availability": "active"
     },
     {
@@ -794,7 +794,7 @@
       "brand": "Paradigm",
       "model": "312RK",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 13560,
       "length": "34' 11\"",
@@ -809,8 +809,8 @@
         "King Bed"
       ],
       "stock": "3248",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 90295.0,
+      "unlockPrice": 88895.0,
       "availability": "active"
     },
     {
@@ -819,7 +819,7 @@
       "brand": "Paradigm",
       "model": "340RL",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 14072,
       "length": "37' 10\"",
@@ -840,7 +840,7 @@
       "brand": "Paradigm",
       "model": "370FB",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 14908,
       "length": "40' 4\"",
@@ -861,9 +861,9 @@
       "brand": "Paradigm",
       "model": "373FB",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 15222,
+      "weight": 15222.0,
       "length": "40' 11\"",
       "status": "A",
       "imagePath": "alliance-paradigm/paradigm-373fb.png",
@@ -882,7 +882,7 @@
       "brand": "Paradigm",
       "model": "375RD",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 15300,
       "length": "41' 9\"",
@@ -903,7 +903,7 @@
       "brand": "Paradigm",
       "model": "382RK",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 14812,
       "length": "41' 4\"",
@@ -924,7 +924,7 @@
       "brand": "Paradigm",
       "model": "385FL",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 15636,
       "length": "41' 4\"",
@@ -945,7 +945,7 @@
       "brand": "Paradigm",
       "model": "388SP",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 15528,
       "length": "40' 11\"",
@@ -960,8 +960,8 @@
         "King Bed"
       ],
       "stock": "3231",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 100745.0,
+      "unlockPrice": 99895.0,
       "availability": "active"
     },
     {
@@ -970,7 +970,7 @@
       "brand": "Paradigm",
       "model": "395DS",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 15278,
       "length": "42' 6\"",
@@ -997,8 +997,8 @@
       "length": "45' 11\"",
       "status": "A",
       "stock": "3450",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 155095.0,
+      "unlockPrice": 153745.0,
       "availability": "active"
     },
     {
@@ -1007,15 +1007,15 @@
       "brand": "Foundation",
       "model": "42GD",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": null,
       "length": null,
       "status": "A",
       "imagePath": "grand-design-foundation/foundation-42GD.jpeg",
       "stock": "3302",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 95345.0,
+      "unlockPrice": 94995.0,
       "availability": "active"
     },
     {
@@ -1024,10 +1024,10 @@
       "brand": "Imagine",
       "model": "2300MK",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6012,
-      "length": "26â 6â",
+      "length": "26’ 6”",
       "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2300mk.png",
       "keyFeatures": [
@@ -1039,8 +1039,8 @@
         "Queen Bed"
       ],
       "stock": "3517",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 42299.0,
+      "unlockPrice": 41599.0,
       "availability": "active"
     },
     {
@@ -1049,10 +1049,10 @@
       "brand": "Imagine",
       "model": "2470BH",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6406,
-      "length": "29â",
+      "length": "29’",
       "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2470bh.png",
       "keyFeatures": [
@@ -1064,8 +1064,8 @@
         "Queen Bed"
       ],
       "stock": "3488",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 48195.0,
+      "unlockPrice": 46995.0,
       "availability": "active"
     },
     {
@@ -1074,10 +1074,10 @@
       "brand": "Imagine",
       "model": "2500RL",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6569,
-      "length": "29â 7â",
+      "length": "29’ 7”",
       "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2500rl.png",
       "keyFeatures": [
@@ -1095,10 +1095,10 @@
       "brand": "Imagine",
       "model": "2600RB",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6487,
-      "length": "29â 8â",
+      "length": "29’ 8”",
       "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2600rb.png",
       "keyFeatures": [
@@ -1110,8 +1110,8 @@
         "Queen Bed"
       ],
       "stock": "3558",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 45695.0,
+      "unlockPrice": 44995.0,
       "availability": "on-order"
     },
     {
@@ -1120,10 +1120,10 @@
       "brand": "Imagine",
       "model": "2670MK",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6884,
-      "length": "32â",
+      "length": "32’",
       "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2670mk.png",
       "keyFeatures": [
@@ -1135,8 +1135,8 @@
         "Queen Bed"
       ],
       "stock": "3511",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 46695.0,
+      "unlockPrice": 45995.0,
       "availability": "active"
     },
     {
@@ -1145,10 +1145,10 @@
       "brand": "Imagine",
       "model": "2700BS",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 7138,
-      "length": "31â 8â",
+      "length": "31’ 8”",
       "status": "A",
       "imagePath": "grand-design-imagine-2of2/imagine-2700bs.png",
       "keyFeatures": [
@@ -1160,8 +1160,8 @@
         "King Bed"
       ],
       "stock": "3545",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 50145.0,
+      "unlockPrice": 48995.0,
       "availability": "on-order"
     },
     {
@@ -1170,10 +1170,10 @@
       "brand": "Imagine",
       "model": "2800BH",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6996,
-      "length": "31â 9â",
+      "length": "31’ 9”",
       "status": "A",
       "imagePath": "grand-design-imagine-2of2/imagine-2800bh.png",
       "keyFeatures": [
@@ -1191,10 +1191,10 @@
       "brand": "Imagine",
       "model": "2810BH",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 7215,
-      "length": "32â",
+      "length": "32’",
       "status": "A",
       "imagePath": "grand-design-imagine-2of2/imagine-2810bh.png",
       "keyFeatures": [
@@ -1206,8 +1206,8 @@
         "Queen Bed"
       ],
       "stock": "3551",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 53145.0,
+      "unlockPrice": 52495.0,
       "availability": "active"
     },
     {
@@ -1219,7 +1219,7 @@
       "year": 2027,
       "price": null,
       "weight": 7880,
-      "length": "33â 11â",
+      "length": "33’ 11”",
       "status": "A",
       "imagePath": "grand-design-imagine-2of2/imagine-2970rl.png",
       "keyFeatures": [
@@ -1231,8 +1231,8 @@
         "Queen Bed"
       ],
       "stock": "3443",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 55045.0,
+      "unlockPrice": 53995.0,
       "availability": "active"
     },
     {
@@ -1244,7 +1244,7 @@
       "year": 2026,
       "price": null,
       "weight": 8030,
-      "length": "35â 8â",
+      "length": "35’ 8”",
       "status": "D",
       "imagePath": "grand-design-imagine-2of2/imagine-3100rd.png",
       "keyFeatures": [
@@ -1260,7 +1260,7 @@
       "year": 2026,
       "price": null,
       "weight": 8725,
-      "length": "36â 8â",
+      "length": "36’ 8”",
       "status": "D",
       "imagePath": "grand-design-imagine-2of2/imagine-3210bh.png",
       "keyFeatures": [
@@ -1273,7 +1273,7 @@
       "brand": "Imagine AIM",
       "model": "15RBA",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 3547,
       "length": "19' 8\"",
@@ -1288,8 +1288,8 @@
         "Murphy Bed"
       ],
       "stock": "3257",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 22795.0,
+      "unlockPrice": 21995.0,
       "availability": "active"
     },
     {
@@ -1319,9 +1319,9 @@
       "brand": "Imagine AIM",
       "model": "17MKA",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 4945,
+      "weight": 4945.0,
       "length": "21' 8\"",
       "status": "A",
       "imagePath": "grand-design-imagine-aim/imagine-aim-17mka.png",
@@ -1334,8 +1334,8 @@
         "Murphy Bed"
       ],
       "stock": "3557",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 33795.0,
+      "unlockPrice": 32995.0,
       "availability": "on-order"
     },
     {
@@ -1359,8 +1359,8 @@
         "Queen Bed"
       ],
       "stock": "3458",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 29043.0,
+      "unlockPrice": 28493.0,
       "availability": "active"
     },
     {
@@ -1384,8 +1384,8 @@
         "Queen Bed"
       ],
       "stock": "3509",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 31195.0,
+      "unlockPrice": 29995.0,
       "availability": "active"
     },
     {
@@ -1394,9 +1394,9 @@
       "brand": "Imagine AIM",
       "model": "21MBA",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 5361,
+      "weight": 5361.0,
       "length": "24' 11\"",
       "status": "A",
       "imagePath": "grand-design-imagine-aim/imagine-aim-21mba.png",
@@ -1441,7 +1441,7 @@
       "brand": "Imagine XLS",
       "model": "22BHE",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 5698,
       "length": "24' 4\"",
@@ -1462,7 +1462,7 @@
       "brand": "Imagine XLS",
       "model": "22MLE",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 5423,
       "length": "25' 11\"",
@@ -1477,8 +1477,8 @@
         "Queen Bed"
       ],
       "stock": "3427",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 36645.0,
+      "unlockPrice": 35995.0,
       "availability": "active"
     },
     {
@@ -1502,8 +1502,8 @@
         "Queen Bed"
       ],
       "stock": "3444",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 38545.0,
+      "unlockPrice": 37495.0,
       "availability": "active"
     },
     {
@@ -1527,8 +1527,8 @@
         "Queen Bed"
       ],
       "stock": "3451",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 38045.0,
+      "unlockPrice": 36995.0,
       "availability": "active"
     },
     {
@@ -1537,7 +1537,7 @@
       "brand": "Imagine XLS",
       "model": "25DBE",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6313,
       "length": "29' 9\"",
@@ -1558,7 +1558,7 @@
       "brand": "Imagine XLS",
       "model": "25RLE",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6186,
       "length": "29' 9\"",
@@ -1573,8 +1573,8 @@
         "Queen Bed"
       ],
       "stock": "3235",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 36095.0,
+      "unlockPrice": 34995.0,
       "availability": "active"
     },
     {
@@ -1583,9 +1583,9 @@
       "brand": "Influence",
       "model": "2903RL",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 12500,
+      "weight": 12500.0,
       "length": "34' 5\"",
       "status": "A",
       "imagePath": "grand-design-influence/influence-2903rl.png",
@@ -1604,9 +1604,9 @@
       "brand": "Influence",
       "model": "3003RL",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 12800,
+      "weight": 12800.0,
       "length": "34' 11\"",
       "status": "A",
       "imagePath": "grand-design-influence/influence-3003rl.png",
@@ -1625,9 +1625,9 @@
       "brand": "Influence",
       "model": "3203GK",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 13200,
+      "weight": 13200.0,
       "length": "35' 11\"",
       "status": "A",
       "imagePath": "grand-design-influence/influence-3203gk.png",
@@ -1646,9 +1646,9 @@
       "brand": "Influence",
       "model": "3503GK",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 13700,
+      "weight": 13700.0,
       "length": "38' 3\"",
       "status": "A",
       "imagePath": "grand-design-influence/influence-3503gk.png",
@@ -1667,7 +1667,7 @@
       "brand": "Influence",
       "model": "3705RD",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": null,
       "length": "41' 10\"",
@@ -1688,9 +1688,9 @@
       "brand": "Influence",
       "model": "3804DS",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 15000,
+      "weight": 15000.0,
       "length": "42' 6\"",
       "status": "A",
       "imagePath": "grand-design-influence/influence-3804ds.png",
@@ -1703,8 +1703,8 @@
         "King Bed"
       ],
       "stock": "3546",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 110845.0,
+      "unlockPrice": 109995.0,
       "availability": "on-order"
     },
     {
@@ -1713,7 +1713,7 @@
       "brand": "Influence",
       "model": "3904BH",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 16000,
       "length": "42' 8\"",
@@ -1728,8 +1728,8 @@
         "King Bed"
       ],
       "stock": "3465",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 111295.0,
+      "unlockPrice": 109995.0,
       "availability": "active"
     },
     {
@@ -1770,8 +1770,8 @@
       "status": "A",
       "imagePath": "lineage-series-m/lineage-25fw.png",
       "stock": "3331",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 181345.0,
+      "unlockPrice": 179995.0,
       "availability": "active"
     },
     {
@@ -1787,8 +1787,8 @@
       "status": "A",
       "imagePath": "lineage-series-m/lineage-25tk.png",
       "stock": "3252",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 161095.0,
+      "unlockPrice": 159395.0,
       "availability": "active"
     },
     {
@@ -1815,8 +1815,8 @@
       "length": "20' 11\"",
       "status": "A",
       "stock": "3389",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 157795.0,
+      "unlockPrice": 156995.0,
       "availability": "active"
     },
     {
@@ -1882,8 +1882,8 @@
       "status": "A",
       "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-350g.png",
       "stock": "3402",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 95295.0,
+      "unlockPrice": 94395.0,
       "availability": "active"
     },
     {
@@ -2097,8 +2097,8 @@
       "status": "A",
       "imagePath": "grand-design-momentum-luxury-2of2/momentum-luxury-395mt.png",
       "stock": "3464",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 146195.0,
+      "unlockPrice": 144995.0,
       "availability": "active"
     },
     {
@@ -2135,7 +2135,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 9518,
+      "weight": 9518.0,
       "length": "35' 5\"",
       "status": "A",
       "imagePath": "grand-design-reflection-travel-trailer/reflection-travel-trailer-317rsts.png",
@@ -2148,8 +2148,8 @@
         "Queen Bed"
       ],
       "stock": "3439",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 66695.0,
+      "unlockPrice": 65995.0,
       "availability": "active"
     },
     {
@@ -2158,9 +2158,9 @@
       "brand": "Reflection Travel Trailer",
       "model": "322FKTS",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 9158,
+      "weight": 9158.0,
       "length": "35' 9\"",
       "status": "A",
       "imagePath": "grand-design-reflection-travel-trailer/reflection-travel-trailer-322fkts.png",
@@ -2173,8 +2173,8 @@
         "King Bed"
       ],
       "stock": "3498",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 69795.0,
+      "unlockPrice": 68995.0,
       "availability": "active"
     },
     {
@@ -2183,7 +2183,7 @@
       "brand": "Reflection Travel Trailer",
       "model": "342BHTS",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 10300,
       "length": "37' 9\"",
@@ -2204,9 +2204,9 @@
       "brand": "Reflection Travel Trailer",
       "model": "345RLTS",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 10425,
+      "weight": 10425.0,
       "length": "38' 10\"",
       "status": "A",
       "imagePath": "grand-design-reflection-travel-trailer/reflection-travel-trailer-345rlts.png",
@@ -2219,8 +2219,8 @@
         "Kind Bed"
       ],
       "stock": "3567",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 70945.0,
+      "unlockPrice": 69995.0,
       "availability": "on-order"
     },
     {
@@ -2229,9 +2229,9 @@
       "brand": "Reflection",
       "model": "303RLS",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 10325,
+      "weight": 10325.0,
       "length": "32' 10\"",
       "status": "A",
       "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-303rls.png",
@@ -2244,8 +2244,8 @@
         "Queen Bed"
       ],
       "stock": "3529",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 70145.0,
+      "unlockPrice": 68995.0,
       "availability": "active"
     },
     {
@@ -2254,7 +2254,7 @@
       "brand": "Reflection",
       "model": "311BHS",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 11700,
       "length": "36' 11\"",
@@ -2288,7 +2288,7 @@
       "brand": "Reflection",
       "model": "324MBS",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 11200,
       "length": "37'",
@@ -2324,8 +2324,8 @@
         "King Bed"
       ],
       "stock": "3445",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 75195.0,
+      "unlockPrice": 74495.0,
       "availability": "active"
     },
     {
@@ -2334,7 +2334,7 @@
       "brand": "Reflection",
       "model": "340RKS",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": null,
       "length": "38' 7\"",
@@ -2355,9 +2355,9 @@
       "brand": "Reflection",
       "model": "350RDS",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 12250,
+      "weight": 12250.0,
       "length": "39' 3\"",
       "status": "A",
       "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-350rds.png",
@@ -2370,8 +2370,8 @@
         "King Bed"
       ],
       "stock": "3569",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 88145.0,
+      "unlockPrice": 86995.0,
       "availability": "on-order"
     },
     {
@@ -2401,7 +2401,7 @@
       "brand": "Reflection",
       "model": "362TBS",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 12500,
       "length": "39' 11\"",
@@ -2443,7 +2443,7 @@
       "brand": "Reflection 100 Series",
       "model": "22RK",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 7000,
       "length": "26' 11\"",
@@ -2464,7 +2464,7 @@
       "brand": "Reflection 100 Series",
       "model": "24RL",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 7739,
       "length": "30'",
@@ -2479,8 +2479,8 @@
         "Queen Bed"
       ],
       "stock": "3213",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 40995.0,
+      "unlockPrice": 39995.0,
       "availability": "active"
     },
     {
@@ -2489,9 +2489,9 @@
       "brand": "Reflection 100 Series",
       "model": "27BH",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 8315,
+      "weight": 8315.0,
       "length": "32' 3\"",
       "status": "A",
       "imagePath": "grand-design-reflection-100-series/reflection-100-series-27bh.png",
@@ -2504,8 +2504,8 @@
         "Queen Bed"
       ],
       "stock": "3355",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 50395.0,
+      "unlockPrice": 48995.0,
       "availability": "active"
     },
     {
@@ -2514,9 +2514,9 @@
       "brand": "Reflection 100 Series",
       "model": "28RL",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 8626,
+      "weight": 8626.0,
       "length": "31'",
       "status": "A",
       "imagePath": "grand-design-reflection-100-series/reflection-100-series-28rl.png",
@@ -2535,9 +2535,9 @@
       "brand": "Reflection 100 Series",
       "model": "29RL",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 9045,
+      "weight": 9045.0,
       "length": "32' 9\"",
       "status": "A",
       "imagePath": "grand-design-reflection-100-series/reflection-100-series-29rl.png",
@@ -2550,8 +2550,8 @@
         "Queen Bed"
       ],
       "stock": "3518",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 58345.0,
+      "unlockPrice": 56995.0,
       "availability": "active"
     },
     {
@@ -2560,7 +2560,7 @@
       "brand": "Reflection 100 Series",
       "model": "32BH",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 9468,
       "length": "35' 10\"",
@@ -2581,7 +2581,7 @@
       "brand": "Reflection 150 Series",
       "model": "250ML",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 8220,
       "length": "29' 9\"",
@@ -2596,8 +2596,8 @@
         "Queen Bed"
       ],
       "stock": "3242",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 50395.0,
+      "unlockPrice": 48995.0,
       "availability": "active"
     },
     {
@@ -2606,7 +2606,7 @@
       "brand": "Reflection 150 Series",
       "model": "260RD",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 7534,
       "length": "29' 10\"",
@@ -2621,8 +2621,8 @@
         "Queen Bed"
       ],
       "stock": "3264",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 48145.0,
+      "unlockPrice": 46895.0,
       "availability": "active"
     },
     {
@@ -2631,7 +2631,7 @@
       "brand": "Reflection 150 Series",
       "model": "270BN",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 8050,
       "length": "29' 11\"",
@@ -2652,9 +2652,9 @@
       "brand": "Reflection 150 Series",
       "model": "295RL",
       "type": "Fifth Wheel",
-      "year": 2026,
+      "year": 2026.0,
       "price": null,
-      "weight": 9577,
+      "weight": 9577.0,
       "length": "33' 9\"",
       "status": "D",
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-295rl.png",
@@ -2668,7 +2668,7 @@
       "brand": "Reflection 150 Series",
       "model": "298BH",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 9050,
       "length": "34' 9\"",
@@ -2683,8 +2683,8 @@
         "Queen Bed"
       ],
       "stock": "3495",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 68195.0,
+      "unlockPrice": 66995.0,
       "availability": "active"
     },
     {
@@ -2693,7 +2693,7 @@
       "brand": "Reflection 150 Series",
       "model": "299MB",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": null,
       "length": null,
@@ -2714,7 +2714,7 @@
       "brand": "Reflection 150 Series",
       "model": "310RL",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": null,
       "length": null,
@@ -2735,7 +2735,7 @@
       "brand": "Solitude",
       "model": "310GK",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 12500,
       "length": "34' 4\"",
@@ -2748,7 +2748,7 @@
       "brand": "Solitude",
       "model": "370DV",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 13800,
       "length": "37' 10\"",
@@ -2761,7 +2761,7 @@
       "brand": "Solitude",
       "model": "376RD",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 15400,
       "length": "42' 6\"",
@@ -2774,15 +2774,15 @@
       "brand": "Solitude",
       "model": "380FL",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 15000,
       "length": "41' 4\"",
       "status": "A",
       "imagePath": "grand-design-solitude-1of2/solitude-380fl.png",
       "stock": "3215",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 106445.0,
+      "unlockPrice": 104995.0,
       "availability": "active"
     },
     {
@@ -2791,7 +2791,7 @@
       "brand": "Solitude",
       "model": "382WB",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 15200,
       "length": "41' 4\"",
@@ -2817,7 +2817,7 @@
       "brand": "Solitude",
       "model": "390RK",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 15000,
       "length": "42' 5\"",
@@ -2830,15 +2830,15 @@
       "brand": "Solitude",
       "model": "414LJMJ",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 19000,
       "length": "42' 10\"",
       "status": "A",
       "imagePath": "grand-design-solitude-2of2/solitude-414ljmj.png",
       "stock": "3547",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 196320.0,
+      "unlockPrice": 0.0,
       "availability": "on-order"
     },
     {
@@ -2860,15 +2860,15 @@
       "brand": "Solitude",
       "model": "417KB",
       "type": "Fifth Wheel",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 15500,
       "length": "41' 8\"",
       "status": "A",
       "imagePath": "grand-design-solitude-2of2/solitude-417kb.png",
       "stock": "3380",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 106045.0,
+      "unlockPrice": 104995.0,
       "availability": "pending"
     },
     {
@@ -2877,10 +2877,10 @@
       "brand": "Transcend",
       "model": "245RLT",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6456,
-      "length": "30â 8â",
+      "length": "30’ 8”",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-245rlt.png",
       "keyFeatures": [
@@ -2892,8 +2892,8 @@
         "Sleeps 6"
       ],
       "stock": "3508",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 40495.0,
+      "unlockPrice": 39995.0,
       "availability": "active"
     },
     {
@@ -2902,10 +2902,10 @@
       "brand": "Transcend",
       "model": "265BHT",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6327,
-      "length": "32â 9â",
+      "length": "32’ 9”",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-265bht.png",
       "keyFeatures": [
@@ -2917,8 +2917,8 @@
         "Sleeps 8"
       ],
       "stock": "3513",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 40545.0,
+      "unlockPrice": 39995.0,
       "availability": "active"
     },
     {
@@ -2927,7 +2927,7 @@
       "brand": "Transcend",
       "model": "275FKT",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": null,
       "length": "31' 11\"",
@@ -2942,8 +2942,8 @@
         "Washer/Dryer Prep"
       ],
       "stock": "3538",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 49545.0,
+      "unlockPrice": 48995.0,
       "availability": "active"
     },
     {
@@ -2952,10 +2952,10 @@
       "brand": "Transcend",
       "model": "285RKT",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 7166,
-      "length": "33â 11â",
+      "weight": 7166.0,
+      "length": "33’ 11”",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-285rkt.png",
       "keyFeatures": [
@@ -2967,8 +2967,8 @@
         "Sleeps 2"
       ],
       "stock": "3510",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 40795.0,
+      "unlockPrice": 39995.0,
       "availability": "active"
     },
     {
@@ -2977,10 +2977,10 @@
       "brand": "Transcend",
       "model": "295QBT",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 7383,
-      "length": "35â 11â",
+      "length": "35’ 11”",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-295qbt.png",
       "keyFeatures": [
@@ -2992,8 +2992,8 @@
         "Sleeps 10"
       ],
       "stock": "3560",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 45195.0,
+      "unlockPrice": 43995.0,
       "availability": "on-order"
     },
     {
@@ -3005,7 +3005,7 @@
       "year": 2026,
       "price": null,
       "weight": 7735,
-      "length": "36â 11â",
+      "length": "36’ 11”",
       "status": "D",
       "imagePath": "grand-design-transcend/transcend-305bht.png"
     },
@@ -3015,10 +3015,10 @@
       "brand": "Transcend",
       "model": "315RKT",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 8400,
-      "length": "36â 10â",
+      "length": "36’ 10”",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-315rkt.png",
       "keyFeatures": [
@@ -3030,8 +3030,8 @@
         "Sleeps 4"
       ],
       "stock": "3479",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 48945.0,
+      "unlockPrice": 47995.0,
       "availability": "active"
     },
     {
@@ -3040,10 +3040,10 @@
       "brand": "Transcend",
       "model": "325BHT",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 8672,
-      "length": "37â 3â",
+      "length": "37’ 3”",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-325bht.png",
       "keyFeatures": [
@@ -3055,8 +3055,8 @@
         "Sleeps 10"
       ],
       "stock": "3180",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 44145.0,
+      "unlockPrice": 42995.0,
       "availability": "active"
     },
     {
@@ -3065,10 +3065,10 @@
       "brand": "Transcend",
       "model": "335BHT",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 9400,
-      "length": "37â 3â",
+      "length": "37’ 3”",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-335bht.png",
       "keyFeatures": [
@@ -3080,8 +3080,8 @@
         "Sleeps 12"
       ],
       "stock": "3512",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 49695.0,
+      "unlockPrice": 48995.0,
       "availability": "active"
     },
     {
@@ -3090,9 +3090,9 @@
       "brand": "Transcend",
       "model": "345DQT",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
-      "weight": 9345,
+      "weight": 9345.0,
       "length": "38' 11\"",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-345dqt.png",
@@ -3105,8 +3105,8 @@
         "Washer/Dryer Prep"
       ],
       "stock": "3507",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 50895.0,
+      "unlockPrice": 49995.0,
       "availability": "active"
     },
     {
@@ -3122,8 +3122,8 @@
       "status": "A",
       "imagePath": "grand-design-transcend-lite/transcend-lite-121rbl.png",
       "stock": "3448",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 16495.0,
+      "unlockPrice": 15995.0,
       "availability": "active"
     },
     {
@@ -3132,7 +3132,7 @@
       "brand": "Transcend One",
       "model": "131DL",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 2950,
       "length": "15' 10\"",
@@ -3145,10 +3145,10 @@
       "brand": "Transcend One",
       "model": "151BH",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 3550,
-      "length": "19â 8â",
+      "length": "19’ 8”",
       "status": "A",
       "imagePath": "grand-design-transcend-one/transcend-one-151bh.png",
       "keyFeatures": [
@@ -3159,8 +3159,8 @@
         "Sleeps 5"
       ],
       "stock": "3457",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 18095.0,
+      "unlockPrice": 16995.0,
       "availability": "active"
     },
     {
@@ -3169,10 +3169,10 @@
       "brand": "Transcend One",
       "model": "151RB",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 3600,
-      "length": "19â 8â",
+      "length": "19’ 8”",
       "status": "A",
       "imagePath": "grand-design-transcend-one/transcend-one-151rb.png",
       "keyFeatures": [
@@ -3183,8 +3183,8 @@
         "Sleeps 4"
       ],
       "stock": "3480",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 20145.0,
+      "unlockPrice": 18995.0,
       "availability": "active"
     },
     {
@@ -3193,10 +3193,10 @@
       "brand": "Transcend One",
       "model": "161BH",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 4784,
-      "length": "23â",
+      "length": "23’",
       "status": "A",
       "imagePath": "grand-design-transcend-one/transcend-one-161bh.png",
       "keyFeatures": [
@@ -3208,8 +3208,8 @@
         "Sleeps 6"
       ],
       "stock": "3563",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 25685.0,
+      "unlockPrice": 24985.0,
       "availability": "active"
     },
     {
@@ -3218,7 +3218,7 @@
       "brand": "Transcend One",
       "model": "161DB",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 4446,
       "length": "23'",
@@ -3233,8 +3233,8 @@
         "Sleeps 7"
       ],
       "stock": "3334",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 23695.0,
+      "unlockPrice": 22995.0,
       "availability": "active"
     },
     {
@@ -3243,7 +3243,7 @@
       "brand": "Transcend XPLOR",
       "model": "18FQX",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": null,
       "length": "24'",
@@ -3264,10 +3264,10 @@
       "brand": "Transcend XPLOR",
       "model": "19BHX",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 4894,
-      "length": "26â 3â",
+      "length": "26’ 3”",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-19bhx.png",
       "keyFeatures": [
@@ -3279,8 +3279,8 @@
         "13.5K A/C"
       ],
       "stock": "3270",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 24885.0,
+      "unlockPrice": 23985.0,
       "availability": "active"
     },
     {
@@ -3289,10 +3289,10 @@
       "brand": "Transcend XPLOR",
       "model": "20MKX",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 5397,
-      "length": "24â 11â",
+      "length": "24’ 11”",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-20mkx.png",
       "keyFeatures": [
@@ -3304,8 +3304,8 @@
         "13.5K A/C"
       ],
       "stock": "3456",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 30645.0,
+      "unlockPrice": 29895.0,
       "availability": "active"
     },
     {
@@ -3314,10 +3314,10 @@
       "brand": "Transcend XPLOR",
       "model": "21RLX",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 4978,
-      "length": "25â 10â",
+      "length": "25’ 10”",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-21rlx.png",
       "keyFeatures": [
@@ -3329,8 +3329,8 @@
         "13.5K A/C"
       ],
       "stock": "3282",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 25585.0,
+      "unlockPrice": 24985.0,
       "availability": "active"
     },
     {
@@ -3342,7 +3342,7 @@
       "year": 2027,
       "price": null,
       "weight": 5749,
-      "length": "26â 10â",
+      "length": "26’ 10”",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-22rbx.png",
       "keyFeatures": [
@@ -3354,8 +3354,8 @@
         "13.5K A/C"
       ],
       "stock": "3437",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 30545.0,
+      "unlockPrice": 29995.0,
       "availability": "active"
     },
     {
@@ -3364,10 +3364,10 @@
       "brand": "Transcend XPLOR",
       "model": "23BHX",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 5580,
-      "length": "26â 11â",
+      "length": "26’ 11”",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-23bhx.png",
       "keyFeatures": [
@@ -3385,10 +3385,10 @@
       "brand": "Transcend XPLOR",
       "model": "24BHX",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 5756,
-      "length": "29â 11â",
+      "length": "29’ 11”",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-24bhx.png",
       "keyFeatures": [
@@ -3406,10 +3406,10 @@
       "brand": "Transcend XPLOR",
       "model": "25MLX",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6335,
-      "length": "29â 9â",
+      "length": "29’ 9”",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-25mlx.png",
       "keyFeatures": [
@@ -3421,8 +3421,8 @@
         "13.5K A/C"
       ],
       "stock": "3375",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 32595.0,
+      "unlockPrice": 31995.0,
       "availability": "active"
     },
     {
@@ -3431,10 +3431,10 @@
       "brand": "Transcend XPLOR",
       "model": "26BHX",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6505,
-      "length": "30â 11â",
+      "length": "30’ 11”",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-26bhx.png",
       "keyFeatures": [
@@ -3446,8 +3446,8 @@
         "13.5K A/C"
       ],
       "stock": "3346",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 33995.0,
+      "unlockPrice": 29995.0,
       "availability": "active"
     },
     {
@@ -3456,15 +3456,15 @@
       "brand": "Transcend XPLOR",
       "model": "26RBX",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2026.0,
       "price": null,
       "weight": 6147,
-      "length": "31â 6â",
+      "length": "31’ 6”",
       "status": "D",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-26rbx.png",
       "stock": "3280",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 30945.0,
+      "unlockPrice": 29995.0,
       "availability": "active"
     },
     {
@@ -3473,10 +3473,10 @@
       "brand": "Transcend XPLOR",
       "model": "27DBX",
       "type": "Travel Trailer",
-      "year": 2027,
+      "year": 2027.0,
       "price": null,
       "weight": 6820,
-      "length": "31â 9â",
+      "length": "31’ 9”",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-27dbx.png",
       "keyFeatures": [
@@ -3488,8 +3488,8 @@
         "13.5K A/C"
       ],
       "stock": "3182",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 33095.0,
+      "unlockPrice": 31895.0,
       "availability": "active"
     },
     {
@@ -3513,8 +3513,8 @@
         "Queen Bed"
       ],
       "stock": "3572",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 20845.0,
+      "unlockPrice": 19995.0,
       "availability": "on-order"
     },
     {
@@ -3538,8 +3538,8 @@
         "Queen Bed"
       ],
       "stock": "3570",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 21995.0,
+      "unlockPrice": 20995.0,
       "availability": "on-order"
     },
     {
@@ -3563,8 +3563,8 @@
         "Queen Bed"
       ],
       "stock": "3340",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 20945.0,
+      "unlockPrice": 19995.0,
       "availability": "active"
     },
     {
@@ -3588,8 +3588,8 @@
         "Queen Bed"
       ],
       "stock": "3534",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 23097.0,
+      "unlockPrice": 21997.0,
       "availability": "active"
     },
     {
@@ -3655,8 +3655,8 @@
         "Olympic Queen Bed"
       ],
       "stock": "3565",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 35795.0,
+      "unlockPrice": 34995.0,
       "availability": "on-order"
     },
     {
@@ -3722,8 +3722,8 @@
         "Olympic Queen Bed"
       ],
       "stock": "3566",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 40545.0,
+      "unlockPrice": 39995.0,
       "availability": "on-order"
     },
     {
@@ -3739,8 +3739,8 @@
       "status": "A",
       "imagePath": "winnebago-minnie/winnebago-micro-minnie-1800bh.jpeg",
       "stock": "3574",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 31673.0,
+      "unlockPrice": 31123.0,
       "availability": "on-order"
     },
     {
@@ -3782,8 +3782,8 @@
       "status": "A",
       "imagePath": "winnebago-minnie/winnebago-micro-minnie-2000mrb.jpeg",
       "stock": "3576",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 33723.0,
+      "unlockPrice": 32823.0,
       "availability": "on-order"
     },
     {
@@ -3812,8 +3812,8 @@
       "status": "A",
       "imagePath": "winnebago-minnie/winnebago-micro-minnie-2108tb.jpeg",
       "stock": "3573",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 35895.0,
+      "unlockPrice": 34995.0,
       "availability": "on-order"
     },
     {
@@ -3829,8 +3829,8 @@
       "status": "A",
       "imagePath": "winnebago-minnie/winnebago-micro-minnie-2108fbs.jpeg",
       "stock": "3258",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 29045.0,
+      "unlockPrice": 27995.0,
       "availability": "active"
     },
     {
@@ -3872,8 +3872,8 @@
       "status": "A",
       "imagePath": "winnebago-minnie/winnebago-micro-minnie-2200fbh.jpeg",
       "stock": "3575",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 37995.0,
+      "unlockPrice": 36995.0,
       "availability": "on-order"
     },
     {
@@ -3902,8 +3902,8 @@
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-18fbs.jpeg",
       "stock": "3313",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 29795.0,
+      "unlockPrice": 28995.0,
       "availability": "active"
     },
     {
@@ -3932,8 +3932,8 @@
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-22mls.jpeg",
       "stock": "3533",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 45595.0,
+      "unlockPrice": 44995.0,
       "availability": "active"
     },
     {
@@ -3944,13 +3944,13 @@
       "type": "Travel Trailer",
       "year": 2026,
       "price": null,
-      "weight": 6122,
+      "weight": 6122.0,
       "length": "26' 7\"",
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-22rbs.jpeg",
       "stock": "3532",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 45195.0,
+      "unlockPrice": 43995.0,
       "availability": "active"
     },
     {
@@ -3966,8 +3966,8 @@
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-24rks.jpeg",
       "stock": "3383",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 44095.0,
+      "unlockPrice": 42995.0,
       "availability": "active"
     },
     {
@@ -3978,7 +3978,7 @@
       "type": "Travel Trailer",
       "year": 2026,
       "price": null,
-      "weight": 6512,
+      "weight": 6512.0,
       "length": "30' 2\"",
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-25rls.jpeg"
@@ -3991,13 +3991,13 @@
       "type": "Travel Trailer",
       "year": 2026,
       "price": null,
-      "weight": 7470,
+      "weight": 7470.0,
       "length": "30' 11\"",
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-26fkd.jpeg",
       "stock": "3463",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 49845.0,
+      "unlockPrice": 48995.0,
       "availability": "active"
     },
     {
@@ -4008,7 +4008,7 @@
       "type": "Travel Trailer",
       "year": 2026,
       "price": null,
-      "weight": 7234,
+      "weight": 7234.0,
       "length": "32' 8\"",
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-28bhs.jpeg"
@@ -4021,7 +4021,7 @@
       "type": "Travel Trailer",
       "year": 2026,
       "price": null,
-      "weight": 8426,
+      "weight": 8426.0,
       "length": "36' 3\"",
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-29rlo.jpeg"
