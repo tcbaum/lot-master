@@ -3899,7 +3899,7 @@ function viewSettings(){
   </div>
 
   <div class="panel" style="margin-top:18px">
-    <div class="panel-head"><h3>Account</h3><span class="sub">Sign in to sync your progress across devices.</span></div>
+    <div class="panel-head"><h3>Account</h3><span class="sub">${authUser?'Your progress is syncing across devices.':'Sign in to sync your progress across devices.'}</span></div>
     <div class="panel-pad">
       ${!authReady ? `<p class="muted" style="font-size:13px">Checking session…</p>` :
         authUser ? `
