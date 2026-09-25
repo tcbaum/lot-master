@@ -3992,7 +3992,7 @@ async function authSignOut(){
 async function authUpdateDisplayName(val){
   if(!supabaseClient||!authUser) return;
   const name=(val||'').trim(); if(!name) return;
-  try{ await supabaseClient.from('profiles').upsert({id:authUser.id,display_name:name}); toast('Saved','ok'); }
+  try{ await supabaseClient.from('profiles').upsert({id:authUser.id,display_name:name}); state.progress=state.progress||{}; state.progress.displayName=name; saveState(); toast('Saved','ok'); }
   catch(err){ toast('Could not save name.','warn'); }
 }
 async function authToggleIncognito(checked){
@@ -4099,6 +4099,7 @@ async function pullRemoteToLocal(){
       state.progress.streak=state.progress.streak||{};
       state.progress.streak.current=profile.streak_count||0;
       if(profile.badges) state.progress.badges=Object.fromEntries((profile.badges||[]).map(b=>[b,true]));
+      if(profile.display_name) state.progress.displayName=profile.display_name;
       changed=true;
     }
     if(changed) saveState();
@@ -4137,9 +4138,10 @@ async function pushLocalToRemote(){
     const rows=state.units.filter(u=>u.srs.reviews>0).map(srsToRow);
     const featureRows=Object.keys(state.featureProgress||{}).map(featureProgressToRow);
     const allRows=rows.concat(featureRows);
-    if(allRows.length) await supabaseClient.from('user_unit_progress').upsert(allRows);
+    if(allRows.length) await supabaseClient.from('user_unit_progress').upsert(allRows,{onConflict:'user_id,unit_id'});
     await supabaseClient.from('profiles').upsert({
       id:authUser.id,
+      display_name:(state.progress&&state.progress.displayName)||(authUser.email?authUser.email.split('@')[0]:'Rep'),
       streak_count:(state.progress&&state.progress.streak&&state.progress.streak.current)||0,
       badges:Object.keys((state.progress&&state.progress.badges)||{}),
       updated_at:new Date().toISOString(),
