@@ -23,8 +23,8 @@
         "King Bed"
       ],
       "stock": "3503",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 94039,
+      "unlockPrice": 92939,
       "availability": "active"
     },
     {
@@ -363,8 +363,8 @@
         "Olympic Queen Bed"
       ],
       "stock": "3452",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 84192,
+      "unlockPrice": 83392,
       "availability": "active"
     },
     {
@@ -388,8 +388,8 @@
         "Queen Bed"
       ],
       "stock": "3492",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 57714,
+      "unlockPrice": 56614,
       "availability": "active"
     },
     {
@@ -429,8 +429,8 @@
         "Queen Bed"
       ],
       "stock": "3491",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 45945,
+      "unlockPrice": 44995,
       "availability": "active"
     },
     {
@@ -454,8 +454,8 @@
         "Queen Bed"
       ],
       "stock": "3241",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 45695,
+      "unlockPrice": 44995,
       "availability": "active"
     },
     {
@@ -697,8 +697,8 @@
         "Queen Bed"
       ],
       "stock": "3432",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 47684,
+      "unlockPrice": 46684,
       "availability": "active"
     },
     {
@@ -759,8 +759,8 @@
         "Bunk House"
       ],
       "stock": "3223",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 38095,
+      "unlockPrice": 36995,
       "availability": "active"
     },
     {
@@ -809,8 +809,8 @@
         "King Bed"
       ],
       "stock": "3248",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 90295,
+      "unlockPrice": 88895,
       "availability": "active"
     },
     {
@@ -960,8 +960,8 @@
         "King Bed"
       ],
       "stock": "3231",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 100745,
+      "unlockPrice": 99895,
       "availability": "active"
     },
     {
@@ -997,8 +997,8 @@
       "length": "45' 11\"",
       "status": "A",
       "stock": "3450",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 155095,
+      "unlockPrice": 153745,
       "availability": "pending"
     },
     {
@@ -1014,8 +1014,8 @@
       "status": "A",
       "imagePath": "grand-design-foundation/foundation-42GD.jpeg",
       "stock": "3302",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 95345,
+      "unlockPrice": 94995,
       "availability": "active"
     },
     {
@@ -1027,7 +1027,7 @@
       "year": 2027,
       "price": null,
       "weight": 6012,
-      "length": "26Ã¢ÂÂ 6Ã¢ÂÂ",
+      "length": "26ÃÂ¢ÃÂÃÂ 6ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2300mk.png",
       "keyFeatures": [
@@ -1039,8 +1039,8 @@
         "Queen Bed"
       ],
       "stock": "3517",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 42299,
+      "unlockPrice": 41599,
       "availability": "active"
     },
     {
@@ -1052,7 +1052,7 @@
       "year": 2027,
       "price": null,
       "weight": 6406,
-      "length": "29Ã¢ÂÂ",
+      "length": "29ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2470bh.png",
       "keyFeatures": [
@@ -1064,8 +1064,8 @@
         "Queen Bed"
       ],
       "stock": "3488",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 48195,
+      "unlockPrice": 46995,
       "availability": "active"
     },
     {
@@ -1077,7 +1077,7 @@
       "year": 2027,
       "price": null,
       "weight": 6569,
-      "length": "29Ã¢ÂÂ 7Ã¢ÂÂ",
+      "length": "29ÃÂ¢ÃÂÃÂ 7ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2500rl.png",
       "keyFeatures": [
@@ -1098,7 +1098,7 @@
       "year": 2027,
       "price": null,
       "weight": 6487,
-      "length": "29Ã¢ÂÂ 8Ã¢ÂÂ",
+      "length": "29ÃÂ¢ÃÂÃÂ 8ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2600rb.png",
       "keyFeatures": [
@@ -1110,8 +1110,8 @@
         "Queen Bed"
       ],
       "stock": "3558",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 45695,
+      "unlockPrice": 44995,
       "availability": "active"
     },
     {
@@ -1123,7 +1123,7 @@
       "year": 2027,
       "price": null,
       "weight": 6884,
-      "length": "32Ã¢ÂÂ",
+      "length": "32ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2670mk.png",
       "keyFeatures": [
@@ -1135,8 +1135,8 @@
         "Queen Bed"
       ],
       "stock": "3511",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 49695,
+      "unlockPrice": 48995,
       "availability": "active"
     },
     {
@@ -1148,7 +1148,7 @@
       "year": 2027,
       "price": null,
       "weight": 7138,
-      "length": "31Ã¢ÂÂ 8Ã¢ÂÂ",
+      "length": "31ÃÂ¢ÃÂÃÂ 8ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-imagine-2of2/imagine-2700bs.png",
       "keyFeatures": [
@@ -1160,8 +1160,8 @@
         "King Bed"
       ],
       "stock": "3545",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 50145,
+      "unlockPrice": 48995,
       "availability": "on-order"
     },
     {
@@ -1173,7 +1173,7 @@
       "year": 2027,
       "price": null,
       "weight": 6996,
-      "length": "31Ã¢ÂÂ 9Ã¢ÂÂ",
+      "length": "31ÃÂ¢ÃÂÃÂ 9ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-imagine-2of2/imagine-2800bh.png",
       "keyFeatures": [
@@ -1194,7 +1194,7 @@
       "year": 2027,
       "price": null,
       "weight": 7215,
-      "length": "32Ã¢ÂÂ",
+      "length": "32ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-imagine-2of2/imagine-2810bh.png",
       "keyFeatures": [
@@ -1206,8 +1206,8 @@
         "Queen Bed"
       ],
       "stock": "3551",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 53145,
+      "unlockPrice": 52495,
       "availability": "active"
     },
     {
@@ -1219,7 +1219,7 @@
       "year": 2027,
       "price": null,
       "weight": 7880,
-      "length": "33Ã¢ÂÂ 11Ã¢ÂÂ",
+      "length": "33ÃÂ¢ÃÂÃÂ 11ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-imagine-2of2/imagine-2970rl.png",
       "keyFeatures": [
@@ -1231,8 +1231,8 @@
         "Queen Bed"
       ],
       "stock": "3443",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 55045,
+      "unlockPrice": 53995,
       "availability": "active"
     },
     {
@@ -1244,7 +1244,7 @@
       "year": 2026,
       "price": null,
       "weight": 8030,
-      "length": "35Ã¢ÂÂ 8Ã¢ÂÂ",
+      "length": "35ÃÂ¢ÃÂÃÂ 8ÃÂ¢ÃÂÃÂ",
       "status": "D",
       "imagePath": "grand-design-imagine-2of2/imagine-3100rd.png",
       "keyFeatures": [
@@ -1260,7 +1260,7 @@
       "year": 2026,
       "price": null,
       "weight": 8725,
-      "length": "36Ã¢ÂÂ 8Ã¢ÂÂ",
+      "length": "36ÃÂ¢ÃÂÃÂ 8ÃÂ¢ÃÂÃÂ",
       "status": "D",
       "imagePath": "grand-design-imagine-2of2/imagine-3210bh.png",
       "keyFeatures": [
@@ -1288,8 +1288,8 @@
         "Murphy Bed"
       ],
       "stock": "3257",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 22795,
+      "unlockPrice": 21995,
       "availability": "active"
     },
     {
@@ -1334,8 +1334,8 @@
         "Murphy Bed"
       ],
       "stock": "3557",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 33795,
+      "unlockPrice": 32995,
       "availability": "on-order"
     },
     {
@@ -1359,8 +1359,8 @@
         "Queen Bed"
       ],
       "stock": "3458",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 29045,
+      "unlockPrice": 28495,
       "availability": "active"
     },
     {
@@ -1384,8 +1384,8 @@
         "Queen Bed"
       ],
       "stock": "3509",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 31195,
+      "unlockPrice": 29995,
       "availability": "active"
     },
     {
@@ -1409,8 +1409,8 @@
         "Murphy Bed"
       ],
       "stock": "3584",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 43638,
+      "unlockPrice": "",
       "availability": "on-order"
     },
     {
@@ -1481,8 +1481,8 @@
         "Queen Bed"
       ],
       "stock": "3427",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 36645,
+      "unlockPrice": 35995,
       "availability": "active"
     },
     {
@@ -1506,8 +1506,8 @@
         "Queen Bed"
       ],
       "stock": "3444",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 38545,
+      "unlockPrice": 37495,
       "availability": "active"
     },
     {
@@ -1531,8 +1531,8 @@
         "Queen Bed"
       ],
       "stock": "3451",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 38045,
+      "unlockPrice": 36995,
       "availability": "active"
     },
     {
@@ -1577,8 +1577,8 @@
         "Queen Bed"
       ],
       "stock": "3235",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 36095,
+      "unlockPrice": 34995,
       "availability": "active"
     },
     {
@@ -1707,8 +1707,8 @@
         "King Bed"
       ],
       "stock": "3546",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 110845,
+      "unlockPrice": 109995,
       "availability": "on-order"
     },
     {
@@ -1732,8 +1732,8 @@
         "King Bed"
       ],
       "stock": "3465",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 111295,
+      "unlockPrice": 109995,
       "availability": "active"
     },
     {
@@ -1774,8 +1774,8 @@
       "status": "A",
       "imagePath": "lineage-series-m/lineage-25fw.png",
       "stock": "3331",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 181345,
+      "unlockPrice": 179995,
       "availability": "active"
     },
     {
@@ -1791,8 +1791,8 @@
       "status": "A",
       "imagePath": "lineage-series-m/lineage-25tk.png",
       "stock": "3252",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 161095,
+      "unlockPrice": 159395,
       "availability": "active"
     },
     {
@@ -1819,8 +1819,8 @@
       "length": "20' 11\"",
       "status": "A",
       "stock": "3389",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 180795,
+      "unlockPrice": 179995,
       "availability": "pending"
     },
     {
@@ -1886,8 +1886,8 @@
       "status": "A",
       "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-350g.png",
       "stock": "3402",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 95295,
+      "unlockPrice": 94395,
       "availability": "active"
     },
     {
@@ -2036,8 +2036,8 @@
       "length": null,
       "imagePath": "grand-design-momentum-mav/mav-28mav.png",
       "stock": "3585",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 61304,
+      "unlockPrice": "",
       "availability": "on-order"
     },
     {
@@ -2105,8 +2105,8 @@
       "status": "A",
       "imagePath": "grand-design-momentum-luxury-2of2/momentum-luxury-395mt.png",
       "stock": "3464",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 146195,
+      "unlockPrice": 144995,
       "availability": "active"
     },
     {
@@ -2156,8 +2156,8 @@
         "Queen Bed"
       ],
       "stock": "3439",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 67695,
+      "unlockPrice": 66995,
       "availability": "active"
     },
     {
@@ -2181,8 +2181,8 @@
         "King Bed"
       ],
       "stock": "3498",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 69795,
+      "unlockPrice": 68995,
       "availability": "active"
     },
     {
@@ -2227,8 +2227,8 @@
         "Kind Bed"
       ],
       "stock": "3567",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 70945,
+      "unlockPrice": 69995,
       "availability": "on-order"
     },
     {
@@ -2252,8 +2252,8 @@
         "Queen Bed"
       ],
       "stock": "3529",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 70145,
+      "unlockPrice": 68995,
       "availability": "active"
     },
     {
@@ -2332,8 +2332,8 @@
         "King Bed"
       ],
       "stock": "3445",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 75695,
+      "unlockPrice": 74995,
       "availability": "active"
     },
     {
@@ -2378,8 +2378,8 @@
         "King Bed"
       ],
       "stock": "3569",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 88145,
+      "unlockPrice": 86995,
       "availability": "on-order"
     },
     {
@@ -2487,8 +2487,8 @@
         "Queen Bed"
       ],
       "stock": "3213",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 40995,
+      "unlockPrice": 39995,
       "availability": "active"
     },
     {
@@ -2512,8 +2512,8 @@
         "Queen Bed"
       ],
       "stock": "3355",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 50395,
+      "unlockPrice": 48995,
       "availability": "active"
     },
     {
@@ -2558,8 +2558,8 @@
         "Queen Bed"
       ],
       "stock": "3518",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 58345,
+      "unlockPrice": 56995,
       "availability": "active"
     },
     {
@@ -2604,8 +2604,8 @@
         "Queen Bed"
       ],
       "stock": "3242",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 50395,
+      "unlockPrice": 48995,
       "availability": "active"
     },
     {
@@ -2629,8 +2629,8 @@
         "Queen Bed"
       ],
       "stock": "3265",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 61395,
+      "unlockPrice": 59995,
       "availability": "active"
     },
     {
@@ -2691,8 +2691,8 @@
         "Queen Bed"
       ],
       "stock": "3495",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 68195,
+      "unlockPrice": 66995,
       "availability": "active"
     },
     {
@@ -2789,8 +2789,8 @@
       "status": "A",
       "imagePath": "grand-design-solitude-1of2/solitude-380fl.png",
       "stock": "3176",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 110695,
+      "unlockPrice": 109995,
       "availability": "active"
     },
     {
@@ -2845,8 +2845,8 @@
       "status": "A",
       "imagePath": "grand-design-solitude-2of2/solitude-414ljmj.png",
       "stock": "3547",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 196320,
+      "unlockPrice": "",
       "availability": "on-order"
     },
     {
@@ -2888,7 +2888,7 @@
       "year": 2027,
       "price": null,
       "weight": 6456,
-      "length": "30Ã¢ÂÂ 8Ã¢ÂÂ",
+      "length": "30ÃÂ¢ÃÂÃÂ 8ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-245rlt.png",
       "keyFeatures": [
@@ -2900,8 +2900,8 @@
         "Sleeps 6"
       ],
       "stock": "3508",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 40495,
+      "unlockPrice": 39995,
       "availability": "active"
     },
     {
@@ -2913,7 +2913,7 @@
       "year": 2027,
       "price": null,
       "weight": 6327,
-      "length": "32Ã¢ÂÂ 9Ã¢ÂÂ",
+      "length": "32ÃÂ¢ÃÂÃÂ 9ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-265bht.png",
       "keyFeatures": [
@@ -2925,8 +2925,8 @@
         "Sleeps 8"
       ],
       "stock": "3513",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 40545,
+      "unlockPrice": 39995,
       "availability": "active"
     },
     {
@@ -2950,8 +2950,8 @@
         "Washer/Dryer Prep"
       ],
       "stock": "3538",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 49545,
+      "unlockPrice": 48995,
       "availability": "active"
     },
     {
@@ -2963,7 +2963,7 @@
       "year": 2027,
       "price": null,
       "weight": 7166,
-      "length": "33Ã¢ÂÂ 11Ã¢ÂÂ",
+      "length": "33ÃÂ¢ÃÂÃÂ 11ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-285rkt.png",
       "keyFeatures": [
@@ -2975,8 +2975,8 @@
         "Sleeps 2"
       ],
       "stock": "3510",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 40795,
+      "unlockPrice": 39995,
       "availability": "active"
     },
     {
@@ -2988,7 +2988,7 @@
       "year": 2027,
       "price": null,
       "weight": 7383,
-      "length": "35Ã¢ÂÂ 11Ã¢ÂÂ",
+      "length": "35ÃÂ¢ÃÂÃÂ 11ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-295qbt.png",
       "keyFeatures": [
@@ -3000,8 +3000,8 @@
         "Sleeps 10"
       ],
       "stock": "3560",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 45195,
+      "unlockPrice": 43995,
       "availability": "on-order"
     },
     {
@@ -3013,7 +3013,7 @@
       "year": 2026,
       "price": null,
       "weight": 7735,
-      "length": "36Ã¢ÂÂ 11Ã¢ÂÂ",
+      "length": "36ÃÂ¢ÃÂÃÂ 11ÃÂ¢ÃÂÃÂ",
       "status": "D",
       "imagePath": "grand-design-transcend/transcend-305bht.png"
     },
@@ -3026,7 +3026,7 @@
       "year": 2027,
       "price": null,
       "weight": 8400,
-      "length": "36Ã¢ÂÂ 10Ã¢ÂÂ",
+      "length": "36ÃÂ¢ÃÂÃÂ 10ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-315rkt.png",
       "keyFeatures": [
@@ -3038,8 +3038,8 @@
         "Sleeps 4"
       ],
       "stock": "3479",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 48945,
+      "unlockPrice": 47995,
       "availability": "active"
     },
     {
@@ -3051,7 +3051,7 @@
       "year": 2027,
       "price": null,
       "weight": 8672,
-      "length": "37Ã¢ÂÂ 3Ã¢ÂÂ",
+      "length": "37ÃÂ¢ÃÂÃÂ 3ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-325bht.png",
       "keyFeatures": [
@@ -3063,8 +3063,8 @@
         "Sleeps 10"
       ],
       "stock": "3180",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 44145,
+      "unlockPrice": 42995,
       "availability": "pending"
     },
     {
@@ -3076,7 +3076,7 @@
       "year": 2027,
       "price": null,
       "weight": 9400,
-      "length": "37Ã¢ÂÂ 3Ã¢ÂÂ",
+      "length": "37ÃÂ¢ÃÂÃÂ 3ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend/transcend-335bht.png",
       "keyFeatures": [
@@ -3088,8 +3088,8 @@
         "Sleeps 12"
       ],
       "stock": "3512",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 49695,
+      "unlockPrice": 48995,
       "availability": "active"
     },
     {
@@ -3113,8 +3113,8 @@
         "Washer/Dryer Prep"
       ],
       "stock": "3507",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 50895,
+      "unlockPrice": 49995,
       "availability": "active"
     },
     {
@@ -3130,8 +3130,8 @@
       "status": "A",
       "imagePath": "grand-design-transcend-lite/transcend-lite-121rbl.png",
       "stock": "3448",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 16495,
+      "unlockPrice": 15995,
       "availability": "active"
     },
     {
@@ -3156,7 +3156,7 @@
       "year": 2027,
       "price": null,
       "weight": 3550,
-      "length": "19Ã¢ÂÂ 8Ã¢ÂÂ",
+      "length": "19ÃÂ¢ÃÂÃÂ 8ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend-one/transcend-one-151bh.png",
       "keyFeatures": [
@@ -3167,8 +3167,8 @@
         "Sleeps 5"
       ],
       "stock": "3457",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 18095,
+      "unlockPrice": 16995,
       "availability": "active"
     },
     {
@@ -3180,7 +3180,7 @@
       "year": 2027,
       "price": null,
       "weight": 3600,
-      "length": "19Ã¢ÂÂ 8Ã¢ÂÂ",
+      "length": "19ÃÂ¢ÃÂÃÂ 8ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend-one/transcend-one-151rb.png",
       "keyFeatures": [
@@ -3191,8 +3191,8 @@
         "Sleeps 4"
       ],
       "stock": "3480",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 20145,
+      "unlockPrice": 18995,
       "availability": "active"
     },
     {
@@ -3204,7 +3204,7 @@
       "year": 2027,
       "price": null,
       "weight": 4784,
-      "length": "23Ã¢ÂÂ",
+      "length": "23ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend-one/transcend-one-161bh.png",
       "keyFeatures": [
@@ -3216,8 +3216,8 @@
         "Sleeps 6"
       ],
       "stock": "3563",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 25685,
+      "unlockPrice": 24985,
       "availability": "active"
     },
     {
@@ -3241,8 +3241,8 @@
         "Sleeps 7"
       ],
       "stock": "3334",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 23695,
+      "unlockPrice": 22995,
       "availability": "active"
     },
     {
@@ -3275,7 +3275,7 @@
       "year": 2027,
       "price": null,
       "weight": 4894,
-      "length": "26Ã¢ÂÂ 3Ã¢ÂÂ",
+      "length": "26ÃÂ¢ÃÂÃÂ 3ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-19bhx.png",
       "keyFeatures": [
@@ -3287,8 +3287,8 @@
         "13.5K A/C"
       ],
       "stock": "3270",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 24885,
+      "unlockPrice": 23985,
       "availability": "active"
     },
     {
@@ -3300,7 +3300,7 @@
       "year": 2027,
       "price": null,
       "weight": 5397,
-      "length": "24Ã¢ÂÂ 11Ã¢ÂÂ",
+      "length": "24ÃÂ¢ÃÂÃÂ 11ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-20mkx.png",
       "keyFeatures": [
@@ -3312,8 +3312,8 @@
         "13.5K A/C"
       ],
       "stock": "3456",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 30645,
+      "unlockPrice": 29895,
       "availability": "active"
     },
     {
@@ -3325,7 +3325,7 @@
       "year": 2027,
       "price": null,
       "weight": 4978,
-      "length": "25Ã¢ÂÂ 10Ã¢ÂÂ",
+      "length": "25ÃÂ¢ÃÂÃÂ 10ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-21rlx.png",
       "keyFeatures": [
@@ -3337,8 +3337,8 @@
         "13.5K A/C"
       ],
       "stock": "3282",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 25585,
+      "unlockPrice": 24985,
       "availability": "active"
     },
     {
@@ -3350,7 +3350,7 @@
       "year": 2027,
       "price": null,
       "weight": 5749,
-      "length": "26Ã¢ÂÂ 10Ã¢ÂÂ",
+      "length": "26ÃÂ¢ÃÂÃÂ 10ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-22rbx.png",
       "keyFeatures": [
@@ -3362,8 +3362,8 @@
         "13.5K A/C"
       ],
       "stock": "3437",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 30545,
+      "unlockPrice": 29995,
       "availability": "active"
     },
     {
@@ -3375,7 +3375,7 @@
       "year": 2027,
       "price": null,
       "weight": 5580,
-      "length": "26Ã¢ÂÂ 11Ã¢ÂÂ",
+      "length": "26ÃÂ¢ÃÂÃÂ 11ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-23bhx.png",
       "keyFeatures": [
@@ -3396,7 +3396,7 @@
       "year": 2027,
       "price": null,
       "weight": 5756,
-      "length": "29Ã¢ÂÂ 11Ã¢ÂÂ",
+      "length": "29ÃÂ¢ÃÂÃÂ 11ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-24bhx.png",
       "keyFeatures": [
@@ -3408,8 +3408,8 @@
         "13.5K A/C"
       ],
       "stock": "3359",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 27545,
+      "unlockPrice": 26995,
       "availability": "active"
     },
     {
@@ -3421,7 +3421,7 @@
       "year": 2027,
       "price": null,
       "weight": 6335,
-      "length": "29Ã¢ÂÂ 9Ã¢ÂÂ",
+      "length": "29ÃÂ¢ÃÂÃÂ 9ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-25mlx.png",
       "keyFeatures": [
@@ -3433,8 +3433,8 @@
         "13.5K A/C"
       ],
       "stock": "3375",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 32595,
+      "unlockPrice": 31995,
       "availability": "active"
     },
     {
@@ -3446,7 +3446,7 @@
       "year": 2027,
       "price": null,
       "weight": 6505,
-      "length": "30Ã¢ÂÂ 11Ã¢ÂÂ",
+      "length": "30ÃÂ¢ÃÂÃÂ 11ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-26bhx.png",
       "keyFeatures": [
@@ -3458,8 +3458,8 @@
         "13.5K A/C"
       ],
       "stock": "3346",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 33995,
+      "unlockPrice": 29995,
       "availability": "active"
     },
     {
@@ -3471,12 +3471,12 @@
       "year": 2026,
       "price": null,
       "weight": 6147,
-      "length": "31Ã¢ÂÂ 6Ã¢ÂÂ",
+      "length": "31ÃÂ¢ÃÂÃÂ 6ÃÂ¢ÃÂÃÂ",
       "status": "D",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-26rbx.png",
       "stock": "3332",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 35695,
+      "unlockPrice": 34995,
       "availability": "active"
     },
     {
@@ -3488,7 +3488,7 @@
       "year": 2027,
       "price": null,
       "weight": 6820,
-      "length": "31Ã¢ÂÂ 9Ã¢ÂÂ",
+      "length": "31ÃÂ¢ÃÂÃÂ 9ÃÂ¢ÃÂÃÂ",
       "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-27dbx.png",
       "keyFeatures": [
@@ -3500,8 +3500,8 @@
         "13.5K A/C"
       ],
       "stock": "3182",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 33095,
+      "unlockPrice": 31895,
       "availability": "active"
     },
     {
@@ -3525,8 +3525,8 @@
         "Queen Bed"
       ],
       "stock": "3572",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 20845,
+      "unlockPrice": 19995,
       "availability": "active"
     },
     {
@@ -3550,8 +3550,8 @@
         "Queen Bed"
       ],
       "stock": "3570",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 21995,
+      "unlockPrice": 20995,
       "availability": "active"
     },
     {
@@ -3575,8 +3575,8 @@
         "Queen Bed"
       ],
       "stock": "3340",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 20945,
+      "unlockPrice": 19995,
       "availability": "active"
     },
     {
@@ -3600,8 +3600,8 @@
         "Queen Bed"
       ],
       "stock": "3535",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 22647,
+      "unlockPrice": 21997,
       "availability": "active"
     },
     {
@@ -3667,8 +3667,8 @@
         "Olympic Queen Bed"
       ],
       "stock": "3565",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 35795,
+      "unlockPrice": 34995,
       "availability": "active"
     },
     {
@@ -3734,8 +3734,8 @@
         "Olympic Queen Bed"
       ],
       "stock": "3566",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 40545,
+      "unlockPrice": 39995,
       "availability": "active"
     },
     {
@@ -3751,8 +3751,8 @@
       "status": "A",
       "imagePath": "winnebago-minnie/winnebago-micro-minnie-1800bh.jpeg",
       "stock": "3574",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 31673,
+      "unlockPrice": 31123,
       "availability": "active"
     },
     {
@@ -3794,8 +3794,8 @@
       "status": "A",
       "imagePath": "winnebago-minnie/winnebago-micro-minnie-2000mrb.jpeg",
       "stock": "3576",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 33723,
+      "unlockPrice": 32823,
       "availability": "on-order"
     },
     {
@@ -3824,8 +3824,8 @@
       "status": "A",
       "imagePath": "winnebago-minnie/winnebago-micro-minnie-2108tb.jpeg",
       "stock": "3573",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 35895,
+      "unlockPrice": 34995,
       "availability": "active"
     },
     {
@@ -3841,8 +3841,8 @@
       "status": "A",
       "imagePath": "winnebago-minnie/winnebago-micro-minnie-2108fbs.jpeg",
       "stock": "3258",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 29045,
+      "unlockPrice": 27995,
       "availability": "active"
     },
     {
@@ -3884,8 +3884,8 @@
       "status": "A",
       "imagePath": "winnebago-minnie/winnebago-micro-minnie-2200fbh.jpeg",
       "stock": "3575",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 37995,
+      "unlockPrice": 36995,
       "availability": "on-order"
     },
     {
@@ -3914,8 +3914,8 @@
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-18fbs.jpeg",
       "stock": "3313",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 29795,
+      "unlockPrice": 28995,
       "availability": "active"
     },
     {
@@ -3944,8 +3944,8 @@
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-22mls.jpeg",
       "stock": "3533",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 45595,
+      "unlockPrice": 44995,
       "availability": "active"
     },
     {
@@ -3961,8 +3961,8 @@
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-22rbs.jpeg",
       "stock": "3532",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 45195,
+      "unlockPrice": 43995,
       "availability": "active"
     },
     {
@@ -3978,8 +3978,8 @@
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-24rks.jpeg",
       "stock": "3383",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 44095,
+      "unlockPrice": 42995,
       "availability": "active"
     },
     {
@@ -4008,8 +4008,8 @@
       "status": "A",
       "imagePath": "winnebago-thrive/winnebago-thrive-26fkd.jpeg",
       "stock": "3463",
-      "webPrice": null,
-      "unlockPrice": null,
+      "webPrice": 49845,
+      "unlockPrice": 48995,
       "availability": "active"
     },
     {
