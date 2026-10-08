@@ -1,6 +1,24 @@
 {
   "version": "inv-2026.09-204-img",
   "unitCount": 204,
+  "brochures": {
+    "Avenue": {
+      "file": "brochures/alliance-avenue.pdf",
+      "title": "Alliance Avenue Brochure"
+    },
+    "Delta": {
+      "file": "brochures/alliance-delta.pdf",
+      "title": "Alliance Delta Brochure"
+    },
+    "Paradigm": {
+      "file": "brochures/alliance-paradigm.pdf",
+      "title": "Alliance Paradigm Brochure"
+    },
+    "Valor": {
+      "file": "brochures/alliance-valor.pdf",
+      "title": "Alliance Valor Brochure"
+    }
+  },
   "units": [
     {
       "id": "alliance-avenue-fifth-wheel-32rls",
