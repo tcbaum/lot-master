@@ -322,6 +322,27 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .bcrumb-current{font-weight:700;color:var(--text);padding:4px 3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .bcrumb-sep{flex:none;color:var(--faint);display:flex}
 .bcrumb-sep svg{width:13px;height:13px}
+.bcrumb-brochure{flex:none;margin-left:auto;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--brand);font:inherit;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap}
+.bcrumb-brochure svg{width:14px;height:14px}
+.bcrumb-brochure:hover{background:var(--brand-soft)}
+.brochure-foot{display:flex;align-items:center;gap:12px;width:100%;margin-top:18px;padding:14px 16px;border-radius:var(--radius);border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit;text-align:left;cursor:pointer}
+.brochure-foot:hover{background:var(--brand-soft)}
+.brochure-foot .bf-ic{flex:none;width:40px;height:40px;border-radius:11px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center}
+.brochure-foot .bf-ic svg{width:20px;height:20px}
+.brochure-foot .bf-t{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+.brochure-foot .bf-t b{font-size:14px;font-weight:700}
+.brochure-foot .bf-t span{font-size:12px;color:var(--muted)}
+.brochure-foot .bf-go{flex:none;color:var(--muted);display:flex}
+.brochure-foot .bf-go svg{width:16px;height:16px}
+.pdf-back{position:fixed;inset:0;z-index:70;background:var(--bg);display:none;flex-direction:column}
+.pdf-back.show{display:flex}
+.pdf-bar{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--card)}
+.pdf-title{flex:1;min-width:0;font-weight:700;font-size:14px;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pdf-open{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--brand);text-decoration:none;padding:6px 10px;border-radius:9px;border:1px solid var(--line)}
+.pdf-open svg{width:14px;height:14px}
+.pdf-x{flex:none;width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);display:grid;place-items:center;cursor:pointer}
+.pdf-x svg{width:16px;height:16px}
+.pdf-frame{flex:1;width:100%;border:0;background:var(--card-2)}
 #bpanel{min-height:120px}
 #bpanel.banim-fwd{animation:bslideFwd .22s ease both}
 #bpanel.banim-back{animation:bslideBack .22s ease both}
@@ -897,6 +918,9 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 <!-- Detail modal -->
 <div class="modal-back" id="modalBack"><div class="modal" id="modalBox"></div></div>
 
+<!-- Brochure viewer (desktop) -->
+<div class="pdf-back" id="pdfBack" role="dialog" aria-modal="true" aria-label="Brochure"><div class="pdf-bar"><span class="pdf-title" id="pdfTitle"></span><a class="pdf-open" id="pdfOpen" target="_blank" rel="noopener"></a><button class="pdf-x" onclick="closeBrochure()" aria-label="Close brochure" id="pdfX"></button></div><iframe class="pdf-frame" id="pdfFrame" title="Brochure"></iframe></div>
+
 <!-- Toast -->
 <div id="toast"></div>
 
@@ -926,6 +950,8 @@ const I = {
   x:'<path d="M18 6 6 18M6 6l12 12"/>',
   trash:'<path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/>',
   download:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/>',
+  book:'<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>',
+  ext:'<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/>',
   upload:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/>',
   play:'<path d="M5 3l14 9-14 9V3z"/>',
   more:'<circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/>',
@@ -1835,6 +1861,10 @@ function reconcileGithubInventory(payload){
     u.tags=inferTags(u); next.push(u); seenIds.add(u.id);
   }
   if(next.length!==prevByKey.size) changed=true;   // catches removed units too, cheaply
+  if(payload.brochures&&typeof payload.brochures==='object'&&!Array.isArray(payload.brochures)){   // per-brand brochure PDFs, keyed by brand name
+    if(JSON.stringify(state.brochures||{})!==JSON.stringify(payload.brochures)) changed=true;
+    state.brochures=payload.brochures;
+  }
   state.units = next.concat(userUnits.filter(u=>!seenIds.has(u.id)));
   saveState();
   return changed;
@@ -3489,6 +3519,37 @@ function mfInitials(name){
   const s = words.length>=2 ? words[0][0]+words[1][0] : (words[0]||'').slice(0,2);
   return esc(s.toUpperCase());
 }
+// ---- brand brochures ----
+// inventory.json carries an optional top-level "brochures" map: brand name -> {file,title,year}
+// (or just a file path / full URL string). Keys are matched to Browse brand names loosely (nrm()).
+function brochureFor(brandName){
+  const map=state.brochures; if(!map||!brandName) return null;
+  const k=Object.keys(map).find(x=>nrm(x)===nrm(brandName)); if(!k) return null;
+  const e=typeof map[k]==='string'?{file:map[k]}:map[k]; if(!e||!e.file) return null;
+  const url=/^https?:\/\//i.test(e.file)?e.file:`${GITHUB_CONFIG.baseUrl}/${encodeGhPath(e.file)}`;
+  return {url,title:e.title||(brandName+' Brochure'),year:e.year||''};
+}
+// Phones/tablets can't scroll a PDF inside an iframe (iOS shows page 1 only), so there the
+// brochure opens in the device's own PDF viewer; desktop gets the in-app viewer.
+function brochureNative(){ return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Mac/.test(navigator.platform||'')); }
+function openBrochure(brandName){
+  const b=brochureFor(brandName); if(!b){ toast('No brochure available for '+brandName,'warn'); return; }
+  if(brochureNative()){ window.open(b.url,'_blank','noopener'); return; }
+  $('#pdfTitle').textContent=b.title+(b.year?' · '+b.year:'');
+  const a=$('#pdfOpen'); a.href=b.url; a.innerHTML=svg(I.ext)+' Open in new tab';
+  $('#pdfX').innerHTML=svg(I.x);
+  $('#pdfFrame').src=b.url;
+  $('#pdfBack').classList.add('show');
+}
+function closeBrochure(){ const f=$('#pdfFrame'); if(f) f.src='about:blank'; const p=$('#pdfBack'); if(p) p.classList.remove('show'); }
+function brochureFooterHtml(brandName){
+  const b=brochureFor(brandName); if(!b) return '';
+  return `<button class="brochure-foot" onclick="openBrochure('${jsq(brandName)}')">
+    <span class="bf-ic">${svg(I.book)}</span>
+    <span class="bf-t"><b>View ${esc(brandName)} Brochure</b><span>PDF${b.year?' · '+esc(b.year):''}</span></span>
+    <span class="bf-go">${svg(I.ext)}</span>
+  </button>`;
+}
 // ---- breadcrumb bar ----
 function browseCrumbsHtml(){
   const parts=[{label:'All manufacturers',depth:0}];
@@ -3499,6 +3560,7 @@ function browseCrumbsHtml(){
   return `<div class="bcrumbs">
     ${last>0?`<button class="bcrumb-back" onclick="browseCrumbTo(${parts[last-1].depth})" aria-label="Back">${svg(I.chevL)}</button>`:''}
     <div class="bcrumb-trail">${parts.map((p,i)=>(i>0?`<span class="bcrumb-sep">${svg(I.chevR)}</span>`:'')+(i===last?`<span class="bcrumb-current">${esc(p.label)}</span>`:`<button class="bcrumb-seg" onclick="browseCrumbTo(${p.depth})">${esc(p.label)}</button>`)).join('')}</div>
+    ${browseNav.brand&&brochureFor(browseNav.brand)?`<button class="bcrumb-brochure" onclick="openBrochure('${jsq(browseNav.brand)}')" aria-label="View ${esc(browseNav.brand)} brochure">${svg(I.book)}<span>Brochure</span></button>`:''}
   </div>`;
 }
 // ---- panel content for the current drill-down depth ----
@@ -3514,7 +3576,7 @@ function browsePanelHtml(){
   if(!browseNav.line) return `<div class="bnav-list">${brand.lines.map(browseLineNavRow).join('')}</div>`;
   const line=brand.lines.find(l=>l.name===browseNav.line);
   if(!line){ browseNav.line=null; return browsePanelHtml(); }
-  return browseFloorplanGrid(line.units);
+  return browseFloorplanGrid(line.units)+brochureFooterHtml(browseNav.brand);
 }
 // Most manufacturer logos are dark-on-transparent and read fine on the default
 // white tile. Alliance's mark has genuine white elements (its "RV" text) — it's
@@ -4254,7 +4316,7 @@ function loadSample(){
 /* ---------- Wire global listeners ---------- */
 function wireGlobal(){
   $('#modalBack').addEventListener('click',e=>{ if(e.target.id==='modalBack') closeDetail(); });
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeDetail(); if(detailId){ if(e.key==='ArrowLeft'){navigateToSibling(-1);} else if(e.key==='ArrowRight'){navigateToSibling(1);} }
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeBrochure(); closeDetail(); } if(detailId){ if(e.key==='ArrowLeft'){navigateToSibling(-1);} else if(e.key==='ArrowRight'){navigateToSibling(1);} }
     if(session&&route==='study'){
       const step=session.mode==='adaptive'?curStep():null;
       const isFlashcard = session.mode==='flashcard' || (session.mode==='adaptive' && step && step.kind==='card' && step.presentation==='flashcard');
@@ -4356,7 +4418,7 @@ window.startAdaptiveSession=startAdaptiveSession;window.setAdaptiveScope=setAdap
 window.adaptiveMatchPick=adaptiveMatchPick;window.adaptiveMatchAssign=adaptiveMatchAssign;window.adaptiveMatchResetStep=adaptiveMatchResetStep;window.adaptiveMatchCheck=adaptiveMatchCheck;window.adaptiveMatchNext=adaptiveMatchNext;
 window.endSession=endSession;window.openDetail=openDetail;window.closeDetail=closeDetail;window.detailNav=detailNav;window.navigateToSibling=navigateToSibling;window.deleteUnit=deleteUnit;window.setBrowseTab=setBrowseTab;
 window.setCat=setCat;window.loadSample=loadSample;
-window.browseDrillMf=browseDrillMf;window.browseDrillBrand=browseDrillBrand;window.browseDrillLine=browseDrillLine;window.browseCrumbTo=browseCrumbTo;
+window.openBrochure=openBrochure;window.closeBrochure=closeBrochure;window.browseDrillMf=browseDrillMf;window.browseDrillBrand=browseDrillBrand;window.browseDrillLine=browseDrillLine;window.browseCrumbTo=browseCrumbTo;
 window.resetProgress=resetProgress;window.forceSyncGithub=forceSyncGithub;window.clearImageCache=clearImageCache;
 window.state=state;window.$=$;
 window.render=render;window.saveState=saveState;window.toast=toast;window.toggleTheme=toggleTheme;window.applyTheme=applyTheme;
