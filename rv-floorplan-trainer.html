@@ -327,6 +327,7 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .bcrumb-brochure:hover{background:var(--brand-soft)}
 .brochure-foot{display:flex;align-items:center;gap:12px;width:100%;margin-top:18px;padding:14px 16px;border-radius:var(--radius);border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit;text-align:left;cursor:pointer}
 .brochure-foot:hover{background:var(--brand-soft)}
+.brochure-foot.in-modal{margin:0 0 14px}
 .brochure-foot .bf-ic{flex:none;width:40px;height:40px;border-radius:11px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center}
 .brochure-foot .bf-ic svg{width:20px;height:20px}
 .brochure-foot .bf-t{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
@@ -1847,14 +1848,14 @@ function reconcileGithubInventory(payload){
       rvType:su.type||'', year:su.year||'', price:(su.price??''), weight:su.weight||'', length:su.length||'',
       sleeps:'',slides:'',location:'',stock:su.stock||'',vin:'',description:'', status:su.status||'',
       webPrice:su.webPrice||'', unlockPrice:su.unlockPrice||'', availability:su.availability||'',
-      seed:true, seedKey:su.image||su.imageFileName||'', imageUrl: resolveImageUrl(su)||'',
+      seed:true, seedKey:su.image||su.imageFileName||'', imageUrl: resolveImageUrl(su)||'', brochure:su.brochure||'',
       keyFeatures: Array.isArray(su.keyFeatures)?su.keyFeatures:[]};
     const prev=prevByKey.get(matchKey(su.manufacturer,su.brand,su.model));
     if(prev){
       u.id=prev.id; u.srs=prev.srs||newSRS(); if(prev.mastery) u.mastery=prev.mastery;
       u.sleeps=prev.sleeps||''; u.slides=prev.slides||''; u.location=prev.location||''; u.vin=prev.vin||''; u.description=prev.description||'';
       if(prev.manufacturer!==u.manufacturer||prev.productLine!==u.productLine||prev.rvType!==u.rvType||prev.year!==u.year
-        ||prev.price!==u.price||prev.weight!==u.weight||prev.length!==u.length||prev.imageUrl!==u.imageUrl||prev.status!==u.status
+        ||prev.price!==u.price||prev.weight!==u.weight||prev.length!==u.length||prev.imageUrl!==u.imageUrl||prev.status!==u.status||(prev.brochure||'')!==u.brochure
         ||prev.stock!==u.stock||prev.webPrice!==u.webPrice||prev.unlockPrice!==u.unlockPrice||prev.availability!==u.availability
         ||JSON.stringify(prev.keyFeatures||[])!==JSON.stringify(u.keyFeatures)) changed=true;
     } else { u.id=su.id||uid(); u.srs=newSRS(); changed=true; }   // prefer the stable id already in inventory.json — a random uid() here would never match across devices, breaking cross-device progress sync entirely
@@ -3532,14 +3533,41 @@ function brochureFor(brandName){
 // Phones/tablets can't scroll a PDF inside an iframe (iOS shows page 1 only), so there the
 // brochure opens in the device's own PDF viewer; desktop gets the in-app viewer.
 function brochureNative(){ return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Mac/.test(navigator.platform||'')); }
-function openBrochure(brandName){
-  const b=brochureFor(brandName); if(!b){ toast('No brochure available for '+brandName,'warn'); return; }
+function showBrochure(b){
   if(brochureNative()){ window.open(b.url,'_blank','noopener'); return; }
   $('#pdfTitle').textContent=b.title+(b.year?' · '+b.year:'');
   const a=$('#pdfOpen'); a.href=b.url; a.innerHTML=svg(I.ext)+' Open in new tab';
   $('#pdfX').innerHTML=svg(I.x);
   $('#pdfFrame').src=b.url;
   $('#pdfBack').classList.add('show');
+}
+function openBrochure(brandName){
+  const b=brochureFor(brandName); if(!b){ toast('No brochure available for '+brandName,'warn'); return; }
+  showBrochure(b);
+}
+// Per-unit brochure: the unit's own PDF (unit.brochure, e.g. Grand Design floorplan pages) wins;
+// otherwise fall back to its brand's brochure (e.g. Alliance, one PDF per brand).
+function unitBrochure(u){
+  if(!u) return null;
+  if(u.brochure){
+    const url=/^https?:\/\//i.test(u.brochure)?u.brochure:`${GITHUB_CONFIG.baseUrl}/${encodeGhPath(u.brochure)}`;
+    return {url,title:unitTitle(u)+' Brochure',year:u.year||''};
+  }
+  const bl=classifyUnit(u).brand; const b=bl&&brochureFor(bl);
+  return b?{url:b.url,title:b.title,year:b.year}:null;
+}
+function openUnitBrochure(id){
+  const u=state.units.find(x=>x.id===id); const b=unitBrochure(u);
+  if(!b){ toast('No brochure available for this unit','warn'); return; }
+  showBrochure(b);
+}
+function unitBrochureHtml(u){
+  const b=unitBrochure(u); if(!b) return '';
+  return `<button class="brochure-foot in-modal" onclick="openUnitBrochure('${u.id}')">
+    <span class="bf-ic">${svg(I.book)}</span>
+    <span class="bf-t"><b>View Brochure</b><span>${esc(u.brochure&&String(u.brochure).toLowerCase().includes(String(u.model).toLowerCase())?'Floorplan page':'Brand brochure')} · PDF</span></span>
+    <span class="bf-go">${svg(I.ext)}</span>
+  </button>`;
 }
 function closeBrochure(){ const f=$('#pdfFrame'); if(f) f.src='about:blank'; const p=$('#pdfBack'); if(p) p.classList.remove('show'); }
 function brochureFooterHtml(brandName){
@@ -3750,6 +3778,7 @@ function openDetail(id){ detailId=id; activeBrowseTab='specs'; const u=state.uni
       </div>
 
       <div class="seg-panel" id="segPanelSpecs">
+        ${unitBrochureHtml(u)}
         ${keyFeaturesGrid(u)}
         ${availabilityChip(u)}
         <dl class="kv">
@@ -4418,7 +4447,7 @@ window.startAdaptiveSession=startAdaptiveSession;window.setAdaptiveScope=setAdap
 window.adaptiveMatchPick=adaptiveMatchPick;window.adaptiveMatchAssign=adaptiveMatchAssign;window.adaptiveMatchResetStep=adaptiveMatchResetStep;window.adaptiveMatchCheck=adaptiveMatchCheck;window.adaptiveMatchNext=adaptiveMatchNext;
 window.endSession=endSession;window.openDetail=openDetail;window.closeDetail=closeDetail;window.detailNav=detailNav;window.navigateToSibling=navigateToSibling;window.deleteUnit=deleteUnit;window.setBrowseTab=setBrowseTab;
 window.setCat=setCat;window.loadSample=loadSample;
-window.openBrochure=openBrochure;window.closeBrochure=closeBrochure;window.browseDrillMf=browseDrillMf;window.browseDrillBrand=browseDrillBrand;window.browseDrillLine=browseDrillLine;window.browseCrumbTo=browseCrumbTo;
+window.openBrochure=openBrochure;window.openUnitBrochure=openUnitBrochure;window.closeBrochure=closeBrochure;window.browseDrillMf=browseDrillMf;window.browseDrillBrand=browseDrillBrand;window.browseDrillLine=browseDrillLine;window.browseCrumbTo=browseCrumbTo;
 window.resetProgress=resetProgress;window.forceSyncGithub=forceSyncGithub;window.clearImageCache=clearImageCache;
 window.state=state;window.$=$;
 window.render=render;window.saveState=saveState;window.toast=toast;window.toggleTheme=toggleTheme;window.applyTheme=applyTheme;
