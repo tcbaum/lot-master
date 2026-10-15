@@ -272,9 +272,16 @@ select.sel:focus{outline:none;border-color:var(--brand)}
 /* ---------- Inventory grid ---------- */
 .inv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;-webkit-backdrop-filter:saturate(130%) blur(12px);backdrop-filter:saturate(130%) blur(12px);border-radius:var(--radius-lg)}
 .unit-card{background:linear-gradient(180deg,color-mix(in srgb,#fff 9%,transparent),transparent 55%),color-mix(in srgb,var(--card) 72%,transparent);border:1px solid color-mix(in srgb,var(--line) 55%,transparent);border-radius:var(--radius);overflow:hidden;
-  box-shadow:var(--shadow),inset 0 1px 0 var(--glass-hi);transition:transform .15s cubic-bezier(.4,0,.2,1),border-color .2s ease,box-shadow .2s ease;text-align:left;display:flex;flex-direction:column;padding:0;-webkit-tap-highlight-color:transparent;user-select:none}
-.unit-card:hover{border-color:var(--brand);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+  box-shadow:var(--shadow),inset 0 1px 0 var(--glass-hi);transition:transform .15s cubic-bezier(.4,0,.2,1),translate .28s cubic-bezier(.2,.7,.2,1),border-color .2s ease,box-shadow .28s ease;text-align:left;display:flex;flex-direction:column;padding:0;-webkit-tap-highlight-color:transparent;user-select:none}
+@media (hover:hover) and (pointer:fine){ .unit-card:hover{border-color:var(--brand);transform:translateY(-2px);box-shadow:var(--shadow-lg)} }   /* mouse only — touch devices keep a sticky :hover after a tap/scroll, which just reads as stray blue cards */
 .unit-card:active{transform:scale(.96)}
+/* "Rolodex" lift: the card nearest the vertical center of the screen rises 3px. Uses the individual
+   `translate` property so it composes with the hover (translateY) and press (scale) transforms instead of fighting them;
+   opacity/filter are untouched, so .is-discontinued dimming is preserved. */
+@media (prefers-reduced-motion: no-preference){
+  .unit-card.is-centered{translate:0 -3px;box-shadow:var(--shadow-lg),inset 0 1px 0 var(--glass-hi);border-color:color-mix(in srgb,var(--brand) 30%,var(--line))}
+}
+@media (prefers-reduced-motion: reduce){ .unit-card{transition:none} }
 .unit-fig{height:142px;background:var(--card-2);display:grid;place-items:center;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
 /* Skeleton shimmer while a floorplan image is genuinely loading — driven by the
    dedicated data-loading attribute (added by ghImg, cleared by hydrateImages/
@@ -291,7 +298,8 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .unit-fig .noimg svg{width:26px;height:26px;opacity:.5}
 .unit-fig .corner{position:absolute;top:9px;right:9px}
 .unit-card.is-discontinued{opacity:.68;filter:grayscale(.55);transition:opacity .2s ease,filter .2s ease}
-.unit-card.is-discontinued:hover,.unit-card.is-discontinued:focus-visible{opacity:.9;filter:grayscale(.2)}
+.unit-card.is-discontinued:focus-visible{opacity:.9;filter:grayscale(.2)}
+@media (hover:hover) and (pointer:fine){ .unit-card.is-discontinued:hover{opacity:.9;filter:grayscale(.2)} }
 .unit-fig .corner-left{position:absolute;top:9px;left:9px;z-index:2}
 .badge-discontinued{display:inline-flex;align-items:center;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;background:linear-gradient(135deg,var(--clay),color-mix(in srgb,var(--clay) 70%,black));color:#fff;border:1px solid color-mix(in srgb,var(--clay) 60%,black);box-shadow:0 1px 3px rgba(0,0,0,.25)}
 @media (prefers-reduced-motion: reduce){ .unit-card.is-discontinued{transition:none} }
@@ -354,7 +362,7 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 @media(min-width:640px){.bnav-grid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:960px){.bnav-grid{grid-template-columns:repeat(4,1fr)}}
 .bnav-card{display:flex;flex-direction:column;align-items:flex-start;gap:8px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px;cursor:pointer;transition:border-color .15s,transform .1s}
-.bnav-card:hover{border-color:var(--brand)}
+@media (hover:hover) and (pointer:fine){ .bnav-card:hover{border-color:var(--brand)} }
 .bnav-card:active{transform:scale(.96)}
 .bnav-th{width:44px;height:44px;border-radius:11px;overflow:hidden;background:var(--card-2);display:grid;place-items:center;color:var(--faint)}
 .bnav-banner{width:100%;height:58px;border-radius:11px;overflow:hidden;background:var(--card-2);display:grid;place-items:center;color:var(--faint)}
@@ -379,7 +387,7 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .bnav-pct{font-size:11px;font-weight:700;color:var(--muted)}
 .bnav-list{display:flex;flex-direction:column;gap:8px}
 .bnav-row{display:flex;align-items:center;gap:11px;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 11px;cursor:pointer}
-.bnav-row:hover{border-color:var(--brand)}
+@media (hover:hover) and (pointer:fine){ .bnav-row:hover{border-color:var(--brand)} }
 .bnav-row-th{width:42px;height:42px;flex:none;border-radius:9px;overflow:hidden;background:var(--card-2);display:grid;place-items:center;color:var(--faint)}
 .bnav-row-th img{width:100%;height:100%;object-fit:cover}
 .bnav-row-th svg{width:16px;height:16px;opacity:.6}
@@ -2188,6 +2196,7 @@ function render(){
   if(route==='study'&&!session) wireStudySetup();
   if(route==='study'&&session&&(session.mode==='adaptive'||session.mode==='flashcard')) wireFlashcardGestures();
   if(route==='browse') wireBrowse();
+  wireCenterLift();
   hydrateImages(v);
   lastRendered=route;
 }
@@ -3704,6 +3713,37 @@ function refreshBrowsePanel(anim){
   } else if(crumbHost) crumbHost.remove();
   const eb=$('.view-head .eyebrow'); if(eb) eb.textContent=l.length+' of '+state.units.length+' units';
   hydrateImages(host||document);
+  wireCenterLift();
+}
+/* ---------- Browse "rolodex" center lift ----------
+   An IntersectionObserver keeps a small set of cards that overlap a band around the vertical center of
+   the screen; on scroll (rAF-throttled) only those few cards are measured and the one closest to center
+   (plus any card in the same grid row) gets .is-centered. Reads happen before writes, only a handful of
+   rects per frame, and only transform-ish properties animate. It is torn down and re-attached on every
+   render, since the Browse panel is rebuilt via innerHTML on drill/search/filter. */
+let centerIO=null, centerCands=new Set(), centerOn=[], centerRaf=0;
+function wireCenterLift(){
+  if(centerIO){ centerIO.disconnect(); centerIO=null; }
+  centerCands.clear();
+  centerOn.forEach(c=>c.classList.remove('is-centered')); centerOn=[];
+  if(route!=='browse'||prefersReduced()||!('IntersectionObserver' in window)) return;
+  const host=$('#bpanel'); if(!host) return;
+  const cards=host.querySelectorAll('.unit-card'); if(!cards.length) return;
+  centerIO=new IntersectionObserver(es=>{
+    for(const e of es){ if(e.isIntersecting) centerCands.add(e.target); else centerCands.delete(e.target); }
+    scheduleCenterPick();
+  },{rootMargin:'-30% 0px -30% 0px'});
+  cards.forEach(c=>centerIO.observe(c));
+}
+function scheduleCenterPick(){ if(centerRaf) return; centerRaf=requestAnimationFrame(()=>{ centerRaf=0; pickCenterCard(); }); }
+function pickCenterCard(){
+  if(!centerCands.size){ centerOn.forEach(c=>c.classList.remove('is-centered')); centerOn=[]; return; }
+  const mid=window.innerHeight/2; let best=Infinity; const m=[];
+  for(const c of centerCands){ const r=c.getBoundingClientRect(); const d=Math.abs(r.top+r.height/2-mid); m.push([c,d]); if(d<best) best=d; }
+  const next=m.filter(x=>x[1]<=best+6).map(x=>x[0]);   // same row in multi-column grids lifts together
+  for(const c of centerOn) if(!next.includes(c)) c.classList.remove('is-centered');
+  for(const c of next) c.classList.add('is-centered');
+  centerOn=next;
 }
 // Identifies discontinued inventory (per the "D" status now tracked in inv.xlsx) —
 // missing/null/anything else defaults to active, no dimming.
@@ -4344,6 +4384,8 @@ function loadSample(){
 
 /* ---------- Wire global listeners ---------- */
 function wireGlobal(){
+  window.addEventListener('scroll',()=>{ if(centerCands.size) scheduleCenterPick(); },{passive:true});
+  window.addEventListener('resize',()=>{ if(centerCands.size) scheduleCenterPick(); },{passive:true});
   $('#modalBack').addEventListener('click',e=>{ if(e.target.id==='modalBack') closeDetail(); });
   document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeBrochure(); closeDetail(); } if(detailId){ if(e.key==='ArrowLeft'){navigateToSibling(-1);} else if(e.key==='ArrowRight'){navigateToSibling(1);} }
     if(session&&route==='study'){
