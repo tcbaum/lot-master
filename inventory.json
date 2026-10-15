@@ -1838,7 +1838,7 @@
       "stock": "3546",
       "webPrice": 110845,
       "unlockPrice": 109995,
-      "availability": "on-order"
+      "availability": "active"
     },
     {
       "id": "grand-design-influence-3904bh",
@@ -3171,7 +3171,7 @@
       "stock": "3560",
       "webPrice": 45195,
       "unlockPrice": 43995,
-      "availability": "on-order"
+      "availability": "active"
     },
     {
       "id": "grand-design-transcend-305bht",
@@ -3693,7 +3693,7 @@
       "stock": "3182",
       "webPrice": 33095,
       "unlockPrice": 31895,
-      "availability": "active"
+      "availability": "pending"
     },
     {
       "id": "winnebago-access-16bh",
@@ -3768,7 +3768,7 @@
       "stock": "3340",
       "webPrice": 20945,
       "unlockPrice": 19995,
-      "availability": "active"
+      "availability": "pending"
     },
     {
       "id": "winnebago-access-18rk",
