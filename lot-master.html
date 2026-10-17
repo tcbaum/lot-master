@@ -336,6 +336,27 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .unit-model{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:-.01em;color:var(--text)}
 .unit-line{font-size:12.5px;color:var(--muted)}
 .unit-specs{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:2px}
+.dash-pulse-section{margin-top:22px;display:flex;flex-direction:column;gap:18px}
+@media (horizontal-viewport-segments:2),(min-width:820px){.dash-pulse-section{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}}
+.dash-pulse-col{display:flex;flex-direction:column;min-width:0}
+.dash-pulse-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;padding:0 4px}
+.dash-pulse-title{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.03em}
+.dash-pulse-dot{display:inline-block;width:8px;height:8px;border-radius:50%}
+.dash-pulse-count{font-size:11px;font-weight:700;padding:2px 7px;border-radius:999px;background:var(--card-2);color:var(--muted);border:1px solid var(--line)}
+.dash-pulse-track{display:flex;gap:10px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 2px 10px;scrollbar-width:none}
+.dash-pulse-track::-webkit-scrollbar{display:none}
+.dash-mini-card{appearance:none;font:inherit;text-align:left;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:0;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;flex:0 0 210px;scroll-snap-align:start;transition:transform .15s ease,border-color .15s ease;position:relative}
+.dash-mini-card:active{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine){.dash-mini-card:hover{border-color:var(--brand);transform:translateY(-2px)}}
+@media (prefers-reduced-motion:reduce){.dash-mini-card{transition:none}.dash-mini-card:hover,.dash-mini-card:active{transform:none}}
+.dash-mini-fig{height:100px;background:var(--card-2);display:grid;place-items:center;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.dash-mini-fig img{width:100%;height:100%;object-fit:contain;padding:4px}
+.dash-mini-fig .noimg{font-size:11px;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:2px}
+.dash-mini-body{padding:9px 10px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.dash-mini-title{font-size:13px;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dash-mini-sub{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dash-mini-meta{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:4px;font-size:11px}
+.dash-mini-price{font-weight:700;color:var(--mint)}
 .unit-stock-pill{display:inline-flex;align-items:center;font-size:11px;font-weight:700;color:var(--muted);background:var(--card-2);border:1px solid var(--line);border-radius:4px;padding:1px 6px;letter-spacing:.02em;white-space:nowrap}
 .unit-pricing{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13.5px;margin-top:4px}
 .chip-avail{display:inline-flex;align-items:center;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
@@ -2316,6 +2337,35 @@ function showAchievements(){
   </div>`;
   $('#modalBack').classList.add('show');
 }
+/* ---------- Dashboard inventory pulse (swipe rails) ---------- */
+function dashMiniCardHtml(u){
+  const im=unitImg(u);
+  const title=(u.year?esc(u.year)+' ':'')+esc(u.model||unitTitle(u));
+  const sub=[u.manufacturer,u.productLine].filter(Boolean).map(esc).join(' · ');
+  const price=u.unlockPrice?formatPrice(u.unlockPrice):(u.webPrice?formatPrice(u.webPrice):'');
+  const stk=String(u.stock||'').trim();
+  return `<button class="dash-mini-card" onclick="openDetail('${u.id}')" aria-label="${title}">
+    <div class="dash-mini-fig">${im?ghImg(im,'loading="lazy"'):`<div class="noimg">${svg(I.bed)}<span>No image</span></div>`}</div>
+    <div class="dash-mini-body">
+      <div class="dash-mini-title" title="${title}">${title}</div>
+      <div class="dash-mini-sub" title="${sub}">${sub}</div>
+      <div class="dash-mini-meta">${stk?`<span class="unit-stock-pill">Stk #${esc(stk)}</span>`:'<span></span>'}${price?`<span class="dash-mini-price">${esc(price)}</span>`:''}</div>
+    </div></button>`;
+}
+function dashPulseColHtml(title,colorVar,units){
+  if(!units.length) return '';
+  return `<div class="dash-pulse-col">
+    <div class="dash-pulse-header"><span class="dash-pulse-title"><span class="dash-pulse-dot" style="background:var(${colorVar})"></span>${title}</span><span class="dash-pulse-count">${units.length}</span></div>
+    <div class="dash-pulse-track">${units.map(dashMiniCardHtml).join('')}</div></div>`;
+}
+function dashboardPulseHtml(){
+  const by=a=>state.units.filter(u=>u.availability===a)
+    .sort((x,y)=>(Number(y.year)||0)-(Number(x.year)||0)||String(y.stock||'').localeCompare(String(x.stock||''),undefined,{numeric:true}));
+  const act=by('active'), ord=by('on-order'), pen=by('pending');
+  if(!act.length&&!ord.length&&!pen.length) return '';
+  return `<div class="dash-pulse-section">${dashPulseColHtml('Fresh on the Lot','--mint',act)}${dashPulseColHtml('Inbound Pipeline','--sky',ord)}${dashPulseColHtml('Under Contract','--amber',pen)}</div>`;
+}
+window.dashboardPulseHtml=dashboardPulseHtml;
 function viewDashboard(){
   if(!state.units.length) return emptyDash();
   ensureProgress(); evaluateBadges();
@@ -2354,6 +2404,7 @@ function viewDashboard(){
       </div>
     </div>
   </div>
+  ${dashboardPulseHtml()}
   <div class="panel">
     <div class="panel-head"><h3>Your training queue</h3><span class="sub">${queue.length} floorplan${queue.length!==1?'s':''} · due first, then weakest</span></div>
     <div class="panel-pad">
