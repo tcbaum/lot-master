@@ -342,6 +342,15 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .dash-pulse-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;padding:0 4px}
 .dash-pulse-title{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.03em}
 .dash-pulse-dot{display:inline-block;width:8px;height:8px;border-radius:50%}
+.dash-pulse-hr{display:flex;align-items:center;gap:8px}
+.dash-pulse-view-all{appearance:none;background:transparent;border:0;color:var(--brand);font:inherit;font-size:11.5px;font-weight:700;cursor:pointer;padding:2px 4px}
+.dash-pulse-view-all:hover{text-decoration:underline}
+.dash-mini-card.dash-mini-endcap{align-items:center;justify-content:center;text-align:center;padding:16px;background:var(--card-2);border:1px dashed var(--line);box-shadow:none;gap:8px;min-height:185px}
+.dash-mini-endcap:hover{border-color:var(--brand);background:var(--card)}
+.dash-endcap-icon{width:32px;height:32px;border-radius:50%;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;color:var(--brand)}
+.dash-endcap-icon svg{width:16px;height:16px}
+.dash-endcap-title{font-size:13px;font-weight:700;color:var(--text)}
+.dash-endcap-sub{font-size:11px;color:var(--muted);line-height:1.3}
 .dash-pulse-count{font-size:11px;font-weight:700;padding:2px 7px;border-radius:999px;background:var(--card-2);color:var(--muted);border:1px solid var(--line)}
 .dash-pulse-track{display:flex;gap:10px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 2px 10px;scrollbar-width:none}
 .dash-pulse-track::-webkit-scrollbar{display:none}
@@ -2356,18 +2365,27 @@ function dashMiniCardHtml(u){
       <div class="dash-mini-meta">${stk?`<span class="unit-stock-pill">Stk #${esc(stk)}</span>`:'<span></span>'}${price?`<span class="dash-mini-price">${esc(price)}</span>`:''}</div>
     </div></button>`;
 }
-function dashPulseColHtml(title,colorVar,units){
+const PULSE_CAP=10;
+// Dashboard "View all": jump to Browse with only that availability showing, everything else cleared
+function viewAllPulseCategory(cat){
+  const f=bf(); f.layout='all'; f.lengthBracket='all'; f.weightBracket='all'; f.hideInactives=false; f.availability=cat;
+  filt.q=''; filt.cat=''; filt.line=''; browseNav={mf:null,brand:null,line:null};
+  saveState(); go('browse');
+}
+window.viewAllPulseCategory=viewAllPulseCategory;
+function dashPulseColHtml(title,colorVar,units,cat){
   if(!units.length) return '';
+  const more=units.length>PULSE_CAP, remaining=units.length-PULSE_CAP;
   return `<div class="dash-pulse-col">
-    <div class="dash-pulse-header"><span class="dash-pulse-title"><span class="dash-pulse-dot" style="background:var(${colorVar})"></span>${title}</span><span class="dash-pulse-count">${units.length}</span></div>
-    <div class="dash-pulse-track">${units.map(dashMiniCardHtml).join('')}</div></div>`;
+    <div class="dash-pulse-header"><span class="dash-pulse-title"><span class="dash-pulse-dot" style="background:var(${colorVar})"></span>${title}</span><span class="dash-pulse-hr"><span class="dash-pulse-count">${units.length}</span>${more?`<button class="dash-pulse-view-all" onclick="viewAllPulseCategory('${cat}')">View all &rarr;</button>`:''}</span></div>
+    <div class="dash-pulse-track">${units.slice(0,PULSE_CAP).map(dashMiniCardHtml).join('')}${more?`<button class="dash-mini-card dash-mini-endcap" onclick="viewAllPulseCategory('${cat}')" aria-label="View all ${units.length} units in Browse"><span class="dash-endcap-icon">${svg(I.browse)}</span><span class="dash-endcap-title">+${remaining} more</span><span class="dash-endcap-sub">View all ${units.length} in Browse</span></button>`:''}</div></div>`;
 }
 function dashboardPulseHtml(){
   const by=a=>state.units.filter(u=>u.availability===a)
     .sort((x,y)=>(Number(unitYear(y))||0)-(Number(unitYear(x))||0)||String(y.stock||'').localeCompare(String(x.stock||''),undefined,{numeric:true}));
   const act=by('active'), ord=by('on-order'), pen=by('pending');
   if(!act.length&&!ord.length&&!pen.length) return '';
-  return `<div class="dash-pulse-section">${dashPulseColHtml('Fresh on the Lot','--mint',act)}${dashPulseColHtml('Inbound Pipeline','--sky',ord)}${dashPulseColHtml('Under Contract','--amber',pen)}</div>`;
+  return `<div class="dash-pulse-section">${dashPulseColHtml('Fresh on the Lot','--mint',act,'active')}${dashPulseColHtml('Inbound Pipeline','--sky',ord,'on-order')}${dashPulseColHtml('Under Contract','--amber',pen,'pending')}</div>`;
 }
 window.dashboardPulseHtml=dashboardPulseHtml;
 function viewDashboard(){
@@ -3576,6 +3594,7 @@ function bf(){
   if(!['all','bunk','couples'].includes(f.layout)) f.layout='all';
   if(!['all','under30','over30'].includes(f.lengthBracket)) f.lengthBracket='all';
   if(!['all','halfton','heavyduty'].includes(f.weightBracket)) f.weightBracket='all';
+  if(!['all','active','on-order','pending'].includes(f.availability)) f.availability='all';
   f.hideInactives=!!f.hideInactives;
   return f;
 }
@@ -3595,7 +3614,10 @@ function lengthFeet(u){
   const m=String(L).replace(/[\u2019\u2018]/g,"'").replace(/[\u201D\u201C]/g,'"').match(/(\d+(?:\.\d+)?)\s*(?:'|ft|feet)?\s*(?:(\d+(?:\.\d+)?)\s*(?:"|in))?/i);
   if(!m) return null; const ft=parseFloat(m[1])+(m[2]?parseFloat(m[2])/12:0); return isNaN(ft)?null:ft;
 }
-function browseFilterCount(){ const f=bf(); return (f.layout!=='all'?1:0)+(f.lengthBracket!=='all'?1:0)+(f.weightBracket!=='all'?1:0); }
+function browseFilterCount(){ const f=bf(); return (f.layout!=='all'?1:0)+(f.lengthBracket!=='all'?1:0)+(f.weightBracket!=='all'?1:0)+(f.availability!=='all'?1:0); }
+const AVAIL_LABEL={active:'On the Lot','on-order':'Inbound','pending':'Under Contract'};
+function clearAvailabilityFilter(){ bf().availability='all'; saveState(); refreshBrowseFilters(); }
+window.clearAvailabilityFilter=clearAvailabilityFilter;
 function browseFiltersHtml(){
   const f=bf(), n=browseFilterCount();
   const lenLbl=f.lengthBracket==='all'?'Length: Any':(f.lengthBracket==='under30'?'&lt; 30 ft':'30+ ft');
@@ -3606,6 +3628,7 @@ function browseFiltersHtml(){
       <button class="fpill ${f.layout==='bunk'?'on':''}" onclick="setBrowseLayout('bunk')">Bunks</button>
       <button class="fpill ${f.layout==='couples'?'on':''}" onclick="setBrowseLayout('couples')">Couples</button>
     </div>
+    ${f.availability!=='all'?`<div class="filter-group"><button class="fpill on" onclick="clearAvailabilityFilter()" title="Clear this filter">${AVAIL_LABEL[f.availability]} &times;</button></div>`:''}
     <div class="filter-group"><button class="fpill ${f.lengthBracket!=='all'?'on':''}" onclick="cycleLengthFilter()" title="Tap to cycle: any, under 30 ft, 30+ ft">${lenLbl}</button></div>
     <div class="filter-group"><button class="fpill ${f.weightBracket!=='all'?'on':''}" onclick="cycleWeightFilter()" title="Tap to cycle. Based on dry weight (UVW), not loaded or tow rating">${wtLbl}</button></div>
     <button class="stock-toggle" role="switch" aria-checked="${f.hideInactives}" onclick="toggleHideInactives()" title="Show only units on the lot, pending or on order"><span class="trk"></span><span>Hide Inactives</span></button>
@@ -3620,10 +3643,11 @@ function setBrowseLayout(t){ bf().layout=t; saveState(); refreshBrowseFilters();
 function cycleLengthFilter(){ const f=bf(); f.lengthBracket={all:'under30',under30:'over30',over30:'all'}[f.lengthBracket]; saveState(); refreshBrowseFilters(); }
 function cycleWeightFilter(){ const f=bf(); f.weightBracket={all:'halfton',halfton:'heavyduty',heavyduty:'all'}[f.weightBracket]; saveState(); refreshBrowseFilters(); }
 function toggleHideInactives(){ const f=bf(); f.hideInactives=!f.hideInactives; saveState(); refreshBrowseFilters(); }
-function resetBrowseFilters(){ const f=bf(); f.layout='all'; f.lengthBracket='all'; f.weightBracket='all'; saveState(); refreshBrowseFilters(); }
+function resetBrowseFilters(){ const f=bf(); f.layout='all'; f.lengthBracket='all'; f.weightBracket='all'; f.availability='all'; saveState(); refreshBrowseFilters(); }
 function browseUnitPasses(u){
   const f=bf();
   if(f.hideInactives&&!isInStock(u)) return false;
+  if(f.availability!=='all'&&u.availability!==f.availability) return false;
   if(f.layout==='bunk'&&!isBunkhouse(u)) return false;
   if(f.layout==='couples'&&isBunkhouse(u)) return false;
   if(f.lengthBracket!=='all'){ const ft=lengthFeet(u); if(ft==null||ft<=0) return false; if(f.lengthBracket==='under30'?ft>=30:ft<30) return false; }
@@ -3636,7 +3660,7 @@ function browseEmptyHtml(){
     ? `<div class="empty"><p>No units match these filters.</p>${browseFilterCount()>0?`<button class="btn" onclick="resetBrowseFilters()">Reset filters</button>`:`<p class="muted">Turn off “Hide Inactives” to see the full lot.</p>`}</div>`
     : `<div class="empty"><p>No units match. Clear a filter and try again.</p></div>`;
 }
-function browseSearchActive(){ return !!(filt.q||filt.cat); }
+function browseSearchActive(){ return !!(filt.q||filt.cat||bf().availability!=='all'); }   // an availability route from the Dashboard shows a flat result list, not the drill-down
 function viewBrowse(){
   if(!state.units.length) return `<div class="view-head"><div><h1>Browse</h1></div></div>
     <div class="panel"><div class="empty"><div class="ec">${svg(I.browse)}</div><h3>${emptySyncCopy().title}</h3><p>${emptySyncCopy().body}</p>${emptySyncActionsHtml()}</div></div>`;
