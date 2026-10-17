@@ -1892,6 +1892,9 @@ async function fetchWithTimeout(url,ms){
 // id/SRS schedule/mastery untouched — only specs and the image path are refreshed.
 // Units with no match are new (fresh id/SRS); units no longer present in the payload
 // are dropped unless they're a rep's own locally-added unit (not sourced from sync/seed).
+// Live Web Special Prices year wins for stocked units; units not in the live sheet fall back to the catalog (inv.xlsx) year
+function unitYear(u){ return u ? String(u.liveYear||u.year||'').trim() : ''; }
+window.unitYear=unitYear;
 function reconcileGithubInventory(payload){
   const matchKey=(mf,brand,model)=>norm(mf)+'|'+norm(brand)+'|'+norm(model);
   const removedKey=(brand,model)=>norm(brand)+'|'+norm(model);   // same 2-part format deleteUnit() already writes to state.removedSeed
@@ -1903,7 +1906,7 @@ function reconcileGithubInventory(payload){
   for(const su of payload.units){
     if(removed.has(removedKey(su.brand,su.model))) continue;
     const u={manufacturer:su.manufacturer, productLine:su.brand, model:su.model,
-      rvType:su.type||'', year:su.year||'', price:(su.price??''), weight:su.weight||'', length:su.length||'',
+      rvType:su.type||'', year:su.year||'', liveYear:su.liveYear||'', price:(su.price??''), weight:su.weight||'', length:su.length||'',
       sleeps:'',slides:'',location:'',stock:su.stock||'',vin:'',description:'', status:su.status||'',
       webPrice:su.webPrice||'', unlockPrice:su.unlockPrice||'', availability:su.availability||'',
       seed:true, seedKey:su.image||su.imageFileName||'', imageUrl: resolveImageUrl(su)||'', brochure:su.brochure||'',
@@ -1912,7 +1915,7 @@ function reconcileGithubInventory(payload){
     if(prev){
       u.id=prev.id; u.srs=prev.srs||newSRS(); if(prev.mastery) u.mastery=prev.mastery;
       u.sleeps=prev.sleeps||''; u.slides=prev.slides||''; u.location=prev.location||''; u.vin=prev.vin||''; u.description=prev.description||'';
-      if(prev.manufacturer!==u.manufacturer||prev.productLine!==u.productLine||prev.rvType!==u.rvType||prev.year!==u.year
+      if(prev.manufacturer!==u.manufacturer||prev.productLine!==u.productLine||prev.rvType!==u.rvType||prev.year!==u.year||(prev.liveYear||'')!==u.liveYear
         ||prev.price!==u.price||prev.weight!==u.weight||prev.length!==u.length||prev.imageUrl!==u.imageUrl||prev.status!==u.status||(prev.brochure||'')!==u.brochure
         ||prev.stock!==u.stock||prev.webPrice!==u.webPrice||prev.unlockPrice!==u.unlockPrice||prev.availability!==u.availability
         ||JSON.stringify(prev.keyFeatures||[])!==JSON.stringify(u.keyFeatures)) changed=true;
@@ -2340,7 +2343,8 @@ function showAchievements(){
 /* ---------- Dashboard inventory pulse (swipe rails) ---------- */
 function dashMiniCardHtml(u){
   const im=unitImg(u);
-  const title=(u.year?esc(u.year)+' ':'')+esc(u.model||unitTitle(u));
+  const yrD=unitYear(u);
+  const title=(yrD?esc(yrD)+' ':'')+esc(u.model||unitTitle(u));
   const sub=[u.manufacturer,u.productLine].filter(Boolean).map(esc).join(' · ');
   const price=u.unlockPrice?formatPrice(u.unlockPrice):(u.webPrice?formatPrice(u.webPrice):'');
   const stk=String(u.stock||'').trim();
@@ -2360,7 +2364,7 @@ function dashPulseColHtml(title,colorVar,units){
 }
 function dashboardPulseHtml(){
   const by=a=>state.units.filter(u=>u.availability===a)
-    .sort((x,y)=>(Number(y.year)||0)-(Number(x.year)||0)||String(y.stock||'').localeCompare(String(x.stock||''),undefined,{numeric:true}));
+    .sort((x,y)=>(Number(unitYear(y))||0)-(Number(unitYear(x))||0)||String(y.stock||'').localeCompare(String(x.stock||''),undefined,{numeric:true}));
   const act=by('active'), ord=by('on-order'), pen=by('pending');
   if(!act.length&&!ord.length&&!pen.length) return '';
   return `<div class="dash-pulse-section">${dashPulseColHtml('Fresh on the Lot','--mint',act)}${dashPulseColHtml('Inbound Pipeline','--sky',ord)}${dashPulseColHtml('Under Contract','--amber',pen)}</div>`;
@@ -3114,7 +3118,7 @@ function answerBack(u){
   return `<div class="fc-prompt">
     ${u.manufacturer?`<div class="fc-a-mfg">${esc(u.manufacturer)}</div>`:''}
     <div class="fc-a-model">${esc(unitTitle(u))}</div>
-    ${u.productLine?`<div class="fc-a-line">${esc(u.productLine)}${u.year?' · '+esc(u.year):''}</div>`:''}
+    ${u.productLine?`<div class="fc-a-line">${esc(u.productLine)}${unitYear(u)?' · '+esc(unitYear(u)):''}</div>`:''}
     ${specs.length?`<div class="fc-a-detail">${specs.join('')}</div>`:''}
     ${u.location?`<div class="fc-a-loc">${svg(I.pin)} ${esc(u.location)}${u.stock?' · Stock '+esc(u.stock):''}</div>`:(u.stock?`<div class="fc-a-detail"><span class="tag">Stock ${esc(u.stock)}</span></div>`:'')}
   </div>`;
@@ -3716,7 +3720,7 @@ function unitBrochure(u){
   if(!u) return null;
   if(u.brochure){
     const url=/^https?:\/\//i.test(u.brochure)?u.brochure:`${GITHUB_CONFIG.baseUrl}/${encodeGhPath(u.brochure)}`;
-    return {url,title:unitTitle(u)+' Brochure',year:u.year||''};
+    return {url,title:unitTitle(u)+' Brochure',year:unitYear(u)};
   }
   const bl=classifyUnit(u).brand; const b=bl&&brochureFor(bl);
   return b?{url:b.url,title:b.title,year:b.year}:null;
@@ -3947,7 +3951,7 @@ function unitCard(u){
   const im=unitImg(u);
   const discontinued=isDiscontinued(u);
   const hasPricing=u.webPrice||u.unlockPrice;
-  const yr=String(u.year||'').trim();
+  const yr=unitYear(u);
   const titleWithYear=(yr?esc(yr)+' ':'')+esc(unitTitle(u));
   const stk=String(u.stock||'').trim();
   const stockChip=stk?`<span class="unit-stock-pill" title="Stock #${esc(stk)}">Stk #${esc(stk)}</span>`:'';
@@ -4000,8 +4004,8 @@ function openDetail(id){ detailId=id; activeBrowseTab='specs'; const u=state.uni
     <div class="modal-body">
       <div class="flex" style="justify-content:space-between;align-items:flex-start">
         <div>${u.manufacturer?`<div class="unit-mfg">${esc(u.manufacturer)}</div>`:''}
-        <h2 style="font-size:22px;margin-top:2px">${esc(unitTitle(u))}</h2>
-        ${u.productLine?`<div class="muted">${esc(u.productLine)}${u.year?' · '+esc(u.year):''}</div>`:''}</div>
+        <h2 style="font-size:22px;margin-top:2px">${unitYear(u)?esc(unitYear(u))+' ':''}${esc(unitTitle(u))}</h2>
+        ${u.productLine?`<div class="muted">${esc(u.productLine)}</div>`:''}</div>
         <span class="badge badge-${st}">${statusLabel(st)}</span>
       </div>
       ${u.location?`<div class="fc-a-loc" style="margin:14px 0">${svg(I.pin)} ${esc(u.location)}</div>`:''}
