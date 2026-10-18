@@ -1048,7 +1048,7 @@
       "stock": "3231",
       "webPrice": 100745,
       "unlockPrice": 99895,
-      "availability": "active",
+      "availability": "pending",
       "liveYear": "2026"
     },
     {
@@ -3144,7 +3144,7 @@
       "stock": "3513",
       "webPrice": 40545,
       "unlockPrice": 39995,
-      "availability": "active",
+      "availability": "pending",
       "liveYear": "2027"
     },
     {
@@ -3264,7 +3264,7 @@
       "stock": "3479",
       "webPrice": 48945,
       "unlockPrice": 47995,
-      "availability": "active",
+      "availability": "pending",
       "liveYear": "2027"
     },
     {
