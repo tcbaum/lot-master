@@ -1915,7 +1915,7 @@ function reconcileGithubInventory(payload){
   for(const su of payload.units){
     if(removed.has(removedKey(su.brand,su.model))) continue;
     const u={manufacturer:su.manufacturer, productLine:su.brand, model:su.model,
-      rvType:su.type||'', year:su.year||'', liveYear:su.liveYear||'', price:(su.price??''), weight:su.weight||'', length:su.length||'',
+      rvType:su.type||'', year:su.year||'', liveYear:su.liveYear||'', lotArrivalDate:su.lotArrivalDate||'', price:(su.price??''), weight:su.weight||'', length:su.length||'',
       sleeps:'',slides:'',location:'',stock:su.stock||'',vin:'',description:'', status:su.status||'',
       webPrice:su.webPrice||'', unlockPrice:su.unlockPrice||'', availability:su.availability||'',
       seed:true, seedKey:su.image||su.imageFileName||'', imageUrl: resolveImageUrl(su)||'', brochure:su.brochure||'',
@@ -1924,7 +1924,7 @@ function reconcileGithubInventory(payload){
     if(prev){
       u.id=prev.id; u.srs=prev.srs||newSRS(); if(prev.mastery) u.mastery=prev.mastery;
       u.sleeps=prev.sleeps||''; u.slides=prev.slides||''; u.location=prev.location||''; u.vin=prev.vin||''; u.description=prev.description||'';
-      if(prev.manufacturer!==u.manufacturer||prev.productLine!==u.productLine||prev.rvType!==u.rvType||prev.year!==u.year||(prev.liveYear||'')!==u.liveYear
+      if(prev.manufacturer!==u.manufacturer||prev.productLine!==u.productLine||prev.rvType!==u.rvType||prev.year!==u.year||(prev.liveYear||'')!==u.liveYear||(prev.lotArrivalDate||'')!==u.lotArrivalDate
         ||prev.price!==u.price||prev.weight!==u.weight||prev.length!==u.length||prev.imageUrl!==u.imageUrl||prev.status!==u.status||(prev.brochure||'')!==u.brochure
         ||prev.stock!==u.stock||prev.webPrice!==u.webPrice||prev.unlockPrice!==u.unlockPrice||prev.availability!==u.availability
         ||JSON.stringify(prev.keyFeatures||[])!==JSON.stringify(u.keyFeatures)) changed=true;
@@ -2365,7 +2365,17 @@ function dashMiniCardHtml(u){
       <div class="dash-mini-meta">${stk?`<span class="unit-stock-pill">Stk #${esc(stk)}</span>`:'<span></span>'}${price?`<span class="dash-mini-price">${esc(price)}</span>`:''}</div>
     </div></button>`;
 }
-const PULSE_CAP=10;
+const PULSE_CAP=10, FRESH_DAYS=30;
+// "Fresh" = active units that reached the lot within FRESH_DAYS (lotArrivalDate, recorded by the sync the day a unit first
+// shows up active) plus units with no recorded date (they predate tracking), so the rail never goes empty.
+// Dated arrivals come first, newest first; undated follow, newest year then highest stock #.
+function arrivalMs(u){ const t=u&&u.lotArrivalDate?Date.parse(u.lotArrivalDate):NaN; return isNaN(t)?0:t; }
+function freshUnits(){
+  const cutoff=Date.now()-FRESH_DAYS*86400000;
+  const stk=u=>parseInt(String(u.stock||'').replace(/\D/g,''),10)||0;
+  return state.units.filter(u=>u.availability==='active'&&(!arrivalMs(u)||arrivalMs(u)>=cutoff))
+    .sort((a,b)=>(arrivalMs(b)-arrivalMs(a))||((Number(unitYear(b))||0)-(Number(unitYear(a))||0))||(stk(b)-stk(a)));
+}
 // Dashboard "View all": jump to Browse with only that availability showing, everything else cleared
 function viewAllPulseCategory(cat){
   const f=bf(); f.layout='all'; f.lengthBracket='all'; f.weightBracket='all'; f.hideInactives=false; f.availability=cat;
@@ -2378,12 +2388,13 @@ function dashPulseColHtml(title,colorVar,units,cat){
   const more=units.length>PULSE_CAP, remaining=units.length-PULSE_CAP;
   return `<div class="dash-pulse-col">
     <div class="dash-pulse-header"><span class="dash-pulse-title"><span class="dash-pulse-dot" style="background:var(${colorVar})"></span>${title}</span><span class="dash-pulse-hr"><span class="dash-pulse-count">${units.length}</span>${more?`<button class="dash-pulse-view-all" onclick="viewAllPulseCategory('${cat}')">View all &rarr;</button>`:''}</span></div>
-    <div class="dash-pulse-track">${units.slice(0,PULSE_CAP).map(dashMiniCardHtml).join('')}${more?`<button class="dash-mini-card dash-mini-endcap" onclick="viewAllPulseCategory('${cat}')" aria-label="View all ${units.length} units in Browse"><span class="dash-endcap-icon">${svg(I.browse)}</span><span class="dash-endcap-title">+${remaining} more</span><span class="dash-endcap-sub">View all ${units.length} in Browse</span></button>`:''}</div></div>`;
+    <div class="dash-pulse-track">${units.slice(0,PULSE_CAP).map(dashMiniCardHtml).join('')}${more?`<button class="dash-mini-card dash-mini-endcap" onclick="viewAllPulseCategory('${cat}')" aria-label="View all ${units.length} units in Browse"><span class="dash-endcap-icon">${svg(I.browse)}</span><span class="dash-endcap-title">+${remaining} more</span><span class="dash-endcap-sub">${cat==='active'?'See the full lot in Browse':'View all '+units.length+' in Browse'}</span></button>`:''}</div></div>`;
 }
 function dashboardPulseHtml(){
-  const by=a=>state.units.filter(u=>u.availability===a)
-    .sort((x,y)=>(Number(unitYear(y))||0)-(Number(unitYear(x))||0)||String(y.stock||'').localeCompare(String(x.stock||''),undefined,{numeric:true}));
-  const act=by('active'), ord=by('on-order'), pen=by('pending');
+  const stkNum=u=>parseInt(String(u.stock||'').replace(/\D/g,''),10)||0;
+  const byYearStock=(x,y)=>(Number(unitYear(y))||0)-(Number(unitYear(x))||0)||stkNum(y)-stkNum(x);
+  const by=a=>state.units.filter(u=>u.availability===a).sort(byYearStock);
+  const act=freshUnits(), ord=by('on-order'), pen=by('pending');
   if(!act.length&&!ord.length&&!pen.length) return '';
   return `<div class="dash-pulse-section">${dashPulseColHtml('Fresh on the Lot','--mint',act,'active')}${dashPulseColHtml('Inbound Pipeline','--sky',ord,'on-order')}${dashPulseColHtml('Under Contract','--amber',pen,'pending')}</div>`;
 }
