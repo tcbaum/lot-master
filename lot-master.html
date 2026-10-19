@@ -1830,7 +1830,7 @@ const LINE_LOGOS={};   // line-level emblem, keyed "brand|line" (e.g. "avenue|fi
 // since they aren't — Delta/Avenue's marks are dark, Paradigm/Valor's are white).
 // Only these two are genuinely white-on-transparent and need a dark tile to read at
 // all; giving everyone a dark tile would have broken the four that are already dark.
-const DARK_LOGO_BRANDS=new Set(['paradigm','valor']);
+const DARK_LOGO_BRANDS=new Set(['paradigm','valor','aurum']);   // aurum: a full-bleed black+gold banner, so it sits on the dark tile
 // Line-level equivalent — Avenue All-Access's bar color (measured directly from
 // the PNG: RGB 161,160,163) only reaches ~2.65:1 contrast against a white tile,
 // well below legible even though the white text on the bar itself has good
@@ -2049,6 +2049,7 @@ const TAXONOMY=[
     {b:'Influence',  lines:['Influence']},
     {b:'Solitude',   lines:['Solitude']},
     {b:'Momentum',   lines:['Momentum G-Class','Momentum G-Class Travel Trailer','Momentum Luxury','Momentum MAV Travel Trailer']},
+    {b:'Lineage',    lines:['Lineage Series E','Lineage Series F','Lineage Series M','Lineage Series VP','Lineage Series VT']},
   ]},
   {mf:'Alliance', brands:[
     {b:'Delta',    lines:['Travel Trailer','Ultra-Lite','Delta Solo']},
@@ -2071,7 +2072,7 @@ const LINE_MAP={
   paradigm:['Paradigm','Paradigm Fifth Wheel'], valor:['Valor','Valor Toy Hauler'], foundation:['Foundation','Foundation'],
   imagine:['Imagine','Imagine'], imagineaim:['Imagine','Imagine Aim'], imaginexls:['Imagine','Imagine XLS'],
   influence:['Influence','Influence'], solitude:['Solitude','Solitude'],
-  lineageseriesf:['Lineage','Lineage Series F'], lineageseriesm:['Lineage','Lineage Series M'], lineageseriesvt:['Lineage','Lineage Series VT'], lineageseriesvp:['Lineage','Lineage Series VP'],
+  lineageseriese:['Lineage','Lineage Series E'], lineageseriesf:['Lineage','Lineage Series F'], lineageseriesm:['Lineage','Lineage Series M'], lineageseriesvt:['Lineage','Lineage Series VT'], lineageseriesvp:['Lineage','Lineage Series VP'],
   momentumgclass:['Momentum','Momentum G-Class'], momentumluxury:['Momentum','Momentum Luxury'],
   momentumgclasstraveltrailer:['Momentum','Momentum G-Class Travel Trailer'], momentummavtraveltrailer:['Momentum','Momentum MAV Travel Trailer'],
   reflection:['Reflection','Reflection 5th Wheel'], reflectiontraveltrailer:['Reflection','Reflection Travel Trailer'],
@@ -4642,6 +4643,7 @@ MFG_LOGOS.granddesign = ghImg(GITHUB_CONFIG.baseUrl+'/logos/grand-design-logo.pn
 MFG_LOGOS.alliance = ghImg(GITHUB_CONFIG.baseUrl+'/logos/alliance-logo.png','class="mfg-logo-img"');
 MFG_LOGOS.winnebago = ghImg(GITHUB_CONFIG.baseUrl+'/logos/winnebago-logo.png','class="mfg-logo-img"');
 BRAND_LOGOS.paradigm = ghImg(GITHUB_CONFIG.baseUrl+'/logos/alliance-paradigm-logo.png','class="mfg-logo-img"');
+BRAND_LOGOS.aurum = ghImg(GITHUB_CONFIG.baseUrl+'/logos/alliance-aurum-logo.png','class="mfg-logo-img"');
 BRAND_LOGOS.valor = ghImg(GITHUB_CONFIG.baseUrl+'/logos/alliance-valor-logo.png','class="mfg-logo-img"');
 BRAND_LOGOS.avenue = ghImg(GITHUB_CONFIG.baseUrl+'/logos/alliance-avenue-5th-wheel-logo.png','class="mfg-logo-img"');
 BRAND_LOGOS.delta = ghImg(GITHUB_CONFIG.baseUrl+'/logos/alliance-delta-logo.png','class="mfg-logo-img"');
@@ -4667,6 +4669,8 @@ BRAND_LOGOS.reflection = ghImg(GITHUB_CONFIG.baseUrl+'/logos/grand-design-reflec
 BRAND_LOGOS.solitude = ghImg(GITHUB_CONFIG.baseUrl+'/logos/grand-design-solitude-logo.png','class="mfg-logo-img"');
 BRAND_LOGOS.influence = ghImg(GITHUB_CONFIG.baseUrl+'/logos/grand-design-influence-logo.png','class="mfg-logo-img"');
 BRAND_LOGOS.lineage = ghImg(GITHUB_CONFIG.baseUrl+'/logos/grand-design-lineage-logo.png','class="mfg-logo-img"');
+LINE_LOGOS['lineage|lineageseriese'] = ghImg(GITHUB_CONFIG.baseUrl+'/logos/lineage-series-e-logo.png','class="mfg-logo-img"');
+LINE_LOGOS['lineage|lineageseriesm'] = ghImg(GITHUB_CONFIG.baseUrl+'/logos/lineage-series-m-logo.png','class="mfg-logo-img"');
 BRAND_LOGOS.momentum = ghImg(GITHUB_CONFIG.baseUrl+'/logos/grand-design-momentum-logo.png','class="mfg-logo-img"');
 // Reflection's own lines (per TAXONOMY) already carry "Reflection" in their own
 // name — 'Reflection 100-Series','Reflection 150-Series','Reflection 5th Wheel',
