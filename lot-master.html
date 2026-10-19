@@ -15,7 +15,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 :root{
   color-scheme:light;
@@ -1794,14 +1793,59 @@ async function saveImage(id,dataUrl){ images.set(id,dataUrl); if(storageOK&&db){
    offline study, must keep working regardless. */
 const SUPABASE_URL='https://arebkywewqtljweizmgz.supabase.co';
 const SUPABASE_ANON_KEY='sb_publishable_7fAn7RlafJc5Tt2reXjClg_Up9lsQIx';
+// The account library used to be a plain <script> from the CDN on every launch. With a weak signal (or offline)
+// it failed to load, there was no client at all, and the app looked signed out even though the login was still
+// saved on the device. Now: an exact pinned version, kept in this device's Cache Storage after the first load,
+// so later launches start it instantly with no network, and the saved login is restored every time.
+const SUPABASE_LIB_URL='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js';
+const SUPABASE_LIB_CACHE='lot-master-lib-v1';
 let supabaseClient=null;
-try{
-  if(window.supabase && window.supabase.createClient){
-    supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
-  }
-}catch(_){ supabaseClient=null; }
 let authUser=null;          // current Supabase auth user object, or null when signed out
-let authReady=!supabaseClient;   // true once the initial session check has resolved; if there's no client at all, there's nothing to check, so this is immediately true rather than hanging forever
+let authReady=false;        // true once the library has loaded and the saved session has been checked (or loading definitively failed)
+let authLibFailed=false;    // library couldn't be loaded this launch (offline on a device that never cached it)
+async function loadSupabaseLib(){
+  if(window.supabase&&window.supabase.createClient) return true;
+  let txt=null;
+  try{ if('caches' in window){ const hit=await (await caches.open(SUPABASE_LIB_CACHE)).match(SUPABASE_LIB_URL); if(hit) txt=await hit.text(); } }catch(_){}
+  if(!txt){
+    try{
+      const res=await Promise.race([fetch(SUPABASE_LIB_URL), new Promise((_,rej)=>setTimeout(()=>rej(new Error('timeout')),12000))]);
+      if(res&&res.ok){ txt=await res.clone().text(); try{ await (await caches.open(SUPABASE_LIB_CACHE)).put(SUPABASE_LIB_URL,res); }catch(_){} }
+    }catch(_){}
+  }
+  if(!txt) return false;
+  try{ const el=document.createElement('script'); el.textContent=txt; document.head.appendChild(el); }catch(_){ return false; }
+  return !!(window.supabase&&window.supabase.createClient);
+}
+let supabaseInitPromise=null;
+function initSupabase(){
+  if(supabaseClient) return Promise.resolve(true);
+  if(supabaseInitPromise) return supabaseInitPromise;
+  supabaseInitPromise=loadSupabaseLib().then(ok=>{
+    supabaseInitPromise=null;
+    if(!ok){ authLibFailed=true; authReady=true; if(route==='settings') render(); return false; }
+    try{ supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY,{auth:{persistSession:true,autoRefreshToken:true}}); }
+    catch(_){ supabaseClient=null; authLibFailed=true; authReady=true; return false; }
+    authLibFailed=false;
+    wireAuthListener();
+    return true;
+  });
+  return supabaseInitPromise;
+}
+// The login Supabase saved on this device (if any) -- readable even when the library itself couldn't load,
+// so the app can say "signed in as …, reconnecting" instead of showing a sign-in form.
+function storedAuthEmail(){
+  try{ const k=Object.keys(localStorage).find(k=>/^sb-.*-auth-token$/.test(k)); if(!k) return null; const v=JSON.parse(localStorage.getItem(k)); return (v&&v.user&&v.user.email)||(v&&v.currentSession&&v.currentSession.user&&v.currentSession.user.email)||null; }catch(_){ return null; }
+}
+async function retryAccountConnection(btn){
+  if(btn){ btn.disabled=true; btn.innerHTML=svg(I.refresh)+' Connecting…'; }
+  authReady=false; if(route==='settings') render();
+  const ok=await initSupabase();
+  if(!ok) toast("Still can't reach the account service — check your connection.",'warn');
+  if(route==='settings') render();
+}
+window.retryAccountConnection=retryAccountConnection;
+window.addEventListener('online',()=>{ if(!supabaseClient) initSupabase(); });
 
 /* ---------- Live GitHub inventory sync ---------- */
 const GITHUB_CONFIG={
@@ -4391,7 +4435,8 @@ function viewSettings(){
   <div class="panel">
     <div class="panel-head"><h3>Personal Preferences</h3><span class="sub">Configure your daily goals and display choices.</span></div>
     <div class="panel-pad">
-      <div class="field"><label>Rep name</label><input type="text" maxlength="40" placeholder="e.g. Alex" value="${esc(s.userName||'')}" onchange="state.settings.userName=this.value.trim();saveState();toast('Saved')"></div>
+      <div class="field"><label>Your name</label><input type="text" maxlength="40" placeholder="e.g. Alex" value="${esc(s.userName||'')}" onchange="setRepName(this.value)">
+        <p class="muted" style="font-size:12px;margin:6px 0 0">${authUser?'Saved to your account — it follows you to any device you sign in on.':'Shown on your dashboard. Sign in below to keep it with your account.'}</p></div>
       <div class="field"><label>New cards per day (limit)</label><input type="number" min="0" value="${s.newLimit}" onchange="state.settings.newLimit=Math.max(0,+this.value||0);saveState();toast('Saved')"></div>
       <div class="field"><label>Reviews per day (target)</label><input type="number" min="0" value="${s.reviewLimit}" onchange="state.settings.reviewLimit=Math.max(0,+this.value||0);saveState();toast('Saved')"></div>
       <div class="field"><label>Flashcard front</label>
@@ -4425,13 +4470,15 @@ function viewSettings(){
     <div class="panel-head"><h3>Account</h3><span class="sub">${authUser?'Your progress is syncing across devices.':'Sign in to sync your progress across devices.'}</span></div>
     <div class="panel-pad">
       ${!authReady ? `<p class="muted" style="font-size:13px">Checking session…</p>` :
+        (!supabaseClient && storedAuthEmail()) ? `
+        <p style="font-size:13.5px;margin:0 0 4px">Signed in as <b>${esc(storedAuthEmail())}</b></p>
+        <p class="muted" style="font-size:12.5px;margin:0 0 12px">Can't reach the account service right now. You're still signed in — keep studying; progress is saved on this device and syncs once you're connected.</p>
+        <button class="btn" onclick="retryAccountConnection(this)">${svg(I.refresh)} Reconnect</button>` :
         authUser ? `
-        <div class="flex" style="justify-content:space-between;align-items:center;margin-bottom:10px">
-          <span class="tag">${esc(authUser.email||'')}</span>
-        </div>
-        <div class="field"><label>Display name</label><input type="text" maxlength="40" placeholder="e.g. Alex" onchange="authUpdateDisplayName(this.value)"></div>
+        <p style="font-size:13.5px;margin:0 0 4px">Signed in as <b>${esc(authUser.email||'')}</b></p>
+        <p class="muted" style="font-size:12.5px;margin:0 0 4px">${currentRepName()?`Name: <b style="color:var(--text)">${esc(currentRepName())}</b> · change it under Personal Preferences.`:'Add your name under Personal Preferences — it saves to this account.'}</p>
         <label class="flex" style="gap:9px;align-items:center;margin:12px 0;cursor:pointer">
-          <input type="checkbox" onchange="authToggleIncognito(this.checked)"> <span style="font-size:13.5px">Incognito mode — hide me from leaderboards</span>
+          <input type="checkbox" ${(state.progress&&state.progress.incognito)?'checked':''} onchange="authToggleIncognito(this.checked)"> <span style="font-size:13.5px">Incognito mode — hide me from leaderboards</span>
         </label>
         <div class="flex wrap" style="gap:9px">
           <button class="btn btn-primary" onclick="syncProgressNow(this)">${svg(I.refresh)} Sync now</button>
@@ -4439,7 +4486,7 @@ function viewSettings(){
         </div>
         ${syncStatusLines()}
         ` : `
-        <div class="field"><label>Display name</label><input type="text" id="authName" maxlength="40" placeholder="e.g. Alex"></div>
+        ${authLibFailed?`<p class="muted" style="font-size:12.5px;margin:0 0 10px">Can't reach the account service right now — check your connection. <a href="#" onclick="retryAccountConnection();return false">Try again</a></p>`:''}
         <div class="field"><label>Email</label><input type="email" id="authEmail" placeholder="you@dealership.com"></div>
         <div class="field"><label>Password</label><input type="password" id="authPassword" placeholder="••••••••"></div>
         <div class="flex wrap" style="gap:9px;margin-top:10px">
@@ -4476,7 +4523,7 @@ function authFieldVals(){
   };
 }
 async function authSignUp(btn){
-  if(!supabaseClient){ toast('Account sign-in is unavailable right now — check your connection.','warn'); return; }
+  if(!supabaseClient && !(await initSupabase())){ toast('Account sign-in is unavailable right now — check your connection.','warn'); return; }
   const {email,password,name}=authFieldVals();
   if(!email||!password){ toast('Enter an email and password.','warn'); return; }
   if(btn) btn.disabled=true;
@@ -4486,7 +4533,7 @@ async function authSignUp(btn){
     // profile row is created/kept in sync by upsert here rather than a DB trigger,
     // so the display name typed at signup is captured immediately
     if(data.user){
-      const {error:pErr}=await supabaseClient.from('profiles').upsert({id:data.user.id,display_name:name||email.split('@')[0]});
+      const {error:pErr}=await supabaseClient.from('profiles').upsert({id:data.user.id,display_name:currentRepName()||email.split('@')[0]});
       if(pErr) toast('Account created, but the profile could not be saved: '+pErr.message,'warn');
     }
     toast('Account created','ok');
@@ -4494,7 +4541,7 @@ async function authSignUp(btn){
   if(btn) btn.disabled=false;
 }
 async function authSignIn(btn){
-  if(!supabaseClient){ toast('Account sign-in is unavailable right now — check your connection.','warn'); return; }
+  if(!supabaseClient && !(await initSupabase())){ toast('Account sign-in is unavailable right now — check your connection.','warn'); return; }
   const {email,password}=authFieldVals();
   if(!email||!password){ toast('Enter your email and password.','warn'); return; }
   if(btn) btn.disabled=true;
@@ -4534,15 +4581,19 @@ async function authSignOut(){
   try{ await supabaseClient.auth.signOut(); toast('Signed out'); }
   catch(err){ toast('Sign-out failed: '+(err.message||'unknown error'),'warn'); }
 }
-async function authUpdateDisplayName(val){
-  if(!supabaseClient||!authUser) return;
-  const name=(val||'').trim(); if(!name) return;
-  try{ const {error}=await supabaseClient.from('profiles').upsert({id:authUser.id,display_name:name}); if(error) throw error; state.progress=state.progress||{}; state.progress.displayName=name; saveState(); toast('Saved','ok'); }
-  catch(err){ toast('Could not save name: '+((err&&err.message)||'unknown error'),'warn'); }
+// One name for the rep: state.settings.userName is the source of truth on the device (dashboard greeting);
+// when signed in it's also the account profile's display_name, and signing in elsewhere pulls it back down.
+function currentRepName(){ return ((state.settings&&state.settings.userName)||(state.progress&&state.progress.displayName)||'').trim(); }
+async function setRepName(val){
+  const name=(val||'').trim();
+  state.settings.userName=name; state.progress=state.progress||{}; state.progress.displayName=name; saveState();
+  if(!supabaseClient||!authUser||!name){ toast('Saved','ok'); return; }
+  try{ const {error}=await supabaseClient.from('profiles').upsert({id:authUser.id,display_name:name}); if(error) throw error; toast('Saved to your account','ok'); }
+  catch(err){ toast('Saved on this device, but not to your account: '+((err&&err.message)||'unknown error'),'warn'); }
 }
 async function authToggleIncognito(checked){
   if(!supabaseClient||!authUser) return;
-  try{ const {error}=await supabaseClient.from('profiles').upsert({id:authUser.id,is_incognito:!!checked}); if(error) throw error; toast(checked?'Incognito on — hidden from leaderboards':'Incognito off','ok'); }
+  try{ const {error}=await supabaseClient.from('profiles').upsert({id:authUser.id,is_incognito:!!checked}); if(error) throw error; state.progress=state.progress||{}; state.progress.incognito=!!checked; saveState(); toast(checked?'Incognito on — hidden from leaderboards':'Incognito off','ok'); }
   catch(err){ toast('Could not save.','warn'); }
 }
 /* ---------- Remote progress sync ----------
@@ -4650,7 +4701,8 @@ async function pullRemoteToLocal(){
       state.progress.streak=state.progress.streak||{};
       state.progress.streak.current=profile.streak_count||0;
       if(profile.badges) state.progress.badges=Object.fromEntries((profile.badges||[]).map(b=>[b,true]));
-      if(profile.display_name) state.progress.displayName=profile.display_name;
+      if(profile.display_name){ state.progress.displayName=profile.display_name; state.settings.userName=profile.display_name; }   // the account's name wins on sign-in
+      state.progress.incognito=!!profile.is_incognito;
       changed=true;
     }
     if(changed) saveState();
@@ -4701,7 +4753,7 @@ async function pushLocalToRemote(){
     }
     const {error:profErr}=await supabaseClient.from('profiles').upsert({
       id:authUser.id,
-      display_name:(state.progress&&state.progress.displayName)||(authUser.email?authUser.email.split('@')[0]:'Rep'),
+      display_name:currentRepName()||(authUser.email?authUser.email.split('@')[0]:'Rep'),
       streak_count:(state.progress&&state.progress.streak&&state.progress.streak.current)||0,
       badges:Object.keys((state.progress&&state.progress.badges)||{}),
       updated_at:new Date().toISOString(),
@@ -4768,8 +4820,10 @@ function dismissMigration(){
   saveState();
   $('#modalBack').classList.remove('show');
 }
+let authListenerWired=false;
 function wireAuthListener(){
-  if(!supabaseClient) return;
+  if(!supabaseClient||authListenerWired) return;
+  authListenerWired=true;
   supabaseClient.auth.onAuthStateChange((_event,session)=>{
     const wasSignedOut=!authUser;
     authUser=session?session.user:null;
@@ -4916,7 +4970,7 @@ function hideSplash(){
   wireGlobal();
   render();                 // instant render from whatever's already in IndexedDB (empty on a device that's never synced)
   hideSplash();              // real content is up as of the line above — nothing further to wait on but the splash's own short cosmetic pacing
-  wireAuthListener();        // auth/session check — non-blocking
+  initSupabase();            // account library (device-cached after first load) + saved-session restore — non-blocking
   // Auth (session restore) typically resolves much faster than the inventory fetch,
   // so a sign-in-triggered pull can easily run before state.units is populated —
   // with nothing to merge remote progress into, that pull is a silent no-op that
@@ -4927,7 +4981,7 @@ function hideSplash(){
 window.go=go;window.setDashBudget=setDashBudget;window.startDashSession=startDashSession;window.startFirstTraining=startFirstTraining;window.showAchievements=showAchievements;window.startSession=startSession;window.reveal=reveal;window.rate=rate;window.pick=pick;window.triggerHaptic=triggerHaptic;
 window.setStudyTab=setStudyTab;window.startPitchDrill=startPitchDrill;window.answerPitch=answerPitch;window.nextPitchQuestion=nextPitchQuestion;window.exitPitchDrill=exitPitchDrill;
 window.selectPitchQuestionOption=selectPitchQuestionOption;window.togglePitchQuestionOption=togglePitchQuestionOption;window.submitPitchQuestionAnswer=submitPitchQuestionAnswer;
-window.authSignUp=authSignUp;window.authSignIn=authSignIn;window.authSignOut=authSignOut;window.authUpdateDisplayName=authUpdateDisplayName;window.authToggleIncognito=authToggleIncognito;
+window.authSignUp=authSignUp;window.authSignIn=authSignIn;window.authSignOut=authSignOut;window.setRepName=setRepName;window.authToggleIncognito=authToggleIncognito;
 window.confirmMigration=confirmMigration;window.syncProgressNow=syncProgressNow;window.dismissMigration=dismissMigration;
 window.toggleMatchLine=toggleMatchLine;window.matchSelectAll=matchSelectAll;window.matchClearLines=matchClearLines;window.startMatch=startMatch;window.matchPickModel=matchPickModel;window.matchAssign=matchAssign;window.matchReset=matchReset;window.matchCheck=matchCheck;window.matchNext=matchNext;
 window.selectMode=selectMode;window.modeScroll=modeScroll;
