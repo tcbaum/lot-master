@@ -434,6 +434,8 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .bnav-th.mfg-logo{background:#ffffff;color:#961A25;padding:6px}
 .bnav-th.mfg-logo.wide{width:100%;padding:8px 12px}
 .bnav-th.mfg-logo.dark{background:#1a1a1f}
+.bnav-th.mfg-logo.wide.bleed{padding:0;height:auto;aspect-ratio:1451/383;max-height:64px;background:#1a1a1f}
+.bnav-th.mfg-logo.bleed img.mfg-logo-img{object-fit:cover;object-position:center}
 .bnav-th.mfg-mark{background:var(--brand-soft);color:var(--brand-deep)}
 .bnav-th.mfg-mark .mfg-init{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.5px;line-height:1}
 .bnav-th.mfg-logo svg{width:100%;height:100%;opacity:1;display:block}
@@ -1830,7 +1832,9 @@ const LINE_LOGOS={};   // line-level emblem, keyed "brand|line" (e.g. "avenue|fi
 // since they aren't — Delta/Avenue's marks are dark, Paradigm/Valor's are white).
 // Only these two are genuinely white-on-transparent and need a dark tile to read at
 // all; giving everyone a dark tile would have broken the four that are already dark.
-const DARK_LOGO_BRANDS=new Set(['paradigm','valor','aurum']);   // aurum: a full-bleed black+gold banner, so it sits on the dark tile
+const DARK_LOGO_BRANDS=new Set(['paradigm','valor']);
+// Full-bleed banner art (already has its own border): fills the whole tile edge to edge, no white padding. Tile height follows the art's 1451:383 ratio, capped so it can't tower on desktop.
+const BLEED_LOGO_BRANDS=new Set(['aurum']);
 // Line-level equivalent — Avenue All-Access's bar color (measured directly from
 // the PNG: RGB 161,160,163) only reaches ~2.65:1 contrast against a white tile,
 // well below legible even though the white text on the bar itself has good
@@ -3833,8 +3837,9 @@ function browseBrandNavCard(b){
   const _logo=BRAND_LOGOS[nrm(b.name)];
   const thumb=_logo||pileThumb(allUnits);
   const dark=_logo&&DARK_LOGO_BRANDS.has(nrm(b.name));
+  const bleed=_logo&&BLEED_LOGO_BRANDS.has(nrm(b.name));
   return `<button class="bnav-card" onclick="browseDrillBrand('${jsq(b.name)}')">
-    <span class="bnav-th${_logo?' mfg-logo wide':''}${dark?' dark':''}">${thumb}</span>
+    <span class="bnav-th${_logo?' mfg-logo wide':''}${dark?' dark':''}${bleed?' bleed':''}">${thumb}</span>
     <span class="bnav-name">${esc(b.name)}</span>
     <span class="bnav-sub">${b.lines.length>1?b.lines.length+' lines · ':''}${b.n} plan${b.n===1?'':'s'}</span>
     <span class="bnav-bar"><i class="${barCls(b.pct)}" style="width:${b.pct}%"></i></span>
