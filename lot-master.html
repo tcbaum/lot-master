@@ -629,10 +629,13 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .flashcard.mc-card.swipe-armed{touch-action:none}
 /* Swipe-to-rate edge cues: left = Wrong (red), top = Needs Work (yellow), right = Good / Got it (green).
    The edge for the direction being dragged thickens while the finger moves. */
-.flashcard.swipe-armed{border-left:3px solid var(--clay);border-top:3px solid var(--amber);border-right:3px solid var(--mint);transition:border-width .12s ease}
-.flashcard.swipe-armed.swipe-l{border-left-width:7px}
-.flashcard.swipe-armed.swipe-u{border-top-width:7px}
-.flashcard.swipe-armed.swipe-r{border-right-width:7px}
+.flashcard.swipe-armed{border:1.5px solid var(--line);cursor:grab;transition:box-shadow .2s ease,border-color .2s ease;
+  --glow-color:transparent;--glow-a:0;--glow-x:0px;--glow-y:0px;--glow-blur:0px;--glow-spread:0px}
+/* While dragging: the edge toward the pending rating blooms (left = Wrong/clay, up = Needs work/amber,
+   right = Good or Got it/mint), growing with drag distance; values are set per pointermove in wireFlashcardGestures(). */
+.flashcard.swipe-armed.is-dragging{cursor:grabbing;transition:none;
+  border-color:color-mix(in srgb,var(--glow-color) calc(var(--glow-a) * 85%),var(--line));
+  box-shadow:var(--shadow-lg),var(--glow-x) var(--glow-y) var(--glow-blur) var(--glow-spread) color-mix(in srgb,var(--glow-color) calc(var(--glow-a) * 60%),transparent)}
 .swipe-hint{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 18px 14px;font-size:11.5px;font-weight:700;letter-spacing:.02em}
 .swipe-hint .sh-l{color:var(--clay)} .swipe-hint .sh-u{color:var(--amber)} .swipe-hint .sh-r{color:var(--mint)}
 .study-detail-card{margin-top:12px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;touch-action:pan-y}
@@ -3259,7 +3262,7 @@ function mcAnswerSummary(u){
   if(u.stock) tags.push('Stock '+esc(u.stock));
   return `<div class="mc-summary">${head?`<div class="mc-sum-head">${head}</div>`:''}${tags.length?`<div class="fc-a-detail">${tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>`:''}</div>`;
 }
-// Direction legend under a swipe-armed card; colors match the card's edge cues.
+// Direction legend under a swipe-armed card; colors match the edge glow that blooms while dragging.
 function swipeHintHtml(rightLabel){
   return `<div class="swipe-hint" aria-hidden="true"><span class="sh-l">&larr; Wrong</span><span class="sh-u">&uarr; Needs work</span><span class="sh-r">${rightLabel} &rarr;</span></div>`;
 }
@@ -3620,12 +3623,14 @@ function toggleFeaturesPanel(card){
    identically to touch, not just via the keyboard/pill fallbacks. Drag-follow
    itself is direct 1:1 finger/pointer tracking, not autonomous animation, so it
    isn't gated by reduced motion — only the fling's rating delay is. */
+const SWIPE_THRESH=60;   // px of travel along the rating axis that commits a swipe on release
 function wireFlashcardGestures(){
   const card=document.getElementById('flashcardEl'); if(!card) return;
   const isMC=card.classList.contains('mc-card');
   // MC before an answer is not a gesture surface at all: no pointer capture, so the choice buttons get ordinary taps and the page scrolls.
   const armed=()=>isMC?!!session.answered:!!session.revealed;
-  let sx=0,sy=0,cx=0,cy=0,dragging=false,startTime=0,pointerId=null,lastTapTime=0;
+  let sx=0,sy=0,cx=0,cy=0,dragging=false,startTime=0,pointerId=null,lastTapTime=0,thresholdCrossed=false;
+  const clearGlow=()=>{ card.classList.remove('is-dragging'); ['--glow-color','--glow-a','--glow-x','--glow-y','--glow-blur','--glow-spread'].forEach(v=>card.style.removeProperty(v)); thresholdCrossed=false; };
   card.onpointerdown=e=>{
     if(e.pointerType==='mouse'&&e.button!==0) return;
     if(isMC&&!session.answered) return;
@@ -3644,11 +3649,24 @@ function wireFlashcardGestures(){
       card.classList.remove('locked-wiggle'); void card.offsetWidth; card.classList.add('locked-wiggle');
       return;
     }
-    card.classList.remove('swipe-r','swipe-l','swipe-u');
-    if(Math.abs(dx)>24&&Math.abs(dx)>Math.abs(dy)*1.3) card.classList.add(dx>0?'swipe-r':'swipe-l');
-    else if(dy<-24&&Math.abs(dy)>Math.abs(dx)*1.3) card.classList.add('swipe-u');
-    const rot=Math.max(-12,Math.min(12,dx/12));
-    card.style.transform=`translate(${dx}px,${Math.min(0,dy)}px) rotate(${rot}deg)`;
+    card.classList.add('is-dragging');
+    // pending rating = same rule release() uses; glow grows with travel toward the 60px commit distance
+    const horiz=Math.abs(dx)>=Math.abs(dy);
+    const dir = horiz ? (dx>15?'r':dx<-15?'l':null) : (dy<-15?'u':null);
+    const travel = dir==='u' ? -dy : Math.abs(dx);
+    const p=dir?Math.min(travel/SWIPE_THRESH,1):0;
+    card.style.setProperty('--glow-color', dir==='l'?'var(--clay)':dir==='u'?'var(--amber)':dir==='r'?'var(--mint)':'transparent');
+    card.style.setProperty('--glow-a', p.toFixed(3));
+    card.style.setProperty('--glow-x', `${(dir==='l'?-10:dir==='r'?10:0)*p}px`);
+    card.style.setProperty('--glow-y', `${(dir==='u'?-10:0)*p}px`);
+    card.style.setProperty('--glow-blur', `${22*p}px`);
+    card.style.setProperty('--glow-spread', `${2*p}px`);
+    // threshold notch: one short tick the moment a release would commit (Android only — iOS has no Vibration API)
+    const past = !!dir && travel>SWIPE_THRESH;
+    if(past&&!thresholdCrossed){ thresholdCrossed=true; triggerHaptic(6); } else if(!past) thresholdCrossed=false;
+    // tilt with horizontal travel; reduced motion keeps the drag-follow (direct finger tracking) but drops the rotation
+    const rot=prefersReduced()?0:Math.max(-12,Math.min(12,dx*0.045));
+    card.style.transform=`translate3d(${dx}px,${Math.min(0,dy)}px,0) rotate(${rot}deg)`;
   };
   const release=e=>{
     if(e.pointerId!==pointerId) return;
@@ -3662,22 +3680,22 @@ function wireFlashcardGestures(){
       return;
     }
     if(!armed()) return;   // locked-wiggle already shown during move; nothing to commit
-    card.classList.remove('swipe-r','swipe-l','swipe-u');
     const absDx=Math.abs(dx), absDy=Math.abs(dy), horizontal=absDx>=absDy;
     const rating = horizontal ? (dx>0?(isMC?mcRightRating():'easy'):'again') : (dy<0?'hard':null);   // a dominant downward drag maps to nothing
-    const distanceCleared = horizontal ? absDx>60 : absDy>60;
+    const distanceCleared = horizontal ? absDx>SWIPE_THRESH : absDy>SWIPE_THRESH;
     const velocity=Math.hypot(dx,dy)/elapsed;
     const cleared = rating && (distanceCleared||velocity>0.5);
     if(cleared){
-      if(prefersReduced()){ card.style.transform=''; rate(rating); return; }
+      if(prefersReduced()){ clearGlow(); card.style.transform=''; rate(rating); return; }
       const flyX=(rating==='easy'||rating==='good')?window.innerWidth:rating==='again'?-window.innerWidth:dx;
       const flyY=rating==='hard'?-window.innerHeight:dy;
-      card.style.transition='transform .18s ease-out, opacity .18s ease-out';
-      card.style.transform=`translate(${flyX}px,${flyY}px) rotate(${flyX/12}deg)`;
+      card.style.transition='transform .2s cubic-bezier(.2,.9,.3,1), opacity .18s ease-out';   // glow stays lit on the way out
+      card.style.transform=`translate3d(${flyX}px,${flyY}px,0) rotate(${Math.max(-22,Math.min(22,flyX*0.045))}deg)`;
       card.style.opacity='0';
       setTimeout(()=>rate(rating),160);
     }else{
-      card.style.transition=prefersReduced()?'':'transform .25s cubic-bezier(.34,1.56,.64,1)';
+      clearGlow();   // glow fades back out via the resting-state transition
+      card.style.transition=prefersReduced()?'':'transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease, border-color .2s ease';
       card.style.transform='';
     }
   };
@@ -3691,6 +3709,7 @@ function pick(id){ if(session.answered) return; triggerHaptic('light'); session.
 function triggerHaptic(type){
   type=type||'light';
   if('vibrate' in navigator){
+    if(typeof type==='number'){ navigator.vibrate(type); return; }   // short custom pulse, e.g. the 6ms swipe-threshold tick
     if(type==='light') navigator.vibrate(15);
     if(type==='heavy') navigator.vibrate([30,50,30]);
   }
