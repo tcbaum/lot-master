@@ -1963,7 +1963,7 @@ function reconcileGithubInventory(payload){
   const removed=new Set(state.removedSeed||[]);
   const userUnits=(state.units||[]).filter(u=>!u.seed);
   const next=[], seenIds=new Set();
-  let changed=false;
+  let changed=false, idsRepaired=0;
   for(const su of payload.units){
     if(removed.has(removedKey(su.brand,su.model))) continue;
     const u={manufacturer:su.manufacturer, productLine:su.brand, model:su.model,
@@ -1975,6 +1975,13 @@ function reconcileGithubInventory(payload){
     const prev=prevByKey.get(matchKey(su.manufacturer,su.brand,su.model));
     if(prev){
       u.id=prev.id; u.srs=prev.srs||newSRS(); if(prev.mastery) u.mastery=prev.mastery;
+      // A device first set up before inventory.json carried stable ids still holds a random local id here, and
+      // cloud progress is keyed by unit id -- so its progress was being saved under ids no other device has.
+      // Adopt the shared id (moving any locally attached photo with it) and re-upload under it.
+      if(su.id && prev.id!==su.id && prev.seed){
+        if(images.has(prev.id)){ const im=images.get(prev.id); saveImage(su.id,im); images.delete(prev.id); }
+        u.id=su.id; idsRepaired++; changed=true;
+      }
       u.sleeps=prev.sleeps||''; u.slides=prev.slides||''; u.location=prev.location||''; u.vin=prev.vin||''; u.description=prev.description||'';
       if(prev.manufacturer!==u.manufacturer||prev.productLine!==u.productLine||prev.rvType!==u.rvType||prev.year!==u.year||(prev.liveYear||'')!==u.liveYear||(prev.lotArrivalDate||'')!==u.lotArrivalDate
         ||prev.price!==u.price||prev.weight!==u.weight||prev.length!==u.length||prev.imageUrl!==u.imageUrl||prev.status!==u.status||(prev.brochure||'')!==u.brochure
@@ -1990,6 +1997,7 @@ function reconcileGithubInventory(payload){
   }
   state.units = next.concat(userUnits.filter(u=>!seenIds.has(u.id)));
   saveState();
+  if(idsRepaired){ remoteSyncStatus.idsRepaired=idsRepaired; if(supabaseClient&&authUser) pushLocalToRemote(); }
   return changed;
 }
 let ghSyncStatus={ lastSyncAt:null, lastError:null, unitCount:0 };
@@ -4406,14 +4414,11 @@ function viewSettings(){
         <label class="flex" style="gap:9px;align-items:center;margin:12px 0;cursor:pointer">
           <input type="checkbox" onchange="authToggleIncognito(this.checked)"> <span style="font-size:13.5px">Incognito mode — hide me from leaderboards</span>
         </label>
-        <button class="btn" onclick="authSignOut()">${svg(I.x)} Sign out</button>
-        <p class="muted" style="font-size:12px;margin:10px 0 0">${(()=>{ const p=pendingSyncCount();
-          if(remoteSyncStatus.pushing) return 'Syncing your progress…';
-          if(!navigator.onLine && p>0) return `Offline — ${p} review${p!==1?'s':''} will sync once you're back online.`;
-          if(p>0) return `${p} review${p!==1?'s':''} waiting to sync.`;
-          if(remoteSyncStatus.lastError) return `Last sync attempt failed: ${esc(remoteSyncStatus.lastError)}.`;
-          if(remoteSyncStatus.lastPushAt) return `Progress synced ${new Date(remoteSyncStatus.lastPushAt).toLocaleString()}.`;
-          return 'Progress will sync automatically as you study.'; })()}</p>
+        <div class="flex wrap" style="gap:9px">
+          <button class="btn btn-primary" onclick="syncProgressNow(this)">${svg(I.refresh)} Sync now</button>
+          <button class="btn" onclick="authSignOut()">${svg(I.x)} Sign out</button>
+        </div>
+        ${syncStatusLines()}
         ` : `
         <div class="field"><label>Display name</label><input type="text" id="authName" maxlength="40" placeholder="e.g. Alex"></div>
         <div class="field"><label>Email</label><input type="email" id="authEmail" placeholder="you@dealership.com"></div>
@@ -4462,7 +4467,8 @@ async function authSignUp(btn){
     // profile row is created/kept in sync by upsert here rather than a DB trigger,
     // so the display name typed at signup is captured immediately
     if(data.user){
-      await supabaseClient.from('profiles').upsert({id:data.user.id,display_name:name||email.split('@')[0]});
+      const {error:pErr}=await supabaseClient.from('profiles').upsert({id:data.user.id,display_name:name||email.split('@')[0]});
+      if(pErr) toast('Account created, but the profile could not be saved: '+pErr.message,'warn');
     }
     toast('Account created','ok');
   }catch(err){ toast('Sign-up failed: '+(err.message||'unknown error'),'warn'); }
@@ -4480,6 +4486,30 @@ async function authSignIn(btn){
   }catch(err){ toast('Sign-in failed: '+(err.message||'unknown error'),'warn'); }
   if(btn) btn.disabled=false;
 }
+// Settings "Sync now": download first (so newer cloud progress wins where it should), then upload everything reviewed here.
+async function syncProgressNow(btn){
+  if(!supabaseClient||!authUser) return;
+  if(btn){ btn.disabled=true; btn.innerHTML=svg(I.refresh)+' Syncing…'; }
+  await pullRemoteToLocal();
+  await pushLocalToRemote();
+  const err=remoteSyncStatus.lastError||remoteSyncStatus.pullError;
+  toast(err?('Sync failed — '+err):'Progress synced',err?'warn':'ok');
+  if(route==='settings') render(); else if(btn&&btn.isConnected){ btn.disabled=false; btn.innerHTML=svg(I.refresh)+' Sync now'; }
+}
+function syncStatusLines(){
+  const st=remoteSyncStatus, out=[];
+  const p=pendingSyncCount();
+  if(st.pushing) out.push('Uploading your progress…');
+  else if(st.lastError) out.push(`<span style="color:var(--clay);font-weight:600">Upload failed: ${esc(st.lastError)}</span>`);
+  else if(!navigator.onLine && p>0) out.push(`Offline — ${p} review${p!==1?'s':''} will upload once you're back online.`);
+  else if(p>0) out.push(`${p} review${p!==1?'s':''} waiting to upload.`);
+  else if(st.lastPushAt) out.push(`Uploaded ${st.lastPushRows} item${st.lastPushRows!==1?'s':''} · ${new Date(st.lastPushAt).toLocaleTimeString()}`);
+  if(st.pullError) out.push(`<span style="color:var(--clay);font-weight:600">Download failed: ${esc(st.pullError)}</span>`);
+  else if(st.lastPull) out.push(`Downloaded progress for ${st.lastPull.matched} floorplan${st.lastPull.matched!==1?'s':''} from your account${st.lastPull.unmatched?` (${st.lastPull.unmatched} saved under old IDs couldn't be matched — open the app on that other device once to repair them)`:''} · ${new Date(st.lastPull.at).toLocaleTimeString()}`);
+  if(st.idsRepaired) out.push(`Repaired ${st.idsRepaired} floorplan ID${st.idsRepaired!==1?'s':''} on this device so its progress matches your other devices.`);
+  if(!out.length) out.push('Progress syncs automatically as you study.');
+  return out.map(t=>`<p class="muted" style="font-size:12px;margin:6px 0 0">${t}</p>`).join('');
+}
 async function authSignOut(){
   if(!supabaseClient) return;
   try{ await supabaseClient.auth.signOut(); toast('Signed out'); }
@@ -4488,12 +4518,12 @@ async function authSignOut(){
 async function authUpdateDisplayName(val){
   if(!supabaseClient||!authUser) return;
   const name=(val||'').trim(); if(!name) return;
-  try{ await supabaseClient.from('profiles').upsert({id:authUser.id,display_name:name}); state.progress=state.progress||{}; state.progress.displayName=name; saveState(); toast('Saved','ok'); }
-  catch(err){ toast('Could not save name.','warn'); }
+  try{ const {error}=await supabaseClient.from('profiles').upsert({id:authUser.id,display_name:name}); if(error) throw error; state.progress=state.progress||{}; state.progress.displayName=name; saveState(); toast('Saved','ok'); }
+  catch(err){ toast('Could not save name: '+((err&&err.message)||'unknown error'),'warn'); }
 }
 async function authToggleIncognito(checked){
   if(!supabaseClient||!authUser) return;
-  try{ await supabaseClient.from('profiles').upsert({id:authUser.id,is_incognito:!!checked}); toast(checked?'Incognito on — hidden from leaderboards':'Incognito off','ok'); }
+  try{ const {error}=await supabaseClient.from('profiles').upsert({id:authUser.id,is_incognito:!!checked}); if(error) throw error; toast(checked?'Incognito on — hidden from leaderboards':'Incognito off','ok'); }
   catch(err){ toast('Could not save.','warn'); }
 }
 /* ---------- Remote progress sync ----------
@@ -4530,6 +4560,7 @@ function applyRemoteRow(u,row){
     lastReviewed:row.last_reviewed_at?new Date(row.last_reviewed_at).getTime():null,
     updatedAt:remoteUpdated||Date.now(),
   });
+  u.srs.syncedAt=u.srs.updatedAt;   // came from the cloud, so nothing here is waiting to upload
   const score=row.mastery_score||0;
   u.mastery={score, level:masteryLevelFor(score), everMastered:!!row.ever_mastered};
   return true;
@@ -4570,16 +4601,19 @@ async function pullRemoteToLocal(){
   try{
     const {data,error}=await supabaseClient.from('user_unit_progress').select('*').eq('user_id',authUser.id);
     if(error) throw error;
+    remoteSyncStatus.pullError=null;
     const byUnit=new Map(), byFeature=new Map();
     for(const row of (data||[])){
       if(String(row.unit_id).startsWith('feature:')) byFeature.set(row.unit_id.slice(8),row);
       else byUnit.set(row.unit_id,row);
     }
-    let changed=false;
+    let changed=false, matched=0, applied=0;
     for(const u of state.units){
       const row=byUnit.get(u.id); if(!row) continue;
-      if(applyRemoteRow(u,row)) changed=true;
+      matched++;
+      if(applyRemoteRow(u,row)){ changed=true; applied++; }
     }
+    remoteSyncStatus.lastPull={at:Date.now(), rows:byUnit.size, matched, applied, unmatched:byUnit.size-matched};
     state.featureProgress=state.featureProgress||{};
     for(const [key,row] of byFeature){
       const local=state.featureProgress[key];
@@ -4587,9 +4621,11 @@ async function pullRemoteToLocal(){
       if(local && local.updatedAt && remoteUpdated<=local.updatedAt) continue;   // local is newer — same protection applyRemoteRow gives units
       const correct=row.repetitions||0;
       state.featureProgress[key]={correct, tier:tierForCorrectCount(correct,featureMasteryThreshold(key)), updatedAt:remoteUpdated||Date.now()};
+      state.featureProgress[key].syncedAt=state.featureProgress[key].updatedAt;
       changed=true;
     }
-    const {data:profile}=await supabaseClient.from('profiles').select('*').eq('id',authUser.id).maybeSingle();
+    const {data:profile,error:profErr}=await supabaseClient.from('profiles').select('*').eq('id',authUser.id).maybeSingle();
+    if(profErr) remoteSyncStatus.pullError='profile: '+(profErr.message||'read failed');
     if(profile){
       state.progress=state.progress||{};
       state.progress.streak=state.progress.streak||{};
@@ -4599,18 +4635,20 @@ async function pullRemoteToLocal(){
       changed=true;
     }
     if(changed) saveState();
-  }catch(_){ /* offline or backend unreachable — local data stays authoritative, nothing lost */ }
+  }catch(err){ remoteSyncStatus.pullError=(err&&err.message)||'Could not load progress'; /* local data stays authoritative, nothing lost */ }
+  updateSyncPill();
 }
-let remoteSyncStatus={ lastPushAt:null, lastError:null, pushing:false };
+let remoteSyncStatus={ lastPushAt:null, lastError:null, pushing:false, pullError:null, lastPull:null, lastPushRows:0, idsRepaired:0 };
 function pendingSyncCount(){
   // "pending" = reviewed units whose local edit is newer than our last confirmed
   // push. Deliberately not a per-record flag: every push already re-sends the full
   // reviewed set (upsert is idempotent), so comparing against lastPushAt is enough
   // to know what a retry still needs to cover, without extra bookkeeping per unit.
   if(!supabaseClient||!authUser) return 0;
-  const since=remoteSyncStatus.lastPushAt||0;
-  const unitsPending=state.units.filter(u=>u.srs.reviews>0 && (u.srs.updatedAt||0)>since).length;
-  const featurePending=Object.values(state.featureProgress||{}).filter(p=>(p.updatedAt||0)>since).length;
+  // per-item upload watermark (persisted with the item), so downloaded or already-uploaded progress isn't
+  // reported as pending -- and a relaunch doesn't make everything look unsent again
+  const unitsPending=state.units.filter(u=>u.srs.reviews>0 && (u.srs.updatedAt||0)>(u.srs.syncedAt||0)).length;
+  const featurePending=Object.values(state.featureProgress||{}).filter(p=>(p.updatedAt||0)>(p.syncedAt||0)).length;
   return unitsPending+featurePending;
 }
 // Stays hidden whenever there's nothing worth a rep's attention (signed out, or
@@ -4623,26 +4661,37 @@ function updateSyncPill(){
   el.style.display='';
   if(remoteSyncStatus.pushing){ el.className='sync-pill syncing'; el.textContent='Syncing…'; }
   else if(!navigator.onLine && pending>0){ el.className='sync-pill offline'; el.textContent=`Offline · ${pending} pending`; }
+  else if(remoteSyncStatus.lastError||remoteSyncStatus.pullError){ el.className='sync-pill error'; el.textContent='Sync error'; }   // a rejected save outranks "pending" — it won't clear on its own
   else if(pending>0){ el.className='sync-pill pending'; el.textContent=`${pending} pending`; }
-  else if(remoteSyncStatus.lastError){ el.className='sync-pill error'; el.textContent='Sync error'; }
   else { el.style.display='none'; }
 }
 async function pushLocalToRemote(){
   if(!supabaseClient||!authUser) return;
   remoteSyncStatus.pushing=true; updateSyncPill();
   try{
-    const rows=state.units.filter(u=>u.srs.reviews>0).map(srsToRow);
-    const featureRows=Object.keys(state.featureProgress||{}).map(featureProgressToRow);
+    const pushedUnits=state.units.filter(u=>u.srs.reviews>0), stamps=pushedUnits.map(u=>u.srs.updatedAt||0);
+    const featKeys=Object.keys(state.featureProgress||{}), featStamps=featKeys.map(k=>state.featureProgress[k].updatedAt||0);
+    const rows=pushedUnits.map(srsToRow);
+    const featureRows=featKeys.map(featureProgressToRow);
     const allRows=rows.concat(featureRows);
-    if(allRows.length) await supabaseClient.from('user_unit_progress').upsert(allRows,{onConflict:'user_id,unit_id'});
-    await supabaseClient.from('profiles').upsert({
+    // supabase-js reports database/permission failures as a returned {error}, not a thrown exception --
+    // unchecked, a rejected save looked exactly like a successful one.
+    if(allRows.length){
+      const {error:upErr}=await supabaseClient.from('user_unit_progress').upsert(allRows,{onConflict:'user_id,unit_id'});
+      if(upErr) throw new Error('progress: '+upErr.message);
+    }
+    const {error:profErr}=await supabaseClient.from('profiles').upsert({
       id:authUser.id,
       display_name:(state.progress&&state.progress.displayName)||(authUser.email?authUser.email.split('@')[0]:'Rep'),
       streak_count:(state.progress&&state.progress.streak&&state.progress.streak.current)||0,
       badges:Object.keys((state.progress&&state.progress.badges)||{}),
       updated_at:new Date().toISOString(),
     });
-    remoteSyncStatus.lastPushAt=Date.now(); remoteSyncStatus.lastError=null;
+    if(profErr) throw new Error('profile: '+profErr.message);
+    remoteSyncStatus.lastPushAt=Date.now(); remoteSyncStatus.lastError=null; remoteSyncStatus.lastPushRows=allRows.length;
+    pushedUnits.forEach((u,i)=>{ u.srs.syncedAt=stamps[i]; });                     // the version that was uploaded (a review made mid-upload stays pending)
+    featKeys.forEach((k,i)=>{ if(state.featureProgress[k]) state.featureProgress[k].syncedAt=featStamps[i]; });
+    if(storageOK&&db){ clearTimeout(saveTimer); saveTimer=setTimeout(()=>{ idbPut('app','state',JSON.parse(JSON.stringify(state))).catch(()=>{}); },500); }   // persist watermarks without re-triggering another upload
   }catch(err){ remoteSyncStatus.lastError=(err&&err.message)||'Sync failed'; /* nothing surfaced mid-study — the pill covers it */ }
   remoteSyncStatus.pushing=false; updateSyncPill();
   if(route==='settings') render();
@@ -4708,6 +4757,11 @@ function wireAuthListener(){
     authReady=true;
     updateSyncPill();
     if(authUser && wasSignedOut) pullRemoteToLocal().then(()=>{
+      if(_event==='SIGNED_IN'){
+        const st=remoteSyncStatus;
+        if(st.pullError) toast('Signed in, but progress could not be loaded — '+st.pullError,'warn');
+        else if(st.lastPull&&st.lastPull.applied) toast(`Loaded your progress on ${st.lastPull.applied} floorplan${st.lastPull.applied!==1?'s':''}`,'ok');
+      }
       if(route==='settings'||route==='dashboard') render();
       if(hasUnclaimedLocalProgress()) showMigrationPrompt();
     });
@@ -4855,7 +4909,7 @@ window.go=go;window.setDashBudget=setDashBudget;window.startDashSession=startDas
 window.setStudyTab=setStudyTab;window.startPitchDrill=startPitchDrill;window.answerPitch=answerPitch;window.nextPitchQuestion=nextPitchQuestion;window.exitPitchDrill=exitPitchDrill;
 window.selectPitchQuestionOption=selectPitchQuestionOption;window.togglePitchQuestionOption=togglePitchQuestionOption;window.submitPitchQuestionAnswer=submitPitchQuestionAnswer;
 window.authSignUp=authSignUp;window.authSignIn=authSignIn;window.authSignOut=authSignOut;window.authUpdateDisplayName=authUpdateDisplayName;window.authToggleIncognito=authToggleIncognito;
-window.confirmMigration=confirmMigration;window.dismissMigration=dismissMigration;
+window.confirmMigration=confirmMigration;window.syncProgressNow=syncProgressNow;window.dismissMigration=dismissMigration;
 window.toggleMatchLine=toggleMatchLine;window.matchSelectAll=matchSelectAll;window.matchClearLines=matchClearLines;window.startMatch=startMatch;window.matchPickModel=matchPickModel;window.matchAssign=matchAssign;window.matchReset=matchReset;window.matchCheck=matchCheck;window.matchNext=matchNext;
 window.selectMode=selectMode;window.modeScroll=modeScroll;
 window.startAdaptiveSession=startAdaptiveSession;window.setAdaptiveScope=setAdaptiveScope;window.setAdaptiveLength=setAdaptiveLength;window.startRedrillSession=startRedrillSession;
