@@ -273,8 +273,12 @@ html[data-theme="dark"] .glass{--glass-hi:rgba(255,255,255,.07);background:color
 select.sel{padding:11px 13px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);font-weight:500;color:var(--text)}
 select.sel:focus{outline:none;border-color:var(--brand)}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-.filter-deck{display:flex;align-items:center;gap:8px;padding:8px 10px;margin-bottom:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--card-2);border:1px solid var(--line);border-radius:var(--radius);scrollbar-width:none}
-.filter-deck::-webkit-scrollbar{display:none}
+.filter-deck{display:flex;flex-direction:column;gap:8px;padding:8px 10px;margin-bottom:14px;background:var(--card-2);border:1px solid var(--line);border-radius:var(--radius)}
+/* fixed top row: Hide Inactives + Reset are always on screen, never scrolled out of view */
+.filter-head{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:30px}
+/* sideways-scrolling row of the remaining filters */
+.filter-rail{display:flex;align-items:center;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.filter-rail::-webkit-scrollbar{display:none}
 .filter-group{display:inline-flex;flex:none;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px}
 .fpill{appearance:none;background:transparent;border:0;color:var(--muted);font:inherit;font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:background-color .15s ease,color .15s ease}
 .fpill.on{background:var(--brand);color:#fff}
@@ -622,11 +626,23 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .fc-dims span{background:rgba(20,30,48,.84);color:#fff;font-family:var(--display);font-weight:600;font-size:12px;line-height:1;letter-spacing:.02em;padding:6px 9px;border-radius:7px;border:1px solid rgba(255,255,255,.14);box-shadow:0 1px 4px rgba(0,0,0,.25)}
 .fc-prompt{padding:18px 20px;text-align:center}
 .flashcard.mc-card{touch-action:pan-y}
-.mc-result{margin-top:4px}
-.mc-summary{text-align:center;padding:8px 4px 2px}
+.flashcard.mc-card.swipe-armed{touch-action:none}
+/* Swipe-to-rate edge cues: left = Wrong (red), top = Needs Work (yellow), right = Good / Got it (green).
+   The edge for the direction being dragged thickens while the finger moves. */
+.flashcard.swipe-armed{border-left:3px solid var(--clay);border-top:3px solid var(--amber);border-right:3px solid var(--mint);transition:border-width .12s ease}
+.flashcard.swipe-armed.swipe-l{border-left-width:7px}
+.flashcard.swipe-armed.swipe-u{border-top-width:7px}
+.flashcard.swipe-armed.swipe-r{border-right-width:7px}
+.swipe-hint{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 18px 14px;font-size:11.5px;font-weight:700;letter-spacing:.02em}
+.swipe-hint .sh-l{color:var(--clay)} .swipe-hint .sh-u{color:var(--amber)} .swipe-hint .sh-r{color:var(--mint)}
+.study-detail-card{margin-top:12px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;touch-action:pan-y}
+.study-detail-card .sdc-kf{padding:0 20px}
+.study-detail-card .sdc-kf:first-child{padding-top:16px}
+.study-detail-card .lf-body{max-height:none;overflow:visible}
+.mc-summary{text-align:center;padding:14px 16px 2px}
 .mc-sum-head{font-size:12.5px;font-weight:600;color:var(--muted);letter-spacing:.02em}
 .mc-summary .fc-a-detail{margin-top:8px}
-.mc-result .rate-row{margin-top:12px}
+
 .fc-q{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
 .fc-a-mfg{font-size:12.5px;color:var(--brand-deep);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-top:14px}
 .fc-a-model{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.02em;margin-top:2px}
@@ -1826,6 +1842,7 @@ function imgFallback(el){ el.onerror=null; el.src=NOIMG_SVG_DATAURI; el.classLis
    needed — not something a single self-contained HTML file could reliably register
    anyway (SW registration requires a real same-origin script URL, not a blob: URL). */
 const IMAGE_CACHE_NAME='lot-master-images-v1';
+let freshImageFetch=false;   // set by Force Sync for the rest of this session
 const IMG_PLACEHOLDER_SRC='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';   // 1x1 transparent
 async function fetchAndCacheImage(url){
   if(!url || !('caches' in window)) return null;
@@ -1833,7 +1850,7 @@ async function fetchAndCacheImage(url){
     const cache=await caches.open(IMAGE_CACHE_NAME);
     const cached=await cache.match(url);
     if(cached) return cached;                    // cache-first: served with zero network attempt
-    const res=await fetch(url);
+    const res=await fetch(url,freshImageFetch?{cache:'reload'}:undefined);
     if(!res.ok) throw new Error('HTTP '+res.status);
     try{ cache.put(url,res.clone()); }catch(_){ /* Cache API write failed (seen on some WebKit builds) -- the image still displays via res below, it just won't be cached for offline use this time */ }
     return res;
@@ -1991,7 +2008,7 @@ async function syncInventory(opts){
     }
     const dataChanged=reconcileGithubInventory(payload);
     ghSyncStatus={ lastSyncAt:Date.now(), lastError:null, unitCount:payload.units.length };
-    if(opts.force) toast('Inventory updated!','ok');
+    if(opts.force) toast('Synced — inventory and images refreshed','ok');
     if((opts.force||dataChanged) && (route==='dashboard'||route==='browse'||route==='settings'||route==='study')) render();   // "subtle" — background sync only re-renders when something actually changed
     return true;
   }catch(err){
@@ -2004,18 +2021,21 @@ async function syncInventory(opts){
     return false;
   }
 }
-async function clearImageCache(btn){
-  if(btn){ btn.disabled=true; }
-  try{
-    if('caches' in window) await caches.delete(IMAGE_CACHE_NAME);   // only this named cache store — IndexedDB, state.units and state.progress are never touched
-    toast('Offline image cache cleared','ok');
-  }catch(_){ toast('Could not clear image cache','warn'); }
-  if(btn){ btn.disabled=false; }
+// Drops every stored floorplan image (the offline Cache API store + this session's in-memory blob copies).
+// Only that named image store is touched — IndexedDB, state.units and study progress never are.
+async function clearImageCache(){
+  try{ if('caches' in window) await caches.delete(IMAGE_CACHE_NAME); }catch(_){}
+  for(const u of hydratedUrlCache.values()){ try{ URL.revokeObjectURL(u); }catch(_){} }
+  hydratedUrlCache.clear();
+  freshImageFetch=true;   // re-downloads skip the browser's HTTP cache too, so they come back current rather than a copy GitHub Pages' CDN cached minutes ago
 }
+// Force Sync = clear stored images + pull the latest inventory/pricing in one action. Images then
+// re-download (fresh) as each one is viewed, rather than pulling ~200 floorplans at once over cellular.
 async function forceSyncGithub(btn){
   if(btn){ btn.disabled=true; btn.dataset.origHtml=btn.innerHTML; btn.innerHTML=svg(I.refresh)+' Syncing…'; }
+  await clearImageCache();
   await syncInventory({force:true});
-  if(btn){ btn.disabled=false; btn.innerHTML=btn.dataset.origHtml||(svg(I.refresh)+' Force Sync with GitHub'); }
+  if(btn&&btn.isConnected){ btn.disabled=false; btn.innerHTML=btn.dataset.origHtml||(svg(I.refresh)+' Force Sync'); }
 }
 
 /* ---------- Helpers ---------- */
@@ -2292,7 +2312,7 @@ function render(){
   // cross-fade so the transition snapshot shows fully-rendered cards)
   v.classList.toggle('stagger', route==='dashboard' && !inVT && !prefersReduced() && lastRendered!=='dashboard');
   if(route==='study'&&!session) wireStudySetup();
-  if(route==='study'&&session&&(session.mode==='adaptive'||session.mode==='flashcard')) wireFlashcardGestures();
+  if(route==='study'&&session&&(session.mode==='adaptive'||session.mode==='flashcard'||session.mode==='mc')) wireFlashcardGestures();
   if(route==='browse') wireBrowse();
   duoSync();
   wireCenterLift();
@@ -3231,14 +3251,19 @@ function mcAnswerSummary(u){
   if(u.stock) tags.push('Stock '+esc(u.stock));
   return `<div class="mc-summary">${head?`<div class="mc-sum-head">${head}</div>`:''}${tags.length?`<div class="fc-a-detail">${tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>`:''}</div>`;
 }
-// After a multiple-choice answer, bring the rating buttons into view (clear of the mobile bottom nav)
-function revealMcResult(){
-  const row=document.getElementById('mcRateRow'); if(!row) return;
-  const r=row.getBoundingClientRect(), navEl=document.getElementById('bottomNav');
-  const navH=(navEl&&getComputedStyle(navEl).display!=='none')?navEl.getBoundingClientRect().height:0;
-  const overflow=r.bottom-(window.innerHeight-navH-12);
-  if(overflow>0) window.scrollBy({top:overflow,behavior:prefersReduced()?'auto':'smooth'});
+// Direction legend under a swipe-armed card; colors match the card's edge cues.
+function swipeHintHtml(rightLabel){
+  return `<div class="swipe-hint" aria-hidden="true"><span class="sh-l">&larr; Wrong</span><span class="sh-u">&uarr; Needs work</span><span class="sh-r">${rightLabel} &rarr;</span></div>`;
 }
+// Unit details live in their own card under the swipe card: it is NOT a swipe surface, so the page scrolls
+// normally here and Top Features can be expanded without triggering a rating.
+function studyDetailCard(u,lead){
+  const kf=keyFeaturesGrid(u), fp=featuresPanel(u);
+  if(!lead&&!kf&&!fp) return '';
+  return `<div class="study-detail-card">${lead||''}${kf?`<div class="sdc-kf">${kf}</div>`:''}${fp}</div>`;
+}
+// Multiple choice right-swipe: a correct pick rates "easy"; a wrong pick caps at "good" (same ceiling the old buttons had).
+function mcRightRating(){ return session&&session._picked&&session._picked===session._optsFor?'easy':'good'; }
 function dimsOverlay(u){
   const bits=[];
   if(u.length) bits.push(esc(fmtLength(u)));
@@ -3299,12 +3324,13 @@ function stageFlashOrQuiz(u){
     return `<div class="flashcard" id="flashcardEl">${front}<div class="fc-prompt"><div class="fc-q">${state.settings.frontImage&&im?'Which model is this floorplan?':'Recall manufacturer · line · model'}</div></div>
       <button class="reveal-btn" onclick="reveal()">Show answer</button></div>`;
   }
-  return `<div class="flashcard" id="flashcardEl">${figBlock(u)}${answerBack(u)}<div style="padding:0 20px">${keyFeaturesGrid(u)}</div>${featuresPanel(u)}
+  return `<div class="flashcard swipe-armed" id="flashcardEl">${figBlock(u)}${answerBack(u)}${swipeHintHtml('Got it')}
     <div class="desktop-rate-pills">
       <button class="rate-pill again" onclick="rate('again')">[1] WRONG</button>
       <button class="rate-pill hard" onclick="rate('hard')">[2] NEEDS WORK</button>
       <button class="rate-pill easy" onclick="rate('easy')">[3] GOT IT</button>
-    </div></div>`;
+    </div></div>
+  ${studyDetailCard(u,'')}`;
 }
 function rateButtons(u,only){
   const p=previewIntervals(u.srs);
@@ -3343,13 +3369,21 @@ function stageChoice(u){
     let cls=''; if(session.answered){ if(o.id===u.id) cls='correct'; else if(o.id===session._picked) cls='wrong'; }
     return `<button class="choice ${cls}" ${session.answered?'disabled':''} onclick="pick('${o.id}')">${esc(unitTitle(o))}${o.productLine?` <span class="muted" style="font-size:12.5px">· ${esc(o.productLine)}</span>`:''}</button>`;
   }).join('');
-  let after='';
-  if(session.answered){
-    after=`<div class="mc-result">${mcAnswerSummary(u)}<div class="rate-row" id="mcRateRow" style="grid-template-columns:repeat(${session._picked===u.id?2:3},1fr)">${rateButtons(u, session._picked===u.id?['good','easy']:['again','hard','good'])}</div></div>`;
+  // Before answering: a plain card (normal scrolling, choices take ordinary taps).
+  // After answering: the card becomes the swipe-to-rate surface (colored edges show the three directions),
+  // and the unit details move to a separate card below it that scrolls normally.
+  if(!session.answered){
+    return `<div class="flashcard mc-card" id="flashcardEl" style="min-height:auto">${figHtml}<div class="fc-prompt" style="padding-bottom:8px"><div class="fc-q">${q}</div></div>
+    <div style="padding:4px 18px 16px">${optsHtml}</div></div>`;
   }
-  // mc-card: no swipe gestures here, so the card must allow normal vertical scrolling (the base .flashcard locks it for swipe-to-rate)
-  return `<div class="flashcard mc-card" style="min-height:auto">${figHtml}<div class="fc-prompt" style="padding-bottom:8px"><div class="fc-q">${q}</div></div>
-    <div style="padding:4px 18px 16px">${optsHtml}${after}</div></div>`;
+  return `<div class="flashcard mc-card swipe-armed" id="flashcardEl" style="min-height:auto">${figHtml}<div class="fc-prompt" style="padding-bottom:8px"><div class="fc-q">${q}</div></div>
+    <div style="padding:4px 18px 4px">${optsHtml}</div>${swipeHintHtml('Good')}
+    <div class="desktop-rate-pills">
+      <button class="rate-pill again" onclick="rate('again')">[1] WRONG</button>
+      <button class="rate-pill hard" onclick="rate('hard')">[2] NEEDS WORK</button>
+      <button class="rate-pill easy" onclick="rate(mcRightRating())">[3] GOOD</button>
+    </div></div>
+  ${studyDetailCard(u,mcAnswerSummary(u))}`;
 }
 
 /* ---- adaptive stage rendering ---- */
@@ -3562,7 +3596,7 @@ function reveal(){ session.revealed=true; render(); }
 // features panel's collapse/expand — reused directly rather than building a
 // separate custom accordion just for this.
 function toggleFeaturesPanel(card){
-  const panel=card.querySelector('details.lf'); if(!panel) return;
+  const panel=document.querySelector('.study-detail-card details.lf')||(card&&card.querySelector('details.lf')); if(!panel) return;
   panel.open=!panel.open;
 }
 /* ---- gesture-driven rating for flashcard steps (both classic and adaptive) ----
@@ -3580,9 +3614,13 @@ function toggleFeaturesPanel(card){
    isn't gated by reduced motion — only the fling's rating delay is. */
 function wireFlashcardGestures(){
   const card=document.getElementById('flashcardEl'); if(!card) return;
+  const isMC=card.classList.contains('mc-card');
+  // MC before an answer is not a gesture surface at all: no pointer capture, so the choice buttons get ordinary taps and the page scrolls.
+  const armed=()=>isMC?!!session.answered:!!session.revealed;
   let sx=0,sy=0,cx=0,cy=0,dragging=false,startTime=0,pointerId=null,lastTapTime=0;
   card.onpointerdown=e=>{
     if(e.pointerType==='mouse'&&e.button!==0) return;
+    if(isMC&&!session.answered) return;
     sx=cx=e.clientX; sy=cy=e.clientY; startTime=Date.now(); dragging=false; pointerId=e.pointerId;
     try{ card.setPointerCapture(pointerId); }catch(_){}
     card.style.transition='';
@@ -3594,7 +3632,7 @@ function wireFlashcardGestures(){
     if(!dragging&&(Math.abs(dx)>10||Math.abs(dy)>10)) dragging=true;
     if(!dragging) return;
     e.preventDefault();   // backs up touch-action:none — belt and suspenders against native scroll contesting the gesture
-    if(!session.revealed){
+    if(!armed()){
       card.classList.remove('locked-wiggle'); void card.offsetWidth; card.classList.add('locked-wiggle');
       return;
     }
@@ -3609,22 +3647,22 @@ function wireFlashcardGestures(){
     try{ card.releasePointerCapture(pointerId); }catch(_){}
     const dx=cx-sx, dy=cy-sy, elapsed=Math.max(1,Date.now()-startTime);
     if(!dragging){
-      if(!session.revealed){ reveal(); return; }
+      if(!armed()){ if(!isMC) reveal(); return; }
       const now=Date.now();
       if(now-lastTapTime<300){ lastTapTime=0; toggleFeaturesPanel(card); }
       else lastTapTime=now;
       return;
     }
-    if(!session.revealed) return;   // locked-wiggle already shown during move; nothing to commit
+    if(!armed()) return;   // locked-wiggle already shown during move; nothing to commit
     card.classList.remove('swipe-r','swipe-l','swipe-u');
     const absDx=Math.abs(dx), absDy=Math.abs(dy), horizontal=absDx>=absDy;
-    const rating = horizontal ? (dx>0?'easy':'again') : (dy<0?'hard':null);   // a dominant downward drag maps to nothing
+    const rating = horizontal ? (dx>0?(isMC?mcRightRating():'easy'):'again') : (dy<0?'hard':null);   // a dominant downward drag maps to nothing
     const distanceCleared = horizontal ? absDx>60 : absDy>60;
     const velocity=Math.hypot(dx,dy)/elapsed;
     const cleared = rating && (distanceCleared||velocity>0.5);
     if(cleared){
       if(prefersReduced()){ card.style.transform=''; rate(rating); return; }
-      const flyX=rating==='easy'?window.innerWidth:rating==='again'?-window.innerWidth:dx;
+      const flyX=(rating==='easy'||rating==='good')?window.innerWidth:rating==='again'?-window.innerWidth:dx;
       const flyY=rating==='hard'?-window.innerHeight:dy;
       card.style.transition='transform .18s ease-out, opacity .18s ease-out';
       card.style.transform=`translate(${flyX}px,${flyY}px) rotate(${flyX/12}deg)`;
@@ -3638,7 +3676,7 @@ function wireFlashcardGestures(){
   card.onpointerup=release;
   card.onpointercancel=release;
 }
-function pick(id){ if(session.answered) return; triggerHaptic('light'); session._picked=id; session.answered=true; render(); requestAnimationFrame(revealMcResult); }
+function pick(id){ if(session.answered) return; triggerHaptic('light'); session._picked=id; session.answered=true; render(); }
 // Real Vibration API, safely guarded — but iOS Safari/WebKit has never implemented
 // it, even for installed PWAs, so this is Android-only in practice. Silently a
 // no-op on iOS rather than throwing, so it's safe to call unconditionally either way.
@@ -3725,6 +3763,11 @@ function browseFiltersHtml(){
   const lenLbl=f.lengthBracket==='all'?'Length: Any':(f.lengthBracket==='under30'?'&lt; 30 ft':'30+ ft');
   const wtLbl=f.weightBracket==='all'?'Tow: Any':(f.weightBracket==='halfton'?'Half-Ton (&le;8.5k)':'Heavy Duty (8.5k+)');
   return `<div class="filter-deck" id="filterDeck">
+    <div class="filter-head">
+      <button class="stock-toggle" role="switch" aria-checked="${f.hideInactives}" onclick="toggleHideInactives()" title="Show only units on the lot, pending or on order"><span class="trk"></span><span>Hide Inactives</span></button>
+      ${n>0?`<button class="filter-reset" onclick="resetBrowseFilters()">Reset (${n})</button>`:''}
+    </div>
+    <div class="filter-rail">
     <div class="filter-group" role="group" aria-label="Layout">
       <button class="fpill ${f.layout==='all'?'on':''}" onclick="setBrowseLayout('all')">All Layouts</button>
       <button class="fpill ${f.layout==='bunk'?'on':''}" onclick="setBrowseLayout('bunk')">Bunks</button>
@@ -3733,8 +3776,7 @@ function browseFiltersHtml(){
     ${f.availability!=='all'?`<div class="filter-group"><button class="fpill on" onclick="clearAvailabilityFilter()" title="Clear this filter">${AVAIL_LABEL[f.availability]} &times;</button></div>`:''}
     <div class="filter-group"><button class="fpill ${f.lengthBracket!=='all'?'on':''}" onclick="cycleLengthFilter()" title="Tap to cycle: any, under 30 ft, 30+ ft">${lenLbl}</button></div>
     <div class="filter-group"><button class="fpill ${f.weightBracket!=='all'?'on':''}" onclick="cycleWeightFilter()" title="Tap to cycle. Based on dry weight (UVW), not loaded or tow rating">${wtLbl}</button></div>
-    <button class="stock-toggle" role="switch" aria-checked="${f.hideInactives}" onclick="toggleHideInactives()" title="Show only units on the lot, pending or on order"><span class="trk"></span><span>Hide Inactives</span></button>
-    ${n>0?`<button class="filter-reset" onclick="resetBrowseFilters()">Reset (${n})</button>`:''}
+    </div>
   </div>`;
 }
 function refreshBrowseFilters(){
@@ -4343,16 +4385,12 @@ function viewSettings(){
     <div class="panel-head"><h3>Local Device Data</h3><span class="sub">Manage offline data stored on this browser.</span></div>
     <div class="panel-pad">
       <div class="flex wrap" style="gap:9px;align-items:center">
-        <button class="btn" onclick="forceSyncGithub(this)">${svg(I.refresh)} Force Sync with GitHub</button>
+        <button class="btn" onclick="forceSyncGithub(this)">${svg(I.refresh)} Force Sync</button>
       </div>
-      <p class="muted" style="font-size:12px;margin:8px 0 0">${ghSyncStatus.lastSyncAt
+      <p class="muted" style="font-size:12px;margin:8px 0 0">Pulls the latest inventory, prices and stock, and clears stored floorplan images so the newest versions download as you view them. Study progress is untouched.</p>
+      <p class="muted" style="font-size:12px;margin:6px 0 0">${ghSyncStatus.lastSyncAt
         ? `Last synced ${new Date(ghSyncStatus.lastSyncAt).toLocaleString()} · ${ghSyncStatus.unitCount} floorplans.`
-        : (ghSyncStatus.lastError ? `Last sync attempt failed: ${esc(ghSyncStatus.lastError)}.` : 'Not yet synced with GitHub — pull the latest inventory and images now.')}</p>
-      <hr class="hr">
-      <div class="flex wrap" style="gap:9px;align-items:center">
-        <button class="btn" onclick="clearImageCache(this)">${svg(I.trash)} Clear Offline Image Cache</button>
-      </div>
-      <p class="muted" style="font-size:12px;margin:8px 0 0">Frees up space used by floorplan images stored for offline viewing. Inventory, study progress and your local backup are untouched — images simply re-download next time they're needed.</p>
+        : (ghSyncStatus.lastError ? `Last sync attempt failed: ${esc(ghSyncStatus.lastError)}.` : 'Not yet synced — tap Force Sync to pull the latest inventory and images.')}</p>
     </div>
   </div>
 
@@ -4724,6 +4762,8 @@ function wireGlobal(){
           if(['1','2','3'].includes(e.key)) rate(['again','hard','easy'][+e.key-1]);
           else if(e.key==='f'||e.key==='F'){ const card=$('#flashcardEl'); if(card) toggleFeaturesPanel(card); }
         }
+      } else if(session.answered&&['1','2','3'].includes(e.key)&&$('#flashcardEl.mc-card')){
+        rate(['again','hard',mcRightRating()][+e.key-1]);
       }
     }
   });
@@ -4823,7 +4863,7 @@ window.adaptiveMatchPick=adaptiveMatchPick;window.adaptiveMatchAssign=adaptiveMa
 window.endSession=endSession;window.openDetail=openDetail;window.closeDetail=closeDetail;window.detailNav=detailNav;window.navigateToSibling=navigateToSibling;window.deleteUnit=deleteUnit;window.setBrowseTab=setBrowseTab;
 window.setCat=setCat;window.loadSample=loadSample;
 window.setBrowseLayout=setBrowseLayout;window.cycleLengthFilter=cycleLengthFilter;window.cycleWeightFilter=cycleWeightFilter;window.toggleHideInactives=toggleHideInactives;window.resetBrowseFilters=resetBrowseFilters;window.openBrochure=openBrochure;window.openUnitBrochure=openUnitBrochure;window.closeBrochure=closeBrochure;window.browseDrillMf=browseDrillMf;window.browseDrillBrand=browseDrillBrand;window.browseDrillLine=browseDrillLine;window.browseCrumbTo=browseCrumbTo;
-window.resetProgress=resetProgress;window.forceSyncGithub=forceSyncGithub;window.clearImageCache=clearImageCache;
+window.resetProgress=resetProgress;window.forceSyncGithub=forceSyncGithub;
 window.state=state;window.$=$;
 window.render=render;window.saveState=saveState;window.toast=toast;window.toggleTheme=toggleTheme;window.applyTheme=applyTheme;
 </script>
