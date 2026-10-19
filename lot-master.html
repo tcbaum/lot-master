@@ -336,6 +336,31 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .unit-model{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:-.01em;color:var(--text)}
 .unit-line{font-size:12.5px;color:var(--muted)}
 .unit-specs{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:2px}
+.welcome-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:16px;display:flex;flex-direction:column;gap:12px;transition:opacity .18s ease,transform .18s ease}
+.welcome-card.leaving{opacity:0;transform:translateY(-6px)}
+.welcome-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.welcome-title-row{display:flex;flex-direction:column;gap:4px}
+.welcome-badge{align-self:flex-start;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 7px;border-radius:4px;background:var(--brand-soft);color:var(--brand-deep)}
+.welcome-title{font-size:16px;font-weight:700;color:var(--text);margin:0}
+.welcome-dismiss{appearance:none;background:transparent;border:0;color:var(--muted);cursor:pointer;padding:6px;display:grid;place-items:center;border-radius:8px;flex:none}
+.welcome-dismiss svg{width:18px;height:18px}
+.welcome-desc{font-size:13px;color:var(--muted);line-height:1.4;margin:0}
+.welcome-steps{display:flex;flex-direction:column;gap:8px}
+.welcome-step-btn{appearance:none;font:inherit;color:var(--text);background:var(--card-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:left;width:100%;transition:border-color .15s ease,background .15s ease}
+.welcome-step-num{width:24px;height:24px;border-radius:50%;background:var(--brand);color:var(--card);font-size:12px;font-weight:700;display:grid;place-items:center;flex:none}
+.welcome-step-text{flex:1;min-width:0}
+.welcome-step-heading{display:block;font-size:13px;font-weight:700;color:var(--text)}
+.welcome-step-sub{display:block;font-size:11.5px;color:var(--muted);margin-top:2px;line-height:1.35}
+.welcome-step-action{color:var(--muted);display:grid;place-items:center;flex:none}
+.welcome-step-action svg{width:16px;height:16px}
+.welcome-foot{display:flex;justify-content:flex-end}
+.welcome-opt-out{appearance:none;font:inherit;background:transparent;border:0;font-size:11.5px;color:var(--muted);cursor:pointer;text-decoration:underline;padding:4px}
+@media (hover:hover) and (pointer:fine){
+  .welcome-dismiss:hover{color:var(--text);background:var(--card-2)}
+  .welcome-step-btn:hover{border-color:var(--brand);background:var(--card)}
+  .welcome-opt-out:hover{color:var(--text)}
+}
+@media (prefers-reduced-motion:reduce){.welcome-card{transition:none}.welcome-card.leaving{transform:none}}
 .dash-pulse-section{margin-top:22px;display:flex;flex-direction:column;gap:18px}
 @media (horizontal-viewport-segments:2),(min-width:820px){.dash-pulse-section{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}}
 .dash-pulse-col{display:flex;flex-direction:column;min-width:0}
@@ -596,6 +621,12 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .fc-dims{position:absolute;left:10px;bottom:10px;display:flex;gap:6px;flex-wrap:wrap;z-index:2;pointer-events:none}
 .fc-dims span{background:rgba(20,30,48,.84);color:#fff;font-family:var(--display);font-weight:600;font-size:12px;line-height:1;letter-spacing:.02em;padding:6px 9px;border-radius:7px;border:1px solid rgba(255,255,255,.14);box-shadow:0 1px 4px rgba(0,0,0,.25)}
 .fc-prompt{padding:18px 20px;text-align:center}
+.flashcard.mc-card{touch-action:pan-y}
+.mc-result{margin-top:4px}
+.mc-summary{text-align:center;padding:8px 4px 2px}
+.mc-sum-head{font-size:12.5px;font-weight:600;color:var(--muted);letter-spacing:.02em}
+.mc-summary .fc-a-detail{margin-top:8px}
+.mc-result .rate-row{margin-top:12px}
 .fc-q{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
 .fc-a-mfg{font-size:12.5px;color:var(--brand-deep);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-top:14px}
 .fc-a-model{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.02em;margin-top:2px}
@@ -2354,6 +2385,37 @@ function showAchievements(){
   </div>`;
   $('#modalBack').classList.add('show');
 }
+/* ---------- Welcome quick-start card (first run only) ----------
+   Shows until the rep dismisses it or does their first review, whichever comes first.
+   "No study history" is judged by review count, not overallMastery(): that is a line-level
+   average that can still round to 0 after a rep has started. */
+function welcomeQuickStartHtml(neverStudied){
+  if(!neverStudied||(state.settings&&state.settings.onboardingDismissed)) return '';
+  const step=(n,fn,h,sub)=>`<button class="welcome-step-btn" onclick="${fn}"><span class="welcome-step-num">${n}</span>
+      <span class="welcome-step-text"><span class="welcome-step-heading">${h}</span><span class="welcome-step-sub">${sub}</span></span>
+      <span class="welcome-step-action">${svg(I.chevR)}</span></button>`;
+  return `<div class="welcome-card" id="welcomeQuickStart">
+    <div class="welcome-header">
+      <div class="welcome-title-row"><span class="welcome-badge">Quick Start</span><h3 class="welcome-title">Welcome to Lot Master</h3></div>
+      <button class="welcome-dismiss" onclick="dismissWelcomeCard()" aria-label="Dismiss welcome guide" title="Dismiss">${svg(I.x)}</button>
+    </div>
+    <p class="welcome-desc">Your pocket companion for lot walkarounds and floorplan mastery. Here's where to start:</p>
+    <div class="welcome-steps">
+      ${step(1,'startFirstTraining()','Drill floorplans (Study)','A 10-card adaptive quiz to learn layouts and specs')}
+      ${step(2,"go('browse')",'Walk the lot (Browse)','Look up stock #s, prices, specs and brochures')}
+      ${step(3,"go('settings')",'Save your progress (Settings)','Sign in to sync across devices, or switch to dark mode')}
+    </div>
+    <div class="welcome-foot"><button class="welcome-opt-out" onclick="dismissWelcomeCard()">Got it, don't show again</button></div>
+  </div>`;
+}
+function dismissWelcomeCard(){
+  state.settings.onboardingDismissed=true; saveState();
+  const el=document.getElementById('welcomeQuickStart');
+  const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(el&&!reduce){ el.classList.add('leaving'); setTimeout(()=>{ if(route==='dashboard') render(); },180); }
+  else if(route==='dashboard') render();
+}
+window.dismissWelcomeCard=dismissWelcomeCard;
 /* ---------- Dashboard inventory pulse (swipe rails) ---------- */
 function dashMiniCardHtml(u){
   const im=unitImg(u);
@@ -2415,6 +2477,7 @@ function viewDashboard(){
   const now=Date.now();
   const dueCount=queue.filter(u=>isReviewDue(u.srs,now)).length;
   const neverStudied=!state.units.some(u=>u.srs.reviews>0);   // real inventory, but nothing studied yet — distinct from "caught up"
+  if(!neverStudied&&!state.settings.onboardingDismissed){ state.settings.onboardingDismissed=true; saveState(); }   // retire the welcome card for good once the rep has studied, so a later progress reset doesn't bring it back
   return `
   <div class="glass hero-glass dash-mission">
     <div class="hero-inner">
@@ -2432,6 +2495,7 @@ function viewDashboard(){
       `}
     </div>
   </div>
+  ${welcomeQuickStartHtml(neverStudied)}
   <div class="panel dash-ready">
     <div class="panel-pad ready-row">
       ${readinessRing(om)}
@@ -3157,6 +3221,24 @@ function answerBack(u){
     ${u.location?`<div class="fc-a-loc">${svg(I.pin)} ${esc(u.location)}${u.stock?' · Stock '+esc(u.stock):''}</div>`:(u.stock?`<div class="fc-a-detail"><span class="tag">Stock ${esc(u.stock)}</span></div>`:'')}
   </div>`;
 }
+// Compact answer line for multiple choice: the model name is already shown on the highlighted correct option,
+// so this only adds what the choice button doesn't -- maker, line, year, key tags, stock.
+function mcAnswerSummary(u){
+  const head=[u.manufacturer,u.productLine,unitYear(u)].filter(Boolean).map(esc).join(' · ');
+  const tags=[];
+  if(u.rvType) tags.push(esc(u.rvType));
+  (u.tags||[]).slice(0,3).forEach(t=>{ if(CAT_LABEL[t]) tags.push(CAT_LABEL[t]); });
+  if(u.stock) tags.push('Stock '+esc(u.stock));
+  return `<div class="mc-summary">${head?`<div class="mc-sum-head">${head}</div>`:''}${tags.length?`<div class="fc-a-detail">${tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>`:''}</div>`;
+}
+// After a multiple-choice answer, bring the rating buttons into view (clear of the mobile bottom nav)
+function revealMcResult(){
+  const row=document.getElementById('mcRateRow'); if(!row) return;
+  const r=row.getBoundingClientRect(), navEl=document.getElementById('bottomNav');
+  const navH=(navEl&&getComputedStyle(navEl).display!=='none')?navEl.getBoundingClientRect().height:0;
+  const overflow=r.bottom-(window.innerHeight-navH-12);
+  if(overflow>0) window.scrollBy({top:overflow,behavior:prefersReduced()?'auto':'smooth'});
+}
 function dimsOverlay(u){
   const bits=[];
   if(u.length) bits.push(esc(fmtLength(u)));
@@ -3254,15 +3336,19 @@ function stageChoice(u){
   const opts=session._opts;
   const figHtml = im?`<div class="fc-fig">${ghImg(im)}${dimsOverlay(u)}</div>`:`<div class="fc-fig"><div class="noimg">${svg(I.bed)}<div class="fc-a-detail">${(u.tags||[]).slice(0,3).map(t=>`<span class="tag">${CAT_LABEL[t]}</span>`).join('')}${u.sleeps?`<span class="tag">Sleeps ${esc(u.sleeps)}</span>`:''}${u.length?`<span class="tag">${esc(fmtLength(u))}</span>`:''}</div></div></div>`;
   const q = 'Which model is this?';
-  let optsHtml=opts.map((o,i)=>{
+  // Once answered, only the correct option and the rep's wrong pick stay on screen -- the two untouched
+  // distractors are dropped so the result + rating buttons fit near the fold on a phone.
+  const shown=session.answered?opts.filter(o=>o.id===u.id||o.id===session._picked):opts;
+  let optsHtml=shown.map((o,i)=>{
     let cls=''; if(session.answered){ if(o.id===u.id) cls='correct'; else if(o.id===session._picked) cls='wrong'; }
     return `<button class="choice ${cls}" ${session.answered?'disabled':''} onclick="pick('${o.id}')">${esc(unitTitle(o))}${o.productLine?` <span class="muted" style="font-size:12.5px">· ${esc(o.productLine)}</span>`:''}</button>`;
   }).join('');
   let after='';
   if(session.answered){
-    after=`<div style="margin-top:6px">${answerBack(u)}<div class="rate-row" style="margin-top:4px">${rateButtons(u, session._picked===u.id?['good','easy']:['again','hard','good'])}</div></div>`;
+    after=`<div class="mc-result">${mcAnswerSummary(u)}<div class="rate-row" id="mcRateRow" style="grid-template-columns:repeat(${session._picked===u.id?2:3},1fr)">${rateButtons(u, session._picked===u.id?['good','easy']:['again','hard','good'])}</div></div>`;
   }
-  return `<div class="flashcard" style="min-height:auto">${figHtml}<div class="fc-prompt" style="padding-bottom:8px"><div class="fc-q">${q}</div></div>
+  // mc-card: no swipe gestures here, so the card must allow normal vertical scrolling (the base .flashcard locks it for swipe-to-rate)
+  return `<div class="flashcard mc-card" style="min-height:auto">${figHtml}<div class="fc-prompt" style="padding-bottom:8px"><div class="fc-q">${q}</div></div>
     <div style="padding:4px 18px 16px">${optsHtml}${after}</div></div>`;
 }
 
@@ -3552,7 +3638,7 @@ function wireFlashcardGestures(){
   card.onpointerup=release;
   card.onpointercancel=release;
 }
-function pick(id){ if(session.answered) return; triggerHaptic('light'); session._picked=id; session.answered=true; render(); }
+function pick(id){ if(session.answered) return; triggerHaptic('light'); session._picked=id; session.answered=true; render(); requestAnimationFrame(revealMcResult); }
 // Real Vibration API, safely guarded — but iOS Safari/WebKit has never implemented
 // it, even for installed PWAs, so this is Android-only in practice. Silently a
 // no-op on iOS rather than throwing, so it's safe to call unconditionally either way.
