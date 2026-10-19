@@ -1,6 +1,6 @@
 {
-  "version": "inv-2026.10-206-brochures",
-  "unitCount": 206,
+  "version": "inv-2026.10-208-brochures",
+  "unitCount": 208,
   "brochures": {
     "Avenue": {
       "file": "brochures/alliance-avenue.pdf",
@@ -17,9 +17,27 @@
     "Valor": {
       "file": "brochures/alliance-valor.pdf",
       "title": "Alliance Valor Brochure"
+    },
+    "Aurum": {
+      "file": "brochures/alliance-aurum.pdf",
+      "title": "Alliance Aurum Brochure"
     }
   },
   "units": [
+    {
+      "id": "alliance-aurum-38fb",
+      "manufacturer": "Alliance",
+      "brand": "Aurum",
+      "model": "38FB",
+      "type": "Fifth Wheel",
+      "year": 2027,
+      "price": null,
+      "weight": 20010,
+      "length": "41' 2\"",
+      "status": "A",
+      "imagePath": "alliance-aurum/aurum-38fb.png",
+      "brochure": "brochures/alliance-aurum.pdf"
+    },
     {
       "id": "alliance-avenue-fifth-wheel-32rls",
       "manufacturer": "Alliance",
@@ -1896,6 +1914,20 @@
       "unlockPrice": 109995,
       "availability": "active",
       "liveYear": "2027"
+    },
+    {
+      "id": "grand-design-lineage-series-e-30dc",
+      "manufacturer": "Grand Design",
+      "brand": "Lineage Series E",
+      "model": "30DC",
+      "type": "Class C Motorhome",
+      "year": 2027,
+      "price": null,
+      "weight": null,
+      "length": "32' 10\"",
+      "status": "A",
+      "imagePath": "lineage-series-e/lineage-30dc.png",
+      "brochure": "brochures/lineage-series-e-30dc.pdf"
     },
     {
       "id": "grand-design-lineage-series-f-31zw",
