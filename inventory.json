@@ -863,8 +863,8 @@
         "King Bed"
       ],
       "stock": "3589",
-      "webPrice": 129682,
-      "unlockPrice": "",
+      "webPrice": 129642,
+      "unlockPrice": 128892,
       "availability": "on-order",
       "liveYear": "2027"
     },
@@ -1096,8 +1096,8 @@
         "King Bed"
       ],
       "stock": "3590",
-      "webPrice": 150417,
-      "unlockPrice": "",
+      "webPrice": 150827,
+      "unlockPrice": 149627,
       "availability": "on-order",
       "liveYear": "2027"
     },
@@ -1117,7 +1117,7 @@
       "stock": "3450",
       "webPrice": 155095,
       "unlockPrice": 153745,
-      "availability": "pending",
+      "availability": "active",
       "liveYear": "2027"
     },
     {
@@ -1160,8 +1160,8 @@
         "Queen Bed"
       ],
       "stock": "3517",
-      "webPrice": 42299,
-      "unlockPrice": 41599,
+      "webPrice": 40695,
+      "unlockPrice": 39995,
       "availability": "active",
       "liveYear": "2027"
     },
@@ -1382,7 +1382,7 @@
       "stock": "3443",
       "webPrice": 55045,
       "unlockPrice": 53995,
-      "availability": "active",
+      "availability": "pending",
       "liveYear": "2027"
     },
     {
@@ -1465,8 +1465,8 @@
         "Queen Bed"
       ],
       "stock": "3596",
-      "webPrice": 37082,
-      "unlockPrice": "",
+      "webPrice": 30845,
+      "unlockPrice": 29995,
       "availability": "on-order",
       "liveYear": "2027"
     },
@@ -1573,10 +1573,11 @@
         "Murphy Bed"
       ],
       "stock": "3584",
-      "webPrice": 43638,
-      "unlockPrice": "",
-      "availability": "on-order",
-      "liveYear": "2027"
+      "webPrice": 35945,
+      "unlockPrice": 34995,
+      "availability": "active",
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-10-20T14:00:08.867Z"
     },
     {
       "id": "grand-design-imagine-xls-17mke",
@@ -1751,8 +1752,8 @@
         "Queen Bed"
       ],
       "stock": "3235",
-      "webPrice": 36095,
-      "unlockPrice": 34995,
+      "webPrice": 35995,
+      "unlockPrice": 34895,
       "availability": "active",
       "liveYear": "2026"
     },
@@ -1934,8 +1935,8 @@
       "imagePath": "lineage-series-e/lineage-30dc.png",
       "brochure": "brochures/lineage-series-e-30dc.pdf",
       "stock": "3598",
-      "webPrice": 204705,
-      "unlockPrice": "",
+      "webPrice": 187704,
+      "unlockPrice": 186404,
       "availability": "on-order",
       "liveYear": "2027"
     },
@@ -1978,8 +1979,8 @@
       "imagePath": "lineage-series-m/lineage-25fw.png",
       "brochure": "brochures/lineage-series-m-25fw.pdf",
       "stock": "3331",
-      "webPrice": 181345,
-      "unlockPrice": 179995,
+      "webPrice": 166161,
+      "unlockPrice": 164811,
       "availability": "active",
       "liveYear": "2026"
     },
@@ -1996,8 +1997,8 @@
       "status": "A",
       "imagePath": "lineage-series-m/lineage-25tk.png",
       "stock": "3252",
-      "webPrice": 161095,
-      "unlockPrice": 159395,
+      "webPrice": 151699,
+      "unlockPrice": 149999,
       "availability": "active",
       "liveYear": "2026"
     },
@@ -2244,8 +2245,8 @@
       "imagePath": "grand-design-momentum-mav/mav-28mav.png",
       "brochure": "brochures/momentum-mav-28mav.pdf",
       "stock": "3585",
-      "webPrice": 61304,
-      "unlockPrice": "",
+      "webPrice": 50845,
+      "unlockPrice": 49995,
       "availability": "on-order",
       "liveYear": "2027"
     },
@@ -2368,8 +2369,8 @@
         "Queen Bed"
       ],
       "stock": "3439",
-      "webPrice": 67695,
-      "unlockPrice": 66995,
+      "webPrice": 66695,
+      "unlockPrice": 65995,
       "availability": "active",
       "liveYear": "2027"
     },
@@ -3099,7 +3100,7 @@
       "imagePath": "grand-design-solitude-2of2/solitude-414ljmj.png",
       "brochure": "brochures/solitude-414ljmj.pdf",
       "stock": "3547",
-      "webPrice": 196320,
+      "webPrice": 209263,
       "unlockPrice": "",
       "availability": "on-order",
       "liveYear": "2027"
@@ -3549,8 +3550,8 @@
         "13.5K A/C"
       ],
       "stock": "3591",
-      "webPrice": 38416,
-      "unlockPrice": "",
+      "webPrice": 29995,
+      "unlockPrice": 28995,
       "availability": "on-order",
       "liveYear": "2027"
     },
@@ -3576,8 +3577,8 @@
         "13.5K A/C"
       ],
       "stock": "3270",
-      "webPrice": 24885,
-      "unlockPrice": 23985,
+      "webPrice": 23895,
+      "unlockPrice": 22995,
       "availability": "active",
       "liveYear": "2026"
     },
@@ -3603,8 +3604,8 @@
         "13.5K A/C"
       ],
       "stock": "3600",
-      "webPrice": 41150,
-      "unlockPrice": "",
+      "webPrice": 30895,
+      "unlockPrice": 29995,
       "availability": "on-order",
       "liveYear": "2027"
     },
@@ -3629,11 +3630,10 @@
         "Sub 5,000 lb UVW",
         "13.5K A/C"
       ],
-      "stock": "3282",
-      "webPrice": 25585,
-      "unlockPrice": 24985,
-      "availability": "pending",
-      "liveYear": "2026"
+      "stock": "",
+      "webPrice": "",
+      "unlockPrice": "",
+      "availability": ""
     },
     {
       "id": "grand-design-transcend-xplor-22rbx",
@@ -3706,8 +3706,8 @@
         "13.5K A/C"
       ],
       "stock": "3359",
-      "webPrice": 27545,
-      "unlockPrice": 26995,
+      "webPrice": 26545,
+      "unlockPrice": 25995,
       "availability": "active",
       "liveYear": "2026"
     },
@@ -3882,11 +3882,10 @@
         "8K A/C",
         "Queen Bed"
       ],
-      "stock": "3340",
-      "webPrice": 20945,
-      "unlockPrice": 19995,
-      "availability": "pending",
-      "liveYear": "2026"
+      "stock": "",
+      "webPrice": "",
+      "unlockPrice": "",
+      "availability": ""
     },
     {
       "id": "winnebago-access-18rk",
