@@ -2029,6 +2029,7 @@ function reconcileGithubInventory(payload){
   const matchKey=(mf,brand,model)=>norm(mf)+'|'+norm(brand)+'|'+norm(model);
   const removedKey=(brand,model)=>norm(brand)+'|'+norm(model);   // same 2-part format deleteUnit() already writes to state.removedSeed
   const prevByKey=new Map((state.units||[]).map(u=>[matchKey(u.manufacturer,u.productLine,u.model),u]));
+  const prevById=new Map((state.units||[]).filter(u=>u.seed).map(u=>[u.id,u]));   // fallback when a model is renamed in the sheet (e.g. 275FKTS -> 275FKT) but keeps its stable id
   const removed=new Set(state.removedSeed||[]);
   const userUnits=(state.units||[]).filter(u=>!u.seed);
   const next=[], seenIds=new Set();
@@ -2041,7 +2042,7 @@ function reconcileGithubInventory(payload){
       webPrice:su.webPrice||'', unlockPrice:su.unlockPrice||'', availability:su.availability||'',
       seed:true, seedKey:su.image||su.imageFileName||'', imageUrl: resolveImageUrl(su)||'', brochure:su.brochure||'',
       keyFeatures: Array.isArray(su.keyFeatures)?su.keyFeatures:[]};
-    const prev=prevByKey.get(matchKey(su.manufacturer,su.brand,su.model));
+    const prev=prevByKey.get(matchKey(su.manufacturer,su.brand,su.model)) || (su.id&&prevById.get(su.id)) || null;   // rename-safe: same id keeps its study progress
     if(prev){
       u.id=prev.id; u.srs=prev.srs||newSRS(); if(prev.mastery) u.mastery=prev.mastery;
       // A device first set up before inventory.json carried stable ids still holds a random local id here, and
@@ -2052,7 +2053,7 @@ function reconcileGithubInventory(payload){
         u.id=su.id; idsRepaired++; changed=true;
       }
       u.sleeps=prev.sleeps||''; u.slides=prev.slides||''; u.location=prev.location||''; u.vin=prev.vin||''; u.description=prev.description||'';
-      if(prev.manufacturer!==u.manufacturer||prev.productLine!==u.productLine||prev.rvType!==u.rvType||prev.year!==u.year||(prev.liveYear||'')!==u.liveYear||(prev.lotArrivalDate||'')!==u.lotArrivalDate
+      if(prev.model!==u.model||prev.manufacturer!==u.manufacturer||prev.productLine!==u.productLine||prev.rvType!==u.rvType||prev.year!==u.year||(prev.liveYear||'')!==u.liveYear||(prev.lotArrivalDate||'')!==u.lotArrivalDate
         ||prev.price!==u.price||prev.weight!==u.weight||prev.length!==u.length||prev.imageUrl!==u.imageUrl||prev.status!==u.status||(prev.brochure||'')!==u.brochure
         ||prev.stock!==u.stock||prev.webPrice!==u.webPrice||prev.unlockPrice!==u.unlockPrice||prev.availability!==u.availability
         ||JSON.stringify(prev.keyFeatures||[])!==JSON.stringify(u.keyFeatures)) changed=true;
@@ -4845,12 +4846,18 @@ async function pullRemoteToLocal(){
       else byUnit.set(row.unit_id,row);
     }
     let changed=false, matched=0, applied=0;
+    const localIds=new Set(state.units.map(u=>u.id));
     for(const u of state.units){
       const row=byUnit.get(u.id); if(!row) continue;
       matched++;
       if(applyRemoteRow(u,row)){ changed=true; applied++; }
     }
-    remoteSyncStatus.lastPull={at:Date.now(), rows:byUnit.size, matched, applied, unmatched:byUnit.size-matched};
+    // Rows that don't match a local unit are either (a) legacy random ids from a not-yet-repaired device (no hyphen,
+    // from uid()) or (b) floorplans retired from inventory.json (stable hyphenated ids). (b) is expected after the
+    // sheet drops discontinued units: kept in the cloud untouched, so progress returns if the unit is ever re-added.
+    let unmatched=0, retired=0;
+    for(const id of byUnit.keys()){ if(localIds.has(id)) continue; if(String(id).includes('-')) retired++; else unmatched++; }
+    remoteSyncStatus.lastPull={at:Date.now(), rows:byUnit.size, matched, applied, unmatched, retired};
     state.featureProgress=state.featureProgress||{};
     for(const [key,row] of byFeature){
       const local=state.featureProgress[key];

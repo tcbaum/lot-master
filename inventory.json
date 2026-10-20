@@ -1,6 +1,6 @@
 {
-  "version": "inv-2026.10-208-brochures",
-  "unitCount": 208,
+  "version": "inv-2026.10-193-brochures",
+  "unitCount": 193,
   "brochures": {
     "Avenue": {
       "file": "brochures/alliance-avenue.pdf",
@@ -34,8 +34,8 @@
       "price": null,
       "weight": 20010,
       "length": "41' 2\"",
-      "status": "A",
       "imagePath": "alliance-aurum/aurum-38fb.png",
+      "status": "A",
       "brochure": "brochures/alliance-aurum.pdf",
       "stock": "3601",
       "webPrice": 269048,
@@ -53,8 +53,8 @@
       "price": null,
       "weight": 10960,
       "length": "35'",
-      "status": "A",
       "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-32rls.png",
+      "status": "A",
       "brochure": "brochures/alliance-avenue.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -71,27 +71,6 @@
       "liveYear": "2027"
     },
     {
-      "id": "alliance-avenue-fifth-wheel-33rks",
-      "manufacturer": "Alliance",
-      "brand": "Avenue Fifth Wheel",
-      "model": "33RKS",
-      "type": "Fifth Wheel",
-      "year": 2025,
-      "price": null,
-      "weight": 10730,
-      "length": "34' 5\"",
-      "status": "D",
-      "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-33rks.png",
-      "keyFeatures": [
-        "Rear Kitchen",
-        "U-Shaped Kitchen",
-        "Central Lounge",
-        "Recliners & Tri-fold Sofa",
-        "Washer/Dryer Prep",
-        "King Bed"
-      ]
-    },
-    {
       "id": "alliance-avenue-fifth-wheel-34rls",
       "manufacturer": "Alliance",
       "brand": "Avenue Fifth Wheel",
@@ -101,8 +80,8 @@
       "price": null,
       "weight": 11500,
       "length": "37'",
-      "status": "A",
       "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-34rls.png",
+      "status": "A",
       "brochure": "brochures/alliance-avenue.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -123,8 +102,8 @@
       "price": null,
       "weight": 11450,
       "length": "36' 10\"",
-      "status": "A",
       "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-35rks.png",
+      "status": "A",
       "brochure": "brochures/alliance-avenue.pdf",
       "keyFeatures": [
         "Rear Kitchen",
@@ -145,8 +124,8 @@
       "price": null,
       "weight": 12890,
       "length": "41' 11\"",
-      "status": "A",
       "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-38dbl.png",
+      "status": "A",
       "brochure": "brochures/alliance-avenue.pdf",
       "keyFeatures": [
         "Dual Bedroom",
@@ -167,8 +146,8 @@
       "price": null,
       "weight": 13400,
       "length": "41' 10\"",
-      "status": "A",
       "imagePath": "alliance-avenue-5th-wheel/avenue-5th-wheel-39mbr.png",
+      "status": "A",
       "brochure": "brochures/alliance-avenue.pdf",
       "keyFeatures": [
         "Mid-bunk",
@@ -189,8 +168,8 @@
       "price": null,
       "weight": 8990,
       "length": "34'",
-      "status": "A",
       "imagePath": "alliance-avenue-travel-trailer/avenue-travel-trailer-298rl.png",
+      "status": "A",
       "brochure": "brochures/alliance-avenue.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -211,8 +190,8 @@
       "price": null,
       "weight": 10100,
       "length": "37' 11\"",
-      "status": "A",
       "imagePath": "alliance-avenue-travel-trailer/avenue-travel-trailer-332rl.png",
+      "status": "A",
       "brochure": "brochures/alliance-avenue.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -233,8 +212,8 @@
       "price": null,
       "weight": 10500,
       "length": "38' 6\"",
-      "status": "A",
       "imagePath": "alliance-avenue-travel-trailer/avenue-travel-trailer-333bh.png",
+      "status": "A",
       "brochure": "brochures/alliance-avenue.pdf",
       "keyFeatures": [
         "Family Bunkhouse",
@@ -255,8 +234,8 @@
       "price": null,
       "weight": 8270,
       "length": "27' 11\"",
-      "status": "A",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-acces-23ml.png",
+      "status": "A",
       "brochure": "brochures/alliance-avenue.pdf",
       "keyFeatures": [
         "Mid-Living",
@@ -281,8 +260,8 @@
       "price": null,
       "weight": 8700,
       "length": "29' 11\"",
-      "status": "A",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-25rl.png",
+      "status": "A",
       "brochure": "brochures/alliance-avenue.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -307,8 +286,8 @@
       "price": null,
       "weight": 8760,
       "length": "30'11\"",
-      "status": "A",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-26re.png",
+      "status": "A",
       "brochure": "brochures/alliance-avenue.pdf",
       "keyFeatures": [
         "Rear Entertainment",
@@ -320,19 +299,6 @@
       ]
     },
     {
-      "id": "alliance-avenue-all-access-series-26rd",
-      "manufacturer": "Alliance",
-      "brand": "Avenue All-Access Series",
-      "model": "26RD",
-      "type": "Fifth Wheel",
-      "year": 2026,
-      "price": null,
-      "weight": 7800,
-      "length": "28' 10\"",
-      "status": "D",
-      "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-26rd.png"
-    },
-    {
       "id": "alliance-avenue-all-access-series-27rk",
       "manufacturer": "Alliance",
       "brand": "Avenue All-Access Series",
@@ -342,8 +308,8 @@
       "price": null,
       "weight": 9375,
       "length": "31' 0\"",
-      "status": "A",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-27rk.png",
+      "status": "A",
       "brochure": "brochures/alliance-avenue.pdf",
       "keyFeatures": [
         "Rear Kitchen",
@@ -364,8 +330,8 @@
       "price": null,
       "weight": 9650,
       "length": "32' 11\"",
-      "status": "A",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-29rl.png",
+      "status": "A",
       "brochure": "brochures/alliance-avenue.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -386,8 +352,8 @@
       "price": null,
       "weight": 9554,
       "length": "34' 11\"",
-      "status": "A",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-29bh.png",
+      "status": "A",
       "brochure": "brochures/alliance-avenue.pdf",
       "keyFeatures": [
         "Bunk House",
@@ -408,8 +374,8 @@
       "price": null,
       "weight": 10150,
       "length": "34' 9\"",
-      "status": "A",
       "imagePath": "alliance-all-access-5th-wheel/alliance-avenue-all-access-30bh.png",
+      "status": "A",
       "brochure": "brochures/alliance-avenue.pdf",
       "keyFeatures": [
         "Bunk House",
@@ -435,8 +401,8 @@
       "price": null,
       "weight": 6545,
       "length": "29' 11\"",
-      "status": "A",
       "imagePath": "alliance-delta/delta-252rl.png",
+      "status": "A",
       "brochure": "brochures/alliance-delta.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -462,7 +428,6 @@
       "price": null,
       "weight": 6608,
       "length": "29' 11\"",
-      "status": "A",
       "imagePath": "alliance-delta/delta-258fk.png",
       "brochure": "brochures/alliance-delta.pdf",
       "keyFeatures": [
@@ -479,8 +444,8 @@
       "price": null,
       "weight": 6408,
       "length": "29' 7\"",
-      "status": "A",
       "imagePath": "alliance-delta/delta-262rb.png",
+      "status": "A",
       "brochure": "brochures/alliance-delta.pdf",
       "keyFeatures": [
         "Rear Bath",
@@ -506,8 +471,8 @@
       "price": null,
       "weight": 7420,
       "length": "31' 11\"",
-      "status": "A",
       "imagePath": "alliance-delta/delta-274rkw.png",
+      "status": "A",
       "brochure": "brochures/alliance-delta.pdf",
       "keyFeatures": [
         "Rear Kitchen",
@@ -533,8 +498,8 @@
       "price": null,
       "weight": 6882,
       "length": "31' 11\"",
-      "status": "A",
       "imagePath": "alliance-delta/delta-281bh.png",
+      "status": "A",
       "brochure": "brochures/alliance-delta.pdf",
       "keyFeatures": [
         "Bunk House",
@@ -555,8 +520,8 @@
       "price": null,
       "weight": 7536,
       "length": "32' 11\"",
-      "status": "A",
       "imagePath": "alliance-delta/delta-284rk.png",
+      "status": "A",
       "brochure": "brochures/alliance-delta.pdf",
       "keyFeatures": [
         "Rear Kitchen",
@@ -577,8 +542,8 @@
       "price": null,
       "weight": 7388,
       "length": "33' 11\"",
-      "status": "A",
       "imagePath": "alliance-delta/delta-291bh.png",
+      "status": "A",
       "brochure": "brochures/alliance-delta.pdf",
       "keyFeatures": [
         "Bunk House",
@@ -599,8 +564,8 @@
       "price": null,
       "weight": 7486,
       "length": "33' 11\"",
-      "status": "A",
       "imagePath": "alliance-delta/delta-292rl.png",
+      "status": "A",
       "brochure": "brochures/alliance-delta.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -612,19 +577,6 @@
       ]
     },
     {
-      "id": "alliance-delta-294rk",
-      "manufacturer": "Alliance",
-      "brand": "Delta",
-      "model": "294RK",
-      "type": "Travel Trailer",
-      "year": 2026,
-      "price": null,
-      "weight": 7316,
-      "length": "33' 11\"",
-      "status": "D",
-      "imagePath": "alliance-delta/delta-294rk.png"
-    },
-    {
       "id": "alliance-delta-321bh",
       "manufacturer": "Alliance",
       "brand": "Delta",
@@ -634,8 +586,8 @@
       "price": null,
       "weight": 8253,
       "length": "36' 11\"",
-      "status": "A",
       "imagePath": "alliance-delta/delta-321bh.png",
+      "status": "A",
       "brochure": "brochures/alliance-delta.pdf",
       "keyFeatures": [
         "Bunk House",
@@ -643,27 +595,6 @@
         "Dinette Booth",
         "Tri-Fold Sofa",
         "U-Shaped Kitchen",
-        "Queen Bed"
-      ]
-    },
-    {
-      "id": "alliance-delta-ultra-lite-ml206",
-      "manufacturer": "Alliance",
-      "brand": "Delta Ultra Lite",
-      "model": "ML206",
-      "type": "Travel Trailer",
-      "year": 2026,
-      "price": null,
-      "weight": 4992,
-      "length": "23' 11\"",
-      "status": "D",
-      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml206.png",
-      "keyFeatures": [
-        "Mid Living",
-        "Pull-Out Pantry",
-        "Theater Seating",
-        "Fireplace",
-        "18K A/C",
         "Queen Bed"
       ]
     },
@@ -677,8 +608,8 @@
       "price": null,
       "weight": 5372,
       "length": "25' 11\"",
-      "status": "A",
       "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml216.png",
+      "status": "A",
       "brochure": "brochures/alliance-delta.pdf",
       "keyFeatures": [
         "Mid Living",
@@ -699,8 +630,8 @@
       "price": null,
       "weight": null,
       "length": "25' 11\"",
-      "status": "A",
       "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-fk218.png",
+      "status": "A",
       "brochure": "brochures/alliance-delta.pdf",
       "keyFeatures": [
         "Front Kitchen",
@@ -709,22 +640,6 @@
         "Ample Counter Space",
         "Couples Wardrobe",
         "Queen Bed"
-      ]
-    },
-    {
-      "id": "alliance-delta-ultra-lite-ml226",
-      "manufacturer": "Alliance",
-      "brand": "Delta Ultra Lite",
-      "model": "ML226",
-      "type": "Travel Trailer",
-      "year": 2026,
-      "price": null,
-      "weight": 5202,
-      "length": "26' 11\"",
-      "status": "D",
-      "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-ml226.png",
-      "keyFeatures": [
-        "Mid Living"
       ]
     },
     {
@@ -737,8 +652,8 @@
       "price": null,
       "weight": 5600,
       "length": "27' 11\"",
-      "status": "A",
       "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-rk234.png",
+      "status": "A",
       "brochure": "brochures/alliance-delta.pdf",
       "keyFeatures": [
         "Rear Kitchen",
@@ -759,8 +674,8 @@
       "price": null,
       "weight": 6175,
       "length": "29' 11\"",
-      "status": "A",
       "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-re250.png",
+      "status": "A",
       "brochure": "brochures/alliance-delta.pdf",
       "keyFeatures": [
         "Rear Entertainment",
@@ -786,8 +701,8 @@
       "price": null,
       "weight": 6230,
       "length": "29' 11\"",
-      "status": "A",
       "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-lk254.png",
+      "status": "A",
       "brochure": "brochures/alliance-delta.pdf",
       "keyFeatures": [
         "L Kitchen",
@@ -808,8 +723,8 @@
       "price": null,
       "weight": 6190,
       "length": "29' 11\"",
-      "status": "A",
       "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-bh255.png",
+      "status": "A",
       "brochure": "brochures/alliance-delta.pdf",
       "keyFeatures": [
         "Bunk House",
@@ -830,8 +745,8 @@
       "price": null,
       "weight": 6295,
       "length": "31' 11\"",
-      "status": "D",
       "imagePath": "alliance-delta-ultra-lite/delta-ultra-lite-bh271.png",
+      "status": "D",
       "keyFeatures": [
         "Bunk House"
       ],
@@ -851,8 +766,8 @@
       "price": null,
       "weight": 13525,
       "length": "34' 11\"",
-      "status": "A",
       "imagePath": "alliance-paradigm/paradigm-310rl.png",
+      "status": "A",
       "brochure": "brochures/alliance-paradigm.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -878,8 +793,8 @@
       "price": null,
       "weight": 13560,
       "length": "34' 11\"",
-      "status": "A",
       "imagePath": "alliance-paradigm/paradigm-312rk.png",
+      "status": "A",
       "brochure": "brochures/alliance-paradigm.pdf",
       "keyFeatures": [
         "Rear Kitchen",
@@ -905,35 +820,14 @@
       "price": null,
       "weight": 14072,
       "length": "37' 10\"",
-      "status": "A",
       "imagePath": "alliance-paradigm/paradigm-340rl.png",
+      "status": "A",
       "brochure": "brochures/alliance-paradigm.pdf",
       "keyFeatures": [
         "Rear Living",
         "Sleeper Sofa | Dual Recliner",
         "Turn Table Dinette",
         "Hidden Pantry",
-        "W/D Prep",
-        "King Bed"
-      ]
-    },
-    {
-      "id": "alliance-paradigm-370fb",
-      "manufacturer": "Alliance",
-      "brand": "Paradigm",
-      "model": "370FB",
-      "type": "Fifth Wheel",
-      "year": 2026,
-      "price": null,
-      "weight": 14908,
-      "length": "40' 4\"",
-      "status": "D",
-      "imagePath": "alliance-paradigm/paradigm-370fb.png",
-      "keyFeatures": [
-        "Front Bath",
-        "Spa Bathroom | Walk-In Closet",
-        "Sleeper Sofa | Dual Recliner",
-        "Bath and a Half",
         "W/D Prep",
         "King Bed"
       ]
@@ -948,8 +842,8 @@
       "price": null,
       "weight": 15222,
       "length": "40' 11\"",
-      "status": "A",
       "imagePath": "alliance-paradigm/paradigm-373fb.png",
+      "status": "A",
       "brochure": "brochures/alliance-paradigm.pdf",
       "keyFeatures": [
         "Front Bath",
@@ -970,8 +864,8 @@
       "price": null,
       "weight": 15300,
       "length": "41' 9\"",
-      "status": "A",
       "imagePath": "alliance-paradigm/paradigm-375rd.png",
+      "status": "A",
       "brochure": "brochures/alliance-paradigm.pdf",
       "keyFeatures": [
         "Rear Den",
@@ -992,35 +886,14 @@
       "price": null,
       "weight": 14812,
       "length": "41' 4\"",
-      "status": "A",
       "imagePath": "alliance-paradigm/paradigm-382rk.png",
+      "status": "A",
       "brochure": "brochures/alliance-paradigm.pdf",
       "keyFeatures": [
         "Rear Kitchen",
         "Ample Counter Space",
         "Sleeper Sofa | Dual Recliner",
         "Walk-In Closet",
-        "W/D Prep",
-        "King Bed"
-      ]
-    },
-    {
-      "id": "alliance-paradigm-385fl",
-      "manufacturer": "Alliance",
-      "brand": "Paradigm",
-      "model": "385FL",
-      "type": "Fifth Wheel",
-      "year": 2026,
-      "price": null,
-      "weight": 15636,
-      "length": "41' 4\"",
-      "status": "D",
-      "imagePath": "alliance-paradigm/paradigm-385fl.png",
-      "keyFeatures": [
-        "Front Living",
-        "L-Shape Sofa",
-        "Turn Table Dinette",
-        "Waterfall Countertops",
         "W/D Prep",
         "King Bed"
       ]
@@ -1035,8 +908,8 @@
       "price": null,
       "weight": 15636,
       "length": "41' 4\"",
-      "status": "A",
       "imagePath": "alliance-paradigm/paradigm-386fl.png",
+      "status": "A",
       "brochure": "brochures/alliance-paradigm.pdf",
       "keyFeatures": [
         "Front Living",
@@ -1057,8 +930,8 @@
       "price": null,
       "weight": 15528,
       "length": "40' 11\"",
-      "status": "A",
       "imagePath": "alliance-paradigm/paradigm-388sp.png",
+      "status": "A",
       "brochure": "brochures/alliance-paradigm.pdf",
       "keyFeatures": [
         "Side Patio",
@@ -1084,8 +957,8 @@
       "price": null,
       "weight": 15278,
       "length": "42' 6\"",
-      "status": "A",
       "imagePath": "alliance-paradigm/paradigm-395ds.png",
+      "status": "A",
       "brochure": "brochures/alliance-paradigm.pdf",
       "keyFeatures": [
         "Dual Suite",
@@ -1111,8 +984,8 @@
       "price": null,
       "weight": 15895,
       "length": "45' 11\"",
-      "status": "A",
       "imagePath": "alliance-valor/valor-44v14.png",
+      "status": "A",
       "brochure": "brochures/alliance-valor.pdf",
       "stock": "3450",
       "webPrice": 155095,
@@ -1130,8 +1003,8 @@
       "price": null,
       "weight": null,
       "length": null,
-      "status": "A",
       "imagePath": "grand-design-foundation/foundation-42GD.jpeg",
+      "status": "A",
       "stock": "3302",
       "webPrice": 95345,
       "unlockPrice": 94995,
@@ -1148,8 +1021,8 @@
       "price": null,
       "weight": 6012,
       "length": "26' 6\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2300mk.png",
+      "status": "A",
       "brochure": "brochures/imagine-2300mk.pdf",
       "keyFeatures": [
         "Mid Kitchen",
@@ -1175,8 +1048,8 @@
       "price": null,
       "weight": 6406,
       "length": "29'",
-      "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2470bh.png",
+      "status": "A",
       "brochure": "brochures/imagine-2470bh.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -1202,8 +1075,8 @@
       "price": null,
       "weight": 6569,
       "length": "29' 7\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2500rl.png",
+      "status": "A",
       "brochure": "brochures/imagine-2500rl.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -1224,8 +1097,8 @@
       "price": null,
       "weight": 6487,
       "length": "29' 8\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2600rb.png",
+      "status": "A",
       "brochure": "brochures/imagine-2600rb.pdf",
       "keyFeatures": [
         "Rear Bathroom",
@@ -1251,8 +1124,8 @@
       "price": null,
       "weight": 7525,
       "length": "29' 11\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2620fk.png",
+      "status": "A",
       "brochure": "brochures/imagine-2620fk.pdf"
     },
     {
@@ -1265,8 +1138,8 @@
       "price": null,
       "weight": 6884,
       "length": "32'",
-      "status": "A",
       "imagePath": "grand-design-imagine-1of2/imagine-2670mk.png",
+      "status": "A",
       "brochure": "brochures/imagine-2670mk.pdf",
       "keyFeatures": [
         "Mid Kitchen",
@@ -1292,8 +1165,8 @@
       "price": null,
       "weight": 7138,
       "length": "31' 8\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-2of2/imagine-2700bs.png",
+      "status": "A",
       "brochure": "brochures/imagine-2700bs.pdf",
       "keyFeatures": [
         "Bedroom-Slide",
@@ -1319,8 +1192,8 @@
       "price": null,
       "weight": 6996,
       "length": "31' 9\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-2of2/imagine-2800bh.png",
+      "status": "A",
       "brochure": "brochures/imagine-2800bh.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -1341,8 +1214,8 @@
       "price": null,
       "weight": 7215,
       "length": "32'",
-      "status": "A",
       "imagePath": "grand-design-imagine-2of2/imagine-2810bh.png",
+      "status": "A",
       "brochure": "brochures/imagine-2810bh.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -1368,8 +1241,8 @@
       "price": null,
       "weight": 7880,
       "length": "33' 11\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-2of2/imagine-2970rl.png",
+      "status": "A",
       "brochure": "brochures/imagine-2970rl.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -1386,38 +1259,6 @@
       "liveYear": "2027"
     },
     {
-      "id": "grand-design-imagine-3100rd",
-      "manufacturer": "Grand Design",
-      "brand": "Imagine",
-      "model": "3100RD",
-      "type": "Travel Trailer",
-      "year": 2026,
-      "price": null,
-      "weight": 8030,
-      "length": "35' 8\"",
-      "status": "D",
-      "imagePath": "grand-design-imagine-2of2/imagine-3100rd.png",
-      "keyFeatures": [
-        "Rear Den"
-      ]
-    },
-    {
-      "id": "grand-design-imagine-3210bh",
-      "manufacturer": "Grand Design",
-      "brand": "Imagine",
-      "model": "3210BH",
-      "type": "Travel Trailer",
-      "year": 2026,
-      "price": null,
-      "weight": 8725,
-      "length": "36' 8\"",
-      "status": "D",
-      "imagePath": "grand-design-imagine-2of2/imagine-3210bh.png",
-      "keyFeatures": [
-        "Bunkhouse"
-      ]
-    },
-    {
       "id": "grand-design-imagine-aim-15rba",
       "manufacturer": "Grand Design",
       "brand": "Imagine AIM",
@@ -1427,8 +1268,8 @@
       "price": null,
       "weight": 3547,
       "length": "19' 8\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-aim/imagine-aim-15rba.png",
+      "status": "A",
       "brochure": "brochures/imagine-aim-15rba.pdf",
       "keyFeatures": [
         "Rear-Bathroom",
@@ -1453,8 +1294,8 @@
       "price": null,
       "weight": 3813,
       "length": "19' 8\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-aim/imagine-aim-16mla.png",
+      "status": "A",
       "brochure": "brochures/imagine-aim-16mla.pdf",
       "keyFeatures": [
         "Mid-Living",
@@ -1480,8 +1321,8 @@
       "price": null,
       "weight": 4945,
       "length": "21' 8\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-aim/imagine-aim-17mka.png",
+      "status": "A",
       "brochure": "brochures/imagine-aim-17mka.pdf",
       "keyFeatures": [
         "Mid-Kitchen",
@@ -1507,8 +1348,8 @@
       "price": null,
       "weight": 4306,
       "length": "22'",
-      "status": "A",
       "imagePath": "grand-design-imagine-aim/imagine-aim-19mla.png",
+      "status": "A",
       "brochure": "brochures/imagine-aim-19mla.pdf",
       "keyFeatures": [
         "Mid-Living",
@@ -1534,8 +1375,8 @@
       "price": null,
       "weight": 4462,
       "length": "23' 10\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-aim/imagine-aim-20bha.png",
+      "status": "A",
       "brochure": "brochures/imagine-aim-20bha.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -1561,8 +1402,8 @@
       "price": null,
       "weight": 5361,
       "length": "24' 11\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-aim/imagine-aim-21mba.png",
+      "status": "A",
       "brochure": "brochures/imagine-aim-21mba.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -1580,32 +1421,6 @@
       "lotArrivalDate": "2026-10-20T14:00:08.867Z"
     },
     {
-      "id": "grand-design-imagine-xls-17mke",
-      "manufacturer": "Grand Design",
-      "brand": "Imagine XLS",
-      "model": "17MKE",
-      "type": "Travel Trailer",
-      "year": 2026,
-      "price": null,
-      "weight": 4921,
-      "length": "21' 8\"",
-      "status": "D",
-      "imagePath": "grand-design-imagine-xls/imagine-xls-17mke.png"
-    },
-    {
-      "id": "grand-design-imagine-xls-21mbe",
-      "manufacturer": "Grand Design",
-      "brand": "Imagine XLS",
-      "model": "21MBE",
-      "type": "Travel Trailer",
-      "year": 2026,
-      "price": null,
-      "weight": 5334,
-      "length": "24' 11\"",
-      "status": "D",
-      "imagePath": "grand-design-imagine-xls/imagine-xls-21mbe.png"
-    },
-    {
       "id": "grand-design-imagine-xls-22bhe",
       "manufacturer": "Grand Design",
       "brand": "Imagine XLS",
@@ -1615,8 +1430,8 @@
       "price": null,
       "weight": 5698,
       "length": "24' 4\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-xls/imagine-xls-22bhe.png",
+      "status": "A",
       "brochure": "brochures/imagine-xls-22bhe.pdf",
       "keyFeatures": [
         "Bunkhouse Entertainment",
@@ -1637,8 +1452,8 @@
       "price": null,
       "weight": 5423,
       "length": "25' 11\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-xls/imagine-xls-22mle.png",
+      "status": "A",
       "brochure": "brochures/imagine-xls-22mle.pdf",
       "keyFeatures": [
         "Mid-Living",
@@ -1664,8 +1479,8 @@
       "price": null,
       "weight": 5379,
       "length": "25' 8\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-xls/imagine-xls-22rbe.png",
+      "status": "A",
       "brochure": "brochures/imagine-xls-22rbe.pdf",
       "keyFeatures": [
         "Rear-Bathroom",
@@ -1691,8 +1506,8 @@
       "price": null,
       "weight": 5831,
       "length": "28' 2\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-xls/imagine-xls-23lde.png",
+      "status": "A",
       "brochure": "brochures/imagine-xls-23lde.pdf",
       "keyFeatures": [
         "Living Dining Entertainment",
@@ -1718,8 +1533,8 @@
       "price": null,
       "weight": 6313,
       "length": "29' 9\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-xls/imagine-xls-25dbe.png",
+      "status": "A",
       "brochure": "brochures/imagine-xls-25dbe.pdf",
       "keyFeatures": [
         "Bunkhouse Entertainment",
@@ -1740,8 +1555,8 @@
       "price": null,
       "weight": 6186,
       "length": "29' 9\"",
-      "status": "A",
       "imagePath": "grand-design-imagine-xls/imagine-xls-25rle.png",
+      "status": "A",
       "brochure": "brochures/imagine-xls-25rle.pdf",
       "keyFeatures": [
         "Rear Living Entertainment",
@@ -1767,8 +1582,8 @@
       "price": null,
       "weight": 12500,
       "length": "34' 5\"",
-      "status": "A",
       "imagePath": "grand-design-influence/influence-2903rl.png",
+      "status": "A",
       "brochure": "brochures/influence-2903rl.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -1789,8 +1604,8 @@
       "price": null,
       "weight": 12800,
       "length": "34' 11\"",
-      "status": "A",
       "imagePath": "grand-design-influence/influence-3003rl.png",
+      "status": "A",
       "brochure": "brochures/influence-3003rl.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -1811,8 +1626,8 @@
       "price": null,
       "weight": 13200,
       "length": "35' 11\"",
-      "status": "A",
       "imagePath": "grand-design-influence/influence-3203gk.png",
+      "status": "A",
       "brochure": "brochures/influence-3203gk.pdf",
       "keyFeatures": [
         "Rear Kitchen",
@@ -1833,8 +1648,8 @@
       "price": null,
       "weight": 13700,
       "length": "38' 3\"",
-      "status": "A",
       "imagePath": "grand-design-influence/influence-3503gk.png",
+      "status": "A",
       "brochure": "brochures/influence-3503gk.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -1855,8 +1670,8 @@
       "price": null,
       "weight": null,
       "length": "41' 10\"",
-      "status": "A",
       "imagePath": "grand-design-influence/influence-3705rd.png",
+      "status": "A",
       "brochure": "brochures/influence-3705rd.pdf",
       "keyFeatures": [
         "Rear Den",
@@ -1877,8 +1692,8 @@
       "price": null,
       "weight": 15000,
       "length": "42' 6\"",
-      "status": "A",
       "imagePath": "grand-design-influence/influence-3804ds.png",
+      "status": "A",
       "brochure": "brochures/influence-3804ds.pdf",
       "keyFeatures": [
         "Dual Suite",
@@ -1904,8 +1719,8 @@
       "price": null,
       "weight": 16000,
       "length": "42' 8\"",
-      "status": "A",
       "imagePath": "grand-design-influence/influence-3904bh.png",
+      "status": "A",
       "brochure": "brochures/influence-3904bh.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -1931,8 +1746,8 @@
       "price": null,
       "weight": null,
       "length": "32' 10\"",
-      "status": "A",
       "imagePath": "lineage-series-e/lineage-30dc.png",
+      "status": "A",
       "brochure": "brochures/lineage-series-e-30dc.pdf",
       "stock": "3598",
       "webPrice": 187704,
@@ -1950,8 +1765,8 @@
       "price": null,
       "weight": null,
       "length": "33' 9\"",
-      "status": "A",
-      "imagePath": "lineage-series-f/lineage-series-f-31zw.png"
+      "imagePath": "lineage-series-f/lineage-series-f-31zw.png",
+      "status": "A"
     },
     {
       "id": "grand-design-lineage-series-f-31zw5",
@@ -1975,8 +1790,8 @@
       "price": null,
       "weight": 12125,
       "length": "25' 8\"",
-      "status": "A",
       "imagePath": "lineage-series-m/lineage-25fw.png",
+      "status": "A",
       "brochure": "brochures/lineage-series-m-25fw.pdf",
       "stock": "3331",
       "webPrice": 166161,
@@ -1994,8 +1809,8 @@
       "price": null,
       "weight": 12125,
       "length": "15' 8\"",
-      "status": "A",
       "imagePath": "lineage-series-m/lineage-25tk.png",
+      "status": "A",
       "stock": "3252",
       "webPrice": 151699,
       "unlockPrice": 149999,
@@ -2064,8 +1879,8 @@
       "price": null,
       "weight": 13100,
       "length": "36' 3\"",
-      "status": "A",
-      "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-320g.png"
+      "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-320g.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-g-class-325g",
@@ -2077,8 +1892,8 @@
       "price": null,
       "weight": 12603,
       "length": "35' 6\"",
-      "status": "A",
-      "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-325g.png"
+      "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-325g.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-g-class-350g",
@@ -2090,8 +1905,8 @@
       "price": null,
       "weight": 12950,
       "length": "39' 9\"",
-      "status": "A",
       "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-350g.png",
+      "status": "A",
       "stock": "3402",
       "webPrice": 95295,
       "unlockPrice": 94395,
@@ -2108,8 +1923,8 @@
       "price": null,
       "weight": 14250,
       "length": "41' 6\"",
-      "status": "A",
-      "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-363g.png"
+      "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-363g.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-g-class-394g",
@@ -2121,8 +1936,8 @@
       "price": null,
       "weight": 16400,
       "length": "44' 11\"",
-      "status": "A",
-      "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-394g.png"
+      "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-394g.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-g-class-travel-trailer-21g",
@@ -2260,8 +2075,8 @@
       "price": null,
       "weight": null,
       "length": null,
-      "status": "A",
-      "imagePath": "grand-design-momentum-luxury-1of2/momentum-luxury-344m.png"
+      "imagePath": "grand-design-momentum-luxury-1of2/momentum-luxury-344m.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-luxury-351ms",
@@ -2273,8 +2088,8 @@
       "price": null,
       "weight": null,
       "length": null,
-      "status": "A",
-      "imagePath": "grand-design-momentum-luxury-1of2/momentum-luxury-351ms.png"
+      "imagePath": "grand-design-momentum-luxury-1of2/momentum-luxury-351ms.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-luxury-381ms",
@@ -2286,8 +2101,8 @@
       "price": null,
       "weight": null,
       "length": null,
-      "status": "A",
-      "imagePath": "grand-design-momentum-luxury-1of2/momentum-luxury-381ms.png"
+      "imagePath": "grand-design-momentum-luxury-1of2/momentum-luxury-381ms.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-luxury-392m",
@@ -2299,8 +2114,8 @@
       "price": null,
       "weight": null,
       "length": null,
-      "status": "A",
-      "imagePath": "grand-design-momentum-luxury-1of2/momentum-luxury-392m.png"
+      "imagePath": "grand-design-momentum-luxury-1of2/momentum-luxury-392m.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-luxury-395mt",
@@ -2312,8 +2127,8 @@
       "price": null,
       "weight": 19100,
       "length": "46' 4\"",
-      "status": "A",
       "imagePath": "grand-design-momentum-luxury-2of2/momentum-luxury-395mt.png",
+      "status": "A",
       "brochure": "brochures/momentum-luxury-395mt.pdf",
       "stock": "3464",
       "webPrice": 146195,
@@ -2331,8 +2146,8 @@
       "price": null,
       "weight": 19100,
       "length": "46' 4\"",
-      "status": "A",
-      "imagePath": "grand-design-momentum-luxury-2of2/momentum-luxury-396db.png"
+      "imagePath": "grand-design-momentum-luxury-2of2/momentum-luxury-396db.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-luxury-399m",
@@ -2344,8 +2159,8 @@
       "price": null,
       "weight": null,
       "length": "44' 10\"",
-      "status": "A",
-      "imagePath": "grand-design-momentum-luxury-2of2/momentum-luxury-399m.png"
+      "imagePath": "grand-design-momentum-luxury-2of2/momentum-luxury-399m.png",
+      "status": "A"
     },
     {
       "id": "grand-design-reflection-travel-trailer-317rsts",
@@ -2357,8 +2172,8 @@
       "price": null,
       "weight": 9518,
       "length": "35' 5\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-travel-trailer/reflection-travel-trailer-317rsts.png",
+      "status": "A",
       "brochure": "brochures/reflection-travel-trailer-317rsts.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -2384,8 +2199,8 @@
       "price": null,
       "weight": 9158,
       "length": "35' 9\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-travel-trailer/reflection-travel-trailer-322fkts.png",
+      "status": "A",
       "brochure": "brochures/reflection-travel-trailer-322fkts.pdf",
       "keyFeatures": [
         "Front Kitchen",
@@ -2411,8 +2226,8 @@
       "price": null,
       "weight": 10300,
       "length": "37' 9\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-travel-trailer/reflection-travel-trailer-342bhts.png",
+      "status": "A",
       "brochure": "brochures/reflection-travel-trailer-342bhts.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -2433,8 +2248,8 @@
       "price": null,
       "weight": 10425,
       "length": "38' 10\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-travel-trailer/reflection-travel-trailer-345rlts.png",
+      "status": "A",
       "brochure": "brochures/reflection-travel-trailer-345rlts.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -2460,8 +2275,8 @@
       "price": null,
       "weight": 10325,
       "length": "32' 10\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-303rls.png",
+      "status": "A",
       "brochure": "brochures/reflection-5th-wheel-303rls.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -2487,8 +2302,8 @@
       "price": null,
       "weight": 11700,
       "length": "36' 11\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-311bhs.png",
+      "status": "A",
       "brochure": "brochures/reflection-5th-wheel-311bhs.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -2500,19 +2315,6 @@
       ]
     },
     {
-      "id": "grand-design-reflection-320mks",
-      "manufacturer": "Grand Design",
-      "brand": "Reflection",
-      "model": "320MKS",
-      "type": "Fifth Wheel",
-      "year": 2026,
-      "price": null,
-      "weight": 11100,
-      "length": "34' 9\"",
-      "status": "D",
-      "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-320mk.png"
-    },
-    {
       "id": "grand-design-reflection-324mbs",
       "manufacturer": "Grand Design",
       "brand": "Reflection",
@@ -2522,8 +2324,8 @@
       "price": null,
       "weight": 11200,
       "length": "37'",
-      "status": "A",
       "imagePath": "grand-design-reflection-5th-wheel-1of2/reflection-5th-wheel-324mbs.png",
+      "status": "A",
       "brochure": "brochures/reflection-5th-wheel-324mbs.pdf",
       "keyFeatures": [
         "Mid-Bunk",
@@ -2544,8 +2346,8 @@
       "price": null,
       "weight": 11200,
       "length": "35' 7\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-337rls.png",
+      "status": "A",
       "brochure": "brochures/reflection-5th-wheel-337rls.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -2571,8 +2373,8 @@
       "price": null,
       "weight": null,
       "length": "38' 7\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-340rks.png",
+      "status": "A",
       "brochure": "brochures/reflection-5th-wheel-340rks.pdf",
       "keyFeatures": [
         "Rear Kitchen",
@@ -2593,8 +2395,8 @@
       "price": null,
       "weight": 12250,
       "length": "39' 3\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-350rds.png",
+      "status": "A",
       "brochure": "brochures/reflection-5th-wheel-350rds.pdf",
       "keyFeatures": [
         "Rear Den",
@@ -2620,8 +2422,8 @@
       "price": null,
       "weight": 12388,
       "length": "39' 2\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-360fls.png",
+      "status": "A",
       "brochure": "brochures/reflection-5th-wheel-360fls.pdf",
       "keyFeatures": [
         "Front Living",
@@ -2642,8 +2444,8 @@
       "price": null,
       "weight": 12500,
       "length": "39' 11\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-362tbs.png",
+      "status": "A",
       "brochure": "brochures/reflection-5th-wheel-362tbs.pdf",
       "keyFeatures": [
         "Top Bunk",
@@ -2664,8 +2466,8 @@
       "price": null,
       "weight": 12900,
       "length": "41' 1\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-5th-wheel-2of2/reflection-5th-wheel-367bhs.png",
+      "status": "A",
       "brochure": "brochures/reflection-5th-wheel-367bhs.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -2686,8 +2488,8 @@
       "price": null,
       "weight": 7000,
       "length": "26' 11\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-100-series/reflection-100-series-22rk.png",
+      "status": "A",
       "brochure": "brochures/reflection-100-series-22rk.pdf",
       "keyFeatures": [
         "Rear Kitchen",
@@ -2708,8 +2510,8 @@
       "price": null,
       "weight": 7739,
       "length": "30'",
-      "status": "A",
       "imagePath": "grand-design-reflection-100-series/reflection-100-series-24rl.png",
+      "status": "A",
       "brochure": "brochures/reflection-100-series-24rl.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -2735,8 +2537,8 @@
       "price": null,
       "weight": 8315,
       "length": "32' 3\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-100-series/reflection-100-series-27bh.png",
+      "status": "A",
       "brochure": "brochures/reflection-100-series-27bh.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -2762,7 +2564,6 @@
       "price": null,
       "weight": 8626,
       "length": "31'",
-      "status": "A",
       "imagePath": "grand-design-reflection-100-series/reflection-100-series-28rl.png",
       "brochure": "brochures/reflection-100-series-28rl.pdf",
       "keyFeatures": [
@@ -2784,8 +2585,8 @@
       "price": null,
       "weight": 9045,
       "length": "32' 9\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-100-series/reflection-100-series-29rl.png",
+      "status": "A",
       "brochure": "brochures/reflection-100-series-29rl.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -2811,8 +2612,8 @@
       "price": null,
       "weight": 9468,
       "length": "35' 10\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-100-series/reflection-100-series-32bh.png",
+      "status": "A",
       "brochure": "brochures/reflection-100-series-32bh.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -2833,8 +2634,8 @@
       "price": null,
       "weight": 8220,
       "length": "29' 9\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-250ml.png",
+      "status": "A",
       "brochure": "brochures/reflection-150-series-250ml.pdf",
       "keyFeatures": [
         "Mid-Living",
@@ -2860,8 +2661,8 @@
       "price": null,
       "weight": 7534,
       "length": "29' 10\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-260rd.png",
+      "status": "A",
       "brochure": "brochures/reflection-150-series-260rd.pdf",
       "keyFeatures": [
         "Rear Dining",
@@ -2887,8 +2688,8 @@
       "price": null,
       "weight": 8050,
       "length": "29' 11\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-270bn.png",
+      "status": "A",
       "brochure": "brochures/reflection-150-series-270bn.pdf",
       "keyFeatures": [
         "Breakfast Nook",
@@ -2900,20 +2701,6 @@
       ]
     },
     {
-      "id": "grand-design-reflection-150-series-295rl",
-      "manufacturer": "Grand Design",
-      "brand": "Reflection 150 Series",
-      "model": "295RL",
-      "type": "Fifth Wheel",
-      "year": 2026,
-      "price": null,
-      "weight": 9577,
-      "length": "33' 9\"",
-      "status": "D",
-      "imagePath": "grand-design-reflection-150-series/reflection-150-series-295rl.png",
-      "keyFeatures": []
-    },
-    {
       "id": "grand-design-reflection-150-series-298bh",
       "manufacturer": "Grand Design",
       "brand": "Reflection 150 Series",
@@ -2923,8 +2710,8 @@
       "price": null,
       "weight": 9050,
       "length": "34' 9\"",
-      "status": "A",
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-298bh.png",
+      "status": "A",
       "brochure": "brochures/reflection-150-series-298bh.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -2950,7 +2737,6 @@
       "price": null,
       "weight": null,
       "length": null,
-      "status": "A",
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-299mb.png",
       "brochure": "brochures/reflection-150-series-299mb.pdf",
       "keyFeatures": [
@@ -2972,7 +2758,6 @@
       "price": null,
       "weight": null,
       "length": null,
-      "status": "A",
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-310rl.png",
       "brochure": "brochures/reflection-150-series-310rl.pdf",
       "keyFeatures": [
@@ -2994,8 +2779,8 @@
       "price": null,
       "weight": 12500,
       "length": "34' 4\"",
-      "status": "A",
       "imagePath": "grand-design-solitude-1of2/solitude-310gk.png",
+      "status": "A",
       "brochure": "brochures/solitude-310gk.pdf"
     },
     {
@@ -3008,8 +2793,8 @@
       "price": null,
       "weight": 13800,
       "length": "37' 10\"",
-      "status": "A",
       "imagePath": "grand-design-solitude-1of2/solitude-370dv.png",
+      "status": "A",
       "brochure": "brochures/solitude-370dv.pdf"
     },
     {
@@ -3022,8 +2807,8 @@
       "price": null,
       "weight": 15400,
       "length": "42' 6\"",
-      "status": "A",
       "imagePath": "grand-design-solitude-1of2/solitude-376rd.png",
+      "status": "A",
       "brochure": "brochures/solitude-376rd.pdf"
     },
     {
@@ -3036,8 +2821,8 @@
       "price": null,
       "weight": 15000,
       "length": "41' 4\"",
-      "status": "A",
       "imagePath": "grand-design-solitude-1of2/solitude-380fl.png",
+      "status": "A",
       "brochure": "brochures/solitude-380fl.pdf",
       "stock": "3176",
       "webPrice": 110695,
@@ -3055,8 +2840,8 @@
       "price": null,
       "weight": 15200,
       "length": "41' 4\"",
-      "status": "A",
       "imagePath": "grand-design-solitude-1of2/solitude-382wb.png",
+      "status": "A",
       "brochure": "brochures/solitude-382wb.pdf"
     },
     {
@@ -3069,8 +2854,8 @@
       "price": null,
       "weight": 15600,
       "length": "42' 11\"",
-      "status": "D",
-      "imagePath": "grand-design-solitude-2of2/solitude-388mbs.png"
+      "imagePath": "grand-design-solitude-2of2/solitude-388mbs.png",
+      "status": "D"
     },
     {
       "id": "grand-design-solitude-390rk",
@@ -3082,8 +2867,8 @@
       "price": null,
       "weight": 15000,
       "length": "42' 5\"",
-      "status": "A",
       "imagePath": "grand-design-solitude-2of2/solitude-390rk.png",
+      "status": "A",
       "brochure": "brochures/solitude-390rk.pdf"
     },
     {
@@ -3096,27 +2881,14 @@
       "price": null,
       "weight": 19000,
       "length": "42' 10\"",
-      "status": "A",
       "imagePath": "grand-design-solitude-2of2/solitude-414ljmj.png",
+      "status": "A",
       "brochure": "brochures/solitude-414ljmj.pdf",
       "stock": "3547",
       "webPrice": 209263,
       "unlockPrice": "",
       "availability": "on-order",
       "liveYear": "2027"
-    },
-    {
-      "id": "grand-design-solitude-391dl",
-      "manufacturer": "Grand Design",
-      "brand": "Solitude",
-      "model": "391DL",
-      "type": "Fifth Wheel",
-      "year": 2026,
-      "price": null,
-      "weight": 15500,
-      "length": "42' 5\"",
-      "status": "D",
-      "imagePath": "grand-design-solitude-2of2/solitude-391dl.png"
     },
     {
       "id": "grand-design-solitude-417kb",
@@ -3128,8 +2900,8 @@
       "price": null,
       "weight": 15500,
       "length": "41' 8\"",
-      "status": "A",
       "imagePath": "grand-design-solitude-2of2/solitude-417kb.png",
+      "status": "A",
       "brochure": "brochures/solitude-417kb.pdf",
       "stock": "",
       "webPrice": "",
@@ -3146,8 +2918,8 @@
       "price": null,
       "weight": 6456,
       "length": "30' 8\"",
-      "status": "A",
       "imagePath": "grand-design-transcend/transcend-245rlt.png",
+      "status": "A",
       "brochure": "brochures/transcend-245rlt.pdf",
       "keyFeatures": [
         "Rear Living",
@@ -3173,8 +2945,8 @@
       "price": null,
       "weight": 6327,
       "length": "32' 9\"",
-      "status": "A",
       "imagePath": "grand-design-transcend/transcend-265bht.png",
+      "status": "A",
       "brochure": "brochures/transcend-265bht.pdf",
       "keyFeatures": [
         "Mid Living",
@@ -3194,14 +2966,14 @@
       "id": "grand-design-transcend-275fkt",
       "manufacturer": "Grand Design",
       "brand": "Transcend",
-      "model": "275FKTS",
+      "model": "275FKT",
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
       "weight": 7506,
       "length": "31' 11\"",
-      "status": "A",
       "imagePath": "grand-design-transcend/transcend-275fkt.png",
+      "status": "A",
       "brochure": "brochures/transcend-275fkt.pdf",
       "keyFeatures": [
         "Front Kitchen",
@@ -3226,8 +2998,8 @@
       "price": null,
       "weight": 7166,
       "length": "33' 11\"",
-      "status": "A",
       "imagePath": "grand-design-transcend/transcend-285rkt.png",
+      "status": "A",
       "brochure": "brochures/transcend-285rkt.pdf",
       "keyFeatures": [
         "Rear Kitchen",
@@ -3253,8 +3025,8 @@
       "price": null,
       "weight": 7383,
       "length": "35' 11\"",
-      "status": "A",
       "imagePath": "grand-design-transcend/transcend-295qbt.png",
+      "status": "A",
       "brochure": "brochures/transcend-295qbt.pdf",
       "keyFeatures": [
         "Queen Bunk",
@@ -3271,19 +3043,6 @@
       "liveYear": "2027"
     },
     {
-      "id": "grand-design-transcend-305bht",
-      "manufacturer": "Grand Design",
-      "brand": "Transcend",
-      "model": "305BHT",
-      "type": "Travel Trailer",
-      "year": 2026,
-      "price": null,
-      "weight": 7735,
-      "length": "36' 11\"",
-      "status": "D",
-      "imagePath": "grand-design-transcend/transcend-305bht.png"
-    },
-    {
       "id": "grand-design-transcend-315rkt",
       "manufacturer": "Grand Design",
       "brand": "Transcend",
@@ -3293,8 +3052,8 @@
       "price": null,
       "weight": 8400,
       "length": "36' 10\"",
-      "status": "A",
       "imagePath": "grand-design-transcend/transcend-315rkt.png",
+      "status": "A",
       "brochure": "brochures/transcend-315rkt.pdf",
       "keyFeatures": [
         "Rear Kitchen",
@@ -3320,8 +3079,8 @@
       "price": null,
       "weight": 8672,
       "length": "37' 3\"",
-      "status": "A",
       "imagePath": "grand-design-transcend/transcend-325bht.png",
+      "status": "A",
       "brochure": "brochures/transcend-325bht.pdf",
       "keyFeatures": [
         "Rear Bunk",
@@ -3347,8 +3106,8 @@
       "price": null,
       "weight": 9400,
       "length": "37' 3\"",
-      "status": "A",
       "imagePath": "grand-design-transcend/transcend-335bht.png",
+      "status": "A",
       "brochure": "brochures/transcend-335bht.pdf",
       "keyFeatures": [
         "Rear Bunk",
@@ -3374,8 +3133,8 @@
       "price": null,
       "weight": 9345,
       "length": "38' 11\"",
-      "status": "A",
       "imagePath": "grand-design-transcend/transcend-345dqt.png",
+      "status": "A",
       "brochure": "brochures/transcend-345dqt.pdf",
       "keyFeatures": [
         "Dual Queen Bedroom",
@@ -3401,8 +3160,8 @@
       "price": null,
       "weight": "TBD",
       "length": "TBD",
-      "status": "A",
       "imagePath": "grand-design-transcend-lite/transcend-lite-121rbl.png",
+      "status": "A",
       "stock": "3448",
       "webPrice": 15495,
       "unlockPrice": 14995,
@@ -3419,8 +3178,8 @@
       "price": null,
       "weight": 2950,
       "length": "15' 10\"",
-      "status": "A",
-      "imagePath": "grand-design-transcend-one/transcend-one-131dl.png"
+      "imagePath": "grand-design-transcend-one/transcend-one-131dl.png",
+      "status": "A"
     },
     {
       "id": "grand-design-transcend-one-151bh",
@@ -3432,8 +3191,8 @@
       "price": null,
       "weight": 3492,
       "length": "19' 8\"",
-      "status": "A",
       "imagePath": "grand-design-transcend-one/transcend-one-151bh.png",
+      "status": "A",
       "brochure": "brochures/transcend-one-151bh.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -3458,8 +3217,8 @@
       "price": null,
       "weight": 3600,
       "length": "19' 8\"",
-      "status": "A",
       "imagePath": "grand-design-transcend-one/transcend-one-151rb.png",
+      "status": "A",
       "brochure": "brochures/transcend-one-151rb.pdf",
       "keyFeatures": [
         "Rear Bath",
@@ -3484,8 +3243,8 @@
       "price": null,
       "weight": 4808,
       "length": "23'",
-      "status": "A",
       "imagePath": "grand-design-transcend-one/transcend-one-161bh.png",
+      "status": "A",
       "brochure": "brochures/transcend-one-161bh.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -3511,8 +3270,8 @@
       "price": null,
       "weight": 4446,
       "length": "23'",
-      "status": "A",
       "imagePath": "grand-design-transcend-one/transcend-one-161db.png",
+      "status": "A",
       "brochure": "brochures/transcend-one-161db.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -3538,8 +3297,8 @@
       "price": null,
       "weight": null,
       "length": "24'",
-      "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-18fqx.png",
+      "status": "A",
       "brochure": "brochures/transcend-xplor-18fqx.pdf",
       "keyFeatures": [
         "Sub 5000 lb UVW",
@@ -3565,8 +3324,8 @@
       "price": null,
       "weight": 4961,
       "length": "26' 3\"",
-      "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-19bhx.png",
+      "status": "A",
       "brochure": "brochures/transcend-xplor-19bhx.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -3592,8 +3351,8 @@
       "price": null,
       "weight": 5250,
       "length": "24' 11\"",
-      "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-20mkx.png",
+      "status": "A",
       "brochure": "brochures/transcend-xplor-20mkx.pdf",
       "keyFeatures": [
         "Mid Kitchen",
@@ -3619,8 +3378,8 @@
       "price": null,
       "weight": 4978,
       "length": "25' 10\"",
-      "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-21rlx.png",
+      "status": "A",
       "brochure": "brochures/transcend-xplor-21rlx.pdf",
       "keyFeatures": [
         "L-Shaped Sofa",
@@ -3645,8 +3404,8 @@
       "price": null,
       "weight": 5749,
       "length": "26' 10\"",
-      "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-22rbx.png",
+      "status": "A",
       "brochure": "brochures/transcend-xplor-22rbx.pdf",
       "keyFeatures": [
         "Rear Bathroom",
@@ -3672,8 +3431,8 @@
       "price": null,
       "weight": 5580,
       "length": "26' 11\"",
-      "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-23bhx.png",
+      "status": "A",
       "brochure": "brochures/transcend-xplor-23bhx.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -3694,8 +3453,8 @@
       "price": null,
       "weight": 5756,
       "length": "29' 11\"",
-      "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-24bhx.png",
+      "status": "A",
       "brochure": "brochures/transcend-xplor-24bhx.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -3721,8 +3480,8 @@
       "price": null,
       "weight": 6335,
       "length": "29' 9\"",
-      "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-25mlx.png",
+      "status": "A",
       "brochure": "brochures/transcend-xplor-25mlx.pdf",
       "keyFeatures": [
         "Mid Living",
@@ -3748,8 +3507,8 @@
       "price": null,
       "weight": 6505,
       "length": "30' 11\"",
-      "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-26bhx.png",
+      "status": "A",
       "brochure": "brochures/transcend-xplor-26bhx.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -3775,8 +3534,8 @@
       "price": null,
       "weight": 6147,
       "length": "31' 6\"",
-      "status": "D",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-26rbx.png",
+      "status": "D",
       "stock": "3332",
       "webPrice": 35695,
       "unlockPrice": 34995,
@@ -3793,8 +3552,8 @@
       "price": null,
       "weight": 6835,
       "length": "31' 9\"",
-      "status": "A",
       "imagePath": "grand-design-transcend-xplor/transcend-xplor-27dbx.png",
+      "status": "A",
       "brochure": "brochures/transcend-xplor-27dbx.pdf",
       "keyFeatures": [
         "Bunkhouse",
@@ -3816,12 +3575,12 @@
       "brand": "Access",
       "model": "16BH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 3772,
       "length": "21'2\"",
-      "status": "A",
       "imagePath": "winnebago-access/winnebago-access-16bh.png",
+      "status": "A",
       "keyFeatures": [
         "Bunkhouse",
         "No Slide-Outs",
@@ -3842,12 +3601,12 @@
       "brand": "Access",
       "model": "16RB",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 3770,
       "length": "21'2\"",
-      "status": "A",
       "imagePath": "winnebago-access/winnebago-access-16rb.png",
+      "status": "A",
       "keyFeatures": [
         "Rear Bath",
         "No Slide-Outs",
@@ -3868,12 +3627,12 @@
       "brand": "Access",
       "model": "18DBH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 3850,
       "length": "22' 6\"",
-      "status": "A",
       "imagePath": "winnebago-access/winnebago-access-18dbh.png",
+      "status": "A",
       "keyFeatures": [
         "Bunkhouse",
         "No Slide-Outs",
@@ -3893,12 +3652,12 @@
       "brand": "Access",
       "model": "18RK",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 3900,
       "length": "22' 6\"",
-      "status": "A",
       "imagePath": "winnebago-access/winnebago-access-18rk.png",
+      "status": "A",
       "keyFeatures": [
         "Rear Kitchen",
         "No Slide-Outs",
@@ -3919,12 +3678,12 @@
       "brand": "Access",
       "model": "24RB",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 6592,
       "length": "29'11\"",
-      "status": "A",
       "imagePath": "winnebago-access/winnebago-access-24rb.png",
+      "status": "A",
       "keyFeatures": [
         "Rear Bath",
         "Private Bedroom",
@@ -3940,12 +3699,12 @@
       "brand": "Access",
       "model": "24RL",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": "TBD",
       "length": "30'6\"",
-      "status": "A",
       "imagePath": "winnebago-access/winnebago-access-24rl.png",
+      "status": "A",
       "keyFeatures": [
         "Rear Living",
         "Pass-Through Bathroom",
@@ -3961,12 +3720,12 @@
       "brand": "Access",
       "model": "25BH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 6456,
       "length": "29' 11\"",
-      "status": "A",
       "imagePath": "winnebago-access/winnebago-access-25bh.png",
+      "status": "A",
       "keyFeatures": [
         "Bunkhouse",
         "48\" x 74\" Bunk",
@@ -3987,12 +3746,12 @@
       "brand": "Access",
       "model": "25RK",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 6520,
       "length": "29' 4\"",
-      "status": "A",
       "imagePath": "winnebago-access/winnebago-access-25rk.png",
+      "status": "A",
       "keyFeatures": [
         "Rear Kitchen",
         "Dual Entry",
@@ -4008,12 +3767,12 @@
       "brand": "Access",
       "model": "27BH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 7292,
       "length": "33'4\"",
-      "status": "A",
       "imagePath": "winnebago-access/winnebago-access-27bh.png",
+      "status": "A",
       "keyFeatures": [
         "Bunkhouse",
         "Dual Entry",
@@ -4029,12 +3788,12 @@
       "brand": "Access",
       "model": "32BR",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 8008,
       "length": "37' 11\"",
-      "status": "A",
       "imagePath": "winnebago-access/winnebago-access-32br.png",
+      "status": "A",
       "keyFeatures": [
         "Bunkhouse",
         "Dual Entry",
@@ -4055,12 +3814,12 @@
       "brand": "Micro Minnie",
       "model": "1800BH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 3821,
       "length": "21' 11\"",
+      "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-1800bh.png",
       "status": "A",
-      "imagePath": "winnebago-minnie/winnebago-micro-minnie-1800bh.jpeg",
       "stock": "3574",
       "webPrice": 31673,
       "unlockPrice": 31123,
@@ -4073,12 +3832,12 @@
       "brand": "Micro Minnie",
       "model": "2000TRB",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 3976,
       "length": "22' 4\"",
-      "status": "A",
-      "imagePath": "winnebago-minnie/winnebago-micro-minnie-2000trb.jpeg"
+      "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2000trb.png",
+      "status": "A"
     },
     {
       "id": "winnebago-micro-minnie-2000frb",
@@ -4086,12 +3845,12 @@
       "brand": "Micro Minnie",
       "model": "2000FRB",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 3942,
       "length": "22'4\"",
-      "status": "A",
-      "imagePath": "winnebago-minnie/winnebago-micro-minnie-2000frb.jpeg"
+      "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2000frb.png",
+      "status": "A"
     },
     {
       "id": "winnebago-micro-minnie-2000mrb",
@@ -4099,12 +3858,12 @@
       "brand": "Micro Minnie",
       "model": "2000MRB",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 4078,
       "length": "22'4\"",
+      "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2000mrb.png",
       "status": "A",
-      "imagePath": "winnebago-minnie/winnebago-micro-minnie-2000mrb.jpeg",
       "stock": "3576",
       "webPrice": 33723,
       "unlockPrice": 32823,
@@ -4121,8 +3880,7 @@
       "price": null,
       "weight": 4049,
       "length": "21'11\"",
-      "status": "A",
-      "imagePath": "winnebago-minnie/winnebago-micro-minnie-2100bh.jpeg"
+      "status": "D"
     },
     {
       "id": "winnebago-micro-minnie-2108tb",
@@ -4130,12 +3888,12 @@
       "brand": "Micro Minnie",
       "model": "2108TB",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 4176,
       "length": "22'5\"",
+      "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2108tb.png",
       "status": "A",
-      "imagePath": "winnebago-minnie/winnebago-micro-minnie-2108tb.jpeg",
       "stock": "3573",
       "webPrice": 35895,
       "unlockPrice": 34995,
@@ -4148,12 +3906,12 @@
       "brand": "Micro Minnie",
       "model": "2108FBS",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 4142,
       "length": "22'5\"",
+      "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2108fbs.png",
       "status": "A",
-      "imagePath": "winnebago-minnie/winnebago-micro-minnie-2108fbs.jpeg",
       "stock": "3258",
       "webPrice": 29045,
       "unlockPrice": 27995,
@@ -4166,12 +3924,12 @@
       "brand": "Micro Minnie",
       "model": "2108DS",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 4291,
       "length": "22'5\"",
-      "status": "A",
-      "imagePath": "winnebago-minnie/winnebago-micro-minnie-2108ds.jpeg"
+      "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2108ds.png",
+      "status": "A"
     },
     {
       "id": "winnebago-micro-minnie-2200tbh",
@@ -4179,12 +3937,12 @@
       "brand": "Micro Minnie",
       "model": "2200TBH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 4072,
       "length": "23'11\"",
-      "status": "A",
-      "imagePath": "winnebago-minnie/winnebago-micro-minnie-2200tbh.jpeg"
+      "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2200tbh.png",
+      "status": "A"
     },
     {
       "id": "winnebago-micro-minnie-2200fbh",
@@ -4192,12 +3950,12 @@
       "brand": "Micro Minnie",
       "model": "2200FBH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 4436,
       "length": "23'11\"",
+      "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2200fbh.png",
       "status": "A",
-      "imagePath": "winnebago-minnie/winnebago-micro-minnie-2200fbh.jpeg",
       "stock": "3575",
       "webPrice": 37995,
       "unlockPrice": 36995,
@@ -4210,12 +3968,12 @@
       "brand": "Micro Minnie",
       "model": "2200MBH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 4218,
       "length": "23'11\"",
-      "status": "A",
-      "imagePath": "winnebago-minnie/winnebago-micro-minnie-2200mbh.jpeg"
+      "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2200mbh.png",
+      "status": "A"
     },
     {
       "id": "winnebago-thrive-18fbs",
@@ -4223,12 +3981,12 @@
       "brand": "Thrive",
       "model": "18FBS",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 4740,
       "length": "22' 11\"",
+      "imagePath": "winnebago-thrive/winnebago-thrive-18fbs.png",
       "status": "A",
-      "imagePath": "winnebago-thrive/winnebago-thrive-18fbs.jpeg",
       "stock": "3313",
       "webPrice": 29795,
       "unlockPrice": 28995,
@@ -4241,12 +3999,12 @@
       "brand": "Thrive",
       "model": "22MBH",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 5822,
       "length": "26' 0\"",
-      "status": "A",
-      "imagePath": "winnebago-thrive/winnebago-thrive-22mbh.jpeg"
+      "imagePath": "winnebago-thrive/winnebago-thrive-22mbh.png",
+      "status": "A"
     },
     {
       "id": "winnebago-thrive-22mls",
@@ -4254,12 +4012,12 @@
       "brand": "Thrive",
       "model": "22MLS",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 6068,
       "length": "26' 11\"",
+      "imagePath": "winnebago-thrive/winnebago-thrive-22mls.png",
       "status": "A",
-      "imagePath": "winnebago-thrive/winnebago-thrive-22mls.jpeg",
       "stock": "3533",
       "webPrice": 45595,
       "unlockPrice": 44995,
@@ -4272,12 +4030,12 @@
       "brand": "Thrive",
       "model": "22RBS",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 6122,
       "length": "26' 7\"",
+      "imagePath": "winnebago-thrive/winnebago-thrive-22rbs.png",
       "status": "A",
-      "imagePath": "winnebago-thrive/winnebago-thrive-22rbs.jpeg",
       "stock": "3532",
       "webPrice": 45195,
       "unlockPrice": 43995,
@@ -4290,12 +4048,12 @@
       "brand": "Thrive",
       "model": "24RKS",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 6480,
       "length": "29' 4\"",
+      "imagePath": "winnebago-thrive/winnebago-thrive-24rks.png",
       "status": "A",
-      "imagePath": "winnebago-thrive/winnebago-thrive-24rks.jpeg",
       "stock": "3383",
       "webPrice": 44095,
       "unlockPrice": 42995,
@@ -4308,12 +4066,12 @@
       "brand": "Thrive",
       "model": "25RLS",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 6512,
       "length": "30' 2\"",
-      "status": "A",
-      "imagePath": "winnebago-thrive/winnebago-thrive-25rls.jpeg"
+      "imagePath": "winnebago-thrive/winnebago-thrive-25rls.png",
+      "status": "A"
     },
     {
       "id": "winnebago-thrive-26fkd",
@@ -4321,12 +4079,12 @@
       "brand": "Thrive",
       "model": "26FKD",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 7470,
       "length": "30' 11\"",
+      "imagePath": "winnebago-thrive/winnebago-thrive-26fkd.png",
       "status": "A",
-      "imagePath": "winnebago-thrive/winnebago-thrive-26fkd.jpeg",
       "stock": "3463",
       "webPrice": 49845,
       "unlockPrice": 48995,
@@ -4339,12 +4097,12 @@
       "brand": "Thrive",
       "model": "28BHS",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 7234,
       "length": "32' 8\"",
-      "status": "A",
-      "imagePath": "winnebago-thrive/winnebago-thrive-28bhs.jpeg"
+      "imagePath": "winnebago-thrive/winnebago-thrive-28bhs.png",
+      "status": "A"
     },
     {
       "id": "winnebago-thrive-29rlo",
@@ -4352,12 +4110,12 @@
       "brand": "Thrive",
       "model": "29RLO",
       "type": "Travel Trailer",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 8426,
       "length": "36' 3\"",
-      "status": "A",
-      "imagePath": "winnebago-thrive/winnebago-thrive-29rlo.jpeg"
+      "imagePath": "winnebago-thrive/winnebago-thrive-29rlo.png",
+      "status": "A"
     }
   ],
   "arrivalTrackingSince": "2026-10-18T01:07:49.068Z"
