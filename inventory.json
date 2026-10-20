@@ -2983,10 +2983,12 @@
         "Grand King Bed",
         "Washer/Dryer Prep"
       ],
-      "stock": "",
-      "webPrice": "",
-      "unlockPrice": "",
-      "availability": ""
+      "stock": "3538",
+      "webPrice": 49545,
+      "unlockPrice": 48995,
+      "availability": "active",
+      "lotArrivalDate": "2026-10-20T22:00:02.135Z",
+      "liveYear": "2027"
     },
     {
       "id": "grand-design-transcend-285rkt",
