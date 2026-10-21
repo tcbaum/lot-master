@@ -68,7 +68,8 @@
       "webPrice": 94039,
       "unlockPrice": 92939,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-08-11"
     },
     {
       "id": "alliance-avenue-fifth-wheel-34rls",
@@ -389,7 +390,8 @@
       "webPrice": 84192,
       "unlockPrice": 83392,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-06-29"
     },
     {
       "id": "alliance-delta-252rl",
@@ -416,7 +418,8 @@
       "webPrice": 57714,
       "unlockPrice": 56614,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-07-30"
     },
     {
       "id": "alliance-delta-258fk",
@@ -459,7 +462,8 @@
       "webPrice": 45945,
       "unlockPrice": 44995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-08-03"
     },
     {
       "id": "alliance-delta-274rkw",
@@ -486,7 +490,8 @@
       "webPrice": 45695,
       "unlockPrice": 44995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2025-11-26"
     },
     {
       "id": "alliance-delta-281bh",
@@ -689,7 +694,8 @@
       "webPrice": 47684,
       "unlockPrice": 46684,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-06-17"
     },
     {
       "id": "alliance-delta-ultra-lite-lk254",
@@ -754,7 +760,8 @@
       "webPrice": 38095,
       "unlockPrice": 36995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2025-10-30"
     },
     {
       "id": "alliance-paradigm-310rl",
@@ -782,7 +789,7 @@
       "unlockPrice": 128892,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-10-21T14:00:02.533Z"
+      "lotArrivalDate": "2026-10-19"
     },
     {
       "id": "alliance-paradigm-312rk",
@@ -809,7 +816,8 @@
       "webPrice": 90295,
       "unlockPrice": 88895,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2025-11-25"
     },
     {
       "id": "alliance-paradigm-340rl",
@@ -946,7 +954,8 @@
       "webPrice": 100745,
       "unlockPrice": 99895,
       "availability": "pending",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2025-11-15"
     },
     {
       "id": "alliance-paradigm-395ds",
@@ -992,7 +1001,8 @@
       "webPrice": 155095,
       "unlockPrice": 153745,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-06-24"
     },
     {
       "id": "grand-design-foundation-42gd",
@@ -1010,7 +1020,8 @@
       "webPrice": 95345,
       "unlockPrice": 94995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2026-03-05"
     },
     {
       "id": "grand-design-imagine-2300mk",
@@ -1037,7 +1048,8 @@
       "webPrice": 40695,
       "unlockPrice": 39995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-08-21"
     },
     {
       "id": "grand-design-imagine-2470bh",
@@ -1064,7 +1076,8 @@
       "webPrice": 48195,
       "unlockPrice": 46995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-07-28"
     },
     {
       "id": "grand-design-imagine-2500rl",
@@ -1113,7 +1126,8 @@
       "webPrice": 45695,
       "unlockPrice": 44995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-10-05"
     },
     {
       "id": "grand-design-imagine-2620fk",
@@ -1154,7 +1168,8 @@
       "webPrice": 49695,
       "unlockPrice": 48995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-09-10"
     },
     {
       "id": "grand-design-imagine-2700bs",
@@ -1230,7 +1245,8 @@
       "webPrice": 53145,
       "unlockPrice": 52495,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-09-12"
     },
     {
       "id": "grand-design-imagine-2970rl",
@@ -1257,7 +1273,8 @@
       "webPrice": 55045,
       "unlockPrice": 53995,
       "availability": "pending",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-06-26"
     },
     {
       "id": "grand-design-imagine-aim-15rba",
@@ -1364,7 +1381,8 @@
       "webPrice": 29045,
       "unlockPrice": 28495,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-06-30"
     },
     {
       "id": "grand-design-imagine-aim-20bha",
@@ -1391,7 +1409,8 @@
       "webPrice": 31195,
       "unlockPrice": 29995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-09-12"
     },
     {
       "id": "grand-design-imagine-aim-21mba",
@@ -1419,7 +1438,7 @@
       "unlockPrice": 34995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-10-20T14:00:08.867Z"
+      "lotArrivalDate": "2026-10-16"
     },
     {
       "id": "grand-design-imagine-xls-22bhe",
@@ -1468,7 +1487,8 @@
       "webPrice": 36645,
       "unlockPrice": 35995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2026-06-11"
     },
     {
       "id": "grand-design-imagine-xls-22rbe",
@@ -1495,7 +1515,8 @@
       "webPrice": 38545,
       "unlockPrice": 37495,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-08-10"
     },
     {
       "id": "grand-design-imagine-xls-23lde",
@@ -1522,7 +1543,8 @@
       "webPrice": 38045,
       "unlockPrice": 36995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-07-20"
     },
     {
       "id": "grand-design-imagine-xls-25dbe",
@@ -1571,7 +1593,8 @@
       "webPrice": 35995,
       "unlockPrice": 34895,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2025-11-19"
     },
     {
       "id": "grand-design-influence-2903rl",
@@ -1708,7 +1731,8 @@
       "webPrice": 110845,
       "unlockPrice": 109995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-10-06"
     },
     {
       "id": "grand-design-influence-3904bh",
@@ -1735,7 +1759,8 @@
       "webPrice": 111295,
       "unlockPrice": 109995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-07-07"
     },
     {
       "id": "grand-design-lineage-series-e-30dc",
@@ -1798,7 +1823,8 @@
       "webPrice": 166161,
       "unlockPrice": 164811,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2026-04-09"
     },
     {
       "id": "grand-design-lineage-series-m-25tk",
@@ -1816,7 +1842,8 @@
       "webPrice": 151699,
       "unlockPrice": 149999,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2025-12-08"
     },
     {
       "id": "grand-design-lineage-series-vt-lvt1",
@@ -1912,7 +1939,8 @@
       "webPrice": 95295,
       "unlockPrice": 94395,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2026-04-30"
     },
     {
       "id": "grand-design-momentum-g-class-363g",
@@ -2135,7 +2163,8 @@
       "webPrice": 146195,
       "unlockPrice": 144995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-07-01"
     },
     {
       "id": "grand-design-momentum-luxury-396db",
@@ -2188,7 +2217,8 @@
       "webPrice": 66695,
       "unlockPrice": 65995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-06-15"
     },
     {
       "id": "grand-design-reflection-travel-trailer-322fkts",
@@ -2215,7 +2245,8 @@
       "webPrice": 69795,
       "unlockPrice": 68995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-08-07"
     },
     {
       "id": "grand-design-reflection-travel-trailer-342bhts",
@@ -2264,7 +2295,8 @@
       "webPrice": 70945,
       "unlockPrice": 69995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-10-14"
     },
     {
       "id": "grand-design-reflection-303rls",
@@ -2291,7 +2323,8 @@
       "webPrice": 70145,
       "unlockPrice": 68995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-08-25"
     },
     {
       "id": "grand-design-reflection-311bhs",
@@ -2362,7 +2395,8 @@
       "webPrice": 75695,
       "unlockPrice": 74995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-06-15"
     },
     {
       "id": "grand-design-reflection-340rks",
@@ -2526,7 +2560,8 @@
       "webPrice": 40995,
       "unlockPrice": 39995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2025-10-11"
     },
     {
       "id": "grand-design-reflection-100-series-27bh",
@@ -2553,7 +2588,8 @@
       "webPrice": 50395,
       "unlockPrice": 48995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2026-03-30"
     },
     {
       "id": "grand-design-reflection-100-series-28rl",
@@ -2601,7 +2637,8 @@
       "webPrice": 58345,
       "unlockPrice": 56995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-09-10"
     },
     {
       "id": "grand-design-reflection-100-series-32bh",
@@ -2650,7 +2687,8 @@
       "webPrice": 50395,
       "unlockPrice": 48995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2025-11-21"
     },
     {
       "id": "grand-design-reflection-150-series-260rd",
@@ -2677,7 +2715,8 @@
       "webPrice": 61395,
       "unlockPrice": 59995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2026-01-19"
     },
     {
       "id": "grand-design-reflection-150-series-270bn",
@@ -2726,7 +2765,8 @@
       "webPrice": 68195,
       "unlockPrice": 66995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-08-01"
     },
     {
       "id": "grand-design-reflection-150-series-299mb",
@@ -2829,7 +2869,8 @@
       "webPrice": 110695,
       "unlockPrice": 109995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2025-09-22"
     },
     {
       "id": "grand-design-solitude-382wb",
@@ -2934,7 +2975,8 @@
       "webPrice": 40495,
       "unlockPrice": 39995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-08-11"
     },
     {
       "id": "grand-design-transcend-265bht",
@@ -2961,7 +3003,8 @@
       "webPrice": 40545,
       "unlockPrice": 39995,
       "availability": "pending",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-09-14"
     },
     {
       "id": "grand-design-transcend-275fkt",
@@ -2988,7 +3031,7 @@
       "webPrice": 49545,
       "unlockPrice": 48995,
       "availability": "active",
-      "lotArrivalDate": "2026-10-20T22:00:02.135Z",
+      "lotArrivalDate": "2026-09-09",
       "liveYear": "2027"
     },
     {
@@ -3016,7 +3059,8 @@
       "webPrice": 40795,
       "unlockPrice": 39995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-08-20"
     },
     {
       "id": "grand-design-transcend-295qbt",
@@ -3043,7 +3087,8 @@
       "webPrice": 45195,
       "unlockPrice": 43995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-10-14"
     },
     {
       "id": "grand-design-transcend-315rkt",
@@ -3070,7 +3115,8 @@
       "webPrice": 48945,
       "unlockPrice": 47995,
       "availability": "pending",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-08-08"
     },
     {
       "id": "grand-design-transcend-325bht",
@@ -3124,7 +3170,8 @@
       "webPrice": 49695,
       "unlockPrice": 48995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-09-15"
     },
     {
       "id": "grand-design-transcend-345dqt",
@@ -3151,7 +3198,8 @@
       "webPrice": 50895,
       "unlockPrice": 49995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-09-02"
     },
     {
       "id": "grand-design-transcend-lite-121rbl",
@@ -3169,7 +3217,8 @@
       "webPrice": 15495,
       "unlockPrice": 14995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-07-29"
     },
     {
       "id": "grand-design-transcend-one-131dl",
@@ -3208,7 +3257,8 @@
       "webPrice": 17095,
       "unlockPrice": 15995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-07-24"
     },
     {
       "id": "grand-design-transcend-one-151rb",
@@ -3234,7 +3284,8 @@
       "webPrice": 20145,
       "unlockPrice": 18995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-08-12"
     },
     {
       "id": "grand-design-transcend-one-161bh",
@@ -3261,7 +3312,8 @@
       "webPrice": 25685,
       "unlockPrice": 24985,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-09-16"
     },
     {
       "id": "grand-design-transcend-one-161db",
@@ -3288,7 +3340,8 @@
       "webPrice": 23695,
       "unlockPrice": 22995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2026-03-02"
     },
     {
       "id": "grand-design-transcend-xplor-18fqx",
@@ -3342,7 +3395,8 @@
       "webPrice": 23895,
       "unlockPrice": 22995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2026-01-13"
     },
     {
       "id": "grand-design-transcend-xplor-20mkx",
@@ -3422,7 +3476,8 @@
       "webPrice": 30545,
       "unlockPrice": 29995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-07-08"
     },
     {
       "id": "grand-design-transcend-xplor-23bhx",
@@ -3471,7 +3526,8 @@
       "webPrice": 26545,
       "unlockPrice": 25995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2026-05-04"
     },
     {
       "id": "grand-design-transcend-xplor-25mlx",
@@ -3498,7 +3554,8 @@
       "webPrice": 32595,
       "unlockPrice": 31995,
       "availability": "pending",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2026-05-04"
     },
     {
       "id": "grand-design-transcend-xplor-26bhx",
@@ -3525,7 +3582,8 @@
       "webPrice": 33995,
       "unlockPrice": 29995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2026-03-20"
     },
     {
       "id": "grand-design-transcend-xplor-26rbx",
@@ -3543,7 +3601,8 @@
       "webPrice": 35695,
       "unlockPrice": 34995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2026-03-16"
     },
     {
       "id": "grand-design-transcend-xplor-27dbx",
@@ -3596,7 +3655,8 @@
       "webPrice": 20845,
       "unlockPrice": 19995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-09-29"
     },
     {
       "id": "winnebago-access-16rb",
@@ -3622,7 +3682,8 @@
       "webPrice": 21995,
       "unlockPrice": 20995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-09-29"
     },
     {
       "id": "winnebago-access-18dbh",
@@ -3673,7 +3734,8 @@
       "webPrice": 22647,
       "unlockPrice": 21997,
       "availability": "pending",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-09-08"
     },
     {
       "id": "winnebago-access-24rb",
@@ -3741,7 +3803,8 @@
       "webPrice": 35795,
       "unlockPrice": 34995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-09-28"
     },
     {
       "id": "winnebago-access-25rk",
@@ -3809,7 +3872,8 @@
       "webPrice": 40545,
       "unlockPrice": 39995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-09-28"
     },
     {
       "id": "winnebago-micro-minnie-1800bh",
@@ -3827,7 +3891,8 @@
       "webPrice": 31673,
       "unlockPrice": 31123,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-10-02"
     },
     {
       "id": "winnebago-micro-minnie-2000trb",
@@ -3901,7 +3966,8 @@
       "webPrice": 35895,
       "unlockPrice": 34995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-10-02"
     },
     {
       "id": "winnebago-micro-minnie-2108fbs",
@@ -3919,7 +3985,8 @@
       "webPrice": 29045,
       "unlockPrice": 27995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2025-12-08"
     },
     {
       "id": "winnebago-micro-minnie-2108ds",
@@ -3994,7 +4061,8 @@
       "webPrice": 29795,
       "unlockPrice": 28995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2026-02-09"
     },
     {
       "id": "winnebago-thrive-22mbh",
@@ -4025,7 +4093,8 @@
       "webPrice": 45595,
       "unlockPrice": 44995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-09-08"
     },
     {
       "id": "winnebago-thrive-22rbs",
@@ -4043,7 +4112,8 @@
       "webPrice": 45195,
       "unlockPrice": 43995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-09-08"
     },
     {
       "id": "winnebago-thrive-24rks",
@@ -4061,7 +4131,8 @@
       "webPrice": 44095,
       "unlockPrice": 42995,
       "availability": "active",
-      "liveYear": "2026"
+      "liveYear": "2026",
+      "lotArrivalDate": "2026-05-18"
     },
     {
       "id": "winnebago-thrive-25rls",
@@ -4092,7 +4163,8 @@
       "webPrice": 49845,
       "unlockPrice": 48995,
       "availability": "active",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-07-06"
     },
     {
       "id": "winnebago-thrive-28bhs",
@@ -4121,5 +4193,331 @@
       "status": "A"
     }
   ],
-  "arrivalTrackingSince": "2026-10-18T01:07:49.068Z"
+  "arrivalTrackingSince": "2026-10-18T01:07:49.068Z",
+  "ageSheetSeen": {
+    "3118": {
+      "days": 461,
+      "date": "2025-07-17"
+    },
+    "3176": {
+      "days": 394,
+      "date": "2025-09-22"
+    },
+    "3210": {
+      "days": 357,
+      "date": "2025-10-29"
+    },
+    "3213": {
+      "days": 375,
+      "date": "2025-10-11"
+    },
+    "3223": {
+      "days": 356,
+      "date": "2025-10-30"
+    },
+    "3231": {
+      "days": 340,
+      "date": "2025-11-15"
+    },
+    "3235": {
+      "days": 336,
+      "date": "2025-11-19"
+    },
+    "3241": {
+      "days": 329,
+      "date": "2025-11-26"
+    },
+    "3242": {
+      "days": 334,
+      "date": "2025-11-21"
+    },
+    "3248": {
+      "days": 330,
+      "date": "2025-11-25"
+    },
+    "3252": {
+      "days": 317,
+      "date": "2025-12-08"
+    },
+    "3258": {
+      "days": 317,
+      "date": "2025-12-08"
+    },
+    "3265": {
+      "days": 275,
+      "date": "2026-01-19"
+    },
+    "3270": {
+      "days": 281,
+      "date": "2026-01-13"
+    },
+    "3302": {
+      "days": 230,
+      "date": "2026-03-05"
+    },
+    "3313": {
+      "days": 254,
+      "date": "2026-02-09"
+    },
+    "3331": {
+      "days": 195,
+      "date": "2026-04-09"
+    },
+    "3332": {
+      "days": 219,
+      "date": "2026-03-16"
+    },
+    "3334": {
+      "days": 233,
+      "date": "2026-03-02"
+    },
+    "3346": {
+      "days": 215,
+      "date": "2026-03-20"
+    },
+    "3355": {
+      "days": 205,
+      "date": "2026-03-30"
+    },
+    "3359": {
+      "days": 170,
+      "date": "2026-05-04"
+    },
+    "3375": {
+      "days": 170,
+      "date": "2026-05-04"
+    },
+    "3376": {
+      "days": 135,
+      "date": "2026-06-08"
+    },
+    "3383": {
+      "days": 156,
+      "date": "2026-05-18"
+    },
+    "3402": {
+      "days": 174,
+      "date": "2026-04-30"
+    },
+    "3427": {
+      "days": 132,
+      "date": "2026-06-11"
+    },
+    "3432": {
+      "days": 126,
+      "date": "2026-06-17"
+    },
+    "3437": {
+      "days": 105,
+      "date": "2026-07-08"
+    },
+    "3439": {
+      "days": 128,
+      "date": "2026-06-15"
+    },
+    "3443": {
+      "days": 117,
+      "date": "2026-06-26"
+    },
+    "3444": {
+      "days": 72,
+      "date": "2026-08-10"
+    },
+    "3445": {
+      "days": 128,
+      "date": "2026-06-15"
+    },
+    "3448": {
+      "days": 84,
+      "date": "2026-07-29"
+    },
+    "3450": {
+      "days": 119,
+      "date": "2026-06-24"
+    },
+    "3451": {
+      "days": 93,
+      "date": "2026-07-20"
+    },
+    "3452": {
+      "days": 114,
+      "date": "2026-06-29"
+    },
+    "3457": {
+      "days": 89,
+      "date": "2026-07-24"
+    },
+    "3458": {
+      "days": 113,
+      "date": "2026-06-30"
+    },
+    "3463": {
+      "days": 107,
+      "date": "2026-07-06"
+    },
+    "3464": {
+      "days": 112,
+      "date": "2026-07-01"
+    },
+    "3465": {
+      "days": 106,
+      "date": "2026-07-07"
+    },
+    "3479": {
+      "days": 74,
+      "date": "2026-08-08"
+    },
+    "3480": {
+      "days": 70,
+      "date": "2026-08-12"
+    },
+    "3488": {
+      "days": 85,
+      "date": "2026-07-28"
+    },
+    "3491": {
+      "days": 79,
+      "date": "2026-08-03"
+    },
+    "3492": {
+      "days": 83,
+      "date": "2026-07-30"
+    },
+    "3495": {
+      "days": 81,
+      "date": "2026-08-01"
+    },
+    "3498": {
+      "days": 75,
+      "date": "2026-08-07"
+    },
+    "3503": {
+      "days": 71,
+      "date": "2026-08-11"
+    },
+    "3507": {
+      "days": 49,
+      "date": "2026-09-02"
+    },
+    "3508": {
+      "days": 71,
+      "date": "2026-08-11"
+    },
+    "3509": {
+      "days": 39,
+      "date": "2026-09-12"
+    },
+    "3510": {
+      "days": 62,
+      "date": "2026-08-20"
+    },
+    "3511": {
+      "days": 41,
+      "date": "2026-09-10"
+    },
+    "3512": {
+      "days": 36,
+      "date": "2026-09-15"
+    },
+    "3513": {
+      "days": 37,
+      "date": "2026-09-14"
+    },
+    "3517": {
+      "days": 61,
+      "date": "2026-08-21"
+    },
+    "3518": {
+      "days": 41,
+      "date": "2026-09-10"
+    },
+    "3529": {
+      "days": 57,
+      "date": "2026-08-25"
+    },
+    "3532": {
+      "days": 43,
+      "date": "2026-09-08"
+    },
+    "3533": {
+      "days": 43,
+      "date": "2026-09-08"
+    },
+    "3535": {
+      "days": 43,
+      "date": "2026-09-08"
+    },
+    "3538": {
+      "days": 42,
+      "date": "2026-09-09"
+    },
+    "3542": {
+      "days": 47,
+      "date": "2026-09-04"
+    },
+    "3546": {
+      "days": 15,
+      "date": "2026-10-06"
+    },
+    "3547": {
+      "days": 4,
+      "date": "2026-10-17"
+    },
+    "3551": {
+      "days": 39,
+      "date": "2026-09-12"
+    },
+    "3558": {
+      "days": 16,
+      "date": "2026-10-05"
+    },
+    "3560": {
+      "days": 7,
+      "date": "2026-10-14"
+    },
+    "3563": {
+      "days": 35,
+      "date": "2026-09-16"
+    },
+    "3565": {
+      "days": 23,
+      "date": "2026-09-28"
+    },
+    "3566": {
+      "days": 23,
+      "date": "2026-09-28"
+    },
+    "3567": {
+      "days": 7,
+      "date": "2026-10-14"
+    },
+    "3568": {
+      "days": 19,
+      "date": "2026-10-02"
+    },
+    "3570": {
+      "days": 22,
+      "date": "2026-09-29"
+    },
+    "3572": {
+      "days": 22,
+      "date": "2026-09-29"
+    },
+    "3573": {
+      "days": 19,
+      "date": "2026-10-02"
+    },
+    "3574": {
+      "days": 19,
+      "date": "2026-10-02"
+    },
+    "3584": {
+      "days": 5,
+      "date": "2026-10-16"
+    },
+    "3589": {
+      "days": 2,
+      "date": "2026-10-19"
+    }
+  }
 }

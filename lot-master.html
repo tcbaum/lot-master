@@ -395,6 +395,15 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .dash-mini-meta{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:4px;font-size:11px}
 .dash-mini-price{font-weight:700;color:var(--mint)}
 .unit-stock-pill{display:inline-flex;align-items:center;font-size:11px;font-weight:700;color:var(--muted);background:var(--card-2);border:1px solid var(--line);border-radius:4px;padding:1px 6px;letter-spacing:.02em;white-space:nowrap}
+/* Lot-age pills: tier color for the fill, text mixed toward --text so small labels stay legible in both themes */
+.dash-mini-pills{display:inline-flex;gap:4px;align-items:center;min-width:0;flex-wrap:wrap}
+.unit-age-pill{display:inline-flex;align-items:center;font-size:11px;font-weight:700;padding:1px 6px;border-radius:4px;border:1px solid var(--line);letter-spacing:.02em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.age-fresh{background:var(--mint-soft);color:color-mix(in srgb,var(--mint) 55%,var(--text));border-color:color-mix(in srgb,var(--mint) 30%,var(--line))}
+.age-standard{background:var(--card-2);color:var(--muted);border-color:var(--line)}
+.age-aged{background:var(--amber-soft);color:color-mix(in srgb,var(--amber) 45%,var(--text));border-color:color-mix(in srgb,var(--amber) 40%,var(--line))}
+.age-priority{background:var(--clay-soft);color:color-mix(in srgb,var(--clay) 70%,var(--text));border-color:color-mix(in srgb,var(--clay) 40%,var(--line));font-weight:800}
+.kv dd .age-val{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
+.kv dd .age-val .muted{font-size:12.5px}
 .unit-pricing{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13.5px;margin-top:4px}
 .chip-avail{display:inline-flex;align-items:center;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
 .chip-pending{background:var(--amber-soft);color:var(--amber)}
@@ -2024,6 +2033,40 @@ async function fetchWithTimeout(url,ms){
 // are dropped unless they're a rep's own locally-added unit (not sourced from sync/seed).
 // Live Web Special Prices year wins for stocked units; units not in the live sheet fall back to the catalog (inv.xlsx) year
 function unitYear(u){ return u ? String(u.liveYear||u.year||'').trim() : ''; }
+/* ---------- Lot age (days on lot) ----------
+   Dealership aging brackets: 0–30 Fresh, 31–199 Standard, 200–299 Aged, 300+ Priority.
+   Only for units currently ACTIVE on the lot with a recorded lotArrivalDate; undated units render nothing. */
+const AGE_AGED_DAYS=200, AGE_PRIORITY_DAYS=300;
+// Arrival as a LOCAL calendar day: "2025-07-17" (Unit Age sheet) is that date in the rep's time zone, not UTC midnight
+// (which would roll ages over at 7 pm Central). Timestamps from the sync's own stamping use their local date too.
+function arrivalLocalDay(v){
+  const m=String(v||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(m) return new Date(+m[1],+m[2]-1,+m[3]);
+  const t=Date.parse(v); if(isNaN(t)) return null;
+  const d=new Date(t); return new Date(d.getFullYear(),d.getMonth(),d.getDate());
+}
+function unitDaysOnLot(u){
+  if(!u||!u.lotArrivalDate||u.availability!=='active') return null;
+  const a=arrivalLocalDay(u.lotArrivalDate); if(!a) return null;
+  const n=new Date(), today=new Date(n.getFullYear(),n.getMonth(),n.getDate());
+  return Math.max(0,Math.round((today-a)/86400000));   // whole calendar days, DST-safe; matches how IDS counts age
+}
+function unitAgeTier(days){
+  if(days==null) return null;
+  if(days<=30) return {label:'Fresh',cls:'age-fresh',tier:'fresh'};
+  if(days<AGE_AGED_DAYS) return {label:'Standard',cls:'age-standard',tier:'standard'};
+  if(days<AGE_PRIORITY_DAYS) return {label:'Aged',cls:'age-aged',tier:'aged'};
+  return {label:'Priority',cls:'age-priority',tier:'priority'};
+}
+function fmtArrival(u){ const d=arrivalLocalDay(u&&u.lotArrivalDate); return d?d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}):''; }
+function unitAgeBadgeHtml(u){
+  const days=unitDaysOnLot(u); if(days==null) return '';
+  const t=unitAgeTier(days);
+  return `<span class="unit-age-pill ${t.cls}" title="${t.label}: ${days} day${days!==1?'s':''} on lot (since ${esc(fmtArrival(u))})" aria-label="${days} days on lot, ${t.label}">${days}d</span>`;
+}
+function priorityUnits(){
+  return state.units.filter(u=>(unitDaysOnLot(u)??-1)>=AGE_PRIORITY_DAYS).sort((a,b)=>unitDaysOnLot(b)-unitDaysOnLot(a));
+}
 window.unitYear=unitYear;
 function reconcileGithubInventory(payload){
   const matchKey=(mf,brand,model)=>norm(mf)+'|'+norm(brand)+'|'+norm(model);
@@ -2527,14 +2570,14 @@ function dashMiniCardHtml(u){
     <div class="dash-mini-body">
       <div class="dash-mini-title" title="${title}">${title}</div>
       <div class="dash-mini-sub" title="${sub}">${sub}</div>
-      <div class="dash-mini-meta">${stk?`<span class="unit-stock-pill">Stk #${esc(stk)}</span>`:'<span></span>'}${price?`<span class="dash-mini-price">${esc(price)}</span>`:''}</div>
+      <div class="dash-mini-meta"><span class="dash-mini-pills">${stk?`<span class="unit-stock-pill">Stk #${esc(stk)}</span>`:''}${unitAgeBadgeHtml(u)}</span>${price?`<span class="dash-mini-price">${esc(price)}</span>`:''}</div>
     </div></button>`;
 }
 const PULSE_CAP=10, FRESH_DAYS=30;
 // "Fresh" = active units that reached the lot within FRESH_DAYS (lotArrivalDate, recorded by the sync the day a unit first
 // shows up active) plus units with no recorded date (they predate tracking), so the rail never goes empty.
 // Dated arrivals come first, newest first; undated follow, newest year then highest stock #.
-function arrivalMs(u){ const t=u&&u.lotArrivalDate?Date.parse(u.lotArrivalDate):NaN; return isNaN(t)?0:t; }
+function arrivalMs(u){ const d=u&&arrivalLocalDay(u.lotArrivalDate); return d?d.getTime():0; }
 function freshUnits(){
   const cutoff=Date.now()-FRESH_DAYS*86400000;
   const stk=u=>parseInt(String(u.stock||'').replace(/\D/g,''),10)||0;
@@ -2543,25 +2586,27 @@ function freshUnits(){
 }
 // Dashboard "View all": jump to Browse with only that availability showing, everything else cleared
 function viewAllPulseCategory(cat){
-  const f=bf(); f.layout='all'; f.lengthBracket='all'; f.weightBracket='all'; f.hideInactives=false; f.availability=cat;
+  const f=bf(); f.layout='all'; f.lengthBracket='all'; f.weightBracket='all'; f.hideInactives=false; f.age='all';
+  if(cat==='priority'){ f.availability='active'; f.age='priority'; } else f.availability=cat;
   filt.q=''; filt.cat=''; filt.line=''; browseNav={mf:null,brand:null,line:null};
   saveState(); go('browse');
 }
 window.viewAllPulseCategory=viewAllPulseCategory;
+window.unitDaysOnLot=unitDaysOnLot; window.unitAgeTier=unitAgeTier; window.unitAgeBadgeHtml=unitAgeBadgeHtml;
 function dashPulseColHtml(title,colorVar,units,cat){
   if(!units.length) return '';
   const more=units.length>PULSE_CAP, remaining=units.length-PULSE_CAP;
   return `<div class="dash-pulse-col">
     <div class="dash-pulse-header"><span class="dash-pulse-title"><span class="dash-pulse-dot" style="background:var(${colorVar})"></span>${title}</span><span class="dash-pulse-hr"><span class="dash-pulse-count">${units.length}</span>${more?`<button class="dash-pulse-view-all" onclick="viewAllPulseCategory('${cat}')">View all &rarr;</button>`:''}</span></div>
-    <div class="dash-pulse-track">${units.slice(0,PULSE_CAP).map(dashMiniCardHtml).join('')}${more?`<button class="dash-mini-card dash-mini-endcap" onclick="viewAllPulseCategory('${cat}')" aria-label="View all ${units.length} units in Browse"><span class="dash-endcap-icon">${svg(I.browse)}</span><span class="dash-endcap-title">+${remaining} more</span><span class="dash-endcap-sub">${cat==='active'?'See the full lot in Browse':'View all '+units.length+' in Browse'}</span></button>`:''}</div></div>`;
+    <div class="dash-pulse-track">${units.slice(0,PULSE_CAP).map(dashMiniCardHtml).join('')}${more?`<button class="dash-mini-card dash-mini-endcap" onclick="viewAllPulseCategory('${cat}')" aria-label="View all ${units.length} units in Browse"><span class="dash-endcap-icon">${svg(I.browse)}</span><span class="dash-endcap-title">+${remaining} more</span><span class="dash-endcap-sub">${cat==='active'?'See the full lot in Browse':cat==='priority'?'See all '+units.length+' oldest units':'View all '+units.length+' in Browse'}</span></button>`:''}</div></div>`;
 }
 function dashboardPulseHtml(){
   const stkNum=u=>parseInt(String(u.stock||'').replace(/\D/g,''),10)||0;
   const byYearStock=(x,y)=>(Number(unitYear(y))||0)-(Number(unitYear(x))||0)||stkNum(y)-stkNum(x);
   const by=a=>state.units.filter(u=>u.availability===a).sort(byYearStock);
-  const act=freshUnits(), ord=by('on-order'), pen=by('pending');
-  if(!act.length&&!ord.length&&!pen.length) return '';
-  return `<div class="dash-pulse-section">${dashPulseColHtml('Fresh on the Lot','--mint',act,'active')}${dashPulseColHtml('Inbound Pipeline','--sky',ord,'on-order')}${dashPulseColHtml('Under Contract','--amber',pen,'pending')}</div>`;
+  const act=freshUnits(), pri=priorityUnits(), ord=by('on-order'), pen=by('pending');
+  if(!act.length&&!pri.length&&!ord.length&&!pen.length) return '';
+  return `<div class="dash-pulse-section">${dashPulseColHtml('Fresh on the Lot','--mint',act,'active')}${dashPulseColHtml('Priority (300d+)','--clay',pri,'priority')}${dashPulseColHtml('Inbound Pipeline','--sky',ord,'on-order')}${dashPulseColHtml('Under Contract','--amber',pen,'pending')}</div>`;
 }
 window.dashboardPulseHtml=dashboardPulseHtml;
 function viewDashboard(){
@@ -3829,6 +3874,7 @@ function bf(){
   if(!['all','under30','over30'].includes(f.lengthBracket)) f.lengthBracket='all';
   if(!['all','halfton','heavyduty'].includes(f.weightBracket)) f.weightBracket='all';
   if(!['all','active','on-order','pending'].includes(f.availability)) f.availability='all';
+  if(!['all','aged','priority'].includes(f.age)) f.age='all';   // lot-age bracket (Dashboard Priority rail -> View all)
   f.hideInactives=!!f.hideInactives;
   return f;
 }
@@ -3848,9 +3894,12 @@ function lengthFeet(u){
   const m=String(L).replace(/[\u2019\u2018]/g,"'").replace(/[\u201D\u201C]/g,'"').match(/(\d+(?:\.\d+)?)\s*(?:'|ft|feet)?\s*(?:(\d+(?:\.\d+)?)\s*(?:"|in))?/i);
   if(!m) return null; const ft=parseFloat(m[1])+(m[2]?parseFloat(m[2])/12:0); return isNaN(ft)?null:ft;
 }
-function browseFilterCount(){ const f=bf(); return (f.layout!=='all'?1:0)+(f.lengthBracket!=='all'?1:0)+(f.weightBracket!=='all'?1:0)+(f.availability!=='all'?1:0); }
+function browseFilterCount(){ const f=bf(); return (f.layout!=='all'?1:0)+(f.lengthBracket!=='all'?1:0)+(f.weightBracket!=='all'?1:0)+(f.availability!=='all'&&f.age==='all'?1:0)+(f.age!=='all'?1:0); }   // the age route's implied 'active' isn't a separate visible pill
+const AGE_FILTER_LABEL={aged:'200+ days on lot',priority:'300+ days on lot'};
+function clearAgeFilter(){ const f=bf(); f.age='all'; f.availability='all'; saveState(); refreshBrowseFilters(); }   // the Priority route also set availability=active; clear both so Browse returns to normal
+window.clearAgeFilter=clearAgeFilter;
 const AVAIL_LABEL={active:'On the Lot','on-order':'Inbound','pending':'Under Contract'};
-function clearAvailabilityFilter(){ bf().availability='all'; saveState(); refreshBrowseFilters(); }
+function clearAvailabilityFilter(){ const f=bf(); f.availability='all'; f.age='all'; saveState(); refreshBrowseFilters(); }
 window.clearAvailabilityFilter=clearAvailabilityFilter;
 function browseFiltersHtml(){
   const f=bf(), n=browseFilterCount();
@@ -3867,7 +3916,8 @@ function browseFiltersHtml(){
       <button class="fpill ${f.layout==='bunk'?'on':''}" onclick="setBrowseLayout('bunk')">Bunks</button>
       <button class="fpill ${f.layout==='couples'?'on':''}" onclick="setBrowseLayout('couples')">Couples</button>
     </div>
-    ${f.availability!=='all'?`<div class="filter-group"><button class="fpill on" onclick="clearAvailabilityFilter()" title="Clear this filter">${AVAIL_LABEL[f.availability]} &times;</button></div>`:''}
+    ${f.age!=='all'?`<div class="filter-group"><button class="fpill on" onclick="clearAgeFilter()" title="Clear this filter">${AGE_FILTER_LABEL[f.age]} &times;</button></div>`:''}
+    ${f.availability!=='all'&&f.age==='all'?`<div class="filter-group"><button class="fpill on" onclick="clearAvailabilityFilter()" title="Clear this filter">${AVAIL_LABEL[f.availability]} &times;</button></div>`:''}
     <div class="filter-group"><button class="fpill ${f.lengthBracket!=='all'?'on':''}" onclick="cycleLengthFilter()" title="Tap to cycle: any, under 30 ft, 30+ ft">${lenLbl}</button></div>
     <div class="filter-group"><button class="fpill ${f.weightBracket!=='all'?'on':''}" onclick="cycleWeightFilter()" title="Tap to cycle. Based on dry weight (UVW), not loaded or tow rating">${wtLbl}</button></div>
     </div>
@@ -3881,11 +3931,12 @@ function setBrowseLayout(t){ bf().layout=t; saveState(); refreshBrowseFilters();
 function cycleLengthFilter(){ const f=bf(); f.lengthBracket={all:'under30',under30:'over30',over30:'all'}[f.lengthBracket]; saveState(); refreshBrowseFilters(); }
 function cycleWeightFilter(){ const f=bf(); f.weightBracket={all:'halfton',halfton:'heavyduty',heavyduty:'all'}[f.weightBracket]; saveState(); refreshBrowseFilters(); }
 function toggleHideInactives(){ const f=bf(); f.hideInactives=!f.hideInactives; saveState(); refreshBrowseFilters(); }
-function resetBrowseFilters(){ const f=bf(); f.layout='all'; f.lengthBracket='all'; f.weightBracket='all'; f.availability='all'; saveState(); refreshBrowseFilters(); }
+function resetBrowseFilters(){ const f=bf(); f.layout='all'; f.lengthBracket='all'; f.weightBracket='all'; f.availability='all'; f.age='all'; saveState(); refreshBrowseFilters(); }
 function browseUnitPasses(u){
   const f=bf();
   if(f.hideInactives&&!isInStock(u)) return false;
   if(f.availability!=='all'&&u.availability!==f.availability) return false;
+  if(f.age!=='all'){ const d=unitDaysOnLot(u); if(d==null||d<(f.age==='priority'?AGE_PRIORITY_DAYS:AGE_AGED_DAYS)) return false; }
   if(f.layout==='bunk'&&!isBunkhouse(u)) return false;
   if(f.layout==='couples'&&isBunkhouse(u)) return false;
   if(f.lengthBracket!=='all'){ const ft=lengthFeet(u); if(ft==null||ft<=0) return false; if(f.lengthBracket==='under30'?ft>=30:ft<30) return false; }
@@ -3898,7 +3949,7 @@ function browseEmptyHtml(){
     ? `<div class="empty"><p>No units match these filters.</p>${browseFilterCount()>0?`<button class="btn" onclick="resetBrowseFilters()">Reset filters</button>`:`<p class="muted">Turn off “Hide Inactives” to see the full lot.</p>`}</div>`
     : `<div class="empty"><p>No units match. Clear a filter and try again.</p></div>`;
 }
-function browseSearchActive(){ return !!(filt.q||filt.cat||bf().availability!=='all'); }   // an availability route from the Dashboard shows a flat result list, not the drill-down
+function browseSearchActive(){ const f=bf(); return !!(filt.q||filt.cat||f.availability!=='all'||f.age!=='all'); }   // an availability route from the Dashboard shows a flat result list, not the drill-down
 function viewBrowse(){
   if(!state.units.length) return `<div class="view-head"><div><h1>Browse</h1></div></div>
     <div class="panel"><div class="empty"><div class="ec">${svg(I.browse)}</div><h3>${emptySyncCopy().title}</h3><p>${emptySyncCopy().body}</p>${emptySyncActionsHtml()}</div></div>`;
@@ -4090,6 +4141,11 @@ function browseFloorplanGrid(units){
 // flat "fast-lookup" results when search text or a type filter is active — grouped
 // by Manufacturer > Brand, still in training-priority order; bypasses the drill panel
 function browseSearchResults(list){
+  if(bf().age!=='all'&&!filt.q&&!filt.cat){   // lot-age view: one list, oldest on the lot first (what a manager works down)
+    if(!list.length) return browseEmptyHtml();
+    const sorted=list.slice().sort((a,b)=>(unitDaysOnLot(b)||0)-(unitDaysOnLot(a)||0));
+    return `<div class="bsearch-group"><h3 class="bsearch-head">${esc(AGE_FILTER_LABEL[bf().age])} <span>Oldest first · ${sorted.length}</span></h3><div class="inv-grid">${sorted.map(unitCard).join('')}</div></div>`;
+  }
   const tree=browseGroups(list);
   if(!tree.length) return browseEmptyHtml();
   let out='';
@@ -4225,7 +4281,7 @@ function unitCard(u){
       <div class="unit-model">${titleWithYear}</div>
       ${u.productLine?`<div class="unit-line">${esc(u.productLine)}</div>`:''}
       <div class="unit-specs">${u.length?`<span><b>${esc(fmtLength(u))}</b></span>`:''}${u.weight?`<span><b>${esc(typeof u.weight==='number'?u.weight.toLocaleString():u.weight)}</b> lbs</span>`:''}${u.sleeps?`<span>Sleeps <b>${esc(u.sleeps)}</b></span>`:''}${u.slides?`<span><b>${esc(u.slides)}</b> slide${u.slides==1?'':'s'}</span>`:''}</div>
-      ${hasPricing?`<div class="unit-pricing">${u.webPrice?`<span style="color:var(--sky);font-weight:700">${esc(formatPrice(u.webPrice))}</span>`:''}${u.unlockPrice?`<span style="color:var(--mint);font-weight:700">${esc(formatPrice(u.unlockPrice))}</span>`:''}${availabilityChip(u)}${stockChip}</div>`:(stockChip?`<div class="unit-pricing">${stockChip}</div>`:'')}
+      ${hasPricing?`<div class="unit-pricing">${u.webPrice?`<span style="color:var(--sky);font-weight:700">${esc(formatPrice(u.webPrice))}</span>`:''}${u.unlockPrice?`<span style="color:var(--mint);font-weight:700">${esc(formatPrice(u.unlockPrice))}</span>`:''}${availabilityChip(u)}${stockChip}${unitAgeBadgeHtml(u)}</div>`:((stockChip||unitAgeBadgeHtml(u))?`<div class="unit-pricing">${stockChip}${unitAgeBadgeHtml(u)}</div>`:'')}
       ${u.location?`<div class="unit-loc">${svg(I.pin)} ${esc(u.location)}</div>`:''}
       <div class="unit-tags">${(u.tags||[]).slice(0,4).map(t=>`<span class="tag">${CAT_LABEL[t]}</span>`).join('')}</div>
     </div></button>`;
@@ -4292,6 +4348,7 @@ function openDetail(id){ detailId=id; activeBrowseTab='specs'; const u=state.uni
           ${u.webPrice?`<dt>Web Price</dt><dd style="color:var(--sky);font-weight:700">${esc(formatPrice(u.webPrice))}</dd>`:''}
           ${u.unlockPrice?`<dt>Unlock Price</dt><dd style="color:var(--mint);font-weight:700">${esc(formatPrice(u.unlockPrice))}</dd>`:''}
           ${u.stock?`<dt>Stock #</dt><dd>${esc(u.stock)}</dd>`:''}
+          ${unitDaysOnLot(u)!=null?(()=>{ const d=unitDaysOnLot(u), t=unitAgeTier(d); return `<dt>Lot Age</dt><dd><span class="age-val"><span class="unit-age-pill ${t.cls}">${d} day${d!==1?'s':''}</span><span class="muted">${t.label} · since ${esc(fmtArrival(u))}</span></span></dd>`; })():''}
           ${u.vin?`<dt>VIN</dt><dd style="font-family:var(--display);font-size:13px">${esc(u.vin)}</dd>`:''}
         </dl>
         ${(u.tags||[]).length?`<div class="unit-tags" style="margin-bottom:14px">${u.tags.map(t=>`<span class="tag">${CAT_LABEL[t]}</span>`).join('')}</div>`:''}
