@@ -780,8 +780,9 @@
       "stock": "3589",
       "webPrice": 129642,
       "unlockPrice": 128892,
-      "availability": "on-order",
-      "liveYear": "2027"
+      "availability": "active",
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-10-21T14:00:02.533Z"
     },
     {
       "id": "alliance-paradigm-312rk",
