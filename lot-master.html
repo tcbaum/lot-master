@@ -365,7 +365,7 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 }
 @media (prefers-reduced-motion:reduce){.welcome-card{transition:none}.welcome-card.leaving{transform:none}}
 .dash-pulse-section{margin-top:22px;display:flex;flex-direction:column;gap:18px}
-@media (horizontal-viewport-segments:2),(min-width:820px){.dash-pulse-section{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}}
+@media (horizontal-viewport-segments:2),(min-width:820px){.dash-pulse-section{display:grid;grid-template-columns:repeat(var(--pulse-cols,3),minmax(0,1fr));gap:16px;align-items:start}}
 .dash-pulse-col{display:flex;flex-direction:column;min-width:0}
 .dash-pulse-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;padding:0 4px}
 .dash-pulse-title{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.03em}
@@ -380,7 +380,16 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .dash-endcap-title{font-size:13px;font-weight:700;color:var(--text)}
 .dash-endcap-sub{font-size:11px;color:var(--muted);line-height:1.3}
 .dash-pulse-count{font-size:11px;font-weight:700;padding:2px 7px;border-radius:999px;background:var(--card-2);color:var(--muted);border:1px solid var(--line)}
+/* Desktop: hover-revealed prev/next buttons over the rail (mirrors .mode-slide's .carousel-arrow). Hidden entirely
+   on touch (coarse pointer) devices, where native swipe/scroll-snap is already the primary, more natural gesture. */
+.dash-pulse-trackwrap{position:relative}
+.pulse-arrow{top:50%;transform:translateY(-50%);width:34px;height:34px;opacity:0;pointer-events:none;transition:opacity .15s ease,border-color .15s ease,color .15s ease}
+.pulse-arrow svg{width:17px;height:17px}
+.pulse-arrow.prev{left:-6px} .pulse-arrow.next{right:-6px}
+@media(hover:hover) and (pointer:fine){.dash-pulse-trackwrap:hover .pulse-arrow,.dash-pulse-trackwrap:focus-within .pulse-arrow{opacity:1;pointer-events:auto}}
+@media(hover:none),(pointer:coarse){.pulse-arrow{display:none}}
 .dash-pulse-track{display:flex;gap:10px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 2px 10px;scrollbar-width:none}
+.dash-pulse-track:focus-visible{outline:2px solid var(--brand);outline-offset:2px;border-radius:var(--radius-lg)}
 .dash-pulse-track::-webkit-scrollbar{display:none}
 .dash-mini-card{appearance:none;font:inherit;text-align:left;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:0;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;flex:0 0 210px;scroll-snap-align:start;transition:transform .15s ease,border-color .15s ease;position:relative}
 .dash-mini-card:active{transform:scale(.97)}
@@ -2598,15 +2607,33 @@ function dashPulseColHtml(title,colorVar,units,cat){
   const more=units.length>PULSE_CAP, remaining=units.length-PULSE_CAP;
   return `<div class="dash-pulse-col">
     <div class="dash-pulse-header"><span class="dash-pulse-title"><span class="dash-pulse-dot" style="background:var(${colorVar})"></span>${title}</span><span class="dash-pulse-hr"><span class="dash-pulse-count">${units.length}</span>${more?`<button class="dash-pulse-view-all" onclick="viewAllPulseCategory('${cat}')">View all &rarr;</button>`:''}</span></div>
-    <div class="dash-pulse-track">${units.slice(0,PULSE_CAP).map(dashMiniCardHtml).join('')}${more?`<button class="dash-mini-card dash-mini-endcap" onclick="viewAllPulseCategory('${cat}')" aria-label="View all ${units.length} units in Browse"><span class="dash-endcap-icon">${svg(I.browse)}</span><span class="dash-endcap-title">+${remaining} more</span><span class="dash-endcap-sub">${cat==='active'?'See the full lot in Browse':cat==='priority'?'See all '+units.length+' oldest units':'View all '+units.length+' in Browse'}</span></button>`:''}</div></div>`;
+    <div class="dash-pulse-trackwrap">
+      <button class="carousel-arrow pulse-arrow prev" onclick="pulseTrackScroll(this,-1)" aria-label="Scroll ${esc(title)} left" tabindex="-1">${svg(I.chevL)}</button>
+      <div class="dash-pulse-track" tabindex="0" role="region" aria-label="${esc(title)} floorplans, scrollable">${units.slice(0,PULSE_CAP).map(dashMiniCardHtml).join('')}${more?`<button class="dash-mini-card dash-mini-endcap" onclick="viewAllPulseCategory('${cat}')" aria-label="View all ${units.length} units in Browse"><span class="dash-endcap-icon">${svg(I.browse)}</span><span class="dash-endcap-title">+${remaining} more</span><span class="dash-endcap-sub">${cat==='active'?'See the full lot in Browse':cat==='priority'?'See all '+units.length+' oldest units':'View all '+units.length+' in Browse'}</span></button>`:''}</div>
+      <button class="carousel-arrow pulse-arrow next" onclick="pulseTrackScroll(this,1)" aria-label="Scroll ${esc(title)} right" tabindex="-1">${svg(I.chevR)}</button>
+    </div></div>`;
 }
+// Desktop convenience: hover-revealed prev/next buttons, mouse-wheel-to-horizontal, and arrow-key scrolling
+// for the pulse rails. Touch devices keep native swipe (the buttons are hidden there via CSS, see .pulse-arrow).
+function pulseTrackScroll(btn,dir){
+  const track=btn.closest('.dash-pulse-trackwrap').querySelector('.dash-pulse-track'); if(!track) return;
+  const card=track.querySelector('.dash-mini-card');
+  const step=card?card.getBoundingClientRect().width+10:230;
+  track.scrollBy({left:dir*step*2, behavior:prefersReduced()?'auto':'smooth'});
+}
+window.pulseTrackScroll=pulseTrackScroll;
 function dashboardPulseHtml(){
   const stkNum=u=>parseInt(String(u.stock||'').replace(/\D/g,''),10)||0;
   const byYearStock=(x,y)=>(Number(unitYear(y))||0)-(Number(unitYear(x))||0)||stkNum(y)-stkNum(x);
   const by=a=>state.units.filter(u=>u.availability===a).sort(byYearStock);
   const act=freshUnits(), pri=priorityUnits(), ord=by('on-order'), pen=by('pending');
   if(!act.length&&!pri.length&&!ord.length&&!pen.length) return '';
-  return `<div class="dash-pulse-section">${dashPulseColHtml('Fresh on the Lot','--mint',act,'active')}${dashPulseColHtml('Priority (300d+)','--clay',pri,'priority')}${dashPulseColHtml('Inbound Pipeline','--sky',ord,'on-order')}${dashPulseColHtml('Under Contract','--amber',pen,'pending')}</div>`;
+  // Order: Fresh, Inbound, Priority, Under Contract. Column count is picked from how many rails actually
+  // render (an empty one is simply omitted) so a lone 4th rail never wraps alone onto a mostly-empty row --
+  // 4 rails lay out 2x2 instead of 3-then-1.
+  const cols=[act.length,ord.length,pri.length,pen.length].filter(Boolean).length;
+  const pulseCols=cols===4?2:(cols||3);
+  return `<div class="dash-pulse-section" style="--pulse-cols:${pulseCols}">${dashPulseColHtml('Fresh on the Lot','--mint',act,'active')}${dashPulseColHtml('Inbound Pipeline','--sky',ord,'on-order')}${dashPulseColHtml('Priority (300d+)','--clay',pri,'priority')}${dashPulseColHtml('Under Contract','--amber',pen,'pending')}</div>`;
 }
 window.dashboardPulseHtml=dashboardPulseHtml;
 function viewDashboard(){
@@ -5106,7 +5133,27 @@ function loadSample(){
 }
 
 /* ---------- Wire global listeners ---------- */
+// Desktop: a vertical mouse-wheel gesture over a pulse rail scrolls it horizontally instead of
+// the page, same convention as Netflix/Amazon-style rails -- but only while the rail can actually
+// move further that way, so the page still scrolls normally once a rail is exhausted. Arrow keys
+// scroll by one card when the rail (or a card inside it) has focus.
+function wirePulseTrackGestures(){
+  document.addEventListener('wheel',e=>{
+    const track=e.target.closest&&e.target.closest('.dash-pulse-track'); if(!track) return;
+    if(Math.abs(e.deltaY)<=Math.abs(e.deltaX)) return;   // already a horizontal gesture (trackpad) -- let the browser handle it natively
+    const atStart=track.scrollLeft<=0, atEnd=track.scrollLeft>=track.scrollWidth-track.clientWidth-1;
+    if((e.deltaY<0&&atStart)||(e.deltaY>0&&atEnd)) return;   // nothing left to scroll that way -- fall through to page scroll
+    e.preventDefault(); track.scrollLeft+=e.deltaY;
+  },{passive:false});
+  document.addEventListener('keydown',e=>{
+    if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight') return;
+    const track=e.target.closest&&e.target.closest('.dash-pulse-track'); if(!track) return;
+    const card=track.querySelector('.dash-mini-card'); const step=card?card.getBoundingClientRect().width+10:230;
+    e.preventDefault(); track.scrollBy({left:(e.key==='ArrowRight'?1:-1)*step,behavior:prefersReduced()?'auto':'smooth'});
+  });
+}
 function wireGlobal(){
+  wirePulseTrackGestures();
   window.addEventListener('scroll',()=>{ if(centerCands.size) scheduleCenterPick(); },{passive:true});
   window.addEventListener('resize',()=>{ if(centerCands.size) scheduleCenterPick(); if(route==='browse'){ cancelAnimationFrame(duoSync._r); duoSync._r=requestAnimationFrame(duoSync); } },{passive:true});
   $('#modalBack').addEventListener('click',e=>{ if(e.target.id==='modalBack') closeDetail(); });
