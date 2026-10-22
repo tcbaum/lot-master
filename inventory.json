@@ -1001,7 +1001,7 @@
       "unlockPrice": 149627,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-10-22T14:00:24.023Z"
+      "lotArrivalDate": "2026-10-20"
     },
     {
       "id": "alliance-valor-44v14",
@@ -2122,7 +2122,7 @@
       "unlockPrice": 49995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-10-22T14:00:24.023Z"
+      "lotArrivalDate": "2026-10-20"
     },
     {
       "id": "grand-design-momentum-luxury-344m",
@@ -4543,9 +4543,17 @@
       "days": 5,
       "date": "2026-10-16"
     },
+    "3585": {
+      "days": 1,
+      "date": "2026-10-20"
+    },
     "3589": {
       "days": 2,
       "date": "2026-10-19"
+    },
+    "3590": {
+      "days": 1,
+      "date": "2026-10-20"
     }
   }
 }
