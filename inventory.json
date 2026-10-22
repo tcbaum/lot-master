@@ -601,7 +601,12 @@
         "Tri-Fold Sofa",
         "U-Shaped Kitchen",
         "Queen Bed"
-      ]
+      ],
+      "stock": "3607",
+      "webPrice": 72964,
+      "unlockPrice": "",
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "alliance-delta-ultra-lite-ml216",
@@ -623,7 +628,12 @@
         "Pull-Out Dinette",
         "18K A/C",
         "Queen Bed"
-      ]
+      ],
+      "stock": "3609",
+      "webPrice": 48249,
+      "unlockPrice": "",
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "alliance-delta-ultra-lite-fk218",
@@ -739,7 +749,12 @@
         "Dinette",
         "Dual Entry",
         "Queen Bed"
-      ]
+      ],
+      "stock": "3608",
+      "webPrice": 52181,
+      "unlockPrice": "",
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "alliance-delta-ultra-lite-bh271",
@@ -861,7 +876,12 @@
         "Bath and a Half",
         "W/D Prep",
         "King Bed"
-      ]
+      ],
+      "stock": "3611",
+      "webPrice": 183843,
+      "unlockPrice": "",
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "alliance-paradigm-375rd",
@@ -950,12 +970,10 @@
         "W/D Prep",
         "King Bed"
       ],
-      "stock": "3231",
-      "webPrice": 100745,
-      "unlockPrice": 99895,
-      "availability": "pending",
-      "liveYear": "2026",
-      "lotArrivalDate": "2025-11-15"
+      "stock": "",
+      "webPrice": "",
+      "unlockPrice": "",
+      "availability": ""
     },
     {
       "id": "alliance-paradigm-395ds",
@@ -981,8 +999,9 @@
       "stock": "3590",
       "webPrice": 150827,
       "unlockPrice": 149627,
-      "availability": "on-order",
-      "liveYear": "2027"
+      "availability": "active",
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-10-22T14:00:24.023Z"
     },
     {
       "id": "alliance-valor-44v14",
@@ -1638,7 +1657,12 @@
         "Sunken Shower",
         "Washer/Dryer Prep",
         "King Bed"
-      ]
+      ],
+      "stock": "3612",
+      "webPrice": 127342,
+      "unlockPrice": "",
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "grand-design-influence-3203gk",
@@ -1704,7 +1728,12 @@
         "XL Bathroom",
         "Washer/Dryer Prep",
         "King Bed"
-      ]
+      ],
+      "stock": "3613",
+      "webPrice": 147170,
+      "unlockPrice": "",
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "grand-design-influence-3804ds",
@@ -2091,8 +2120,9 @@
       "stock": "3585",
       "webPrice": 50845,
       "unlockPrice": 49995,
-      "availability": "on-order",
-      "liveYear": "2027"
+      "availability": "active",
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-10-22T14:00:24.023Z"
     },
     {
       "id": "grand-design-momentum-luxury-344m",
@@ -2214,8 +2244,8 @@
         "Queen Bed"
       ],
       "stock": "3439",
-      "webPrice": 66695,
-      "unlockPrice": 65995,
+      "webPrice": 67695,
+      "unlockPrice": 66995,
       "availability": "active",
       "liveYear": "2027",
       "lotArrivalDate": "2026-06-15"
@@ -2929,8 +2959,9 @@
       "stock": "3547",
       "webPrice": 209263,
       "unlockPrice": "",
-      "availability": "on-order",
-      "liveYear": "2027"
+      "availability": "active",
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-10-17"
     },
     {
       "id": "grand-design-solitude-417kb",
@@ -2945,10 +2976,11 @@
       "imagePath": "grand-design-solitude-2of2/solitude-417kb.png",
       "status": "A",
       "brochure": "brochures/solitude-417kb.pdf",
-      "stock": "",
-      "webPrice": "",
+      "stock": "3614",
+      "webPrice": 171731,
       "unlockPrice": "",
-      "availability": ""
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "grand-design-transcend-245rlt",
@@ -2999,12 +3031,10 @@
         "50 Amp w/ 2nd A/C Prep",
         "Sleeps 8"
       ],
-      "stock": "3513",
-      "webPrice": 40545,
-      "unlockPrice": 39995,
-      "availability": "pending",
-      "liveYear": "2027",
-      "lotArrivalDate": "2026-09-14"
+      "stock": "",
+      "webPrice": "",
+      "unlockPrice": "",
+      "availability": ""
     },
     {
       "id": "grand-design-transcend-275fkt",
@@ -3111,12 +3141,10 @@
         "50 Amp w/ 2nd A/C Prep",
         "Sleeps 4"
       ],
-      "stock": "3479",
-      "webPrice": 48945,
-      "unlockPrice": 47995,
-      "availability": "pending",
-      "liveYear": "2027",
-      "lotArrivalDate": "2026-08-08"
+      "stock": "",
+      "webPrice": "",
+      "unlockPrice": "",
+      "availability": ""
     },
     {
       "id": "grand-design-transcend-325bht",
@@ -3550,12 +3578,12 @@
         "Queen Bed",
         "13.5K A/C"
       ],
-      "stock": "3375",
-      "webPrice": 32595,
-      "unlockPrice": 31995,
-      "availability": "pending",
+      "stock": "3376",
+      "webPrice": 33695,
+      "unlockPrice": 32995,
+      "availability": "active",
       "liveYear": "2026",
-      "lotArrivalDate": "2026-05-04"
+      "lotArrivalDate": "2026-06-08"
     },
     {
       "id": "grand-design-transcend-xplor-26bhx",
@@ -3625,11 +3653,11 @@
         "Queen Bed",
         "13.5K A/C"
       ],
-      "stock": "3182",
-      "webPrice": 33095,
-      "unlockPrice": 31895,
-      "availability": "pending",
-      "liveYear": "2026"
+      "stock": "3610",
+      "webPrice": 47976,
+      "unlockPrice": "",
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "winnebago-access-16bh",
