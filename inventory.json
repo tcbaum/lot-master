@@ -804,7 +804,7 @@
       "unlockPrice": 128892,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-10-19"
+      "lotArrivalDate": "2026-10-17"
     },
     {
       "id": "alliance-paradigm-312rk",
@@ -1457,7 +1457,7 @@
       "unlockPrice": 34995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-10-16"
+      "lotArrivalDate": "2026-10-11"
     },
     {
       "id": "grand-design-imagine-xls-22bhe",
@@ -3920,7 +3920,7 @@
       "unlockPrice": 31123,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-10-02"
+      "lotArrivalDate": "2026-09-13"
     },
     {
       "id": "winnebago-micro-minnie-2000trb",
@@ -3963,8 +3963,9 @@
       "stock": "3576",
       "webPrice": 33723,
       "unlockPrice": 32823,
-      "availability": "on-order",
-      "liveYear": "2027"
+      "availability": "active",
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-10-23T14:00:03.806Z"
     },
     {
       "id": "winnebago-micro-minnie-2100bh",
@@ -4057,8 +4058,9 @@
       "stock": "3575",
       "webPrice": 37995,
       "unlockPrice": 36995,
-      "availability": "on-order",
-      "liveYear": "2027"
+      "availability": "active",
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-10-23T14:00:03.806Z"
     },
     {
       "id": "winnebago-micro-minnie-2200mbh",
@@ -4537,11 +4539,11 @@
     },
     "3574": {
       "days": 19,
-      "date": "2026-10-02"
+      "date": "2026-09-13"
     },
     "3584": {
       "days": 5,
-      "date": "2026-10-16"
+      "date": "2026-10-11"
     },
     "3585": {
       "days": 1,
@@ -4549,7 +4551,7 @@
     },
     "3589": {
       "days": 2,
-      "date": "2026-10-19"
+      "date": "2026-10-17"
     },
     "3590": {
       "days": 1,
