@@ -459,8 +459,8 @@
         "Queen Bed"
       ],
       "stock": "3491",
-      "webPrice": 45945,
-      "unlockPrice": 44995,
+      "webPrice": 55852,
+      "unlockPrice": 54902,
       "availability": "active",
       "liveYear": "2027",
       "lotArrivalDate": "2026-08-03"
@@ -603,10 +603,11 @@
         "Queen Bed"
       ],
       "stock": "3607",
-      "webPrice": 72964,
+      "webPrice": 73563,
       "unlockPrice": "",
-      "availability": "on-order",
-      "liveYear": "2027"
+      "availability": "active",
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-10-24T14:00:03.602Z"
     },
     {
       "id": "alliance-delta-ultra-lite-ml216",
