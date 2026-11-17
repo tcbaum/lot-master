@@ -774,12 +774,10 @@
       "keyFeatures": [
         "Bunk House"
       ],
-      "stock": "3223",
-      "webPrice": 38095,
-      "unlockPrice": 36995,
-      "availability": "pending",
-      "liveYear": "2026",
-      "lotArrivalDate": "2025-10-30"
+      "stock": "",
+      "webPrice": "",
+      "unlockPrice": "",
+      "availability": ""
     },
     {
       "id": "alliance-paradigm-310rl",
@@ -3663,10 +3661,11 @@
         "13.5K A/C"
       ],
       "stock": "3610",
-      "webPrice": 47976,
+      "webPrice": 48473,
       "unlockPrice": "",
-      "availability": "on-order",
-      "liveYear": "2027"
+      "availability": "active",
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-11-17T14:00:03.945Z"
     },
     {
       "id": "winnebago-access-16bh",
