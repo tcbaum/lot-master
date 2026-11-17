@@ -21,6 +21,14 @@
     "Aurum": {
       "file": "brochures/alliance-aurum.pdf",
       "title": "Alliance Aurum Brochure"
+    },
+    "Micro Minnie": {
+      "file": "brochures/minnie-brochure.pdf",
+      "title": "Winnebago Micro Minnie Brochure"
+    },
+    "Thrive": {
+      "file": "brochures/thrive-brochure.pdf",
+      "title": "Winnebago Thrive Brochure"
     }
   },
   "units": [
@@ -3692,7 +3700,8 @@
       "unlockPrice": 19995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-09-29"
+      "lotArrivalDate": "2026-09-29",
+      "brochure": "brochures/access-single-axle-brochure.pdf"
     },
     {
       "id": "winnebago-access-16rb",
@@ -3718,7 +3727,8 @@
       "webPrice": 22095,
       "unlockPrice": 20995,
       "availability": "on-order",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "brochure": "brochures/access-single-axle-brochure.pdf"
     },
     {
       "id": "winnebago-access-18dbh",
@@ -3743,7 +3753,8 @@
       "stock": "",
       "webPrice": "",
       "unlockPrice": "",
-      "availability": ""
+      "availability": "",
+      "brochure": "brochures/access-single-axle-brochure.pdf"
     },
     {
       "id": "winnebago-access-18rk",
@@ -3770,7 +3781,8 @@
       "unlockPrice": 26995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-10-23"
+      "lotArrivalDate": "2026-10-23",
+      "brochure": "brochures/access-single-axle-brochure.pdf"
     },
     {
       "id": "winnebago-access-24rb",
@@ -3791,7 +3803,8 @@
         "Theater Seating",
         "13.5K A/C",
         "Olympic Queen Bed"
-      ]
+      ],
+      "brochure": "brochures/access-tandem-axle-brochure.pdf"
     },
     {
       "id": "winnebago-access-24rl",
@@ -3812,7 +3825,8 @@
         "Theater Seating",
         "13.5K A/C",
         "Olympic Queen Bed"
-      ]
+      ],
+      "brochure": "brochures/access-tandem-axle-brochure.pdf"
     },
     {
       "id": "winnebago-access-25bh",
@@ -3839,7 +3853,8 @@
       "unlockPrice": 34995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-09-28"
+      "lotArrivalDate": "2026-09-28",
+      "brochure": "brochures/access-tandem-axle-brochure.pdf"
     },
     {
       "id": "winnebago-access-25rk",
@@ -3860,7 +3875,8 @@
         "Theater Seating",
         "13.5K A/C",
         "Olympic Queen Bed"
-      ]
+      ],
+      "brochure": "brochures/access-tandem-axle-brochure.pdf"
     },
     {
       "id": "winnebago-access-27bh",
@@ -3881,7 +3897,8 @@
         "Thater Seating",
         "13.5K A/C",
         "Olympic Queen Bed"
-      ]
+      ],
+      "brochure": "brochures/access-tandem-axle-brochure.pdf"
     },
     {
       "id": "winnebago-access-32br",
@@ -3908,7 +3925,8 @@
       "unlockPrice": 39995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-09-28"
+      "lotArrivalDate": "2026-09-28",
+      "brochure": "brochures/access-tandem-axle-brochure.pdf"
     },
     {
       "id": "winnebago-micro-minnie-1800bh",
@@ -3927,7 +3945,8 @@
       "unlockPrice": 31123,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-10-02"
+      "lotArrivalDate": "2026-10-02",
+      "brochure": "brochures/minnie-brochure.pdf"
     },
     {
       "id": "winnebago-micro-minnie-2000trb",
@@ -3940,7 +3959,8 @@
       "weight": 3976,
       "length": "22' 4\"",
       "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2000trb.png",
-      "status": "A"
+      "status": "A",
+      "brochure": "brochures/minnie-brochure.pdf"
     },
     {
       "id": "winnebago-micro-minnie-2000frb",
@@ -3953,7 +3973,8 @@
       "weight": 3942,
       "length": "22'4\"",
       "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2000frb.png",
-      "status": "A"
+      "status": "A",
+      "brochure": "brochures/minnie-brochure.pdf"
     },
     {
       "id": "winnebago-micro-minnie-2000mrb",
@@ -3972,7 +3993,8 @@
       "unlockPrice": 32823,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-10-21"
+      "lotArrivalDate": "2026-10-21",
+      "brochure": "brochures/minnie-brochure.pdf"
     },
     {
       "id": "winnebago-micro-minnie-2100bh",
@@ -3984,7 +4006,8 @@
       "price": null,
       "weight": 4049,
       "length": "21'11\"",
-      "status": "D"
+      "status": "D",
+      "brochure": "brochures/minnie-brochure.pdf"
     },
     {
       "id": "winnebago-micro-minnie-2108tb",
@@ -4003,7 +4026,8 @@
       "unlockPrice": 34995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-10-02"
+      "lotArrivalDate": "2026-10-02",
+      "brochure": "brochures/minnie-brochure.pdf"
     },
     {
       "id": "winnebago-micro-minnie-2108fbs",
@@ -4022,7 +4046,8 @@
       "unlockPrice": 27995,
       "availability": "active",
       "liveYear": "2026",
-      "lotArrivalDate": "2025-12-08"
+      "lotArrivalDate": "2025-12-08",
+      "brochure": "brochures/minnie-brochure.pdf"
     },
     {
       "id": "winnebago-micro-minnie-2108ds",
@@ -4035,7 +4060,8 @@
       "weight": 4291,
       "length": "22'5\"",
       "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2108ds.png",
-      "status": "A"
+      "status": "A",
+      "brochure": "brochures/minnie-brochure.pdf"
     },
     {
       "id": "winnebago-micro-minnie-2200tbh",
@@ -4048,7 +4074,8 @@
       "weight": 4072,
       "length": "23'11\"",
       "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2200tbh.png",
-      "status": "A"
+      "status": "A",
+      "brochure": "brochures/minnie-brochure.pdf"
     },
     {
       "id": "winnebago-micro-minnie-2200fbh",
@@ -4067,7 +4094,8 @@
       "unlockPrice": 36995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-10-21"
+      "lotArrivalDate": "2026-10-21",
+      "brochure": "brochures/minnie-brochure.pdf"
     },
     {
       "id": "winnebago-micro-minnie-2200mbh",
@@ -4080,7 +4108,8 @@
       "weight": 4218,
       "length": "23'11\"",
       "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2200mbh.png",
-      "status": "A"
+      "status": "A",
+      "brochure": "brochures/minnie-brochure.pdf"
     },
     {
       "id": "winnebago-thrive-18fbs",
@@ -4099,7 +4128,8 @@
       "unlockPrice": 28995,
       "availability": "active",
       "liveYear": "2026",
-      "lotArrivalDate": "2026-02-09"
+      "lotArrivalDate": "2026-02-09",
+      "brochure": "brochures/thrive-brochure.pdf"
     },
     {
       "id": "winnebago-thrive-22mbh",
@@ -4112,7 +4142,8 @@
       "weight": 5822,
       "length": "26' 0\"",
       "imagePath": "winnebago-thrive/winnebago-thrive-22mbh.png",
-      "status": "A"
+      "status": "A",
+      "brochure": "brochures/thrive-brochure.pdf"
     },
     {
       "id": "winnebago-thrive-22mls",
@@ -4131,7 +4162,8 @@
       "unlockPrice": 44995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-09-08"
+      "lotArrivalDate": "2026-09-08",
+      "brochure": "brochures/thrive-brochure.pdf"
     },
     {
       "id": "winnebago-thrive-22rbs",
@@ -4150,7 +4182,8 @@
       "unlockPrice": 43995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-09-08"
+      "lotArrivalDate": "2026-09-08",
+      "brochure": "brochures/thrive-brochure.pdf"
     },
     {
       "id": "winnebago-thrive-24rks",
@@ -4169,7 +4202,8 @@
       "unlockPrice": 42995,
       "availability": "active",
       "liveYear": "2026",
-      "lotArrivalDate": "2026-05-18"
+      "lotArrivalDate": "2026-05-18",
+      "brochure": "brochures/thrive-brochure.pdf"
     },
     {
       "id": "winnebago-thrive-25rls",
@@ -4182,7 +4216,8 @@
       "weight": 6512,
       "length": "30' 2\"",
       "imagePath": "winnebago-thrive/winnebago-thrive-25rls.png",
-      "status": "A"
+      "status": "A",
+      "brochure": "brochures/thrive-brochure.pdf"
     },
     {
       "id": "winnebago-thrive-26fkd",
@@ -4201,7 +4236,8 @@
       "unlockPrice": "",
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-11-16T16:17:09.977Z"
+      "lotArrivalDate": "2026-11-16T16:17:09.977Z",
+      "brochure": "brochures/thrive-brochure.pdf"
     },
     {
       "id": "winnebago-thrive-28bhs",
@@ -4214,7 +4250,8 @@
       "weight": 7234,
       "length": "32' 8\"",
       "imagePath": "winnebago-thrive/winnebago-thrive-28bhs.png",
-      "status": "A"
+      "status": "A",
+      "brochure": "brochures/thrive-brochure.pdf"
     },
     {
       "id": "winnebago-thrive-29rlo",
@@ -4227,7 +4264,8 @@
       "weight": 8426,
       "length": "36' 3\"",
       "imagePath": "winnebago-thrive/winnebago-thrive-29rlo.png",
-      "status": "A"
+      "status": "A",
+      "brochure": "brochures/thrive-brochure.pdf"
     }
   ],
   "arrivalTrackingSince": "2026-10-18T01:07:49.068Z"
