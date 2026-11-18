@@ -337,13 +337,15 @@ select.sel:focus{outline:none;border-color:var(--brand)}
 .browse-split.is-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,1fr);column-gap:18px;align-items:start}
 .browse-split.is-split>.browse-controls,.browse-split.is-split>.bcrumbs,.browse-split.is-split>#bpanel{grid-column:1}
 /* --topbar-h / --bnav-h are measured live by syncChromeVars() (0 when those bars are hidden, e.g. desktop), so the
-   pane pins just below the sticky top bar and ends just above the fixed bottom nav instead of sliding under both. */
+   pane pins just below the sticky top bar and ends just above the fixed bottom nav instead of sliding under both.
+   The pane is position:fixed (not sticky): a sticky pane only holds within its grid area, which is barely taller than
+   the pane, so it slid with page scroll and iOS bounce. syncDuoPaneBox() sizes it to grid column 2 (--duo-left/-w). */
 :root{--vh-full:100vh}
 @supports (height:100dvh){ :root{--vh-full:100dvh} }
-.browse-split.is-split>#duoDetailPane{display:block;grid-column:2;grid-row:1 / span 3;position:sticky;top:calc(var(--topbar-h,0px) + 8px);max-height:calc(var(--vh-full) - var(--topbar-h,0px) - var(--bnav-h,0px) - 16px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+.browse-split.is-split>#duoDetailPane{display:block;grid-column:2;grid-row:1 / span 3;position:fixed;z-index:5;top:calc(var(--topbar-h,0px) + 8px);bottom:calc(var(--bnav-h,0px) + 8px);left:var(--duo-left,50%);width:var(--duo-w,45%);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow)}
 #duoDetailPane .modal-x{display:none}
 /* right side before a unit is picked: a clean, full-height slate with one quiet hint */
-.duo-empty{min-height:calc(var(--vh-full) - var(--topbar-h,0px) - var(--bnav-h,0px) - 18px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--muted);font-size:13px;text-align:center;padding:24px}
+.duo-empty{min-height:100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--muted);font-size:13px;text-align:center;padding:24px}
 .duo-empty svg{width:30px;height:30px;opacity:.45}
 .unit-card.is-duo-selected{border-color:var(--brand);box-shadow:0 0 0 1.5px var(--brand),var(--shadow)}
 .unit-card.is-duo-selected.is-centered{box-shadow:0 0 0 1.5px var(--brand),var(--shadow-lg)}
@@ -4542,11 +4544,22 @@ function duoSync(){
   const want=duoActive(), was=b.classList.contains('is-split');
   b.classList.toggle('is-split',want);
   if(!want){ if(was){ pane.innerHTML=''; pane.dataset.uid=''; if(!$('#modalBack').classList.contains('show')) detailId=null; } duoSelId=null; return; }
+  syncDuoPaneBox();
   // The right side stays a clean slate until a unit is tapped (no auto-pick of the first card); it clears again if
   // filtering/drilling removes the selected unit from the list.
   const ids=cards.map(c=>c.dataset.uid);
   if(duoSelId&&ids.includes(duoSelId)){ if(!was||pane.dataset.uid!==duoSelId||!pane.querySelector('.modal-fig')) openDetail(duoSelId); else duoMarkSelected(); }
   else duoClearPane();
+}
+/* Place the fixed right pane exactly over grid column 2 of #bsplit (column 1 + gap from its left edge). */
+function syncDuoPaneBox(){
+  const b=$('#bsplit'), pane=$('#duoDetailPane');
+  if(!b||!pane||!b.classList.contains('is-split')) return;
+  const cs=getComputedStyle(b), cols=cs.gridTemplateColumns.split(' ').map(parseFloat);
+  const r=b.getBoundingClientRect(), gap=parseFloat(cs.columnGap)||0;
+  if(cols.length<2||!isFinite(cols[0])||!isFinite(cols[1])) return;
+  pane.style.setProperty('--duo-left',Math.round(r.left+(parseFloat(cs.paddingLeft)||0)+cols[0]+gap)+'px');
+  pane.style.setProperty('--duo-w',Math.round(cols[1])+'px');
 }
 function duoClearPane(){
   const pane=$('#duoDetailPane'); if(!pane) return;
