@@ -991,11 +991,26 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 :focus-visible{outline:2px solid var(--brand);outline-offset:2px}
-/* ---- page transitions (View Transitions API) ---- */
-/* Old and new MUST share duration + easing: the UA cross-fade blends them with plus-lighter, which only keeps total
-   opacity at 100% when both curves match. Mismatched (it was .20s vs .30s), the frame dips toward the bare page
-   background mid-fade, which reads as a flash. */
-::view-transition-old(root),::view-transition-new(root){ animation-duration:.22s; animation-timing-function:cubic-bezier(.4,0,.2,1); }
+/* ---- page transitions (View Transitions API, scoped to the content area) ----
+   viewSwap() names #view "lm-view-out" for the old capture and "lm-view-in" for the new one, so the old screen and
+   the new screen are two separate groups that each fade *in place* -- no position/size morph between them (a morph
+   slid the old content hundreds of px when you left a scrolled page, and stretched it when page heights differed).
+   Pattern is a "fade-through": old out fast, new in with a small settle.
+   html.vt-nav (set only while a transition runs) names the top bar + bottom nav and lifts them above the content,
+   so they never cross-fade (no ghosted active tab) and the content never paints over them. The root (page
+   background + any unnamed chrome, e.g. the desktop sidebar) swaps instantly. */
+html.vt-nav .topbar{view-transition-name:lm-topbar}
+html.vt-nav #bottomNav{view-transition-name:lm-bnav}
+::view-transition-old(root){animation:none;opacity:0}
+::view-transition-new(root){animation:none}
+::view-transition-group(lm-topbar),::view-transition-group(lm-bnav){z-index:3;animation:none}
+::view-transition-old(lm-topbar),::view-transition-old(lm-bnav){display:none}
+::view-transition-new(lm-topbar),::view-transition-new(lm-bnav){animation:none}
+::view-transition-group(lm-view-out),::view-transition-group(lm-view-in){animation:none}
+::view-transition-old(lm-view-out){animation:vtOut .09s cubic-bezier(.4,0,1,1) both}
+::view-transition-new(lm-view-in){animation:vtIn .2s cubic-bezier(0,0,.2,1) .06s both}
+@keyframes vtOut{to{opacity:0}}
+@keyframes vtIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 /* ---- dashboard staggered card reveal ---- */
 @keyframes cardrise{ from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:none;} }
 #view.stagger > *{ animation:cardrise .46s cubic-bezier(.2,.8,.2,1) both; }
@@ -1009,7 +1024,7 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 #view.stagger > *:nth-child(n+8){animation-delay:.34s}
 @media (prefers-reduced-motion: reduce){
   #view.stagger > *{ animation:none; }
-  ::view-transition-old(root),::view-transition-new(root){ animation:none; }
+  ::view-transition-old(*),::view-transition-new(*),::view-transition-group(*){ animation:none!important; }
 }
 </style>
 </head>
@@ -2473,15 +2488,24 @@ const NAV=[
 let route='dashboard';
 function toTop(){ window.scrollTo(0,0); requestAnimationFrame(()=>window.scrollTo(0,0)); }
 function prefersReduced(){ try{ return matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(_){ return false; } }
-let inVT=false, lastRendered=null;
+let inVT=false, lastRendered=null, vtToken=0;
 /* Wrap a route/view change in a cross-fade where supported; otherwise apply instantly. */
 function viewSwap(apply){
   if(!document.startViewTransition || prefersReduced()){ apply(); return; }
+  const v=$('#view'), html=document.documentElement, token=++vtToken;
+  // A quick second tap starts a new transition, which skips the running one; the skipped one's finished promise
+  // settles *after* the new one has set its names. Only the newest transition may clean up.
+  const cleanup=()=>{ if(token!==vtToken) return; inVT=false; v.style.viewTransitionName=''; html.classList.remove('vt-nav'); };
   inVT=true;
-  // The "new" snapshot is taken when this callback resolves, so give on-screen images a brief chance (capped) to
-  // finish decoding first -- otherwise they're captured as blank boxes and pop in after the fade.
-  try{ document.startViewTransition(async()=>{ apply(); await visibleImagesReady($('#view'),180); }).finished.finally(()=>{ inVT=false; }); }
-  catch(_){ inVT=false; apply(); }
+  // Old capture happens at startViewTransition(); new capture when the callback resolves. Renaming #view in between
+  // makes old and new separate groups (see the CSS above). The "new" capture also waits briefly (capped) for
+  // on-screen images that are local but still decoding, so they aren't captured as blank boxes.
+  v.style.viewTransitionName='lm-view-out'; html.classList.add('vt-nav');
+  try{
+    const vt=document.startViewTransition(async()=>{ apply(); v.style.viewTransitionName='lm-view-in'; await visibleImagesReady(v,120); });
+    vt.ready.catch(()=>{});   // rejects with AbortError when skipped by a newer transition -- expected, not an error
+    vt.finished.finally(cleanup);
+  }catch(_){ cleanup(); apply(); }
 }
 async function visibleImagesReady(root,maxMs){
   if(!root) return;
@@ -2497,7 +2521,12 @@ async function visibleImagesReady(root,maxMs){
     await Promise.race([Promise.allSettled(waiting.map(i=>i.decode?i.decode():null)), new Promise(r=>setTimeout(r,16))]);
   }
 }
-function go(r){ viewSwap(()=>{ route=r; if(r!=='study') session=null; render(); toTop(); }); }
+function go(r){
+  // Re-tapping the tab you're already on (or a programmatic refresh like "load sample lot") still re-renders and
+  // returns to the top, but without a cross-fade between two copies of the same page.
+  if(r===route&&r!=='study'){ render(); toTop(); return; }
+  viewSwap(()=>{ route=r; if(r!=='study') session=null; render(); toTop(); });
+}
 /* Hero/Learning-path "Continue/Resume training": prefer due work, else the priority-focus line, else the study setup. */
 function renderNav(){
   const dc=dueCounts();
