@@ -992,8 +992,10 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 :focus-visible{outline:2px solid var(--brand);outline-offset:2px}
 /* ---- page transitions (View Transitions API) ---- */
-::view-transition-old(root){ animation-duration:.20s; animation-timing-function:ease; }
-::view-transition-new(root){ animation-duration:.30s; animation-timing-function:cubic-bezier(.2,.8,.2,1); }
+/* Old and new MUST share duration + easing: the UA cross-fade blends them with plus-lighter, which only keeps total
+   opacity at 100% when both curves match. Mismatched (it was .20s vs .30s), the frame dips toward the bare page
+   background mid-fade, which reads as a flash. */
+::view-transition-old(root),::view-transition-new(root){ animation-duration:.22s; animation-timing-function:cubic-bezier(.4,0,.2,1); }
 /* ---- dashboard staggered card reveal ---- */
 @keyframes cardrise{ from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:none;} }
 #view.stagger > *{ animation:cardrise .46s cubic-bezier(.2,.8,.2,1) both; }
@@ -2046,10 +2048,19 @@ const DARK_LINE_LOGOS=new Set(['avenue|allaccessfifthwheel']);
 // fetch genuinely settles, success or failure — that's what actually drives the
 // skeleton shimmer for its true duration, not the earlier-cleared data-ghsrc.
 async function hydrateImages(root){
-  const els=(root||document).querySelectorAll('img[data-ghsrc]');
+  const els=[...(root||document).querySelectorAll('img[data-ghsrc]')];
+  // Images already fetched this session: swap them in synchronously, before the first await, so they're present in
+  // the very next frame (and in a View Transition's "new" snapshot). Markup built once at boot (the logo tables)
+  // always carries the placeholder, so without this every Browse visit re-flashed the logos and re-read them from
+  // the Cache API into a brand-new blob URL.
+  const pending=[];
   for(const el of els){
     const url=el.getAttribute('data-ghsrc'); if(!url) continue;
     el.removeAttribute('data-ghsrc');
+    const hit=hydratedUrlCache.get(url);
+    if(hit){ el.src=hit; el.removeAttribute('data-loading'); } else pending.push([el,url]);
+  }
+  for(const [el,url] of pending){
     const res=await fetchAndCacheImage(url);
     if(!res){ imgFallback(el); continue; }
     try{ el.src=URL.createObjectURL(await res.blob()); el.removeAttribute('data-loading'); hydratedUrlCache.set(url,el.src); }
@@ -2467,8 +2478,24 @@ let inVT=false, lastRendered=null;
 function viewSwap(apply){
   if(!document.startViewTransition || prefersReduced()){ apply(); return; }
   inVT=true;
-  try{ document.startViewTransition(apply).finished.finally(()=>{ inVT=false; }); }
+  // The "new" snapshot is taken when this callback resolves, so give on-screen images a brief chance (capped) to
+  // finish decoding first -- otherwise they're captured as blank boxes and pop in after the fade.
+  try{ document.startViewTransition(async()=>{ apply(); await visibleImagesReady($('#view'),180); }).finished.finally(()=>{ inVT=false; }); }
   catch(_){ inVT=false; apply(); }
+}
+async function visibleImagesReady(root,maxMs){
+  if(!root) return;
+  const t0=performance.now(), vh=window.innerHeight;
+  const onScreen=i=>{ const r=i.getBoundingClientRect(); return r.width>0&&r.bottom>0&&r.top<vh; };
+  // Only wait on images whose bytes are already local (decoding). Ones still marked data-loading need a network
+  // fetch that won't land inside this window, so holding the transition for them would just add lag.
+  const decoding=i=>!i.dataset.loading&&!(i.complete&&i.naturalWidth>1);
+  while(performance.now()-t0<maxMs){
+    const waiting=[...root.querySelectorAll('img')].filter(i=>onScreen(i)&&decoding(i));
+    if(!waiting.length) return;
+    // setTimeout, not rAF: rendering is paused while a View Transition's update callback is pending.
+    await Promise.race([Promise.allSettled(waiting.map(i=>i.decode?i.decode():null)), new Promise(r=>setTimeout(r,16))]);
+  }
 }
 function go(r){ viewSwap(()=>{ route=r; if(r!=='study') session=null; render(); toTop(); }); }
 /* Hero/Learning-path "Continue/Resume training": prefer due work, else the priority-focus line, else the study setup. */
