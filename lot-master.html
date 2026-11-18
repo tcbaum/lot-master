@@ -272,18 +272,48 @@ html[data-theme="dark"] .glass{--glass-hi:rgba(255,255,255,.07);background:color
 select.sel{padding:11px 13px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);font-weight:500;color:var(--text)}
 select.sel:focus{outline:none;border-color:var(--brand)}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-.filter-deck{display:flex;flex-direction:column;gap:8px;padding:8px 10px;margin-bottom:14px;background:var(--card-2);border:1px solid var(--line);border-radius:var(--radius)}
-/* fixed top row: Hide Inactives + Reset are always on screen, never scrolled out of view */
-.filter-head{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:30px}
-/* sideways-scrolling row of the remaining filters */
-.filter-rail{display:flex;align-items:center;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.filter-rail::-webkit-scrollbar{display:none}
-.filter-group{display:inline-flex;flex:none;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px}
-.fpill{appearance:none;background:transparent;border:0;color:var(--muted);font:inherit;font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:background-color .15s ease,color .15s ease}
-.fpill.on{background:var(--brand);color:#fff}
+/* ---- Browse controls: title + search + compact filter deck (kept to roughly the top quarter of a phone screen) ---- */
+.browse-controls{display:flex;flex-direction:column;gap:10px;margin-bottom:14px;min-width:0}
+.browse-head{margin-bottom:0;align-items:center;flex-wrap:nowrap}
+.browse-head h1{font-size:20px;letter-spacing:.08em;text-transform:uppercase}
+.browse-controls .search input{padding:10px 14px 10px 38px}
+.filter-deck{display:flex;flex-direction:column;gap:8px;min-width:0}
+/* row 1: Hide Inactives, Length, Weight (+ Dashboard route pill), Reset -- one line, scrolls sideways if it must */
+.filter-row{display:flex;align-items:center;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:1px}
+.filter-row::-webkit-scrollbar{display:none}
 .filter-deck .stock-toggle{flex:none;padding:5px 11px 5px 8px;font-size:12px}
-.filter-reset{appearance:none;background:transparent;border:0;color:var(--brand);font:inherit;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;padding:4px 8px;text-decoration:underline;flex:none}
-@media (prefers-reduced-motion: reduce){ .fpill{transition:none} }
+.fpill-solo{appearance:none;flex:none;display:inline-flex;align-items:center;gap:5px;background:var(--card);border:1px solid var(--line);color:var(--text);font:inherit;font-size:12px;font-weight:600;padding:6px 10px 6px 12px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:background-color .15s ease,border-color .15s ease,color .15s ease}
+.fpill-solo .caret{display:inline-flex;color:var(--muted)}
+.fpill-solo .caret svg{width:13px;height:13px;transition:transform .2s ease}
+.fpill-solo.open .caret svg{transform:rotate(180deg)}
+.fpill-solo.open{border-color:var(--brand)}
+.fpill-solo.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.fpill-solo.on .caret{color:#fff}
+.filter-reset{appearance:none;background:transparent;border:0;color:var(--brand);font:inherit;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;padding:4px 6px;text-decoration:underline;flex:none}
+/* inline dual-range slider (opens under row 1) */
+.range-panel{background:var(--card-2);border:1px solid var(--line);border-radius:var(--radius);padding:10px 12px 8px}
+.range-top{display:flex;align-items:baseline;gap:8px;margin-bottom:4px}
+.range-title{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.range-val{font-family:var(--display);font-size:14px;font-weight:700;color:var(--text);margin-left:auto}
+.range-any{appearance:none;background:transparent;border:0;color:var(--brand);font:inherit;font-size:12px;font-weight:600;cursor:pointer;padding:2px 0 2px 6px}
+.dual-range{position:relative;height:32px;--thumb:24px}
+.dr-track{position:absolute;left:calc(var(--thumb)/2);right:calc(var(--thumb)/2);top:50%;height:4px;margin-top:-2px;border-radius:2px;background:var(--line-2)}
+.dr-fill{position:absolute;top:0;bottom:0;left:var(--lo);right:calc(100% - var(--hi));background:var(--brand);border-radius:2px}
+.dual-range input{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;border-radius:0;box-shadow:none;outline:none;background:none;pointer-events:none;-webkit-appearance:none;appearance:none;z-index:2}
+.dual-range input::-webkit-slider-runnable-track{height:100%;background:transparent}
+.dual-range input::-moz-range-track{background:transparent}
+.dual-range input::-webkit-slider-thumb{-webkit-appearance:none;pointer-events:auto;width:var(--thumb);height:var(--thumb);margin-top:4px;border-radius:50%;background:var(--card);border:2px solid var(--brand);box-shadow:0 1px 4px rgba(0,0,0,.25);cursor:grab}
+.dual-range input::-moz-range-thumb{pointer-events:auto;width:20px;height:20px;border-radius:50%;background:var(--card);border:2px solid var(--brand);box-shadow:0 1px 4px rgba(0,0,0,.25);cursor:grab}
+.dual-range input:focus-visible::-webkit-slider-thumb{outline:2px solid var(--brand);outline-offset:2px}
+.dual-range input:focus-visible::-moz-range-thumb{outline:2px solid var(--brand);outline-offset:2px}
+.range-scale{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+/* row 2: merged Layout chips -- one sideways-scrolling line on touch, wraps on desktop */
+.layout-rail{display:flex;gap:7px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:1px 1px 2px;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent)}
+.layout-rail::-webkit-scrollbar{display:none}
+.layout-rail .chip{flex:none;padding:6px 12px;font-size:12.5px}
+.layout-rail .chip.on{background:var(--brand);border-color:var(--brand);color:#fff}
+@media (hover:hover) and (pointer:fine){ .layout-rail{flex-wrap:wrap;overflow:visible;-webkit-mask-image:none;mask-image:none} }
+@media (prefers-reduced-motion: reduce){ .fpill-solo,.fpill-solo .caret svg{transition:none} }
 .chip{border:1px solid color-mix(in srgb,var(--line-2) 60%,transparent);background:linear-gradient(180deg,color-mix(in srgb,#fff 9%,transparent),transparent 60%),color-mix(in srgb,var(--card) 60%,transparent);color:var(--text);padding:6px 13px;border-radius:20px;font-size:13px;font-weight:600;transition:.13s;box-shadow:inset 0 1px 0 var(--glass-hi)}
 .chip:hover{border-color:var(--brand)}
 .chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
@@ -305,13 +335,16 @@ select.sel:focus{outline:none;border-color:var(--brand)}
    The page itself keeps scrolling (so the rolodex lift still tracks viewport center) and the detail pane is sticky. */
 #duoDetailPane{display:none}
 .browse-split.is-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,1fr);column-gap:18px;align-items:start}
-.browse-split.is-split>.bcrumbs,.browse-split.is-split>#bpanel{grid-column:1}
+.browse-split.is-split>.browse-controls,.browse-split.is-split>.bcrumbs,.browse-split.is-split>#bpanel{grid-column:1}
 /* --topbar-h / --bnav-h are measured live by syncChromeVars() (0 when those bars are hidden, e.g. desktop), so the
    pane pins just below the sticky top bar and ends just above the fixed bottom nav instead of sliding under both. */
 :root{--vh-full:100vh}
 @supports (height:100dvh){ :root{--vh-full:100dvh} }
-.browse-split.is-split>#duoDetailPane{display:block;grid-column:2;grid-row:1 / span 2;position:sticky;top:calc(var(--topbar-h,0px) + 8px);max-height:calc(var(--vh-full) - var(--topbar-h,0px) - var(--bnav-h,0px) - 16px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+.browse-split.is-split>#duoDetailPane{display:block;grid-column:2;grid-row:1 / span 3;position:sticky;top:calc(var(--topbar-h,0px) + 8px);max-height:calc(var(--vh-full) - var(--topbar-h,0px) - var(--bnav-h,0px) - 16px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow)}
 #duoDetailPane .modal-x{display:none}
+/* right side before a unit is picked: a clean, full-height slate with one quiet hint */
+.duo-empty{min-height:calc(var(--vh-full) - var(--topbar-h,0px) - var(--bnav-h,0px) - 18px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--muted);font-size:13px;text-align:center;padding:24px}
+.duo-empty svg{width:30px;height:30px;opacity:.45}
 .unit-card.is-duo-selected{border-color:var(--brand);box-shadow:0 0 0 1.5px var(--brand),var(--shadow)}
 .unit-card.is-duo-selected.is-centered{box-shadow:0 0 0 1.5px var(--brand),var(--shadow-lg)}
 @media (horizontal-viewport-segments: 2){
@@ -494,13 +527,13 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 /* Capped width so that on wide screens (unfolded Duo, tablet, desktop) the tiles don't
    become very wide white bars with a small logo in the middle. Height scales gently
    with viewport width. */
-.bnav-logo-row{display:flex;flex-direction:column;gap:10px;padding:2px 0 6px;width:100%;max-width:560px}
+.bnav-logo-row{display:flex;flex-direction:column;gap:var(--tile-gap,10px);padding:2px 0 6px;width:100%;max-width:560px}
 /* Flex, not grid: in a grid a percentage height on the <img> can't resolve while the row
    is being sized, so the row grows to the image's natural height at full width and gets
    clipped (taglines cut off on narrow screens, huge cropped logos on wide ones). Flex
    with a definite height pins the image box to the tile, so object-fit:contain actually
    scales the whole logo down to fit, centered both ways. */
-.bnav-logo-btn{flex:none;position:relative;width:100%;height:clamp(66px,18vw,88px);border-radius:14px;overflow:hidden;background:#ffffff;border:1px solid var(--line);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:11px 22px;color:var(--faint);transition:border-color .15s,transform .1s}
+.bnav-logo-btn{flex:none;position:relative;width:100%;height:var(--tile-h,clamp(66px,18vw,88px));border-radius:14px;overflow:hidden;background:#ffffff;border:1px solid var(--line);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:11px 22px;color:var(--faint);transition:border-color .15s,transform .1s}
 @media (hover:hover) and (pointer:fine){ .bnav-logo-btn:hover{border-color:var(--brand)} }
 .bnav-logo-btn:active{transform:scale(.98)}
 .bnav-logo-btn.dark{background:#1a1a1f}
@@ -1178,6 +1211,8 @@ const CATEGORIES = [
   {id:'front_living', label:'Front Living',   kw:['front living','front lounge']},
   {id:'rear_bath',    label:'Rear Bath',      kw:['rear bath']},
   {id:'rear_kitchen', label:'Rear Kitchen',   kw:['rear kitchen']},
+  {id:'front_kitchen',label:'Front Kitchen',  kw:['front kitchen']},
+  {id:'mid_kitchen',  label:'Mid Kitchen',    kw:['mid kitchen','middle kitchen']},
   {id:'mid_bunk',     label:'Mid Bunk',       kw:['mid bunk','mid-bunk','midbunk']},
   {id:'outdoor_kitchen',label:'Outdoor Kitchen',kw:['outdoor kitchen','outside kitchen']},
   {id:'kitchen_island',label:'Kitchen Island',kw:['kitchen island','island kitchen']},
@@ -1642,12 +1677,25 @@ function lineProgressSummary(lineKey){
   return {total:items.length, mastered, learning, unseen:items.length-mastered-learning};
 }
 // model-code suffix abbreviations -> category
-const CODE_ABBR = [
-  [/BHS?\b/,'bunkhouse'],[/QB\b/,'bunkhouse'],[/RLS?\b/,'rear_living'],[/RLTS\b/,'rear_living'],
-  [/FLS?\b/,'front_living'],[/RB\b/,'rear_bath'],[/RK\b/,'rear_kitchen'],[/OK\b/,'outdoor_kitchen'],
-  [/IK\b/,'kitchen_island'],[/FBS?\b/,'front_bedroom'],[/MBH\b/,'mid_bunk'],[/RD\b/,'office'],[/LOFT\b/,'loft'],
-  [/TH\b/,'toy_hauler'],
+// Model-code layout decoding. Codes are digits + layout letters + an optional line suffix (21RLX = RL + XPLOR "X",
+// 245RLT = RL + Transcend "T", 15RBA = RB + Aim "A", 340RKS, 295QBT), or letters first on Alliance (BH255, RK234,
+// FK218, RE250). So each letter run is matched by a known layout code at its START and trailing suffix letters are
+// ignored. Only widely used industry codes are mapped; ambiguous ones (ML, MB, DS, GK, BS, TB, BR...) are left out
+// rather than guessed. Longest codes first so e.g. MBH wins over anything shorter.
+const CODE_PREFIX = [
+  ['MBH','mid_bunk'],['LOFT','loft'],
+  ['BH','bunkhouse'],['QB','bunkhouse'],['DB','bunkhouse'],
+  ['RL','rear_living'],['RE','rear_living'],          // RE = Alliance "rear entertainment" (living area at the rear)
+  ['FL','front_living'],['RB','rear_bath'],['RK','rear_kitchen'],['FK','front_kitchen'],['MK','mid_kitchen'],
+  ['OK','outdoor_kitchen'],['IK','kitchen_island'],['FB','front_bedroom'],['FQ','front_bedroom'],   // FQ = front queen
+  ['RD','office'],['TH','toy_hauler'],
 ];
+function codeLayoutTags(model){
+  const out=new Set();
+  for(const run of String(model||'').toUpperCase().match(/[A-Z]+/g)||[])
+    for(const [code,id] of CODE_PREFIX) if(run.startsWith(code)){ out.add(id); break; }
+  return out;
+}
 
 /* ---------- Column detection ---------- */
 const norm = s => (s==null?'':String(s)).toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
@@ -1660,8 +1708,7 @@ function inferTags(u){
     if(cat.id==='couples'||cat.id==='family') continue;
     for(const kw of cat.kw){ if(text.includes(norm(kw))){ tags.add(cat.id); break; } }
   }
-  const code=String(u.model||'').toUpperCase();
-  for(const [re,id] of CODE_ABBR){ if(re.test(code)) tags.add(id); }
+  for(const id of codeLayoutTags(u.model)) tags.add(id);
   const sleeps=Number(u.sleeps)||0;
   const familyish = tags.has('bunkhouse')||tags.has('mid_bunk')||tags.has('loft')||sleeps>=6||/family/.test(text);
   const couplish = (!tags.has('bunkhouse')&&!tags.has('mid_bunk')&&sleeps>0&&sleeps<=4)||/couple/.test(text);
@@ -2200,6 +2247,7 @@ function reconcileGithubInventory(payload){
         ||JSON.stringify(prev.keyFeatures||[])!==JSON.stringify(u.keyFeatures)) changed=true;
     } else { u.id=su.id||uid(); u.srs=newSRS(); changed=true; }   // prefer the stable id already in inventory.json — a random uid() here would never match across devices, breaking cross-device progress sync entirely
     u.tags=inferTags(u); next.push(u); seenIds.add(u.id);
+    if(prev&&JSON.stringify(prev.tags||[])!==JSON.stringify(u.tags)) changed=true;   // improved tagging rules reach devices that already hold the unit
   }
   if(next.length!==prevByKey.size) changed=true;   // catches removed units too, cheaply
   if(payload.brochures&&typeof payload.brochures==='object'&&!Array.isArray(payload.brochures)){   // per-brand brochure PDFs, keyed by brand name
@@ -2564,6 +2612,7 @@ function render(){
   if(route==='study'&&session&&(session.mode==='adaptive'||session.mode==='flashcard'||session.mode==='mc')) wireFlashcardGestures();
   if(route==='browse') wireBrowse();
   duoSync();
+  if(route==='browse') fitBrowseLogoRow();
   wireCenterLift();
   hydrateImages(v);
   lastRendered=route;
@@ -2714,7 +2763,7 @@ function freshUnits(){
 }
 // Dashboard "View all": jump to Browse with only that availability showing, everything else cleared
 function viewAllPulseCategory(cat){
-  const f=bf(); f.layout='all'; f.lengthBracket='all'; f.weightBracket='all'; f.hideInactives=false; f.age='all';
+  const f=bf(); f.layouts=[]; f.lenMin=f.lenMax=f.wtMin=f.wtMax=null; f.hideInactives=false; f.age='all'; browseOpenRange=null;
   if(cat==='priority'){ f.availability='active'; f.age='priority'; } else f.availability=cat;
   filt.q=''; filt.cat=''; filt.line=''; browseNav={mf:null,brand:null,line:null};
   saveState(); go('browse');
@@ -4019,17 +4068,34 @@ let activeBrowseTab='specs';                      // detail-modal segmented tab:
 let browseDepthPrev=0;                            // for slide direction on transitions
 function jsq(s){ return String(s==null?'':s).replace(/\\/g,'\\\\').replace(/'/g,"\\'"); }
 function browseDepth(){ return browseNav.line?3:browseNav.brand?2:browseNav.mf?1:0; }
-// ---- Browse fast filters: layout (bunks/couples), length, tow weight, hide inactives ----
+// ---- Browse filters: layouts (multi-select), length range, dry-weight range, hide inactives ----
 // All persisted in state.browseFilters (IndexedDB via saveState). hideInactives migrates from the older
 // state.settings.hideOutOfStock toggle the first time it's read; it defaults OFF so nothing is hidden until a rep opts in.
+//   layouts: array of layout ids (see layoutOptions) -- AND-combined, except Bunkhouse/Couples are mutually exclusive.
+//   lenMin/lenMax (whole ft) and wtMin/wtMax (lb): null = that end is open ("Any").
+const LEN_RANGE={min:15,max:50,step:1};
+// Weight slider bounds track live inventory: lightest dry weight - 500 lb (rounded down to 100) up to heaviest + 500 lb
+// (rounded up to 100). Because they're recomputed from the lot every time, lighter/heavier units added later stretch the
+// range automatically -- no fixed headroom needed, so the whole slider travel stays useful.
+function weightRange(){
+  const ws=state.units.map(u=>Number(u.weight)).filter(w=>w>0);
+  if(!ws.length) return {min:0,max:20000,step:100};
+  return {min:Math.max(0,Math.floor((Math.min(...ws)-500)/100)*100), max:Math.ceil((Math.max(...ws)+500)/100)*100, step:100};
+}
 function bf(){
   if(!state.browseFilters||typeof state.browseFilters!=='object'){
-    state.browseFilters={layout:'all',lengthBracket:'all',weightBracket:'all',hideInactives:!!(state.settings&&state.settings.hideOutOfStock)};
+    state.browseFilters={layouts:[],lenMin:null,lenMax:null,wtMin:null,wtMax:null,hideInactives:!!(state.settings&&state.settings.hideOutOfStock)};
   }
   const f=state.browseFilters;
-  if(!['all','bunk','couples'].includes(f.layout)) f.layout='all';
-  if(!['all','under30','over30'].includes(f.lengthBracket)) f.lengthBracket='all';
-  if(!['all','halfton','heavyduty'].includes(f.weightBracket)) f.weightBracket='all';
+  // one-time migration from the old single Layout slider + bracket cycles
+  if(!Array.isArray(f.layouts)) f.layouts=f.layout==='bunk'?['bunkhouse']:f.layout==='couples'?['couples']:[];
+  if('layout' in f||'lengthBracket' in f||'weightBracket' in f){
+    if(f.lengthBracket==='under30') f.lenMax=29; else if(f.lengthBracket==='over30') f.lenMin=30;
+    if(f.weightBracket==='halfton') f.wtMax=8500; else if(f.weightBracket==='heavyduty') f.wtMin=8500;
+    delete f.layout; delete f.lengthBracket; delete f.weightBracket;
+  }
+  const num=v=>(v==null||v===''||isNaN(+v))?null:+v;
+  f.lenMin=num(f.lenMin); f.lenMax=num(f.lenMax); f.wtMin=num(f.wtMin); f.wtMax=num(f.wtMax);
   if(!['all','active','on-order','pending'].includes(f.availability)) f.availability='all';
   if(!['all','aged','priority'].includes(f.age)) f.age='all';   // lot-age bracket (Dashboard Priority rail -> View all)
   f.hideInactives=!!f.hideInactives;
@@ -4051,53 +4117,120 @@ function lengthFeet(u){
   const m=String(L).replace(/[\u2019\u2018]/g,"'").replace(/[\u201D\u201C]/g,'"').match(/(\d+(?:\.\d+)?)\s*(?:'|ft|feet)?\s*(?:(\d+(?:\.\d+)?)\s*(?:"|in))?/i);
   if(!m) return null; const ft=parseFloat(m[1])+(m[2]?parseFloat(m[2])/12:0); return isNaN(ft)?null:ft;
 }
-function browseFilterCount(){ const f=bf(); return (f.layout!=='all'?1:0)+(f.lengthBracket!=='all'?1:0)+(f.weightBracket!=='all'?1:0)+(f.availability!=='all'&&f.age==='all'?1:0)+(f.age!=='all'?1:0); }   // the age route's implied 'active' isn't a separate visible pill
+const lenActive=f=>f.lenMin!=null||f.lenMax!=null, wtActive=f=>f.wtMin!=null||f.wtMax!=null;
+function browseFilterCount(){ const f=bf(); return f.layouts.length+(lenActive(f)?1:0)+(wtActive(f)?1:0)+(f.availability!=='all'&&f.age==='all'?1:0)+(f.age!=='all'?1:0); }   // the age route's implied 'active' isn't a separate visible pill
+// Layout chips = the old Layout slider (Bunks/Couples) merged with the floorplan-type chips. Bunkhouse uses the
+// model/feature/sleeps heuristic (the keyword tags miss ~half the bunkhouses: BH255, 20BHA, 265BHT...); Couples =
+// no bunks. The rest are the keyword-derived tags, shown only when at least one unit carries them.
+function layoutOptions(){
+  const present=new Set(); state.units.forEach(u=>(u.tags||[]).forEach(t=>present.add(t)));
+  return [{id:'bunkhouse',label:'Bunkhouse'},{id:'couples',label:'Couples'}]
+    .concat(CATEGORIES.filter(c=>c.id!=='bunkhouse'&&c.id!=='couples'&&present.has(c.id)).map(c=>({id:c.id,label:c.label})));
+}
+function unitHasLayout(u,id){
+  const bunk=isBunkhouse(u)||(u.tags||[]).includes('bunkhouse');
+  if(id==='bunkhouse') return bunk;
+  if(id==='couples') return !bunk;
+  return (u.tags||[]).includes(id);
+}
+function fmtLb(n){ return Number(n).toLocaleString('en-US'); }
+function rangeText(kind){
+  const f=bf();
+  if(kind==='len'){ if(!lenActive(f)) return 'Length'; const a=f.lenMin??LEN_RANGE.min, b=f.lenMax??LEN_RANGE.max; return f.lenMin==null?`&le; ${b} ft`:f.lenMax==null?`${a}+ ft`:`${a}&ndash;${b} ft`; }
+  if(!wtActive(f)) return 'Weight';
+  const R=weightRange(), a=f.wtMin??R.min, b=f.wtMax??R.max, k=n=>(n/1000).toFixed(n%1000?1:0)+'k';
+  return f.wtMin==null?`&le; ${k(b)} lb`:f.wtMax==null?`${k(a)}+ lb`:`${k(a)}&ndash;${k(b)} lb`;
+}
 const AGE_FILTER_LABEL={aged:'200+ days on lot',priority:'300+ days on lot'};
 function clearAgeFilter(){ const f=bf(); f.age='all'; f.availability='all'; saveState(); refreshBrowseFilters(); }   // the Priority route also set availability=active; clear both so Browse returns to normal
 window.clearAgeFilter=clearAgeFilter;
 const AVAIL_LABEL={active:'On the Lot','on-order':'Inbound','pending':'Under Contract'};
 function clearAvailabilityFilter(){ const f=bf(); f.availability='all'; f.age='all'; saveState(); refreshBrowseFilters(); }
 window.clearAvailabilityFilter=clearAvailabilityFilter;
+// Compact filter deck: row 1 = Hide Inactives + Length/Weight pills (+ any Dashboard route pill) + Reset;
+// tapping Length/Weight opens a dual-range slider inline (one at a time); row 2 = merged Layout chips (one scrolling row).
+let browseOpenRange=null;   // 'len' | 'wt' | null -- which slider panel is open (not persisted)
+function dualRangeHtml(kind){
+  const f=bf(), R=kind==='len'?LEN_RANGE:weightRange();
+  const lo=kind==='len'?(f.lenMin??R.min):(f.wtMin??R.min), hi=kind==='len'?(f.lenMax??R.max):(f.wtMax??R.max);
+  const pct=v=>((v-R.min)/(R.max-R.min)*100).toFixed(2)+'%', unit=kind==='len'?'ft':'lb', name=kind==='len'?'length':'dry weight';
+  const lbl=v=>kind==='len'?`${v} ft`:`${fmtLb(v)} lb`;
+  return `<div class="range-panel" id="rangePanel" data-kind="${kind}">
+    <div class="range-top"><span class="range-title">${kind==='len'?'Length':'Dry weight (UVW)'}</span><span class="range-val" id="rangeVal">${lbl(lo)} &ndash; ${lbl(hi)}</span>
+      <button class="range-any" onclick="clearRange('${kind}')">Any</button></div>
+    <div class="dual-range" style="--lo:${pct(lo)};--hi:${pct(hi)}">
+      <div class="dr-track"><div class="dr-fill"></div></div>
+      <input type="range" min="${R.min}" max="${R.max}" step="${R.step}" value="${lo}" aria-label="Minimum ${name} (${unit})" oninput="onRangeInput(this)" onchange="onRangeCommit()">
+      <input type="range" min="${R.min}" max="${R.max}" step="${R.step}" value="${hi}" aria-label="Maximum ${name} (${unit})" oninput="onRangeInput(this)" onchange="onRangeCommit()">
+    </div>
+    <div class="range-scale"><span>${lbl(R.min)}</span><span>${lbl(R.max)}</span></div>
+  </div>`;
+}
+// Reset sits beside the page title (always visible) rather than at the end of the pill row, where a wide active
+// pill pushed it off-screen on phones.
+function browseResetHtml(){ const n=browseFilterCount(); return n>0?`<button class="filter-reset" onclick="resetBrowseFilters()">Reset (${n})</button>`:''; }
 function browseFiltersHtml(){
-  const f=bf(), n=browseFilterCount();
-  const lenLbl=f.lengthBracket==='all'?'Length: Any':(f.lengthBracket==='under30'?'&lt; 30 ft':'30+ ft');
-  const wtLbl=f.weightBracket==='all'?'Tow: Any':(f.weightBracket==='halfton'?'Half-Ton (&le;8.5k)':'Heavy Duty (8.5k+)');
+  const f=bf(), opts=layoutOptions(), on=id=>f.layouts.includes(id);
+  const pill=(kind,active)=>`<button class="fpill-solo${active?' on':''}${browseOpenRange===kind?' open':''}" id="pill-${kind}" aria-expanded="${browseOpenRange===kind}" aria-controls="rangePanel" onclick="toggleRangePanel('${kind}')">${rangeText(kind)}<span class="caret" aria-hidden="true">${svg(I.chevD)}</span></button>`;
   return `<div class="filter-deck" id="filterDeck">
-    <div class="filter-head">
+    <div class="filter-row">
       <button class="stock-toggle" role="switch" aria-checked="${f.hideInactives}" onclick="toggleHideInactives()" title="Show only units on the lot, pending or on order"><span class="trk"></span><span>Hide Inactives</span></button>
-      ${n>0?`<button class="filter-reset" onclick="resetBrowseFilters()">Reset (${n})</button>`:''}
+      ${pill('len',lenActive(f))}${pill('wt',wtActive(f))}
+      ${f.age!=='all'?`<button class="fpill-solo on" onclick="clearAgeFilter()" title="Clear this filter">${AGE_FILTER_LABEL[f.age]} &times;</button>`:''}
+      ${f.availability!=='all'&&f.age==='all'?`<button class="fpill-solo on" onclick="clearAvailabilityFilter()" title="Clear this filter">${AVAIL_LABEL[f.availability]} &times;</button>`:''}
     </div>
-    <div class="filter-rail">
-    <div class="filter-group" role="group" aria-label="Layout">
-      <button class="fpill ${f.layout==='all'?'on':''}" onclick="setBrowseLayout('all')">All Layouts</button>
-      <button class="fpill ${f.layout==='bunk'?'on':''}" onclick="setBrowseLayout('bunk')">Bunks</button>
-      <button class="fpill ${f.layout==='couples'?'on':''}" onclick="setBrowseLayout('couples')">Couples</button>
-    </div>
-    ${f.age!=='all'?`<div class="filter-group"><button class="fpill on" onclick="clearAgeFilter()" title="Clear this filter">${AGE_FILTER_LABEL[f.age]} &times;</button></div>`:''}
-    ${f.availability!=='all'&&f.age==='all'?`<div class="filter-group"><button class="fpill on" onclick="clearAvailabilityFilter()" title="Clear this filter">${AVAIL_LABEL[f.availability]} &times;</button></div>`:''}
-    <div class="filter-group"><button class="fpill ${f.lengthBracket!=='all'?'on':''}" onclick="cycleLengthFilter()" title="Tap to cycle: any, under 30 ft, 30+ ft">${lenLbl}</button></div>
-    <div class="filter-group"><button class="fpill ${f.weightBracket!=='all'?'on':''}" onclick="cycleWeightFilter()" title="Tap to cycle. Based on dry weight (UVW), not loaded or tow rating">${wtLbl}</button></div>
+    ${browseOpenRange?dualRangeHtml(browseOpenRange):''}
+    <div class="layout-rail" role="group" aria-label="Layout">
+      <button class="chip${f.layouts.length?'':' on'}" aria-pressed="${!f.layouts.length}" onclick="clearLayouts()">All layouts</button>
+      ${opts.map(o=>`<button class="chip${on(o.id)?' on':''}" aria-pressed="${on(o.id)}" onclick="toggleLayout('${o.id}')">${o.label}</button>`).join('')}
     </div>
   </div>`;
 }
 function refreshBrowseFilters(){
-  const deck=$('#filterDeck'); if(deck) deck.outerHTML=browseFiltersHtml();
+  const deck=$('#filterDeck');
+  if(deck){ const rail=deck.querySelector('.layout-rail'), sx=rail?rail.scrollLeft:0; deck.outerHTML=browseFiltersHtml(); const r2=$('#filterDeck .layout-rail'); if(r2) r2.scrollLeft=sx; }   // keep the chip row's scroll position
+  const rs=$('#browseResetSlot'); if(rs) rs.innerHTML=browseResetHtml();
   refreshBrowsePanel(null);
 }
-function setBrowseLayout(t){ bf().layout=t; saveState(); refreshBrowseFilters(); }
-function cycleLengthFilter(){ const f=bf(); f.lengthBracket={all:'under30',under30:'over30',over30:'all'}[f.lengthBracket]; saveState(); refreshBrowseFilters(); }
-function cycleWeightFilter(){ const f=bf(); f.weightBracket={all:'halfton',halfton:'heavyduty',heavyduty:'all'}[f.weightBracket]; saveState(); refreshBrowseFilters(); }
+function toggleLayout(id){
+  const f=bf(), i=f.layouts.indexOf(id);
+  if(i>=0) f.layouts.splice(i,1);
+  else { f.layouts.push(id); if(id==='bunkhouse'||id==='couples') f.layouts=f.layouts.filter(x=>x!==(id==='bunkhouse'?'couples':'bunkhouse')); }
+  saveState(); refreshBrowseFilters();
+}
+function clearLayouts(){ bf().layouts=[]; saveState(); refreshBrowseFilters(); }
+function toggleRangePanel(kind){ browseOpenRange=browseOpenRange===kind?null:kind; refreshBrowseFilters(); }
+// Live while dragging: keep min <= max, store (null at either extreme = "Any"), update the readout, fill and pill label,
+// and refilter the results -- without re-rendering the deck (that would drop the drag).
+let rangeRaf=0;
+function onRangeInput(el){
+  const panel=el.closest('.range-panel'), kind=panel.dataset.kind, [a,b]=panel.querySelectorAll('input');
+  const R=kind==='len'?LEN_RANGE:weightRange();
+  let lo=+a.value, hi=+b.value;
+  if(lo>hi){ if(el===a){ lo=hi; a.value=lo; } else { hi=lo; b.value=hi; } }
+  a.style.zIndex=lo>=R.max-R.step?3:'';   // both thumbs parked at max: keep the min thumb grabbable
+  const f=bf();
+  if(kind==='len'){ f.lenMin=lo>R.min?lo:null; f.lenMax=hi<R.max?hi:null; } else { f.wtMin=lo>R.min?lo:null; f.wtMax=hi<R.max?hi:null; }
+  const pct=v=>((v-R.min)/(R.max-R.min)*100).toFixed(2)+'%';
+  const dr=panel.querySelector('.dual-range'); dr.style.setProperty('--lo',pct(lo)); dr.style.setProperty('--hi',pct(hi));
+  const lbl=v=>kind==='len'?`${v} ft`:`${fmtLb(v)} lb`;
+  $('#rangeVal').innerHTML=`${lbl(lo)} &ndash; ${lbl(hi)}`;
+  const p=$('#pill-'+kind); if(p){ p.innerHTML=`${rangeText(kind)}<span class="caret" aria-hidden="true">${svg(I.chevD)}</span>`; p.classList.toggle('on',kind==='len'?lenActive(f):wtActive(f)); }
+  cancelAnimationFrame(rangeRaf); rangeRaf=requestAnimationFrame(()=>refreshBrowsePanel(null));
+}
+function onRangeCommit(){ saveState(); refreshBrowseFilters(); }   // on release: persist + refresh the Reset count
+function clearRange(kind){ const f=bf(); if(kind==='len'){ f.lenMin=f.lenMax=null; } else { f.wtMin=f.wtMax=null; } saveState(); refreshBrowseFilters(); }
 function toggleHideInactives(){ const f=bf(); f.hideInactives=!f.hideInactives; saveState(); refreshBrowseFilters(); }
-function resetBrowseFilters(){ const f=bf(); f.layout='all'; f.lengthBracket='all'; f.weightBracket='all'; f.availability='all'; f.age='all'; saveState(); refreshBrowseFilters(); }
+function resetBrowseFilters(){ const f=bf(); f.layouts=[]; f.lenMin=f.lenMax=f.wtMin=f.wtMax=null; f.availability='all'; f.age='all'; browseOpenRange=null; saveState(); refreshBrowseFilters(); }
 function browseUnitPasses(u){
   const f=bf();
   if(f.hideInactives&&!isInStock(u)) return false;
   if(f.availability!=='all'&&u.availability!==f.availability) return false;
   if(f.age!=='all'){ const d=unitDaysOnLot(u); if(d==null||d<(f.age==='priority'?AGE_PRIORITY_DAYS:AGE_AGED_DAYS)) return false; }
-  if(f.layout==='bunk'&&!isBunkhouse(u)) return false;
-  if(f.layout==='couples'&&isBunkhouse(u)) return false;
-  if(f.lengthBracket!=='all'){ const ft=lengthFeet(u); if(ft==null||ft<=0) return false; if(f.lengthBracket==='under30'?ft>=30:ft<30) return false; }
-  if(f.weightBracket!=='all'){ const w=Number(u.weight); if(!(w>0)) return false; if(f.weightBracket==='halfton'?w>8500:w<=8500) return false; }
+  for(const id of f.layouts) if(!unitHasLayout(u,id)) return false;
+  if(lenActive(f)){ const ft=lengthFeet(u); if(ft==null||ft<=0) return false; const whole=Math.floor(ft);   // 30' 6" counts as a 30 ft unit
+    if(f.lenMin!=null&&whole<f.lenMin) return false; if(f.lenMax!=null&&whole>f.lenMax) return false; }
+  if(wtActive(f)){ const w=Number(u.weight); if(!(w>0)) return false; if(f.wtMin!=null&&w<f.wtMin) return false; if(f.wtMax!=null&&w>f.wtMax) return false; }
   return true;
 }
 function browseEmptyHtml(){
@@ -4106,25 +4239,21 @@ function browseEmptyHtml(){
     ? `<div class="empty"><p>No units match these filters.</p>${browseFilterCount()>0?`<button class="btn" onclick="resetBrowseFilters()">Reset filters</button>`:`<p class="muted">Turn off “Hide Inactives” to see the full lot.</p>`}</div>`
     : `<div class="empty"><p>No units match. Clear a filter and try again.</p></div>`;
 }
-function browseSearchActive(){ const f=bf(); return !!(filt.q||filt.cat||f.availability!=='all'||f.age!=='all'); }   // an availability route from the Dashboard shows a flat result list, not the drill-down
+function browseSearchActive(){ const f=bf(); return !!(filt.q||f.layouts.length||f.availability!=='all'||f.age!=='all'); }   // search text, a Layout chip, or an availability route from the Dashboard shows a flat result list, not the drill-down
 function viewBrowse(){
   if(!state.units.length) return `<div class="view-head"><div><h1>Browse</h1></div></div>
     <div class="panel"><div class="empty"><div class="ec">${svg(I.browse)}</div><h3>${emptySyncCopy().title}</h3><p>${emptySyncCopy().body}</p>${emptySyncActionsHtml()}</div></div>`;
-  const cats=CATEGORIES.filter(c=>state.units.some(u=>(u.tags||[]).includes(c.id)));
   const list=filteredUnits();
+  // Controls live inside #bsplit (column 1) so on the unfolded/split layout they stay left of the crease and the
+  // detail pane owns the whole right side.
   return `
-  <div class="view-head"><div><div class="eyebrow">${list.length} of ${state.units.length} units</div><h1>Browse the lot</h1>
-  <p>Search and filter to match a customer to the right floorplan — then see exactly where it's parked.</p></div></div>
-  <div class="toolbar">
-    <div class="search">${svg(I.browse)}<input id="bq" placeholder="Search model, line, features, location…" value="${esc(filt.q)}"></div>
-  </div>
-  ${browseFiltersHtml()}
-  <div class="chips">
-    <button class="chip ${!filt.cat?'on':''}" onclick="setCat('')">All types</button>
-    ${cats.map(c=>`<button class="chip ${filt.cat===c.id?'on':''}" onclick="setCat('${c.id}')">${c.label}</button>`).join('')}
-  </div>
   <div class="browse-split" id="bsplit">
-    ${browseSearchActive()?'':browseCrumbsHtml()}
+    <div class="browse-controls">
+      <div class="view-head browse-head"><h1>Browse the lot</h1><span id="browseResetSlot">${browseResetHtml()}</span></div>
+      <div class="search">${svg(I.browse)}<input id="bq" type="search" placeholder="Search brand, model, features, stock #..." value="${esc(filt.q)}" aria-label="Search the lot"></div>
+      ${browseFiltersHtml()}
+    </div>
+    ${browseSearchActive()||!browseDepth()?'':browseCrumbsHtml()}
     <div id="bpanel">${browseSearchActive()?browseSearchResults(list):browsePanelHtml()}</div>
     <aside id="duoDetailPane" aria-label="Unit detail"></aside>
   </div>`;
@@ -4290,7 +4419,7 @@ function browseFloorplanGrid(units){
 // flat "fast-lookup" results when search text or a type filter is active — grouped
 // by Manufacturer > Brand, still in training-priority order; bypasses the drill panel
 function browseSearchResults(list){
-  if(bf().age!=='all'&&!filt.q&&!filt.cat){   // lot-age view: one list, oldest on the lot first (what a manager works down)
+  if(bf().age!=='all'&&!filt.q&&!bf().layouts.length){   // lot-age view: one list, oldest on the lot first (what a manager works down)
     if(!list.length) return browseEmptyHtml();
     const sorted=list.slice().sort((a,b)=>(unitDaysOnLot(b)||0)-(unitDaysOnLot(a)||0));
     return `<div class="bsearch-group"><h3 class="bsearch-head">${esc(AGE_FILTER_LABEL[bf().age])} <span>Oldest first · ${sorted.length}</span></h3><div class="inv-grid">${sorted.map(unitCard).join('')}</div></div>`;
@@ -4333,15 +4462,15 @@ function refreshBrowsePanel(anim){
     host.innerHTML = browseSearchActive() ? browseSearchResults(l) : browsePanelHtml();
     if(anim && !prefersReduced()){ void host.offsetWidth; host.classList.add(anim==='back'?'banim-back':'banim-fwd'); }
   }
-  const crumbHost=$('.bcrumbs'); const wantCrumbs=!browseSearchActive();
+  const crumbHost=$('.bcrumbs'); const wantCrumbs=!browseSearchActive()&&browseDepth()>0;   // top level: no trail to show, give the space to the logos
   if(wantCrumbs){
     const html=browseCrumbsHtml();
     if(crumbHost) crumbHost.outerHTML=html;
     else if(host) host.insertAdjacentHTML('beforebegin',html);
   } else if(crumbHost) crumbHost.remove();
-  const eb=$('.view-head .eyebrow'); if(eb) eb.textContent=l.length+' of '+state.units.length+' units';
   hydrateImages(host||document);
   duoSync();
+  fitBrowseLogoRow();
   wireCenterLift();
 }
 /* ---------- Browse split-pane (detail beside the list) ----------
@@ -4409,12 +4538,37 @@ function duoSync(){
   const b=$('#bsplit'), pane=$('#duoDetailPane');
   if(route!=='browse'||!b||!pane){ duoSelId=null; if(detailId&&!$('#modalBack').classList.contains('show')) detailId=null; return; }
   const cards=[...b.querySelectorAll('#bpanel .unit-card')];
-  const want=cards.length>0&&duoActive(), was=b.classList.contains('is-split');
+  // Unfolded / wide: split the whole Browse tab (controls + logos left of the crease), not just once unit cards exist.
+  const want=duoActive(), was=b.classList.contains('is-split');
   b.classList.toggle('is-split',want);
   if(!want){ if(was){ pane.innerHTML=''; pane.dataset.uid=''; if(!$('#modalBack').classList.contains('show')) detailId=null; } duoSelId=null; return; }
+  // The right side stays a clean slate until a unit is tapped (no auto-pick of the first card); it clears again if
+  // filtering/drilling removes the selected unit from the list.
   const ids=cards.map(c=>c.dataset.uid);
-  const pick=ids.includes(duoSelId)?duoSelId:ids[0];
-  if(!was||pane.dataset.uid!==pick||!pane.firstElementChild) openDetail(pick); else { duoSelId=pick; duoMarkSelected(); }
+  if(duoSelId&&ids.includes(duoSelId)){ if(!was||pane.dataset.uid!==duoSelId||!pane.querySelector('.modal-fig')) openDetail(duoSelId); else duoMarkSelected(); }
+  else duoClearPane();
+}
+function duoClearPane(){
+  const pane=$('#duoDetailPane'); if(!pane) return;
+  duoSelId=null;
+  if(pane.dataset.uid!=='none'){ pane.dataset.uid='none'; pane.innerHTML=`<div class="duo-empty">${svg(I.img)}<span>Select a floorplan to see it here</span></div>`; }
+  if(!$('#modalBack').classList.contains('show')) detailId=null;
+  duoMarkSelected();
+}
+// Manufacturer / brand / line logo column: fill the rest of the first screen with evenly sized tiles (capped), so the
+// logos read as the main route with the filters tucked above. Falls back to natural tile size when there are too
+// many to fit (the page just scrolls).
+function fitBrowseLogoRow(){
+  const row=$('#bpanel .bnav-logo-row'); if(!row) return;
+  row.style.removeProperty('--tile-h'); row.style.removeProperty('--tile-gap');
+  const n=row.children.length; if(!n) return;
+  const bnav=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--bnav-h'))||0;
+  const avail=window.innerHeight-bnav-16-(row.getBoundingClientRect().top+window.scrollY);
+  const MIN=66, MAX=140, GAP=10;
+  const per=(avail-GAP*(n-1))/n;
+  if(per<=MIN) return;
+  const tile=Math.min(per,MAX), gap=n>1?Math.min(28,Math.max(GAP,(avail-tile*n)/(n-1))):GAP;
+  row.style.setProperty('--tile-h',Math.floor(tile)+'px'); row.style.setProperty('--tile-gap',Math.floor(gap)+'px');
 }
 /* ---------- Browse "rolodex" center lift ----------
    An IntersectionObserver keeps a small set of cards that overlap a band around the vertical center of
@@ -4481,16 +4635,15 @@ function filteredUnits(){
   const q=norm(filt.q);
   return state.units.filter(u=>{
     if(filt.line&&u.productLine!==filt.line) return false;
-    if(filt.cat&&!(u.tags||[]).includes(filt.cat)) return false;
     if(!browseUnitPasses(u)) return false;
-    if(q){ const hay=norm([u.model,u.productLine,u.manufacturer,u.stock,u.location,u.rvType,(u.tags||[]).map(t=>CAT_LABEL[t]).join(' '),(u.keyFeatures||[]).join(' ')].join(' ')); if(!hay.includes(q)) return false; }
+    if(q){ const c=classifyUnit(u), hay=norm([u.model,u.productLine,u.manufacturer,u.brand,c.brand,c.line,u.stock,u.location,u.rvType,(u.tags||[]).map(t=>CAT_LABEL[t]).join(' '),(u.keyFeatures||[]).join(' ')].join(' ')); if(!hay.includes(q)) return false; }
     return true;
   });
 }
 function wireBrowse(){
   const bq=$('#bq'); if(bq){ bq.oninput=e=>{filt.q=e.target.value; refreshBrowsePanel(null);}; }
 }
-function setCat(c){ filt.cat=c; render(); }
+function setCat(c){ bf().layouts=c?[c]:[]; saveState(); render(); }   // legacy entry point; type chips merged into Layout
 
 /* ---------- Detail modal ---------- */
 let detailId=null;
@@ -5336,7 +5489,7 @@ function wireGlobal(){
   wirePulseTrackGestures();
   wireChromeVars();
   window.addEventListener('scroll',()=>{ if(centerCands.size) scheduleCenterPick(); },{passive:true});
-  window.addEventListener('resize',()=>{ if(centerCands.size) scheduleCenterPick(); if(route==='browse'){ cancelAnimationFrame(duoSync._r); duoSync._r=requestAnimationFrame(duoSync); } },{passive:true});
+  window.addEventListener('resize',()=>{ if(centerCands.size) scheduleCenterPick(); if(route==='browse'){ cancelAnimationFrame(duoSync._r); duoSync._r=requestAnimationFrame(()=>{ duoSync(); fitBrowseLogoRow(); }); } },{passive:true});
   $('#modalBack').addEventListener('click',e=>{ if(e.target.id==='modalBack') closeDetail(); });
   document.addEventListener('keydown',e=>{ if(zoomOpen){ zoomKey(e); return; } if(e.key==='Escape'){ closeBrochure(); closeDetail(); } if(detailId&&!/^(INPUT|TEXTAREA|SELECT)$/.test((e.target&&e.target.tagName)||'')){ if(e.key==='ArrowLeft'){navigateToSibling(-1);} else if(e.key==='ArrowRight'){navigateToSibling(1);} }
     if(session&&route==='study'){
@@ -5451,7 +5604,7 @@ window.startAdaptiveSession=startAdaptiveSession;window.setAdaptiveScope=setAdap
 window.adaptiveMatchPick=adaptiveMatchPick;window.adaptiveMatchAssign=adaptiveMatchAssign;window.adaptiveMatchResetStep=adaptiveMatchResetStep;window.adaptiveMatchCheck=adaptiveMatchCheck;window.adaptiveMatchNext=adaptiveMatchNext;
 window.endSession=endSession;window.openDetail=openDetail;window.closeDetail=closeDetail;window.detailNav=detailNav;window.navigateToSibling=navigateToSibling;window.deleteUnit=deleteUnit;window.setBrowseTab=setBrowseTab;
 window.setCat=setCat;window.loadSample=loadSample;
-window.setBrowseLayout=setBrowseLayout;window.cycleLengthFilter=cycleLengthFilter;window.cycleWeightFilter=cycleWeightFilter;window.toggleHideInactives=toggleHideInactives;window.resetBrowseFilters=resetBrowseFilters;window.openBrochure=openBrochure;window.openUnitBrochure=openUnitBrochure;window.closeBrochure=closeBrochure;window.browseDrillMf=browseDrillMf;window.browseDrillBrand=browseDrillBrand;window.browseDrillLine=browseDrillLine;window.browseCrumbTo=browseCrumbTo;
+window.toggleLayout=toggleLayout;window.clearLayouts=clearLayouts;window.toggleRangePanel=toggleRangePanel;window.onRangeInput=onRangeInput;window.onRangeCommit=onRangeCommit;window.clearRange=clearRange;window.toggleHideInactives=toggleHideInactives;window.resetBrowseFilters=resetBrowseFilters;window.openBrochure=openBrochure;window.openUnitBrochure=openUnitBrochure;window.closeBrochure=closeBrochure;window.browseDrillMf=browseDrillMf;window.browseDrillBrand=browseDrillBrand;window.browseDrillLine=browseDrillLine;window.browseCrumbTo=browseCrumbTo;
 window.resetProgress=resetProgress;window.forceSyncGithub=forceSyncGithub;
 window.state=state;window.$=$;
 window.render=render;window.saveState=saveState;window.toast=toast;window.toggleTheme=toggleTheme;window.applyTheme=applyTheme;
