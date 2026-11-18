@@ -254,10 +254,12 @@
         "Washer/Dryer Prep",
         "50\" Smart TV"
       ],
-      "stock": "",
-      "webPrice": "",
+      "stock": "3647",
+      "webPrice": 75991,
       "unlockPrice": "",
-      "availability": ""
+      "availability": "active",
+      "lotArrivalDate": "2026-11-18T14:00:05.812Z",
+      "liveYear": "2027"
     },
     {
       "id": "alliance-avenue-all-access-series-25rl",
@@ -494,12 +496,10 @@
         "Outdoor Griddle",
         "Queen Bed"
       ],
-      "stock": "3241",
-      "webPrice": 45695,
-      "unlockPrice": 44995,
-      "availability": "pending",
-      "liveYear": "2026",
-      "lotArrivalDate": "2025-11-26"
+      "stock": "",
+      "webPrice": "",
+      "unlockPrice": "",
+      "availability": ""
     },
     {
       "id": "alliance-delta-281bh",
@@ -543,7 +543,12 @@
         "Pull-Out Pantry",
         "Dual-Living Slides",
         "Queen Bed"
-      ]
+      ],
+      "stock": "3639",
+      "webPrice": 65624,
+      "unlockPrice": "",
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "alliance-delta-291bh",
@@ -1130,8 +1135,8 @@
       ],
       "lotArrivalDate": "2026-11-16T16:17:09.977Z",
       "stock": "3616",
-      "webPrice": 65267,
-      "unlockPrice": "",
+      "webPrice": 50895,
+      "unlockPrice": 49995,
       "availability": "active",
       "liveYear": "2027"
     },
@@ -2679,10 +2684,11 @@
         "Washer/Dryer Prep",
         "Queen Bed"
       ],
-      "stock": "",
-      "webPrice": "",
+      "stock": "3638",
+      "webPrice": 75353,
       "unlockPrice": "",
-      "availability": ""
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "grand-design-reflection-100-series-32bh",
@@ -3049,10 +3055,11 @@
         "50 Amp w/ 2nd A/C Prep",
         "Sleeps 8"
       ],
-      "stock": "",
-      "webPrice": "",
+      "stock": "3631",
+      "webPrice": 51871,
       "unlockPrice": "",
-      "availability": ""
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "grand-design-transcend-275fkt",
@@ -3159,10 +3166,11 @@
         "50 Amp w/ 2nd A/C Prep",
         "Sleeps 4"
       ],
-      "stock": "",
-      "webPrice": "",
+      "stock": "3633",
+      "webPrice": 63103,
       "unlockPrice": "",
-      "availability": ""
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "grand-design-transcend-325bht",
@@ -3185,10 +3193,11 @@
         "50 Amp w/ 2nd A/C Prep",
         "Sleeps 10"
       ],
-      "stock": "",
-      "webPrice": "",
+      "stock": "3635",
+      "webPrice": 62969,
       "unlockPrice": "",
-      "availability": ""
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "grand-design-transcend-335bht",
@@ -3299,7 +3308,7 @@
       "stock": "3457",
       "webPrice": 17095,
       "unlockPrice": 15995,
-      "availability": "active",
+      "availability": "pending",
       "liveYear": "2027",
       "lotArrivalDate": "2026-07-24"
     },
@@ -3669,8 +3678,8 @@
         "13.5K A/C"
       ],
       "stock": "3610",
-      "webPrice": 48473,
-      "unlockPrice": "",
+      "webPrice": 38895,
+      "unlockPrice": 37995,
       "availability": "active",
       "liveYear": "2027",
       "lotArrivalDate": "2026-11-17T14:00:03.945Z"
