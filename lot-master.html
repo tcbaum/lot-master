@@ -6,7 +6,16 @@
 <title>Lot Master — Floorplan Trainer</title>
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" id="sbStyle" />
+<script>
+/* iPhone Duo + iOS 27.2: with the "default" status-bar style an installed web app shrinks and shifts down after a
+   trip to the background on the unfolded screen (fixed bars then float). "black-translucent" keeps it full size.
+   iOS reads this only when the icon is added to the Home Screen, so it must be set before that moment. Duo only
+   (it reports the same 466x678 screen folded and unfolded); other phones keep the default bar. */
+(function(){try{var a=Math.min(screen.width,screen.height),b=Math.max(screen.width,screen.height);
+  if((a===466&&b===678)||(a===669&&(b===951||b===867))){document.getElementById('sbStyle').setAttribute('content','black-translucent');document.documentElement.classList.add('is-duo');}
+}catch(e){}})();
+</script>
 <meta name="apple-mobile-web-app-title" content="Lot Master" />
 <meta name="theme-color" content="#FFFFFF" />
 <link rel="apple-touch-icon" href="data:image/png;base64,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" />
@@ -621,12 +630,8 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .study-duo .sd-panel{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
 .study-duo .sd-panel .study-detail-card{margin-top:0}
 .study-duo .sd-right>.study-detail-card{margin-top:12px}
-/* on the split, tap-to-rate buttons sit under the answer for every pointer type (swiping the card still works) */
-.study-duo .desktop-rate-pills{display:flex;gap:8px;justify-content:center;padding:4px 18px 18px;flex-wrap:wrap}
-.study-duo .rate-pill{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:999px;padding:10px 16px;min-height:44px;font-size:12.5px;font-weight:700;letter-spacing:.02em;cursor:pointer;transition:border-color .15s,color .15s}
-.study-duo .rate-pill.again{border-color:color-mix(in srgb,var(--clay) 55%,var(--line))}
-.study-duo .rate-pill.hard{border-color:color-mix(in srgb,var(--amber) 55%,var(--line))}
-.study-duo .rate-pill.easy{border-color:color-mix(in srgb,var(--mint) 55%,var(--line))}
+/* rating is the swipe on the floorplan card; the right side only shows the answer + details (mouse users still get
+   the desktop pills via the hover/fine-pointer rule above) */
 @media (horizontal-viewport-segments: 2){
   .study-duo{column-gap:max(18px,calc(env(viewport-segment-left 1 0,0px) - env(viewport-segment-right 0 0,0px)))}
 }
@@ -1021,7 +1026,7 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
   .sidebar{display:none}
   .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:40;
     background:var(--card);background:color-mix(in srgb,var(--card) 82%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);
-    color:var(--text);border-bottom:1px solid var(--line);padding:12px 16px;padding-top:max(12px,env(safe-area-inset-top))}
+    color:var(--text);border-bottom:1px solid var(--line);padding:12px 16px;padding-top:max(12px,env(safe-area-inset-top));padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
   .topbar .brand{padding:0}
   .topbar .brand-name{color:var(--text)}
   .topbar .brand-sub{display:none}
@@ -1031,7 +1036,7 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
   .topbar .sync-pill.pending{background:var(--card-2);color:var(--muted)}
   .topbar .sync-pill.offline{background:var(--clay-soft);color:var(--clay)}
   .topbar .sync-pill.error{background:var(--clay-soft);color:var(--clay)}
-  .view{padding:18px 15px calc(86px + env(safe-area-inset-bottom))}
+  .view{padding:18px max(15px,env(safe-area-inset-right)) calc(86px + env(safe-area-inset-bottom)) max(15px,env(safe-area-inset-left))}
   .view-head h1{font-size:22px}
   .stat-grid{grid-template-columns:1fr 1fr;gap:10px}
   .stat .val{font-size:26px}
@@ -1039,7 +1044,7 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
   .study-setup{grid-template-columns:1fr}
   .map-grid{grid-template-columns:1fr}
   .bottom-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:50;background:var(--card);background:color-mix(in srgb,var(--card) 90%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);
-    padding:8px 6px calc(8px + env(safe-area-inset-bottom));justify-content:space-around;border-top:1px solid var(--line)}
+    padding:8px max(6px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(6px,env(safe-area-inset-left));justify-content:space-around;border-top:1px solid var(--line)}
   .bn-btn{flex:1;background:0;border:0;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:3px;
     font-size:10.5px;font-weight:600;padding:5px 2px;border-radius:9px;position:relative;transition:transform .15s cubic-bezier(.4,0,.2,1),color .2s ease}
   .bn-btn:active{transform:scale(.96)}
@@ -1061,6 +1066,7 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
    html.vt-nav (set only while a transition runs) names the top bar + bottom nav and lifts them above the content,
    so they never cross-fade (no ghosted active tab) and the content never paints over them. The root (page
    background + any unnamed chrome, e.g. the desktop sidebar) swaps instantly. */
+html.is-duo:not([data-theme="dark"]) .topbar{background-image:linear-gradient(to bottom,#0F1720 0,#0F1720 env(safe-area-inset-top,0px),transparent env(safe-area-inset-top,0px))}
 html.vt-nav .topbar{view-transition-name:lm-topbar}
 html.vt-nav #bottomNav{view-transition-name:lm-bnav}
 ::view-transition-old(root){animation:none;opacity:0}
@@ -4584,9 +4590,22 @@ function wireChromeVars(){
     syncChromeVars();
     const ae=document.activeElement;
     if(ae&&/^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName)) return;
+    // iOS 27.2 on the unfolded Duo can report a garbage visualViewport (height -33554432) after a background trip:
+    // ignore readings that aren't a plausible on-screen size.
+    if(!(vv.height>0&&vv.height<=screen.height*1.5&&Math.abs(vv.offsetTop)<vv.height)) return;
     if(Math.abs(vv.scale-1)<0.01&&Math.abs(vv.offsetTop)>1) window.scrollTo(window.scrollX, vv.pageTop);
   }); };
   vv.addEventListener('resize',check,{passive:true});
+  /* After a fold or a background trip the real window size can land a few frames late with no resize event. A
+     fixed full-window probe catches it; relay it as a resize so the split layouts, pane box and bars re-measure. */
+  if('ResizeObserver' in window&&!document.getElementById('vpProbe')){
+    const probe=document.createElement('div'); probe.id='vpProbe'; probe.setAttribute('aria-hidden','true');
+    probe.style.cssText='position:fixed;inset:0;visibility:hidden;pointer-events:none;z-index:-1';
+    document.body.appendChild(probe);
+    let first=true; new ResizeObserver(()=>{ if(first){ first=false; return; } window.dispatchEvent(new Event('resize')); }).observe(probe);
+  }
+  document.addEventListener('visibilitychange',()=>{ if(document.visibilityState!=='visible') return;
+    [0,1,3,6].forEach(n=>setTimeout(()=>{ syncChromeVars(); window.dispatchEvent(new Event('resize')); },n*16)); });
   vv.addEventListener('scroll',check,{passive:true});
 }
 function duoSync(){
