@@ -2293,10 +2293,11 @@
         "Washer/Dryer Prep",
         "King Bed"
       ],
-      "stock": "",
-      "webPrice": "",
+      "stock": "3657",
+      "webPrice": 89251,
       "unlockPrice": "",
-      "availability": ""
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "grand-design-reflection-travel-trailer-342bhts",
@@ -3248,10 +3249,11 @@
         "Sleeps up to 8",
         "Washer/Dryer Prep"
       ],
-      "stock": "",
-      "webPrice": "",
+      "stock": "3656",
+      "webPrice": 65191,
       "unlockPrice": "",
-      "availability": ""
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "grand-design-transcend-lite-121rbl",
