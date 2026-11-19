@@ -930,24 +930,66 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .rank-bar{height:10px;background:rgba(255,255,255,.22);border-radius:99px;overflow:hidden;margin-top:15px}
 .rank-bar>i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--xp-from),var(--xp-to));transition:width .8s cubic-bezier(.2,.8,.2,1)}
 /* ---- dashboard: Action-First Launchpad ---- */
-.dash-mission h1{font-size:24px;line-height:1.25;margin:6px 0 18px;letter-spacing:-.01em;color:var(--text);max-width:34ch}
+/* ---- Dashboard hero: mission + readiness in one tile ----
+   Phone: stacked (mission, then a slim readiness strip). >=740px (Duo unfolded, desktop): two columns, readiness on
+   the right behind a divider. Everything is scoped under .dash-hero so the big .btn-mission on Study / Pitches is
+   untouched. */
 .btn-mission{width:100%;justify-content:center;padding:16px 20px;font-size:16.5px;font-weight:700;border-radius:14px;margin-bottom:14px}
 .btn-mission svg{width:20px;height:20px}
-.budget-pills{display:flex;gap:8px;flex-wrap:wrap}
-.dash-ready{margin-bottom:18px}
-.ready-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.ready-ring-wrap{position:relative;width:96px;height:96px;flex:none}
+.dash-hero.hero-glass{padding:20px 22px}
+.dash-hero-grid{display:flex;flex-direction:column;gap:14px}
+.dash-hero-main{min-width:0}
+.dash-hero-main .eyebrow{margin-bottom:2px}
+.dash-mission.dash-hero h1{font-size:20px;line-height:1.25;margin:2px 0 14px;max-width:32ch}
+.dash-hero-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.dash-hero .btn-mission{width:auto;flex:1 1 0;min-width:0;margin:0;padding:12px;font-size:15px;min-height:52px;border-radius:var(--radius);white-space:nowrap}
+.dash-hero .btn-mission svg{width:18px;height:18px}
+.budget-icon-group{display:inline-flex;gap:4px;padding:3px;background:var(--card-2);border:1px solid var(--line);border-radius:var(--radius);flex:none}
+.budget-btn{appearance:none;background:transparent;border:1px solid transparent;color:var(--muted);border-radius:calc(var(--radius) - 2px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-width:44px;min-height:44px;padding:3px 5px;cursor:pointer;
+  transition:color .15s ease,background-color .15s ease,border-color .15s ease,box-shadow .15s ease}
+.budget-btn:hover{color:var(--text)}
+.budget-btn.on{background:var(--card);border-color:color-mix(in srgb,var(--brand) 40%,var(--line));color:var(--brand);box-shadow:var(--shadow)}
+.budget-btn:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.budget-glyph{position:relative;display:grid;place-items:center;width:26px;height:26px}
+.budget-glyph svg{width:26px;height:26px;grid-area:1/1}
+.budget-glyph b{grid-area:1/1;margin-top:3px;font-family:var(--display);font-size:12px;font-weight:700;line-height:1;color:currentColor}
+.budget-btn-sub{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;line-height:1}
+.dash-hero-ready{display:flex;align-items:center;gap:14px;padding-top:12px;border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.ready-ring-wrap{position:relative;width:64px;height:64px;flex:none}
 .ready-ring{width:100%;height:100%;transform:rotate(-90deg)}
 .ready-ring-bg{fill:none;stroke:var(--card-2);stroke-width:9}
 .ready-ring-fg{fill:none;stroke:var(--success);stroke-width:9;stroke-linecap:round;transition:stroke-dashoffset .7s cubic-bezier(.2,.8,.2,1)}
 .ready-ring-fg.mid{stroke:var(--accent)} .ready-ring-fg.low{stroke:var(--clay)}
-.ready-ring-pct{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05}
-.ready-ring-pct b{font-family:var(--display);font-size:21px;color:var(--text)}
-.ready-ring-pct span{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
-.ready-tiers{display:flex;flex-direction:column;gap:7px;flex:1;min-width:160px}
-.ready-tier{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--text)}
+.ready-ring-pct{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.ready-ring-pct b{font-family:var(--display);font-size:15px;color:var(--text)}
+.ready-ring-pct span{font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+.ready-tiers{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}
+.ready-tier{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted);white-space:nowrap}
+.ready-tier .rt-l{margin-left:-1px}
+.ready-tier b{color:var(--text);font-family:var(--display);font-weight:700}
+/* phone: the three tiers sit side by side as compact columns (count on top, label under) so the strip is one ring tall */
+@media (max-width:739px){
+  .dash-hero .ready-tiers{flex-direction:row;justify-content:space-around;gap:8px}
+  .dash-hero .ready-tier{display:grid;grid-template-columns:auto auto;align-items:center;justify-items:start;column-gap:6px;row-gap:1px;white-space:normal}
+  .dash-hero .ready-tier b{font-size:17px}
+  .dash-hero .rt-l{grid-column:1/-1;font-size:11px;line-height:1.2}
+  .dash-hero .ready-ring-wrap{width:58px;height:58px}
+  .dash-hero .ready-ring-pct b{font-size:14px}
+}
+@media (max-width:369px){ .dash-hero .btn-mission{flex-basis:100%} }   /* very narrow phones: CTA gets its own row */
 .dot{width:9px;height:9px;border-radius:50%;flex:none}
+.dash-hero .dot{width:8px;height:8px}
 .ready-g{background:var(--success)} .ready-y{background:var(--accent)} .ready-r{background:var(--clay)}
+@media (min-width:740px){
+  .dash-hero.hero-glass{padding:22px 26px}
+  .dash-hero:not(.is-first) .dash-hero-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(200px,.8fr);align-items:center;gap:24px}
+  .dash-hero-ready{padding:0 0 0 22px;border-top:0;border-left:1px solid color-mix(in srgb,var(--line) 70%,transparent);justify-content:center}
+  .dash-hero .ready-ring-wrap{width:76px;height:76px}
+  .dash-hero .ready-ring-pct b{font-size:18px}
+  .dash-mission.dash-hero h1{font-size:22px}
+}
+@media (prefers-reduced-motion:reduce){ .budget-btn,.ready-ring-fg{transition:none} }
 .ach-row{display:flex;align-items:center;gap:11px;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 15px;cursor:pointer;margin-top:4px}
 .ach-row:hover{border-color:var(--brand)}
 .ach-ic{flex:none;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:var(--accent);color:var(--brand-deep)}
@@ -1184,6 +1226,8 @@ const I = {
   ext:'<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/>',
   upload:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/>',
   play:'<path d="M5 3l14 9-14 9V3z"/>',
+  stopwatch:'<circle cx="12" cy="13.5" r="8.5"/><path d="M10 2.5h4M12 2.5v2.5M19 6l1.3-1.3"/>',   // digit overlaid in HTML (budget buttons)
+  cardStack:'<rect x="4" y="7" width="13" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-1"/><path d="M7.5 12h6M7.5 15.5h4"/>',
   more:'<circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/>',
   bed:'<path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20"/><path d="M6 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>',
   match:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 17.5h7M17.5 14v7"/>',
@@ -2755,33 +2799,38 @@ function viewDashboard(){
   const neverStudied=!state.units.some(u=>u.srs.reviews>0);   // real inventory, but nothing studied yet — distinct from "caught up"
   if(!neverStudied&&!state.settings.onboardingDismissed){ state.settings.onboardingDismissed=true; saveState(); }   // retire the welcome card for good once the rep has studied, so a later progress reset doesn't bring it back
   return `
-  <div class="glass hero-glass dash-mission">
-    <div class="hero-inner">
-      <div class="eyebrow">${(state.settings&&(state.settings.userName||'').trim())?'Welcome back, '+esc(state.settings.userName.trim()):'Welcome back'}</div>
-      ${neverStudied ? `
-      <h1>New here? Let's find your starting point.</h1>
-      <button class="btn btn-primary btn-mission" onclick="startFirstTraining()">${svg(I.play)} Start Training</button>
-      ` : `
-      <h1>${esc(dashMissionText(queue.length,dashBudget,dueCount))}</h1>
-      <button class="btn btn-primary btn-mission" onclick="startDashSession()" ${queue.length?'':'disabled'}>${svg(I.play)} Start Quick Session</button>
-      <div class="budget-pills">
-        ${Object.keys(DASH_BUDGETS).map(k=>{ const b=DASH_BUDGETS[k], n=Math.min(queue.length,b.n||queue.length);
-          return `<button class="chip ${dashBudget===k?'on':''}" onclick="setDashBudget('${k}')">${b.label}${k!=='full'?` (${n} item${n!==1?'s':''})`:''}</button>`; }).join('')}
+  <div class="glass hero-glass dash-mission dash-hero${neverStudied?' is-first':''}">
+    <div class="hero-inner dash-hero-grid">
+      <div class="dash-hero-main">
+        <div class="eyebrow">${(state.settings&&(state.settings.userName||'').trim())?'Welcome back, '+esc(state.settings.userName.trim()):'Welcome back'}</div>
+        ${neverStudied ? `
+        <h1>New here? Let's find your starting point.</h1>
+        <div class="dash-hero-actions"><button class="btn btn-primary btn-mission" onclick="startFirstTraining()">${svg(I.play)} Start Training</button></div>
+        ` : `
+        <h1>${esc(dashMissionText(queue.length,dashBudget,dueCount))}</h1>
+        <div class="dash-hero-actions">
+          <button class="btn btn-primary btn-mission" onclick="startDashSession()" ${queue.length?'':'disabled'}>${svg(I.play)} Start Session</button>
+          <div class="budget-icon-group" role="group" aria-label="Session length">
+            ${Object.keys(DASH_BUDGETS).map(k=>{ const b=DASH_BUDGETS[k], n=Math.min(queue.length,b.n||queue.length), on=dashBudget===k;
+              const label=(k==='full'?'Full review':b.label)+` (${n} item${n!==1?'s':''})`;
+              const glyph=k==='full'?`<span class="budget-glyph">${svg(I.cardStack)}</span>`:`<span class="budget-glyph">${svg(I.stopwatch)}<b>${esc(k)}</b></span>`;
+              return `<button type="button" class="budget-btn${on?' on':''}" aria-pressed="${on}" aria-label="${esc(label)}" title="${esc(label)}" onclick="setDashBudget('${k}')">${glyph}<span class="budget-btn-sub">${k==='full'?'All':'min'}</span></button>`; }).join('')}
+          </div>
+        </div>
+        `}
       </div>
-      `}
+      ${neverStudied?'':`
+      <div class="dash-hero-ready">
+        ${readinessRing(om)}
+        <div class="ready-tiers">
+          <div class="ready-tier"><span class="dot ready-g"></span><b>${tiers.ready}</b><span class="rt-l">pitch-ready</span></div>
+          <div class="ready-tier"><span class="dot ready-y"></span><b>${tiers.mid}</b><span class="rt-l">in progress</span></div>
+          <div class="ready-tier"><span class="dot ready-r"></span><b>${tiers.low}</b><span class="rt-l">need work</span></div>
+        </div>
+      </div>`}
     </div>
   </div>
   ${welcomeQuickStartHtml(neverStudied)}
-  <div class="panel dash-ready">
-    <div class="panel-pad ready-row">
-      ${readinessRing(om)}
-      <div class="ready-tiers">
-        <div class="ready-tier"><span class="dot ready-g"></span>${tiers.ready} line${tiers.ready!==1?'s':''} pitch-ready</div>
-        <div class="ready-tier"><span class="dot ready-y"></span>${tiers.mid} line${tiers.mid!==1?'s':''} in progress</div>
-        <div class="ready-tier"><span class="dot ready-r"></span>${tiers.low} line${tiers.low!==1?'s':''} need work</div>
-      </div>
-    </div>
-  </div>
   ${dashboardPulseHtml()}
   <div class="panel">
     <div class="panel-head"><h3>Your training queue</h3><span class="sub">${queue.length} floorplan${queue.length!==1?'s':''} · due first, then weakest</span></div>
