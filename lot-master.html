@@ -245,7 +245,7 @@ html[data-theme="dark"] .glass{--glass-hi:rgba(255,255,255,.07);background:color
 @media(max-width:760px){.glass-row{grid-template-columns:1fr}.hero-glass{padding:24px 20px}.hero-glass h1{font-size:25px}}
 @media(prefers-reduced-motion:reduce){.glass{transition:none}.glass:hover{transform:none}}
 @media (prefers-reduced-transparency:reduce){
-  .glass,.panel,.flashcard,.mode-slide,.modal,.unit-card,.inv-grid,.choice,.rate,.weak-row,.chip,.prof-chip{background:var(--card)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+  .glass,.panel,.flashcard,.modal,.unit-card,.inv-grid,.choice,.rate,.weak-row,.chip,.prof-chip{background:var(--card)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
   .hero-glass::before{display:none}
 }
 
@@ -452,7 +452,7 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .dash-endcap-title{font-size:13px;font-weight:700;color:var(--text)}
 .dash-endcap-sub{font-size:11px;color:var(--muted);line-height:1.3}
 .dash-pulse-count{font-size:11px;font-weight:700;padding:2px 7px;border-radius:999px;background:var(--card-2);color:var(--muted);border:1px solid var(--line)}
-/* Desktop: hover-revealed prev/next buttons over the rail (mirrors .mode-slide's .carousel-arrow). Hidden entirely
+/* Desktop: hover-revealed prev/next buttons over the rail (shared .carousel-arrow style). Hidden entirely
    on touch (coarse pointer) devices, where native swipe/scroll-snap is already the primary, more natural gesture. */
 .dash-pulse-trackwrap{position:relative}
 .pulse-arrow{top:50%;transform:translateY(-50%);width:34px;height:34px;opacity:0;pointer-events:none;transition:opacity .15s ease,border-color .15s ease,color .15s ease}
@@ -577,15 +577,8 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .mode-card h4{font-size:15.5px;margin-bottom:3px}
 .mode-card p{margin:0;font-size:12.5px;color:var(--muted)}
 /* ---- mode carousel ---- */
-.mode-carousel-wrap{position:relative;margin-bottom:24px}
 /* ---- adaptive study session ---- */
 .adaptive-setup{margin-bottom:14px}
-.classic-toggle{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);margin-bottom:18px;overflow:hidden}
-.classic-toggle summary{list-style:none;cursor:pointer;padding:13px 16px;font-size:13.5px;font-weight:600;color:var(--muted)}
-.classic-toggle summary::-webkit-details-marker{display:none}
-.classic-toggle summary:hover{color:var(--brand)}
-.classic-toggle[open] summary{border-bottom:1px solid var(--line);color:var(--text)}
-.classic-body{padding:16px}
 .adaptive-bar{position:relative}
 .seg-track{flex:1;display:flex;gap:2px;height:7px}
 .seg-track i{flex:1;display:block;border-radius:20px;background:var(--card-2);border:1px solid var(--line)}
@@ -635,6 +628,14 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 @media (horizontal-viewport-segments: 2){
   .study-duo{column-gap:max(18px,calc(env(viewport-segment-left 1 0,0px) - env(viewport-segment-right 0 0,0px)))}
 }
+.pc-prompt{text-align:left}
+.pc-eyebrow{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brand)}
+.pc-eyebrow svg{width:15px;height:15px}
+.pc-title{font-size:17px;margin:8px 0 4px}
+.pc-sub{font-size:13.5px;margin:0}
+.pc-after{margin-top:12px;display:flex;flex-direction:column;gap:12px}
+.pc-detail{font-size:13.5px;color:var(--text);background:var(--card-2);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;line-height:1.5}
+.pc-detail .lf-say{margin-top:8px}
 .kbd-hint{display:none}
 @media (hover:hover) and (pointer:fine){ .kbd-hint{display:inline} }
 /* ---------- Session Hero: unified completion screen ---------- */
@@ -663,29 +664,12 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .hero-perfect{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--mint-soft);color:var(--success,var(--mint));
   border-radius:14px;padding:16px;font-weight:700;font-size:14px}
 .hero-perfect svg{width:20px;height:20px}
-.mode-carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
-  padding:6px 2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.mode-carousel::-webkit-scrollbar{display:none}
-.mode-slide{flex:0 0 min(340px,82%);scroll-snap-align:center;text-align:left;display:flex;flex-direction:column;
-  background:var(--card);background:color-mix(in srgb,var(--card) 80%,transparent);-webkit-backdrop-filter:saturate(140%) blur(14px);backdrop-filter:saturate(140%) blur(14px);border:2px solid color-mix(in srgb,var(--line) 60%,transparent);border-radius:var(--radius-lg);padding:18px;cursor:pointer;
-  transition:border-color .15s,transform .15s,box-shadow .15s}
-.mode-slide:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.mode-slide.sel{border-color:var(--brand);box-shadow:var(--glow)}
-.mode-slide .mode-ic{margin-bottom:13px}
-.mode-slide h4{font-size:17px;margin:0 0 5px}
-.mode-slide p{margin:0;font-size:13px;color:var(--muted);flex:1;line-height:1.45}
-.mode-pick{margin-top:15px;display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--faint)}
-.mode-slide.sel .mode-pick{color:var(--brand)}
-.mode-pick svg{width:15px;height:15px}
 .carousel-arrow{position:absolute;top:38%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;
   background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow-lg);display:grid;place-items:center;z-index:5;color:var(--text);transition:.15s}
 .carousel-arrow:hover{border-color:var(--brand);color:var(--brand)}
 .carousel-arrow svg{width:20px;height:20px}
 .carousel-arrow.prev{left:-8px} .carousel-arrow.next{right:-8px}
-.carousel-dots{display:flex;justify-content:center;gap:7px;margin-top:14px}
-.cdot{width:8px;height:8px;border-radius:50%;background:var(--line-2);padding:0;border:0;transition:.2s}
-.cdot.on{background:var(--brand);width:24px;border-radius:99px}
-@media(max-width:640px){.carousel-arrow{display:none}.mode-slide{flex-basis:86%}}
+@media(max-width:640px){.carousel-arrow{display:none}}
 
 .study-stage{max-width:680px;margin:0 auto}
 .study-bar{display:flex;align-items:center;gap:14px;margin-bottom:18px}
@@ -1588,24 +1572,6 @@ function allFeatureItems(){
   }
   return out;
 }
-/* ---------- Alliance training questions: session generator (Micro-Task 2A) ----------
-   Note: there is no "deltasolo" line key in this app's data — the "Delta Ultra-Lite &
-   Solo" question set was filed under the existing "deltaultralite" key with
-   subcategory:'Solo' on the two Solo-specific questions (a Phase 1 decision, since
-   there's no separate Delta Solo content or inventory line otherwise). Passing
-   'deltasolo' here will correctly, harmlessly return an empty deck rather than throw —
-   use 'deltaultralite' to reach that content. */
-function buildQuestionDeck(lineKey,mode){
-  const all=allFeatureItems().filter(i=>i.type==='question');
-  if(lineKey) return shuffle(all.filter(i=>i.lineKey===lineKey));
-  if(mode==='full') return shuffle(all);
-  // no line specified: an "all categories" quick-drill — prioritize whatever hasn't
-  // been mastered yet, diversified across categories so one can't dominate the deck,
-  // capped at 10 (same pattern already used for the general pitch-drill quick-drill)
-  const byTier=t=>all.filter(i=>featureProgress(i.key).tier===t);
-  const pool=byTier(0).concat(byTier(1)).concat(byTier(2));
-  return pickDiversified(pool,10,i=>i.lineKey);
-}
 // Shuffles a question's options and returns a FRESH object (never mutates the shared
 // ALLIANCE_QUESTIONS registry — every drill run needs its own shuffle) with
 // correctness tracked by POSITION after shuffling, not by string value. Value-based
@@ -1759,10 +1725,6 @@ function fmtInterval(d){
   if(d<1) return '<1d'; if(d<30) return Math.round(d)+'d';
   if(d<365) return (d/30).toFixed(d<60?0:0)+'mo'; return (d/365).toFixed(1)+'y';
 }
-function previewIntervals(c){
-  // fixed redrill scheduling per rating
-  return {again:'10m',hard:'1d',good:'2d',easy:'3d'};
-}
 function schedule(c,rating,now){
   now=now||Date.now();
   c.reviews=(c.reviews||0)+1; c.lastReviewed=now;
@@ -1789,40 +1751,13 @@ function isWeak(c){ return c.reviews>0 && (c.lapses>=2 || c.ease<2.0 || masteryS
 
 /* ============================================================
    PROGRESSION SYSTEM  (layered on the existing SRS above)
-   - XP + ranks, per-floorplan 0–100 mastery, achievement badges,
+   - Per-floorplan 0–100 mastery, achievement badges,
      daily learning streak. Scheduling/due/queue keep using
-     schedule()/isReviewDue()/buildQueue() — not rewritten.
+     schedule()/isReviewDue()/actionQueueUnits() — not rewritten.
    - All progression state lives on the existing `state` object
      and persists through the existing saveState()/IndexedDB.
    ============================================================ */
 const fmtN = n => Number(n||0).toLocaleString();
-
-/* ---- 1 · XP & Rank engine ---- */
-const RANKS = [
-  {id:'trainee',    label:'Trainee',              xp:0},
-  {id:'specialist', label:'RV Specialist',        xp:100},
-  {id:'advisor',    label:'Product Advisor',      xp:500},
-  {id:'consultant', label:'Floorplan Consultant', xp:1500},
-  {id:'senior',     label:'Senior Consultant',    xp:5000},
-  {id:'master',     label:'Floorplan Master',     xp:10000},
-];
-const XP = { correct:10, streakBonus:5, perfectQuiz:50, firstMastery:100 };
-function totalXP(){ return state.xp||0; }
-function rankForXP(xp){ let r=RANKS[0]; for(const k of RANKS){ if((xp||0)>=k.xp) r=k; else break; } return r; }
-function nextRank(xp){ return RANKS.find(k=>k.xp>(xp||0))||null; }
-function rankProgress(xp){
-  xp=xp||0; const current=rankForXP(xp), next=nextRank(xp);
-  if(!next) return {current,next:null,pct:100,into:0,span:0,toNext:0};
-  const span=next.xp-current.xp, into=xp-current.xp;
-  return {current,next,pct:Math.round(into/span*100),into,span,toNext:next.xp-xp};
-}
-function addXP(n){
-  if(!n) return;
-  const before=rankForXP(state.xp||0);
-  state.xp=(state.xp||0)+n;
-  const after=rankForXP(state.xp);
-  if(after.id!==before.id) setTimeout(()=>toast('New rank: '+after.label+'!','ok'),200);
-}
 
 /* ---- 2 · Mastery engine (0–100 per floorplan) ---- */
 const MASTERY_LEVELS = [
@@ -1850,15 +1785,6 @@ function masteryStats(){
   for(const u of state.units){ const m=unitMastery(u); sum+=m.score; if(m.level==='Mastered') mastered++; else if(m.score>0) inReview++; }
   return {mastered,inReview,avg:state.units.length?Math.round(sum/state.units.length):0};
 }
-
-/* ---- 3 · Spaced repetition (reuses existing SRS) ----
-   Per-level cadence from the spec, for reference/display. The real
-   next-review date is u.srs.due (set by schedule()), the due set is
-   isReviewDue(), and the queue is buildQueue('due'). */
-const REVIEW_INTERVAL_DAYS = {Learning:1,Familiar:3,Strong:7,Expert:14,Mastered:30};
-function reviewIntervalForLevel(level){ return REVIEW_INTERVAL_DAYS[level]||1; }
-function nextReviewDate(u){ return u.srs ? u.srs.due : Date.now(); }
-function reviewQueue(){ return buildQueue('due'); }
 
 /* ---- 4 · Badge engine ---- */
 function unitIsFifthWheel(u){ return /fifth|5th/.test(norm(u.rvType)); }
@@ -1960,7 +1886,6 @@ function openDB(){
 function idbGet(store,key){return new Promise((res,rej)=>{try{const t=db.transaction(store).objectStore(store).get(key);t.onsuccess=()=>res(t.result);t.onerror=()=>rej(t.error);}catch(e){rej(e);}});}
 function idbPut(store,key,val){return new Promise((res,rej)=>{try{const t=db.transaction(store,'readwrite').objectStore(store).put(val,key);t.onsuccess=()=>res();t.onerror=()=>rej(t.error);}catch(e){rej(e);}});}
 function idbAll(store){return new Promise((res)=>{try{const out={};const t=db.transaction(store).objectStore(store).openCursor();t.onsuccess=e=>{const c=e.target.result;if(c){out[c.key]=c.value;c.continue();}else res(out);};t.onerror=()=>res(out);}catch(_){res({});}});}
-function idbClear(store){return new Promise((res)=>{try{const t=db.transaction(store,'readwrite').objectStore(store).clear();t.onsuccess=()=>res();t.onerror=()=>res();}catch(_){res();}});}
 
 async function loadState(){
   if(!db) return;
@@ -2174,8 +2099,7 @@ function prefetchStudyQueueImages(queue,currentIndex){
   const ids=[];
   for(let i=currentIndex+1; i<queue.length && ids.length<3; i++){
     const item=queue[i];
-    if(typeof item==='string') ids.push(item);                                  // classic session: flat unit-id queue
-    else if(item&&item.kind==='card'&&item.id) ids.push(item.id);                // adaptive: individual card step
+    if(item&&(item.kind==='card'||item.kind==='pitch')&&item.id) ids.push(item.id);   // individual card / pitch-check step
     else if(item&&item.kind==='match'&&Array.isArray(item.ids)) for(const id of item.ids){ if(ids.length<3) ids.push(id); } // adaptive: match round
   }
   for(const id of ids){
@@ -2349,25 +2273,6 @@ function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor
 function unitTitle(u){ return u.model || u.productLine || 'Unit '+(u.stock||''); }
 function unitImg(u){ return images.get(u.id) || u.imageUrl || null; }
 // Length can arrive as plain feet (34) or feet+inches (19' 8", 19 ft 8 in, 19'-8").
-// Store whole feet as a number; store feet+inches as a clean string like 19' 8".
-function parseLength(raw){
-  if(raw==null||raw==='') return '';
-  if(typeof raw==='number') return raw;
-  let s=String(raw).trim();
-  if(!s) return '';
-  s=s.replace(/[\u2019\u2018]/g,"'").replace(/[\u201D\u201C]/g,'"');
-  const m=s.match(/^(\d+(?:\.\d+)?)\s*(?:'|ft|feet)\.?\s*-?\s*(\d+(?:\.\d+)?)?\s*(?:"|''|in|inch|inches)?\.?$/i);
-  if(m){
-    const ft=parseFloat(m[1]);
-    const inch=(m[2]!=null&&m[2]!=='')?parseFloat(m[2]):0;
-    if(!isNaN(ft)) return inch?`${ft}' ${inch}"`:ft;
-  }
-  if(!/['"]|ft|feet|in/i.test(s)){
-    const n=parseFloat(s.replace(/[^0-9.]/g,''));
-    if(!isNaN(n)) return n;
-  }
-  return s;
-}
 function fmtLength(u){
   const L=u.length;
   if(L==null||L==='') return '';
@@ -2387,11 +2292,6 @@ function dueCounts(now){
   return {reviewDue,newAvail,newToday,total:reviewDue+newToday};
 }
 function overallMastery(){ return masteryStats().avg; }  // line-proficiency based (mean 0–100 mastery)
-function masteryByKey(keyFn){
-  const m=new Map();
-  for(const u of state.units){ const k=keyFn(u)||'—'; if(!m.has(k)) m.set(k,{sum:0,n:0,weak:0}); const o=m.get(k); o.sum+=masteryScore(u.srs); o.n++; if(isWeak(u.srs)) o.weak++; }
-  return [...m.entries()].map(([k,o])=>({key:k,pct:Math.round(o.sum/o.n*100),count:o.n,weak:o.weak})).sort((a,b)=>a.pct-b.pct);
-}
 function weakUnits(limit){
   return state.units.filter(u=>u.srs.reviews>0).map(u=>({u,m:masteryScore(u.srs),lap:u.srs.lapses||0}))
     .filter(x=>x.m<0.6||x.lap>=2).sort((a,b)=>a.m-b.m||b.lap-a.lap).slice(0,limit||8).map(x=>x.u);
@@ -2480,23 +2380,6 @@ function masteryTree(){
     out.push({name:mf,pct:mfN?Math.round(mfSum/mfN):0,n:mfN,brands});
   }
   return out;
-}
-function lineComplete(m,b,l){
-  if(l.n<=0) return true;
-  const earned=(state.progress&&state.progress.badges)||{};
-  const lk=m.name+'|'+b.name+'|'+l.name;
-  if(b.lines.length>1) return !!earned['line:'+lk] || l.mastered>=l.n;        // multi-line: line achievement (3 perfect drills) or all models mastered
-  return !!earned['brand:'+m.name+'|'+b.name] || l.mastered>=l.n;             // single-line brand: brand achievement (all models mastered)
-}
-function focusNext(tree){
-  for(const m of tree) for(const b of m.brands) for(const l of b.lines){ if(!lineComplete(m,b,l)) return {mf:m.name,brand:b.name,line:l.name,pct:l.pct}; }
-  return null;
-}
-function focusScopeStr(focus){
-  const u=state.units.find(x=>{const c=classifyUnit(x); return c.mf===focus.mf&&c.brand===focus.brand&&c.line===focus.line;});
-  // scope on the CLASSIFIED line, not the raw productLine text: lines that share a
-  // product-line string (e.g. Reflection fifth wheels vs travel trailers) must not mix
-  return u? 'taxline:'+focus.mf+'|'+focus.brand+'|'+focus.line : 'due';
 }
 function taxlineParts(s){ const p=s.slice(8).split('|'); return {mf:p[0],brand:p[1],line:p[2]}; }
 function matchesTaxline(u,t){ const c=classifyUnit(u); return c.mf===t.mf&&c.brand===t.brand&&c.line===t.line; }
@@ -2645,7 +2528,6 @@ function render(){
   // staggered card reveal when first arriving at the dashboard (skipped during a
   // cross-fade so the transition snapshot shows fully-rendered cards)
   v.classList.toggle('stagger', route==='dashboard' && !inVT && !prefersReduced() && lastRendered!=='dashboard');
-  if(route==='study'&&!session) wireStudySetup();
   if(route==='study'&&session&&(session.mode==='adaptive'||session.mode==='flashcard'||session.mode==='mc')) wireFlashcardGestures();
   if(route==='browse') wireBrowse();
   duoSync();
@@ -2695,11 +2577,19 @@ function dashMissionText(qlen,budgetKey,dueCount){
 }
 function startDashSession(){
   const b=DASH_BUDGETS[dashBudget]||DASH_BUDGETS['3'];
-  startSession('queue','flashcard',b.n||0);
+  G.scope='queue'; G.length=b.n||0;
+  startAdaptiveSession();
+  G.scope='all'; G.length=10;   // don't leave the Study setup pointed at the dashboard queue
 }
 // First-run entry point: a brand-new device has real inventory but zero study
 // history, so the normal due/weak queue is legitimately empty — this gives that
 // state its own clear starting action instead of a misleading "all caught up".
+// Browse detail -> Study: an adaptive session on that unit's product line (whole lot if it has none).
+function studyUnitLine(line){
+  closeDetail();
+  G.scope=line?'line:'+line:'all'; G.length=10;
+  startAdaptiveSession();
+}
 function startFirstTraining(){
   G.scope='all'; G.length=10;
   startAdaptiveSession();
@@ -2917,11 +2807,6 @@ function viewDashboard(){
     <span class="ach-cv">${svg(I.chevR)}</span>
   </button>`;
 }
-function gaugeRow(g){
-  const cls=g.pct<40?'low':g.pct<75?'mid':'';
-  return `<div class="gauge"><div class="gauge-top"><span class="gauge-name">${esc(g.key)} <small>· ${g.count} unit${g.count!==1?'s':''}${g.weak?` · ${g.weak} weak`:''}</small></span><span class="gauge-pct">${g.pct}%</span></div>
-  <div class="gauge-track"><div class="gauge-fill ${cls}" style="width:${g.pct}%"></div></div></div>`;
-}
 function statusLabel(s){ return {new:'New',learning:'Learning',young:'Learning',mastered:'Mastered'}[s]; }
 // Shared empty-state copy for Dashboard/Study/Browse when state.units is empty --
 // now the expected first-run state on any device until its first GitHub sync
@@ -2951,13 +2836,13 @@ function emptyDash(){
 }
 
 /* ---------- Study setup ---------- */
-const G = window.G = { pendingMode:'flashcard', importStage:null };
-const MODES=[
-  {id:'flashcard',label:'Flashcards',icon:I.cards,desc:'See the floorplan, recall the model, then rate how well you knew it. Drives the spaced-repetition schedule.'},
-  {id:'mc',label:'Multiple choice',icon:I.mc,desc:'Pick the correct model from four options. Distractors come from the same manufacturer — or the same product line when you\'ve filtered to one.'},
-  {id:'match',label:'Matching',icon:I.match,desc:'Pick one or more product lines, then match each model to its floorplan image. Sharp visual recall — needs floorplan images.'},
+const G = window.G = { focus:'mixed', importStage:null };
+// One study path (the adaptive engine); Focus only changes how each floorplan is asked.
+const STUDY_FOCUS=[
+  {id:'mixed',label:'Mixed',hint:'Recommended: multiple choice for what\'s shaky, recall for what\'s solid, quick match rounds for what you\'ve got down.'},
+  {id:'flashcard',label:'Flashcards',hint:'Every floorplan as recall: see it, name it, rate yourself.'},
+  {id:'mc',label:'Multiple choice',hint:'Every floorplan as pick-the-model from four options.'},
 ];
-const G2 = (window.G2 = { matchLines:[], matchSize:5 });
 function viewStudySetup(){
   if(!state.units.length) return `<div class="view-head"><div><h1>Study</h1></div></div>
     <div class="panel"><div class="empty"><div class="ec">${svg(I.study)}</div><h3>${emptySyncCopy().title}</h3><p>${emptySyncCopy().body}</p>${emptySyncActionsHtml()}</div></div>`;
@@ -2978,7 +2863,7 @@ function viewStudySetup(){
   ${toggle}
   <div class="panel panel-pad adaptive-setup seg-fade">
     <button class="btn btn-primary btn-mission" onclick="startAdaptiveSession()" ${n?'':'disabled'}>${svg(I.play)} Start Adaptive Session</button>
-    <p class="muted" style="text-align:center;font-size:12.5px;margin:8px 0 20px">${n?`${n} floorplan${n!==1?'s':''} — recognition for what's shaky, recall for what's solid, quick match rounds for what you've got down.`:'No floorplans match this filter.'}</p>
+    <p class="muted" style="text-align:center;font-size:12.5px;margin:8px 0 20px">${n?`${n} floorplan${n!==1?'s':''} — ${(G.focus||'mixed')==='mixed'?'recognition for what\'s shaky, recall for what\'s solid, quick match rounds for what you\'ve got down.':(G.focus==='mc'?'all multiple choice.':'all flashcards.')}`:'No floorplans match this filter.'}</p>
     <div class="field"><label>Scope</label>
       <div class="chips" style="margin:0 0 8px">
         <button class="chip ${G.scope==='all'?'on':''}" onclick="setAdaptiveScope('all')">Whole lot (${state.units.length})</button>
@@ -2994,243 +2879,14 @@ function viewStudySetup(){
     <div class="field"><label>Session length</label>
       <div class="chips" style="margin:0">${[5,10,20].map(len=>`<button class="chip ${G.length===len?'on':''}" onclick="setAdaptiveLength(${len})">${len} cards</button>`).join('')}</div>
     </div>
+    <div class="field"><label>Focus</label>
+      <div class="chips" style="margin:0">${STUDY_FOCUS.map(f=>`<button class="chip ${(G.focus||'mixed')===f.id?'on':''}" onclick="setAdaptiveFocus('${f.id}')">${f.label}</button>`).join('')}</div>
+      <p class="muted" style="font-size:12px;margin:6px 0 0">${(STUDY_FOCUS.find(f=>f.id===(G.focus||'mixed'))||STUDY_FOCUS[0]).hint}</p>
+    </div>
   </div>
-  <details class="classic-toggle" ontoggle="wireStudySetup()">
-    <summary>Prefer a single mode instead?</summary>
-    <div class="classic-body">
-      <h3 style="margin-bottom:12px;font-size:14px;color:var(--text)">1 · Choose a mode</h3>
-      <div class="mode-carousel-wrap">
-        <button class="carousel-arrow prev" onclick="modeScroll(-1)" aria-label="Previous mode">${svg(I.chevL)}</button>
-        <div class="mode-carousel" id="modeCarousel">
-          ${MODES.map(m=>`<button class="mode-slide ${G.pendingMode===m.id?'sel':''}" data-mode="${m.id}" onclick="selectMode('${m.id}')">
-            <div class="mode-ic">${svg(m.icon)}</div><h4>${m.label}</h4><p>${m.desc}</p>
-            <span class="mode-pick">${G.pendingMode===m.id?svg(I.check)+' Selected':'Tap to choose'}</span>
-          </button>`).join('')}
-        </div>
-        <button class="carousel-arrow next" onclick="modeScroll(1)" aria-label="Next mode">${svg(I.chevR)}</button>
-        <div class="carousel-dots">${MODES.map(m=>`<button class="cdot ${G.pendingMode===m.id?'on':''}" onclick="selectMode('${m.id}')" aria-label="${esc(m.label)}"></button>`).join('')}</div>
-      </div>
-      <h3 style="margin-bottom:12px;font-size:14px;color:var(--text)">2 · Choose what to study</h3>
-      ${G.pendingMode==='match' ? matchSetup() : `<div class="panel panel-pad">
-        <div class="flex wrap" style="gap:10px">
-          <button class="btn btn-primary" onclick="startSession('due','${'PM'}')">${svg(I.bolt)} Due now (${dc.total})</button>
-          <button class="btn" onclick="startSession('all','PM')">All units (${state.units.length})</button>
-          <button class="btn" onclick="startSession('weak','PM')">Weak only (${weakUnits(999).length})</button>
-        </div>
-        <hr class="hr">
-        <div class="map-grid">
-          <div class="field"><label>By manufacturer</label>
-            <select class="sel" style="width:100%" onchange="if(this.value)startSession('mfg:'+this.value,'PM')">
-              <option value="">Select a manufacturer…</option>${mfgs.map(m=>`<option>${esc(m)}</option>`).join('')}</select></div>
-          <div class="field"><label>By product line</label>
-            <select class="sel" style="width:100%" onchange="if(this.value)startSession('line:'+this.value,'PM')">
-              <option value="">Select a product line…</option>${lines.map(m=>`<option>${esc(m)}</option>`).join('')}</select></div>
-        </div>
-        <div class="field"><label>By floorplan type</label>
-          <div class="chips" style="margin:0">${CATEGORIES.map(c=>{
-            const cn=state.units.filter(u=>(u.tags||[]).includes(c.id)).length; if(!cn) return '';
-            return `<button class="chip" onclick="startSession('cat:${c.id}','PM')">${c.label} <b style="opacity:.6">${cn}</b></button>`;
-          }).join('')}</div></div>
-      </div>`}
-    </div>
-  </details>`;
-}
-function selectMode(id){ G.pendingMode=id; render(); }
-function modeScroll(dir){
-  const c=document.getElementById('modeCarousel'); if(!c) return;
-  const slide=c.querySelector('.mode-slide');
-  const step=slide?slide.getBoundingClientRect().width+14:300;
-  if(typeof c.scrollBy==='function') c.scrollBy({left:dir*step, behavior:'smooth'});
-  else c.scrollLeft += dir*step;
-}
-function wireStudySetup(){
-  const c=document.getElementById('modeCarousel'); if(!c) return;
-  const sel=c.querySelector('.mode-slide.sel');
-  if(sel){ const cr=c.getBoundingClientRect(), sr=sel.getBoundingClientRect();
-    c.scrollLeft += (sr.left-cr.left)-(cr.width-sr.width)/2; }   // center selected, instant (pre-paint)
-  // dots follow the carousel as it scrolls/swipes (element is fresh each render)
-  let raf=null;
-  c.addEventListener('scroll',()=>{ if(raf) return; raf=requestAnimationFrame(()=>{ raf=null; updateModeDots(); }); }, {passive:true});
-  updateModeDots();
-}
-function updateModeDots(){
-  const c=document.getElementById('modeCarousel'); if(!c) return;
-  const slides=[...c.querySelectorAll('.mode-slide')];
-  const dots=[...document.querySelectorAll('.carousel-dots .cdot')];
-  if(!slides.length||!dots.length) return;
-  const cr=c.getBoundingClientRect(), mid=cr.left+cr.width/2;
-  let best=0, bestD=Infinity;
-  slides.forEach((s,i)=>{ const r=s.getBoundingClientRect(); const d=Math.abs((r.left+r.width/2)-mid); if(d<bestD){ bestD=d; best=i; } });
-  dots.forEach((d,i)=>d.classList.toggle('on', i===best));
-}
-function imagedUnits(){ return state.units.filter(u=>unitImg(u)); }
-function matchLineGroups(){
-  const map={};
-  imagedUnits().forEach(u=>{ const k=u.productLine||'—'; (map[k]=map[k]||[]).push(u); });
-  return Object.keys(map).sort().map(k=>({line:k,units:map[k]}));
-}
-function matchSetup(){
-  const groups=matchLineGroups();
-  const totalImaged=imagedUnits().length;
-  if(!totalImaged){
-    return `<div class="panel panel-pad"><div class="empty" style="padding:26px 16px">
-      <div class="ec">${svg(I.img)}</div><h3>No floorplan images yet</h3>
-      <p>The matching quiz pairs each model to its floorplan image, so it needs pictures synced in first. Images come from GitHub along with the rest of your inventory.</p>
-      <div class="empty-actions"><button class="btn btn-primary" onclick="forceSyncGithub(this)">${svg(I.refresh)} Sync now</button></div>
-    </div></div>`;
-  }
-  const sel=G2.matchLines.filter(l=>groups.some(g=>g.line===l));
-  const selCount=sel.reduce((n,l)=>n+(groups.find(g=>g.line===l)?.units.length||0),0);
-  const sizes=[4,5,6,8];
-  return `<div class="panel panel-pad">
-    <p class="muted" style="margin:0 0 12px;font-size:13px">Pick one or more product lines (only models with floorplan images are shown). Then match each model to its floorplan.</p>
-    <div class="chips" style="margin:0 0 14px">
-      ${groups.map(g=>`<button class="chip ${G2.matchLines.includes(g.line)?'on':''}" onclick="toggleMatchLine('${esc(g.line).replace(/'/g,"\\'")}')">${esc(g.line)} <b style="opacity:.6">${g.units.length}</b></button>`).join('')}
-    </div>
-    <div class="flex wrap" style="gap:8px;align-items:center;margin-bottom:14px">
-      <button class="chip ${sel.length===groups.length&&groups.length?'on':''}" onclick="matchSelectAll()">Select all</button>
-      ${sel.length?`<button class="chip" onclick="matchClearLines()">Clear</button>`:''}
-    </div>
-    <hr class="hr">
-    <div class="field" style="max-width:220px"><label>Models per round</label>
-      <select class="sel" style="width:100%" onchange="G2.matchSize=+this.value">
-        ${sizes.map(n=>`<option value="${n}" ${G2.matchSize===n?'selected':''}>${n} models</option>`).join('')}</select></div>
-    <div class="flex" style="justify-content:space-between;align-items:center;margin-top:14px">
-      <span class="muted" style="font-size:12.5px">${sel.length?`${selCount} model${selCount!==1?'s':''} selected across ${sel.length} line${sel.length!==1?'s':''}`:'No lines selected'}</span>
-      <button class="btn btn-primary" ${selCount<2?'disabled style="opacity:.5;cursor:not-allowed"':''} onclick="startMatch()">${svg(I.match)} Start matching</button>
-    </div>
-  </div>`;
-}
-function toggleMatchLine(line){
-  const i=G2.matchLines.indexOf(line);
-  if(i<0) G2.matchLines.push(line); else G2.matchLines.splice(i,1);
-  render();
-}
-function matchSelectAll(){ G2.matchLines=matchLineGroups().map(g=>g.line); render(); }
-function matchClearLines(){ G2.matchLines=[]; render(); }
-function matchPool(){
-  const set=new Set(G2.matchLines);
-  return imagedUnits().filter(u=>set.has(u.productLine||'—'));
-}
-function startMatch(){
-  const pool=matchPool();
-  if(pool.length<2){ toast('Pick lines with at least 2 imaged models.','warn'); return; }
-  session={ type:'match', size:Math.min(G2.matchSize, pool.length), remaining:shuffle(pool).map(u=>u.id),
-    round:0, totalCorrect:0, totalSeen:0 };
-  buildMatchRound();
-  viewSwap(()=>{ route='study'; render(); toTop(); });
-}
-function buildMatchRound(){
-  const take=session.remaining.splice(0, Math.min(session.size, session.remaining.length));
-  session.cur=take;                          // unit ids in this round
-  session.slots=shuffle(take.slice());        // image tiles order (each keyed by its own uid)
-  session.bank=shuffle(take.slice());         // model chip order
-  session.assign={};                          // imgUid -> modelUid
-  session.selModel=null; session.checked=false; session.correct=0;
-  session.round++;
+`;
 }
 function matchUnit(id){ return state.units.find(u=>u.id===id); }
-function viewMatchStage(){
-  if(session.summary) return matchSummaryView();
-  const slots=session.slots, bank=session.bank, assign=session.assign;
-  const placed=Object.values(assign).filter(Boolean).length;
-  const allPlaced=placed===slots.length;
-  const imgsHtml=slots.map(imgId=>{
-    const u=matchUnit(imgId); const im=unitImg(u);
-    const modelId=assign[imgId]; const m=modelId?matchUnit(modelId):null;
-    let cls=''; let mark='';
-    if(session.checked && modelId){
-      const right=modelId===imgId; cls=right?'correct':'wrong';
-      mark=`<span class="mslot-mark ${right?'ok':'no'}">${svg(right?I.check:I.x)}</span>`;
-    } else if(session.checked && !modelId){ cls='wrong'; }
-    const label = m ? `<span class="mslot-label">${esc(unitTitle(m))}</span>` : `<span class="mslot-empty">${session.selModel?'Tap to place':'—'}</span>`;
-    const reveal = session.checked && modelId!==imgId ? `<span class="mslot-answer">${esc(unitTitle(u))}</span>` : '';
-    return `<button class="mslot ${cls} ${(!session.checked&&session.selModel)?'active':''}" ${session.checked?'disabled':''} onclick="matchAssign('${imgId}')">
-      <span class="mslot-fig">${im?`${ghImg(im)}`:svg(I.img)}</span>
-      <span class="mslot-foot">${label}${mark}</span>${reveal}
-    </button>`;
-  }).join('');
-  const bankHtml=bank.map(mid=>{
-    const used=Object.values(assign).includes(mid);
-    const m=matchUnit(mid);
-    return `<button class="mtoken ${session.selModel===mid?'sel':''} ${used?'used':''}" ${(session.checked)?'disabled':''} onclick="matchPickModel('${mid}')">
-      ${esc(unitTitle(m))}${m.productLine?`<small>${esc(m.productLine)}</small>`:''}</button>`;
-  }).join('');
-  const totalRounds = session.round + Math.ceil(session.remaining.length/session.size);
-  return `<div class="study-stage">
-    <div class="study-bar">
-      <button class="btn btn-sm btn-ghost" onclick="endSession()">${svg(I.x)} End</button>
-      <div class="study-prog"><i style="width:${Math.round(placed/slots.length*100)}%"></i></div>
-      <div class="study-counts"><span class="c-rem">${placed}/${slots.length} placed</span></div>
-    </div>
-    <div class="flex" style="justify-content:space-between;margin-bottom:12px">
-      <span class="tag">Matching · round ${session.round}${totalRounds>session.round?` of ${totalRounds}`:''}</span>
-      <span class="muted" style="font-size:12.5px">Tap a model, then its floorplan</span>
-    </div>
-    <div class="match-imgs">${imgsHtml}</div>
-    <div class="match-bank-wrap">
-      <div class="eyebrow" style="margin-bottom:8px">Models</div>
-      <div class="match-bank">${bankHtml}</div>
-    </div>
-    <div class="match-actions">
-      ${session.checked
-        ? `<div class="match-score ${session.correct===slots.length?'all':''}">${session.correct} / ${slots.length} correct</div>
-           <button class="btn btn-primary" onclick="matchNext()">${session.remaining.length?`Next round ${svg(I.play)}`:`See results ${svg(I.check)}`}</button>`
-        : `<button class="btn" onclick="matchReset()">Reset round</button>
-           <button class="btn btn-primary" ${allPlaced?'':'disabled style="opacity:.5;cursor:not-allowed"'} onclick="matchCheck()">${svg(I.check)} Check matches</button>`}
-    </div>
-  </div>`;
-}
-function matchPickModel(mid){
-  if(session.checked) return;
-  // if already placed somewhere, lift it back to selection
-  for(const k in session.assign){ if(session.assign[k]===mid){ delete session.assign[k]; } }
-  session.selModel = session.selModel===mid?null:mid;
-  render();
-}
-function matchAssign(imgId){
-  if(session.checked) return;
-  if(session.selModel){
-    // remove selected model from any other slot, then place here
-    for(const k in session.assign){ if(session.assign[k]===session.selModel) delete session.assign[k]; }
-    session.assign[imgId]=session.selModel; session.selModel=null;
-  } else if(session.assign[imgId]){
-    // tapping a filled slot with nothing selected clears it
-    delete session.assign[imgId];
-  }
-  render();
-}
-function matchReset(){ session.assign={}; session.selModel=null; render(); }
-function matchCheck(){
-  let correct=0;
-  session.cur.forEach(id=>{
-    const right = session.assign[id]===id;
-    if(right) correct++;
-    const u=matchUnit(id); if(u){ schedule(u.srs, right?'good':'again'); recordAnswer(u,right,{test:true}); }
-  });
-  session.checked=true; session.correct=correct;
-  session.totalCorrect+=correct; session.totalSeen+=session.cur.length;
-  if(session.cur.length && correct===session.cur.length){ setTimeout(()=>toast('Perfect round!','ok'),140); }
-  saveState(); render(); toTop();
-}
-function matchNext(){
-  if(session.remaining.length){ buildMatchRound(); render(); toTop(); }
-  else { session.summary=true; render(); toTop(); }
-}
-function matchSummaryView(){
-  const pct=session.totalSeen?Math.round(session.totalCorrect/session.totalSeen*100):0;
-  const tc=session.totalCorrect, ts=session.totalSeen;
-  recordSessionDrills(session._correct||new Set(), session._wrong||new Set());
-  evalProficiency().forEach((b,i)=>setTimeout(()=>toast('Achievement unlocked · '+b.label,'ok'),300+i*260));
-  session=null; saveState();
-  return `<div class="study-stage"><div class="panel"><div class="empty">
-    <div class="ec">${svg(I.match)}</div><h3>Matching complete</h3>
-    <p>You matched <b>${tc}</b> of <b>${ts}</b> floorplans correctly (${pct}%). Correct matches advance the spaced-repetition schedule; misses come back sooner.</p>
-    <div class="empty-actions">
-      <button class="btn btn-primary" onclick="go('study')">${svg(I.play)} New matching round</button>
-      <button class="btn" onclick="go('dashboard')">Back to dashboard</button></div>
-  </div></div></div>`;
-}
 
 /* ---------- Study session ---------- */
 let session=null;
@@ -3287,6 +2943,7 @@ function interleaveByBrand(units,maxRun){
   return result;
 }
 function buildAdaptiveUnits(scope,length){
+  if(scope==='queue'){ const q=actionQueueUnits(); return length?q.slice(0,length):q; }   // dashboard: due first, then weakest, in priority order
   const now=Date.now();
   const pool=adaptivePool(scope);
   const due=pool.filter(u=>isReviewDue(u.srs,now)).sort((a,b)=>a.srs.due-b.srs.due);
@@ -3306,7 +2963,8 @@ function buildAdaptiveUnits(scope,length){
   }
   return interleaveByBrand(combined,2);
 }
-function buildAdaptiveSteps(units){
+function buildAdaptiveSteps(units,focus){
+  if(focus==='flashcard'||focus==='mc') return units.map(u=>({kind:'card', id:u.id, presentation:focus}));
   const high=units.filter(u=>adaptiveTier(u)==='high').map(u=>u.id);
   const individual=units.filter(u=>adaptiveTier(u)!=='high');
   const steps=[]; const hi=high.slice(); let sinceRound=0;
@@ -3321,11 +2979,12 @@ function buildAdaptiveSteps(units){
 }
 function setAdaptiveScope(type,value){ G.scope = type==='all' ? 'all' : type+':'+value; render(); }
 function setAdaptiveLength(n){ G.length=n; render(); }
+function setAdaptiveFocus(f){ G.focus=f; render(); }
 function startAdaptiveSession(){
   const scope=G.scope||'all', length=G.length||10;
   const units=buildAdaptiveUnits(scope,length);
   if(!units.length){ toast('No units match that filter.','warn'); return; }
-  const steps=buildAdaptiveSteps(units);
+  const steps=buildAdaptiveSteps(units,G.focus||'mixed');
   session={ mode:'adaptive', steps, pos:0, done:0, again:0, outcomes:[], combo:0, bestCombo:0,
     startMastery:overallMastery(), startScores:Object.fromEntries(state.units.map(u=>[u.id,unitMastery(u).score])),
     scope, revealed:false, answered:false };
@@ -3385,6 +3044,10 @@ function startPitchDrill(lineKey){
   if(!items.length){ toast('Nothing to drill here.','warn'); return; }
   session={ mode:'pitch', queue:items, pos:0, correct:0, answered:false, picked:null, opts:null };
   viewSwap(()=>{ route='study'; render(); toTop(); });
+}
+function viewStudyStage(){
+  if(session.mode==='pitch') return viewPitchStage();
+  return viewAdaptiveStage();
 }
 function curPitchItem(){ return session.queue[session.pos]; }
 function exitPitchDrill(){ route='study'; session=null; render(); }
@@ -3486,59 +3149,6 @@ function adaptiveTrackOutcome(r){
   session.bestCombo=Math.max(session.bestCombo||0, session.combo);
 }
 
-function buildQueue(scope){
-  const now=Date.now();
-  let pool=state.units.slice();
-  if(scope==='queue') return actionQueueUnits().map(u=>u.id);   // dashboard: due-first-then-weakest, priority order (not shuffled)
-  if(scope==='weak') pool=pool.filter(u=>isWeak(u.srs));
-  else if(scope.startsWith('mfg:')) pool=pool.filter(u=>classifyUnit(u).mf===scope.slice(4));
-  else if(scope.startsWith('taxline:')) { const t=taxlineParts(scope); pool=pool.filter(u=>matchesTaxline(u,t)); }
-  else if(scope.startsWith('line:')) pool=pool.filter(u=>u.productLine===scope.slice(5));
-  else if(scope.startsWith('cat:')) pool=pool.filter(u=>(u.tags||[]).includes(scope.slice(4)));
-  if(scope==='due'){
-    const rev=pool.filter(u=>isReviewDue(u.srs,now)).sort((a,b)=>a.srs.due-b.srs.due);
-    const nw=pool.filter(u=>isNew(u.srs)).slice(0,state.settings.newLimit||20);
-    return shuffle(rev).concat(shuffle(nw)).map(u=>u.id);
-  }
-  // practice scopes: everything in pool, due first
-  return shuffle(pool).sort((a,b)=> (isReviewDue(b.srs,now)?1:0)-(isReviewDue(a.srs,now)?1:0)).map(u=>u.id);
-}
-function startSession(scope,mode,limit){
-  if(mode==='PM') mode=G.pendingMode;
-  let q=buildQueue(scope);
-  if(limit) q=q.slice(0,limit);
-  if(!q.length){ toast(scope==='due'?'Nothing due right now — try All or Weak.':'No units match that filter.','warn'); return; }
-  session={scope,mode,queue:q,pos:0,again:0,done:0,revealed:false,answered:false,
-    startMastery:overallMastery(), startScores:Object.fromEntries(state.units.map(u=>[u.id,unitMastery(u).score]))};
-  prefetchStudyQueueImages(q,-1);
-  viewSwap(()=>{ route='study'; render(); toTop(); });
-}
-function curUnit(){ return state.units.find(u=>u.id===session.queue[session.pos]); }
-function viewStudyStage(){
-  if(session.mode==='pitch') return viewPitchStage();
-  if(session.type==='match') return viewMatchStage();
-  if(session.mode==='adaptive') return viewAdaptiveStage();
-  const u=curUnit(); if(!u){ return sessionDone(); }
-  const total=session.queue.length, done=session.done;
-  const pct=Math.round(done/total*100);
-  const modeLabel=MODES.find(m=>m.id===session.mode).label;
-  let body='';
-  if(session.mode==='flashcard') body=stageFlashOrQuiz(u);
-  else body=stageChoice(u);
-  return `
-  <div class="study-stage">
-    <div class="study-bar">
-      <button class="btn btn-sm btn-ghost" onclick="endSession()">${svg(I.x)} End</button>
-      <div class="study-prog"><i style="width:${pct}%"></i></div>
-      <div class="study-counts"><span class="c-again">${session.again}↺</span><span class="c-rem">${total-done} left</span></div>
-    </div>
-    <div class="flex" style="justify-content:space-between;margin-bottom:12px">
-      <span class="tag">${modeLabel}</span>
-      <span class="muted" style="font-size:12.5px">${scopeLabel(session.scope)}</span>
-    </div>
-    ${body}
-  </div>`;
-}
 function scopeLabel(s){
   if(s==='due') return 'Due now'; if(s==='all') return 'All units'; if(s==='weak') return 'Weak models';
   if(s.startsWith('mfg:')) return s.slice(4); if(s.startsWith('taxline:')) return taxlineParts(s).line;
@@ -3700,12 +3310,6 @@ function stageFlashOrQuiz(u){
     </div>`,below:`
   ${studyDetailCard(u,'')}`});
 }
-function rateButtons(u,only){
-  const p=previewIntervals(u.srs);
-  const all=[['again','WRONG',p.again],['hard','Needs Work',p.hard],['good','Fair',p.good],['easy','Got it',p.easy]];
-  const list=only?all.filter(r=>only.includes(r[0])):all;
-  return list.map(([id,lab,when])=>`<button class="rate ${id}" onclick="rate('${id}')"><div class="r-lab">${lab}</div><div class="r-when">${when}</div></button>`).join('');
-}
 function stageChoice(u){
   const im=unitImg(u);
   // build options
@@ -3762,7 +3366,7 @@ function adaptiveShell(body,step){
   const total=session.steps.length, done=session.done||0, outcomes=session.outcomes||[];
   const segHtml=session.steps.map((s,i)=>`<i class="${i<outcomes.length?outcomes[i]:(i===session.pos?'cur':'')}"></i>`).join('');
   const combo=session.combo||0;
-  const kindLabel = step.kind==='match' ? 'Speed round' : (step.presentation==='mc'?'Multiple choice':'Flashcard');
+  const kindLabel = step.kind==='match' ? 'Speed round' : step.kind==='pitch' ? 'Pitch check' : (step.presentation==='mc'?'Multiple choice':'Flashcard');
   return `<div class="study-stage">
     <div class="study-bar adaptive-bar">
       <button class="btn btn-sm btn-ghost" onclick="endSession()">${svg(I.x)} End</button>
@@ -3780,6 +3384,7 @@ function viewAdaptiveStage(){
   const step=curStep();
   if(!step) return adaptiveSessionDone();
   if(step.kind==='match') return adaptiveMatchStepHtml(step);
+  if(step.kind==='pitch') return adaptivePitchStepHtml(step);
   const u=state.units.find(x=>x.id===step.id);
   if(!u){ session.pos++; return viewAdaptiveStage(); }   // defensive: unit removed mid-session
   const body = step.presentation==='mc' ? stageChoice(u) : stageFlashOrQuiz(u);
@@ -3848,8 +3453,77 @@ function adaptiveMatchCheck(){
   saveState(); render(); toTop();
 }
 function adaptiveMatchNext(){ session.done=(session.done||0)+1; session.pos++; prefetchStudyQueueImages(session.steps,session.pos); render(); toTop(); }
+/* ---------- Pitch check: Top 10 / Top Features asked in context ----------
+   After a correctly identified floorplan, sometimes the next step asks one question about that unit's product line,
+   so pitch knowledge is learned attached to the floorplan rather than only in the separate Pitches & Features drill.
+   Answers record through recordFeatureAnswer(), i.e. the same progress the Pitches tab shows. Only items not yet
+   mastered are asked; capped per session and spaced out so it stays a bonus, not a second quiz. */
+const PITCH_CHECK={max:3, minGap:2, chance:0.5};
+function pitchItemsForUnit(u){
+  const k=nrm(u&&u.productLine); if(!k) return [];
+  return allFeatureItems().filter(i=>i.lineKey===k&&i.type!=='question'&&i.t);
+}
+function maybeQueuePitchCheck(u){
+  if(!session||session.mode!=='adaptive'||!u) return;
+  const n=session._pitchN||0;
+  if(n>=PITCH_CHECK.max) return;
+  if(session._lastPitchPos!=null&&session.pos-session._lastPitchPos<=PITCH_CHECK.minGap) return;
+  const open=pitchItemsForUnit(u).filter(i=>featureProgress(i.key).tier<2);
+  if(!open.length||Math.random()>=PITCH_CHECK.chance) return;
+  const unseen=open.filter(i=>featureProgress(i.key).tier===0);
+  const pick=shuffle(unseen.length?unseen:open)[0];
+  session.steps.splice(session.pos,0,{kind:'pitch',id:u.id,key:pick.key});
+  session._pitchN=n+1; session._lastPitchPos=session.pos;
+}
+function adaptivePitchStepHtml(step){
+  const u=state.units.find(x=>x.id===step.id), item=allFeatureItems().find(i=>i.key===step.key);
+  if(!u||!item){ session.steps.splice(session.pos,1); return viewAdaptiveStage(); }   // content changed mid-session
+  const line=u.productLine||'this line';
+  if(!step._opts){
+    if(item.say){ step._mode='say'; step._answer=item.say; step._opts=shuffle([item.say,...pitchDistractors(item,3)]); }
+    else{
+      // Wrong answers come from OTHER manufacturers' lines only: sister lines (e.g. two Alliance lines) often share
+      // features, so a "wrong" option borrowed from one could actually be true for this unit's line.
+      const own=new Set(pitchItemsForUnit(u).map(i=>norm(i.t)));
+      const lineMfr={}; state.units.forEach(x=>{ const k=nrm(x.productLine); if(k&&!lineMfr[k]) lineMfr[k]=x.manufacturer; });
+      const foreign=i=>lineMfr[i.lineKey]&&lineMfr[i.lineKey]!==u.manufacturer;
+      const others=[...new Map(allFeatureItems().filter(i=>i.t&&i.type!=='question'&&foreign(i)&&!own.has(norm(i.t))).map(i=>[norm(i.t),i.t])).values()];
+      if(others.length<2){ session.steps.splice(session.pos,1); return viewAdaptiveStage(); }   // not enough safe distractors: skip this check
+      step._mode='title'; step._answer=item.t; step._opts=shuffle([item.t,...shuffle(others).slice(0,3)]);
+    }
+  }
+  const answered=step._picked!=null;
+  const q=step._mode==='say'
+    ? `<div class="pc-eyebrow">${svg(I.speech)} Pitch check · ${esc(line)}</div><h3 class="pc-title">${esc(item.t)}</h3>${item.s?`<p class="muted pc-sub">${esc(item.s)}</p>`:''}<div class="fc-q" style="margin-top:12px">Which is the line to say?</div>`
+    : `<div class="pc-eyebrow">${svg(I.speech)} Pitch check · ${esc(line)}</div><div class="fc-q" style="margin-top:6px">Which of these is a top feature of the ${esc(line)}?</div>`;
+  const opts=step._opts.map((o,i)=>{
+    let cls=''; if(answered){ if(o===step._answer) cls='correct'; else if(i===step._picked) cls='wrong'; }
+    return `<button class="choice ${cls}" ${answered?'disabled':''} onclick="adaptivePitchAnswer(${i})">${esc(o)}</button>`;
+  }).join('');
+  const after=answered?`<div class="pc-after">
+      ${step._mode==='title'&&(item.s||item.say)?`<div class="pc-detail"><b>${esc(item.t)}</b>${item.s?` — ${esc(item.s)}`:''}${item.say?`<div class="lf-say">${svg(I.speech)}<span>${esc(item.say)}</span></div>`:''}</div>`:''}
+      <button class="btn btn-primary" style="width:100%" onclick="adaptivePitchNext()">${svg(I.chevR)} Continue</button></div>`:'';
+  const side=`<div class="fc-prompt pc-prompt">${q}</div><div style="padding:4px 18px 16px">${opts}${after}</div>`;
+  return adaptiveShell(studyCardHtml({cls:'flashcard mc-card',style:'min-height:auto',fig:figBlock(u),side}),step);
+}
+function adaptivePitchAnswer(i){
+  const step=curStep(); if(!step||step.kind!=='pitch'||step._picked!=null) return;
+  triggerHaptic('light');
+  step._picked=i;
+  const ok=step._opts[i]===step._answer;
+  recordFeatureAnswer(step.key,ok); saveState();
+  adaptiveTrackOutcome(ok?'easy':'again');
+  render();
+}
+function adaptivePitchNext(){
+  session.done=(session.done||0)+1; session.pos++;
+  session.revealed=false; session.answered=false; session._picked=null; session._opts=null;
+  prefetchStudyQueueImages(session.steps,session.pos);
+  render(); toTop();
+}
 function adaptiveRate(r){
-  const step=curStep(); const u=state.units.find(x=>x.id===step.id);
+  const step=curStep(); if(!step||step.kind!=='card') return;   // pitch checks / match rounds have their own handlers
+  const u=state.units.find(x=>x.id===step.id);
   schedule(u.srs,r);
   let correct,delta;
   if(step.presentation==='flashcard'){
@@ -3863,15 +3537,13 @@ function adaptiveRate(r){
   adaptiveTrackOutcome(r);
   if(r==='again') session.again=(session.again||0)+1;
   session.done=(session.done||0)+1; session.pos++;
+  if(correct&&r!=='hard') maybeQueuePitchCheck(u);   // "needs work" is not a confident answer -- no bonus question
   session.revealed=false; session.answered=false; session._picked=null; session._opts=null;
   if(r==='again') session.steps.push({kind:'card',id:u.id,presentation:step.presentation});   // requeue at end
   prefetchStudyQueueImages(session.steps,session.pos);
   render(); toTop();
 }
-// Shared by both adaptive and classic completion — both now track the same
-// startMastery/startScores baseline (added to classic's startSession specifically
-// so this could be unified rather than duplicated per mode).
-/* ---------- Session Hero: unified completion screen (adaptive + classic) ---------- */
+/* ---------- Session Hero: completion screen (reads the session's startMastery/startScores baseline) ---------- */
 function masteryGaugeSvg(startPct,endPct,gid){
   const r=50, C=(2*Math.PI*r).toFixed(2);
   const startOffset=(C*(1-startPct/100)).toFixed(2);
@@ -3962,7 +3634,7 @@ function adaptiveSessionDone(){
 }
 
 /* study interactions */
-function reveal(){ session.revealed=true; render(); }
+function reveal(){ if(session&&session.mode==='adaptive'){ const st=curStep(); if(!st||st.kind!=='card') return; } session.revealed=true; render(); }
 // Toggles the native <details class="lf"> disclosure that already implements the
 // features panel's collapse/expand — reused directly rather than building a
 // separate custom accordion just for this.
@@ -4074,34 +3746,8 @@ function triggerHaptic(type){
     if(type==='heavy') navigator.vibrate([30,50,30]);
   }
 }
-function rate(r){
-  if(session.mode==='adaptive') return adaptiveRate(r);
-  const u=curUnit(); schedule(u.srs,r);
-  // progression: derive correctness + mastery delta from the mode
-  let correct, delta;
-  if(session.mode==='flashcard'){
-    correct = r!=='again';
-    delta = r==='again'?MASTERY_DELTA.incorrect : r==='hard'?MASTERY_DELTA.hard : r==='easy'?MASTERY_DELTA.easy : MASTERY_DELTA.correct;
-  } else { // mc
-    correct = session._picked===u.id; delta = correct?MASTERY_DELTA.correct:MASTERY_DELTA.incorrect;
-  }
-  recordAnswer(u,correct,{delta,test:session.mode!=='flashcard'});
-  saveState();
-  if(r==='again') session.again++;
-  session.done++; session.pos++;
-  session.revealed=false; session.answered=false; session._picked=null; session._opts=null;
-  if(r==='again'){ session.queue.push(session.queue[session.pos-1]); } // requeue lapses at end
-  prefetchStudyQueueImages(session.queue,session.pos);
-  render(); toTop();
-}
+function rate(r){ return adaptiveRate(r); }
 function endSession(){ viewSwap(()=>{ session=null; route='study'; render(); toTop(); }); }
-function sessionDone(){
-  const stats=computeSessionStats();
-  recordSessionDrills(session._correct||new Set(), session._wrong||new Set());
-  evalProficiency().forEach((b,i)=>setTimeout(()=>toast('Achievement unlocked · '+b.label,'ok'),300+i*260));
-  session=null; saveState();
-  return sessionHeroHtml(stats);
-}
 
 /* ---------- Browse ---------- */
 let filt={q:'',line:'',cat:''};
@@ -4322,7 +3968,6 @@ function browseGroups(list){
 }
 function browseTree(){ return browseGroups(filteredUnits()); }
 function pileThumb(units){ const t=units.find(u=>unitImg(u)); return t?`${ghImg(unitImg(t),'loading="lazy"')}`:svg(I.bed); }
-function barCls(p){ return p>=80?'':(p>=45?'mid':'low'); }
 const MFG_INITIALS={ granddesign:'GD', alliance:'AL', winnebago:'WB' };  // preferred initials; others auto-derive
 function mfInitials(name){
   const k=nrm(name); if(MFG_INITIALS[k]) return MFG_INITIALS[k];
@@ -4800,7 +4445,7 @@ function openDetail(id){ detailId=id; activeBrowseTab='specs'; const u=state.uni
         </div>
       </div>
       <div class="flex wrap" style="gap:9px">
-        <button class="btn" onclick="closeDetail();startSession('all','flashcard')">${svg(I.study)} Study</button>
+        <button class="btn" onclick="studyUnitLine('${jsq(u.productLine||'')}')">${svg(I.study)} Study</button>
         <button class="btn btn-danger right" onclick="deleteUnit('${u.id}')">${svg(I.trash)} Remove</button>
       </div>
     </div>`;
@@ -5678,14 +5323,14 @@ function hideSplash(){
   // closes that gap regardless of which of the two finishes first.
   syncInventory().then(()=>{ if(authUser) pullRemoteToLocal().then(()=>{ if(route==='dashboard'||route==='settings') render(); }); });
 })();
-window.go=go;window.setDashBudget=setDashBudget;window.startDashSession=startDashSession;window.startFirstTraining=startFirstTraining;window.showAchievements=showAchievements;window.startSession=startSession;window.reveal=reveal;window.rate=rate;window.pick=pick;window.triggerHaptic=triggerHaptic;
+window.go=go;window.setDashBudget=setDashBudget;window.startDashSession=startDashSession;window.startFirstTraining=startFirstTraining;window.showAchievements=showAchievements;window.reveal=reveal;window.rate=rate;window.pick=pick;window.triggerHaptic=triggerHaptic;
 window.setStudyTab=setStudyTab;window.startPitchDrill=startPitchDrill;window.answerPitch=answerPitch;window.nextPitchQuestion=nextPitchQuestion;window.exitPitchDrill=exitPitchDrill;
 window.selectPitchQuestionOption=selectPitchQuestionOption;window.togglePitchQuestionOption=togglePitchQuestionOption;window.submitPitchQuestionAnswer=submitPitchQuestionAnswer;
 window.authSignUp=authSignUp;window.authSignIn=authSignIn;window.authSignOut=authSignOut;window.setRepName=setRepName;window.authToggleIncognito=authToggleIncognito;
 window.confirmMigration=confirmMigration;window.syncProgressNow=syncProgressNow;window.dismissMigration=dismissMigration;
-window.toggleMatchLine=toggleMatchLine;window.matchSelectAll=matchSelectAll;window.matchClearLines=matchClearLines;window.startMatch=startMatch;window.matchPickModel=matchPickModel;window.matchAssign=matchAssign;window.matchReset=matchReset;window.matchCheck=matchCheck;window.matchNext=matchNext;
-window.selectMode=selectMode;window.modeScroll=modeScroll;
-window.startAdaptiveSession=startAdaptiveSession;window.setAdaptiveScope=setAdaptiveScope;window.setAdaptiveLength=setAdaptiveLength;window.startRedrillSession=startRedrillSession;
+
+
+window.startAdaptiveSession=startAdaptiveSession;window.setAdaptiveScope=setAdaptiveScope;window.setAdaptiveLength=setAdaptiveLength;window.setAdaptiveFocus=setAdaptiveFocus;window.studyUnitLine=studyUnitLine;window.adaptivePitchAnswer=adaptivePitchAnswer;window.adaptivePitchNext=adaptivePitchNext;window.startRedrillSession=startRedrillSession;
 window.adaptiveMatchPick=adaptiveMatchPick;window.adaptiveMatchAssign=adaptiveMatchAssign;window.adaptiveMatchResetStep=adaptiveMatchResetStep;window.adaptiveMatchCheck=adaptiveMatchCheck;window.adaptiveMatchNext=adaptiveMatchNext;
 window.endSession=endSession;window.openDetail=openDetail;window.closeDetail=closeDetail;window.detailNav=detailNav;window.navigateToSibling=navigateToSibling;window.deleteUnit=deleteUnit;window.setBrowseTab=setBrowseTab;
 window.setCat=setCat;window.loadSample=loadSample;
