@@ -258,7 +258,7 @@
       "webPrice": 75991,
       "unlockPrice": "",
       "availability": "active",
-      "lotArrivalDate": "2026-11-18T14:00:05.812Z",
+      "lotArrivalDate": "2026-11-10",
       "liveYear": "2027"
     },
     {
@@ -648,7 +648,7 @@
       "unlockPrice": "",
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-11-16T16:17:09.977Z"
+      "lotArrivalDate": "2026-11-04"
     },
     {
       "id": "alliance-delta-ultra-lite-fk218",
@@ -770,7 +770,7 @@
       "unlockPrice": "",
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-11-16T16:17:09.977Z"
+      "lotArrivalDate": "2026-10-28"
     },
     {
       "id": "alliance-delta-ultra-lite-bh271",
@@ -1133,7 +1133,7 @@
         "Dual-Entry",
         "Queen Bed"
       ],
-      "lotArrivalDate": "2026-11-16T16:17:09.977Z",
+      "lotArrivalDate": "2026-11-10",
       "stock": "3616",
       "webPrice": 50895,
       "unlockPrice": 49995,
@@ -1236,7 +1236,7 @@
       "unlockPrice": 49995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-11-16T16:17:09.977Z"
+      "lotArrivalDate": "2026-11-06"
     },
     {
       "id": "grand-design-imagine-2800bh",
@@ -1366,7 +1366,7 @@
       "unlockPrice": 29995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-11-16T16:17:09.977Z"
+      "lotArrivalDate": "2026-10-27"
     },
     {
       "id": "grand-design-imagine-aim-17mka",
@@ -1683,7 +1683,7 @@
       "unlockPrice": "",
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-11-16T16:17:09.977Z"
+      "lotArrivalDate": "2026-10-27"
     },
     {
       "id": "grand-design-influence-3203gk",
@@ -1755,7 +1755,7 @@
       "unlockPrice": "",
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-11-16T16:17:09.977Z"
+      "lotArrivalDate": "2026-11-12"
     },
     {
       "id": "grand-design-influence-3804ds",
@@ -2497,7 +2497,7 @@
       "unlockPrice": 86995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-11-16T16:17:09.977Z"
+      "lotArrivalDate": "2026-10-29"
     },
     {
       "id": "grand-design-reflection-360fls",
@@ -3005,7 +3005,7 @@
       "unlockPrice": 119985,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-11-16T16:17:09.977Z"
+      "lotArrivalDate": "2026-11-02"
     },
     {
       "id": "grand-design-transcend-245rlt",
@@ -3423,7 +3423,7 @@
       "unlockPrice": 28995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-11-16T16:17:09.977Z"
+      "lotArrivalDate": "2026-10-27"
     },
     {
       "id": "grand-design-transcend-xplor-19bhx",
@@ -3477,7 +3477,7 @@
       "unlockPrice": 29995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-11-16T16:17:09.977Z"
+      "lotArrivalDate": "2026-10-24"
     },
     {
       "id": "grand-design-transcend-xplor-21rlx",
@@ -3684,7 +3684,7 @@
       "unlockPrice": 37995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-11-17T14:00:03.945Z"
+      "lotArrivalDate": "2026-11-16"
     },
     {
       "id": "winnebago-access-16bh",
@@ -4247,7 +4247,7 @@
       "unlockPrice": "",
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-11-16T16:17:09.977Z",
+      "lotArrivalDate": "2026-11-09",
       "brochure": "brochures/thrive-brochure.pdf"
     },
     {
