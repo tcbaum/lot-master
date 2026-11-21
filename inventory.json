@@ -3057,10 +3057,11 @@
         "Sleeps 8"
       ],
       "stock": "3631",
-      "webPrice": 51871,
+      "webPrice": 51992,
       "unlockPrice": "",
-      "availability": "on-order",
-      "liveYear": "2027"
+      "availability": "active",
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-11-19"
     },
     {
       "id": "grand-design-transcend-275fkt",
@@ -3815,7 +3816,12 @@
         "13.5K A/C",
         "Olympic Queen Bed"
       ],
-      "brochure": "brochures/access-tandem-axle-brochure.pdf"
+      "brochure": "brochures/access-tandem-axle-brochure.pdf",
+      "stock": "3659",
+      "webPrice": 49763,
+      "unlockPrice": "",
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "winnebago-access-24rl",
