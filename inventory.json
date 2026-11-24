@@ -1,6 +1,6 @@
 {
-  "version": "inv-2026.10-193-brochures",
-  "unitCount": 193,
+  "version": "inv-2026.11-196-brochures",
+  "unitCount": 196,
   "brochures": {
     "Avenue": {
       "file": "brochures/alliance-avenue.pdf",
@@ -1819,7 +1819,7 @@
       "type": "Class C Motorhome",
       "year": 2027,
       "price": null,
-      "weight": null,
+      "weight": 14500,
       "length": "32' 10\"",
       "imagePath": "lineage-series-e/lineage-30dc.png",
       "status": "A",
@@ -1951,7 +1951,7 @@
       "brand": "Momentum G-Class",
       "model": "320G",
       "type": "Fifth Wheel Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 13100,
       "length": "36' 3\"",
@@ -1964,7 +1964,7 @@
       "brand": "Momentum G-Class",
       "model": "325G",
       "type": "Fifth Wheel Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 12603,
       "length": "35' 6\"",
@@ -1977,7 +1977,7 @@
       "brand": "Momentum G-Class",
       "model": "350G",
       "type": "Fifth Wheel Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 12950,
       "length": "39' 9\"",
@@ -1996,10 +1996,10 @@
       "brand": "Momentum G-Class",
       "model": "363G",
       "type": "Fifth Wheel Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 14250,
-      "length": "41' 6\"",
+      "length": "41' 7\"",
       "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-363g.png",
       "status": "A"
     },
@@ -2009,7 +2009,7 @@
       "brand": "Momentum G-Class",
       "model": "394G",
       "type": "Fifth Wheel Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 16400,
       "length": "44' 11\"",
@@ -2022,11 +2022,12 @@
       "brand": "Momentum G-Class Travel Trailer",
       "model": "21G",
       "type": "Travel Trailer Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
-      "weight": null,
-      "length": null,
-      "imagePath": "grand-design-momentum-g-class-travel-trailer/g-class-travel-trailer-21g.png"
+      "weight": 7280,
+      "length": "26' 11\"",
+      "imagePath": "grand-design-momentum-g-class-travel-trailer/g-class-travel-trailer-21g.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-g-class-travel-trailer-25g",
@@ -2034,11 +2035,12 @@
       "brand": "Momentum G-Class Travel Trailer",
       "model": "25G",
       "type": "Travel Trailer Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
-      "weight": null,
-      "length": null,
-      "imagePath": "grand-design-momentum-g-class-travel-trailer/g-class-travel-trailer-25g.png"
+      "weight": 8600,
+      "length": "30' 11\"",
+      "imagePath": "grand-design-momentum-g-class-travel-trailer/g-class-travel-trailer-25g.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-g-class-travel-trailer-27g",
@@ -2046,11 +2048,12 @@
       "brand": "Momentum G-Class Travel Trailer",
       "model": "27G",
       "type": "Travel Trailer Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
-      "weight": null,
-      "length": null,
-      "imagePath": "grand-design-momentum-g-class-travel-trailer/g-class-travel-trailer-27g.png"
+      "weight": 8650,
+      "length": "32' 3\"",
+      "imagePath": "grand-design-momentum-g-class-travel-trailer/g-class-travel-trailer-27g.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-g-class-travel-trailer-29gs",
@@ -2058,11 +2061,12 @@
       "brand": "Momentum G-Class Travel Trailer",
       "model": "29GS",
       "type": "Travel Trailer Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
-      "weight": null,
-      "length": null,
-      "imagePath": "grand-design-momentum-g-class-travel-trailer/g-class-travel-trailer-29gs.png"
+      "weight": 9720,
+      "length": "34' 6\"",
+      "imagePath": "grand-design-momentum-g-class-travel-trailer/g-class-travel-trailer-29gs.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-g-class-travel-trailer-31g",
@@ -2070,11 +2074,12 @@
       "brand": "Momentum G-Class Travel Trailer",
       "model": "31G",
       "type": "Travel Trailer Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
-      "weight": null,
-      "length": null,
-      "imagePath": "grand-design-momentum-g-class-travel-trailer/g-class-travel-trailer-31g.png"
+      "weight": 9700,
+      "length": "35' 11\"",
+      "imagePath": "grand-design-momentum-g-class-travel-trailer/g-class-travel-trailer-31g.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-mav-travel-trailer-17mav",
@@ -2082,11 +2087,12 @@
       "brand": "Momentum MAV Travel Trailer",
       "model": "17MAV",
       "type": "Travel Trailer Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
-      "weight": null,
-      "length": null,
-      "imagePath": "grand-design-momentum-mav/mav-17mav.png"
+      "weight": 5542,
+      "length": "22' 11\"",
+      "imagePath": "grand-design-momentum-mav/mav-17mav.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-mav-travel-trailer-22mav",
@@ -2094,11 +2100,12 @@
       "brand": "Momentum MAV Travel Trailer",
       "model": "22MAV",
       "type": "Travel Trailer Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
-      "weight": null,
-      "length": null,
-      "imagePath": "grand-design-momentum-mav/mav-22mav.png"
+      "weight": 5900,
+      "length": "26' 6\"",
+      "imagePath": "grand-design-momentum-mav/mav-22mav.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-mav-travel-trailer-24mav",
@@ -2118,11 +2125,12 @@
       "brand": "Momentum MAV Travel Trailer",
       "model": "27MAV",
       "type": "Travel Trailer Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
-      "weight": null,
-      "length": null,
-      "imagePath": "grand-design-momentum-mav/mav-27mav.png"
+      "weight": 6900,
+      "length": "32' 2\"",
+      "imagePath": "grand-design-momentum-mav/mav-27mav.png",
+      "status": "A"
     },
     {
       "id": "grand-design-momentum-mav-travel-trailer-28mav",
@@ -2130,10 +2138,10 @@
       "brand": "Momentum MAV Travel Trailer",
       "model": "28MAV",
       "type": "Travel Trailer Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
-      "weight": null,
-      "length": null,
+      "weight": 8300,
+      "length": "33' 11\"",
       "imagePath": "grand-design-momentum-mav/mav-28mav.png",
       "brochure": "brochures/momentum-mav-28mav.pdf",
       "stock": "3585",
@@ -2141,7 +2149,23 @@
       "unlockPrice": 49995,
       "availability": "active",
       "liveYear": "2027",
-      "lotArrivalDate": "2026-10-21"
+      "lotArrivalDate": "2026-10-21",
+      "status": "A"
+    },
+    {
+      "id": "grand-design-momentum-mav-travel-trailer-30mav",
+      "manufacturer": "Grand Design",
+      "brand": "Momentum MAV Travel Trailer",
+      "model": "30MAV",
+      "type": "Travel Trailer Toy Hauler",
+      "year": 2027,
+      "price": null,
+      "weight": 8404,
+      "length": "36' 11\"",
+      "imagePath": "grand-design-momentum-mav/mav-30mav.png",
+      "status": "A",
+      "keyFeatures": null,
+      "brochure": null
     },
     {
       "id": "grand-design-momentum-luxury-344m",
@@ -2149,10 +2173,10 @@
       "brand": "Momentum Luxury",
       "model": "344M",
       "type": "Fifth Wheel Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
-      "weight": null,
-      "length": null,
+      "weight": 15910,
+      "length": "39' 11\"",
       "imagePath": "grand-design-momentum-luxury-1of2/momentum-luxury-344m.png",
       "status": "A"
     },
@@ -2162,10 +2186,10 @@
       "brand": "Momentum Luxury",
       "model": "351MS",
       "type": "Fifth Wheel Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
-      "weight": null,
-      "length": null,
+      "weight": 15760,
+      "length": "39' 11\"",
       "imagePath": "grand-design-momentum-luxury-1of2/momentum-luxury-351ms.png",
       "status": "A"
     },
@@ -2175,10 +2199,10 @@
       "brand": "Momentum Luxury",
       "model": "381MS",
       "type": "Fifth Wheel Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
-      "weight": null,
-      "length": null,
+      "weight": 17722,
+      "length": "43' 11\"",
       "imagePath": "grand-design-momentum-luxury-1of2/momentum-luxury-381ms.png",
       "status": "A"
     },
@@ -2188,10 +2212,10 @@
       "brand": "Momentum Luxury",
       "model": "392M",
       "type": "Fifth Wheel Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
-      "weight": null,
-      "length": null,
+      "weight": 18114,
+      "length": "45' 11\"",
       "imagePath": "grand-design-momentum-luxury-1of2/momentum-luxury-392m.png",
       "status": "A"
     },
@@ -2201,7 +2225,7 @@
       "brand": "Momentum Luxury",
       "model": "395MT",
       "type": "Fifth Wheel Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 19100,
       "length": "46' 4\"",
@@ -2221,7 +2245,7 @@
       "brand": "Momentum Luxury",
       "model": "396DB",
       "type": "Fifth Wheel Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
       "weight": 19100,
       "length": "46' 4\"",
@@ -2234,9 +2258,9 @@
       "brand": "Momentum Luxury",
       "model": "399M",
       "type": "Fifth Wheel Toy Hauler",
-      "year": 2026,
+      "year": 2027,
       "price": null,
-      "weight": null,
+      "weight": 19170,
       "length": "44' 10\"",
       "imagePath": "grand-design-momentum-luxury-2of2/momentum-luxury-399m.png",
       "status": "A"
@@ -2659,7 +2683,8 @@
         "Outdoor Kitchen",
         "Washer/Dryer Prep",
         "Queen Bed"
-      ]
+      ],
+      "status": "A"
     },
     {
       "id": "grand-design-reflection-100-series-29rl",
@@ -2825,7 +2850,7 @@
       "year": 2027,
       "price": null,
       "weight": null,
-      "length": null,
+      "length": "34' 5\"",
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-299mb.png",
       "brochure": "brochures/reflection-150-series-299mb.pdf",
       "keyFeatures": [
@@ -2840,7 +2865,8 @@
       "webPrice": 86673,
       "unlockPrice": "",
       "availability": "on-order",
-      "liveYear": "2027"
+      "liveYear": "2027",
+      "status": "A"
     },
     {
       "id": "grand-design-reflection-150-series-310rl",
@@ -2851,7 +2877,7 @@
       "year": 2027,
       "price": null,
       "weight": null,
-      "length": null,
+      "length": "34' 2\"",
       "imagePath": "grand-design-reflection-150-series/reflection-150-series-310rl.png",
       "brochure": "brochures/reflection-150-series-310rl.pdf",
       "keyFeatures": [
@@ -2861,7 +2887,8 @@
         "Ample Counter Space",
         "Washer/Dryer Prep",
         "King Bed"
-      ]
+      ],
+      "status": "A"
     },
     {
       "id": "grand-design-solitude-310gk",
@@ -2875,7 +2902,10 @@
       "length": "34' 4\"",
       "imagePath": "grand-design-solitude-1of2/solitude-310gk.png",
       "status": "A",
-      "brochure": "brochures/solitude-310gk.pdf"
+      "brochure": "brochures/solitude-310gk.pdf",
+      "keyFeatures": [
+        "Rear Living"
+      ]
     },
     {
       "id": "grand-design-solitude-370dv",
@@ -3240,7 +3270,7 @@
       "status": "A",
       "brochure": "brochures/transcend-345dqt.pdf",
       "keyFeatures": [
-        "Dual Queen Bedroom",
+        "Dual Suite",
         "Coffee Bar",
         "Dual Entry",
         "Rear Desk/Flex Space",
@@ -3303,7 +3333,8 @@
         "Jack-Knife Sofa",
         "Camp Table",
         "Queen Bed",
-        "Sleeps 5"
+        "Sleeps 5",
+        "13.5K A/C"
       ],
       "stock": "3457",
       "webPrice": 17095,
@@ -3330,7 +3361,8 @@
         "Booth Dinette",
         "Camp Table",
         "Murphy Queen Bed",
-        "Sleeps 4"
+        "Sleeps 4",
+        "13.5K A/C"
       ],
       "stock": "3481",
       "webPrice": 19995,
@@ -3358,7 +3390,7 @@
         "Booth Dinette",
         "Camp Table",
         "Outdoor Kitchen",
-        "Sleeps 6"
+        "13.5K A/C"
       ],
       "stock": "3563",
       "webPrice": 25685,
@@ -3386,7 +3418,7 @@
         "Camp Table",
         "Queen Bed",
         "Baggage Door Access",
-        "Sleeps 7"
+        "13.5K A/C"
       ],
       "stock": "3334",
       "webPrice": 23695,
@@ -3414,7 +3446,7 @@
         "Large Pantry/Closet",
         "16' Awning",
         "Queen Bed",
-        "13.5K A/C"
+        "15K A/C"
       ],
       "stock": "3591",
       "webPrice": 29995,
@@ -3442,7 +3474,7 @@
         "Smart RV Kitchen Storage",
         "17' Awning",
         "Queen Bed",
-        "13.5K A/C"
+        "15K A/C"
       ],
       "stock": "",
       "webPrice": "",
@@ -3468,7 +3500,7 @@
         "Theater Seating Option",
         "17' Awning",
         "Queen Bed",
-        "13.5K A/C"
+        "15K A/C"
       ],
       "stock": "3600",
       "webPrice": 30895,
@@ -3496,7 +3528,7 @@
         "Full Pantry",
         "Queen Bed",
         "Sub 5,000 lb UVW",
-        "13.5K A/C"
+        "15K A/C"
       ],
       "stock": "",
       "webPrice": "",
@@ -3522,7 +3554,7 @@
         "Outdoor Kitchen",
         "Queen Bed",
         "17' Awning",
-        "13.5K A/C"
+        "15K A/C"
       ],
       "stock": "3437",
       "webPrice": 30545,
@@ -3550,7 +3582,7 @@
         "Dual Entry",
         "Queen Bed",
         "Outdoor Kitchen",
-        "13.5K A/C"
+        "15K A/C"
       ]
     },
     {
@@ -3572,7 +3604,7 @@
         "No Slide",
         "15' Awning",
         "Queen Bed",
-        "13.5K A/C"
+        "15K A/C"
       ],
       "stock": "3359",
       "webPrice": 26545,
@@ -3600,7 +3632,7 @@
         "Abundant Counter Space",
         "17' Awning",
         "Queen Bed",
-        "13.5K A/C"
+        "15K A/C"
       ],
       "stock": "3376",
       "webPrice": 33695,
@@ -3675,7 +3707,7 @@
         "Outdoor Kitchen",
         "19' Awning",
         "Queen Bed",
-        "13.5K A/C"
+        "15K A/C"
       ],
       "stock": "3610",
       "webPrice": 38895,
@@ -3692,7 +3724,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 3772,
+      "weight": 3770,
       "length": "21'2\"",
       "imagePath": "winnebago-access/winnebago-access-16bh.png",
       "status": "A",
@@ -3701,7 +3733,7 @@
         "No Slide-Outs",
         "Wardrobe",
         "32\" x 74\" Bunks",
-        "8K A/C",
+        "10K A/C",
         "Queen Bed"
       ],
       "stock": "3572",
@@ -3729,7 +3761,7 @@
         "No Slide-Outs",
         "Dinette Booth",
         "Wardrobe",
-        "8K A/C",
+        "10K A/C",
         "Queen Bed"
       ],
       "stock": "3571",
@@ -3748,7 +3780,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 3850,
+      "weight": 4100,
       "length": "22' 6\"",
       "imagePath": "winnebago-access/winnebago-access-18dbh.png",
       "status": "A",
@@ -3757,7 +3789,7 @@
         "No Slide-Outs",
         "Dinette Booth",
         "48\" x 68\" Bunks",
-        "8K A/C",
+        "10K A/C",
         "Queen Bed"
       ],
       "stock": "",
@@ -3774,7 +3806,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 3900,
+      "weight": 4026,
       "length": "22' 6\"",
       "imagePath": "winnebago-access/winnebago-access-18rk.png",
       "status": "A",
@@ -3783,7 +3815,7 @@
         "No Slide-Outs",
         "Dinette Booth",
         "Flip-out Sofa",
-        "8K A/C",
+        "10K A/C",
         "Queen Bed"
       ],
       "stock": "3605",
@@ -3811,7 +3843,7 @@
         "Private Bedroom",
         "Dinette Booth",
         "Theater Seating",
-        "13.5K A/C",
+        "15K A/C",
         "Olympic Queen Bed"
       ],
       "brochure": "brochures/access-tandem-axle-brochure.pdf",
@@ -3829,7 +3861,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": "TBD",
+      "weight": 6570,
       "length": "30'6\"",
       "imagePath": "winnebago-access/winnebago-access-24rl.png",
       "status": "A",
@@ -3838,7 +3870,7 @@
         "Pass-Through Bathroom",
         "U-Shaped Dinette",
         "Theater Seating",
-        "13.5K A/C",
+        "15K A/C",
         "Olympic Queen Bed"
       ],
       "brochure": "brochures/access-tandem-axle-brochure.pdf"
@@ -3860,7 +3892,7 @@
         "48\" x 74\" Bunk",
         "Dinette Booth",
         "Theater Seating",
-        "13.5K A/C",
+        "15K A/C",
         "Olympic Queen Bed"
       ],
       "stock": "3565",
@@ -3909,8 +3941,8 @@
         "Bunkhouse",
         "Dual Entry",
         "U-Shaped Dinette",
-        "Thater Seating",
-        "13.5K A/C",
+        "Theater Seating",
+        "15K A/C",
         "Olympic Queen Bed"
       ],
       "brochure": "brochures/access-tandem-axle-brochure.pdf"
@@ -3932,7 +3964,7 @@
         "Dual Entry",
         "Dinette Booth",
         "Theater Seating",
-        "13.5K A/C",
+        "15K A/C",
         "Olympic Queen Bed"
       ],
       "stock": "3566",
@@ -3944,6 +3976,50 @@
       "brochure": "brochures/access-tandem-axle-brochure.pdf"
     },
     {
+      "id": "winnebago-access-28gp",
+      "manufacturer": "Winnebago",
+      "brand": "Access",
+      "model": "28GP",
+      "type": "Travel Trailer",
+      "year": 2027,
+      "price": null,
+      "weight": 7100,
+      "length": "33' 10\"",
+      "imagePath": "winnebago-access/winnebago-access-28gp.png",
+      "status": "A",
+      "keyFeatures": [
+        "Bunkhouse",
+        "Dual Entry",
+        "U-Shaped Dinette",
+        "Electric Fireplace",
+        "15K A/C",
+        "Olympic Queen Bed"
+      ],
+      "brochure": "brochures/access-tandem-axle-brochure.pdf"
+    },
+    {
+      "id": "winnebago-access-32jw",
+      "manufacturer": "Winnebago",
+      "brand": "Access",
+      "model": "32JW",
+      "type": "Travel Trailer",
+      "year": 2027,
+      "price": null,
+      "weight": 7814,
+      "length": "37' 11\"",
+      "imagePath": "winnebago-access/winnebago-access-32jw.png",
+      "status": "A",
+      "keyFeatures": [
+        "Dual Suite",
+        "Dual Entry",
+        "Dinette Booth",
+        "Theater Seating",
+        "15K A/C",
+        "Olympic Queen Bed"
+      ],
+      "brochure": "brochures/access-tandem-axle-brochure.pdf"
+    },
+    {
       "id": "winnebago-micro-minnie-1800bh",
       "manufacturer": "Winnebago",
       "brand": "Micro Minnie",
@@ -3951,7 +4027,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 3821,
+      "weight": 3900,
       "length": "21' 11\"",
       "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-1800bh.png",
       "status": "A",
@@ -3961,7 +4037,15 @@
       "availability": "active",
       "liveYear": "2027",
       "lotArrivalDate": "2026-10-02",
-      "brochure": "brochures/minnie-brochure.pdf"
+      "brochure": "brochures/minnie-brochure.pdf",
+      "keyFeatures": [
+        "Bunkhouse",
+        "Composite Steps",
+        "Solid Surface Countertops",
+        "Tandem Axle",
+        "13.5K A/C",
+        "Full Bed"
+      ]
     },
     {
       "id": "winnebago-micro-minnie-2000trb",
@@ -3971,11 +4055,19 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 3976,
+      "weight": 4000,
       "length": "22' 4\"",
       "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2000trb.png",
       "status": "A",
-      "brochure": "brochures/minnie-brochure.pdf"
+      "brochure": "brochures/minnie-brochure.pdf",
+      "keyFeatures": [
+        "Rear Bathroom",
+        "7' Wide Body",
+        "Solid Surface Countertops",
+        "Tandem Axle",
+        "13.5K A/C",
+        "Twin Bed"
+      ]
     },
     {
       "id": "winnebago-micro-minnie-2000frb",
@@ -3985,11 +4077,19 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 3942,
+      "weight": 3964,
       "length": "22'4\"",
       "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2000frb.png",
       "status": "A",
-      "brochure": "brochures/minnie-brochure.pdf"
+      "brochure": "brochures/minnie-brochure.pdf",
+      "keyFeatures": [
+        "Rear Bath",
+        "7' Wide Body",
+        "Solid Surface Countertops",
+        "Tandem Axle",
+        "13.5K A/C",
+        "Full Bed"
+      ]
     },
     {
       "id": "winnebago-micro-minnie-2000mrb",
@@ -3999,7 +4099,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 4078,
+      "weight": 4100,
       "length": "22'4\"",
       "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2000mrb.png",
       "status": "A",
@@ -4009,7 +4109,15 @@
       "availability": "active",
       "liveYear": "2027",
       "lotArrivalDate": "2026-10-21",
-      "brochure": "brochures/minnie-brochure.pdf"
+      "brochure": "brochures/minnie-brochure.pdf",
+      "keyFeatures": [
+        "Rear Bath",
+        "7' Wide Body",
+        "Solid Surface Countertops",
+        "Tandem Axle",
+        "13.5K A/C",
+        "Murphy Bed"
+      ]
     },
     {
       "id": "winnebago-micro-minnie-2100bh",
@@ -4032,7 +4140,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 4176,
+      "weight": 4332,
       "length": "22'5\"",
       "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2108tb.png",
       "status": "A",
@@ -4042,7 +4150,15 @@
       "availability": "active",
       "liveYear": "2027",
       "lotArrivalDate": "2026-10-02",
-      "brochure": "brochures/minnie-brochure.pdf"
+      "brochure": "brochures/minnie-brochure.pdf",
+      "keyFeatures": [
+        "Front Bedroom",
+        "7' Wide Body",
+        "Solid Surface Countertops",
+        "Tandem Axle",
+        "13.5K A/C",
+        "Twin Bed"
+      ]
     },
     {
       "id": "winnebago-micro-minnie-2108fbs",
@@ -4052,7 +4168,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 4142,
+      "weight": 4300,
       "length": "22'5\"",
       "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2108fbs.png",
       "status": "A",
@@ -4062,7 +4178,15 @@
       "availability": "active",
       "liveYear": "2026",
       "lotArrivalDate": "2025-12-08",
-      "brochure": "brochures/minnie-brochure.pdf"
+      "brochure": "brochures/minnie-brochure.pdf",
+      "keyFeatures": [
+        "Front Bedroom",
+        "7' Wide Body",
+        "Solid Surface Countertops",
+        "Tandem Axle",
+        "13.5K A/C",
+        "Full Bed"
+      ]
     },
     {
       "id": "winnebago-micro-minnie-2108ds",
@@ -4072,11 +4196,19 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 4291,
+      "weight": 4426,
       "length": "22'5\"",
       "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2108ds.png",
       "status": "A",
-      "brochure": "brochures/minnie-brochure.pdf"
+      "brochure": "brochures/minnie-brochure.pdf",
+      "keyFeatures": [
+        "Murphy Bed",
+        "7' Wide Body",
+        "Solid Surface Countertops",
+        "Tandem Axle",
+        "13.5K A/C",
+        "Murphy Bed"
+      ]
     },
     {
       "id": "winnebago-micro-minnie-2200tbh",
@@ -4086,11 +4218,19 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 4072,
+      "weight": 4350,
       "length": "23'11\"",
       "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2200tbh.png",
       "status": "A",
-      "brochure": "brochures/minnie-brochure.pdf"
+      "brochure": "brochures/minnie-brochure.pdf",
+      "keyFeatures": [
+        "Bunkhouse",
+        "7' Wide Body",
+        "Solid Surface Countertops",
+        "Tandem Axle",
+        "13.5K A/C",
+        "Twin Bed"
+      ]
     },
     {
       "id": "winnebago-micro-minnie-2200fbh",
@@ -4100,7 +4240,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 4436,
+      "weight": 4300,
       "length": "23'11\"",
       "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2200fbh.png",
       "status": "A",
@@ -4110,7 +4250,15 @@
       "availability": "active",
       "liveYear": "2027",
       "lotArrivalDate": "2026-10-21",
-      "brochure": "brochures/minnie-brochure.pdf"
+      "brochure": "brochures/minnie-brochure.pdf",
+      "keyFeatures": [
+        "Bunkhouse",
+        "7' Wide Body",
+        "Solid Surface Countertops",
+        "Tandem Axle",
+        "13.5K A/C",
+        "Full Bed"
+      ]
     },
     {
       "id": "winnebago-micro-minnie-2200mbh",
@@ -4120,11 +4268,19 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 4218,
+      "weight": 4502,
       "length": "23'11\"",
       "imagePath": "winnebago-micro-minnie/winnebago-micro-minnie-2200mbh.png",
       "status": "A",
-      "brochure": "brochures/minnie-brochure.pdf"
+      "brochure": "brochures/minnie-brochure.pdf",
+      "keyFeatures": [
+        "Murphy Bunkhouse",
+        "7' Wide Body",
+        "Solid Surface Countertops",
+        "Tandem Axle",
+        "13.5K A/C",
+        "Murphy Bed"
+      ]
     },
     {
       "id": "winnebago-thrive-18fbs",
@@ -4134,7 +4290,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 4740,
+      "weight": 4840,
       "length": "22' 11\"",
       "imagePath": "winnebago-thrive/winnebago-thrive-18fbs.png",
       "status": "A",
@@ -4144,7 +4300,15 @@
       "availability": "active",
       "liveYear": "2026",
       "lotArrivalDate": "2026-02-09",
-      "brochure": "brochures/thrive-brochure.pdf"
+      "brochure": "brochures/thrive-brochure.pdf",
+      "keyFeatures": [
+        "Front Bedroom",
+        "4-Point Power Stabilizer Jacks",
+        "Inverter Prepped",
+        "Tandem Axle",
+        "15K A/C",
+        "Olympic Queen Bed"
+      ]
     },
     {
       "id": "winnebago-thrive-22mbh",
@@ -4154,11 +4318,19 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 5822,
+      "weight": 5950,
       "length": "26' 0\"",
       "imagePath": "winnebago-thrive/winnebago-thrive-22mbh.png",
       "status": "A",
-      "brochure": "brochures/thrive-brochure.pdf"
+      "brochure": "brochures/thrive-brochure.pdf",
+      "keyFeatures": [
+        "Murphy Bunkhouse",
+        "4-Point Power Stabilizer Jacks",
+        "Inverter Prepped",
+        "Tandem Axle",
+        "15K A/C",
+        "Olympic Queen Bed"
+      ]
     },
     {
       "id": "winnebago-thrive-22mls",
@@ -4168,7 +4340,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 6068,
+      "weight": 6070,
       "length": "26' 11\"",
       "imagePath": "winnebago-thrive/winnebago-thrive-22mls.png",
       "status": "A",
@@ -4178,7 +4350,15 @@
       "availability": "active",
       "liveYear": "2027",
       "lotArrivalDate": "2026-09-08",
-      "brochure": "brochures/thrive-brochure.pdf"
+      "brochure": "brochures/thrive-brochure.pdf",
+      "keyFeatures": [
+        "Mid Living",
+        "4-Point Power Stabilizer Jacks",
+        "Inverter Prepped",
+        "Tandem Axle",
+        "15K A/C",
+        "Olympic Queen Bed"
+      ]
     },
     {
       "id": "winnebago-thrive-22rbs",
@@ -4188,7 +4368,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 6122,
+      "weight": 6084,
       "length": "26' 7\"",
       "imagePath": "winnebago-thrive/winnebago-thrive-22rbs.png",
       "status": "A",
@@ -4198,7 +4378,15 @@
       "availability": "active",
       "liveYear": "2027",
       "lotArrivalDate": "2026-09-08",
-      "brochure": "brochures/thrive-brochure.pdf"
+      "brochure": "brochures/thrive-brochure.pdf",
+      "keyFeatures": [
+        "Rear Bath",
+        "4-Point Power Stabilizer Jacks",
+        "Inverter Prepped",
+        "Tandem Axle",
+        "15K A/C",
+        "Olympic Queen Bed"
+      ]
     },
     {
       "id": "winnebago-thrive-24rks",
@@ -4208,7 +4396,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 6480,
+      "weight": 6800,
       "length": "29' 4\"",
       "imagePath": "winnebago-thrive/winnebago-thrive-24rks.png",
       "status": "A",
@@ -4218,7 +4406,15 @@
       "availability": "active",
       "liveYear": "2026",
       "lotArrivalDate": "2026-05-18",
-      "brochure": "brochures/thrive-brochure.pdf"
+      "brochure": "brochures/thrive-brochure.pdf",
+      "keyFeatures": [
+        "Rear Kitchen",
+        "4-Point Power Stabilizer Jacks",
+        "Inverter Prepped",
+        "Tandem Axle",
+        "15K A/C",
+        "Olympic Queen Bed"
+      ]
     },
     {
       "id": "winnebago-thrive-25rls",
@@ -4228,11 +4424,19 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 6512,
+      "weight": 6582,
       "length": "30' 2\"",
       "imagePath": "winnebago-thrive/winnebago-thrive-25rls.png",
       "status": "A",
-      "brochure": "brochures/thrive-brochure.pdf"
+      "brochure": "brochures/thrive-brochure.pdf",
+      "keyFeatures": [
+        "Rear Living",
+        "4-Point Power Stabilizer Jacks",
+        "Inverter Prepped",
+        "Tandem Axle",
+        "15K A/C",
+        "Olympic Queen Bed"
+      ]
     },
     {
       "id": "winnebago-thrive-26fkd",
@@ -4242,7 +4446,7 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 7470,
+      "weight": 7474,
       "length": "30' 11\"",
       "imagePath": "winnebago-thrive/winnebago-thrive-26fkd.png",
       "status": "A",
@@ -4252,7 +4456,15 @@
       "availability": "active",
       "liveYear": "2027",
       "lotArrivalDate": "2026-11-09",
-      "brochure": "brochures/thrive-brochure.pdf"
+      "brochure": "brochures/thrive-brochure.pdf",
+      "keyFeatures": [
+        "Front Kitchen",
+        "4-Point Power Stabilizer Jacks",
+        "Inverter Prepped",
+        "Tandem Axle",
+        "15K A/C",
+        "Olympic Queen Bed"
+      ]
     },
     {
       "id": "winnebago-thrive-28bhs",
@@ -4262,11 +4474,19 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 7234,
+      "weight": 7200,
       "length": "32' 8\"",
       "imagePath": "winnebago-thrive/winnebago-thrive-28bhs.png",
       "status": "A",
-      "brochure": "brochures/thrive-brochure.pdf"
+      "brochure": "brochures/thrive-brochure.pdf",
+      "keyFeatures": [
+        "Bunk House",
+        "4-Point Power Stabilizer Jacks",
+        "Inverter Prepped",
+        "Tandem Axle",
+        "15K A/C",
+        "Olympic Queen Bed"
+      ]
     },
     {
       "id": "winnebago-thrive-29rlo",
@@ -4276,11 +4496,19 @@
       "type": "Travel Trailer",
       "year": 2027,
       "price": null,
-      "weight": 8426,
+      "weight": 8400,
       "length": "36' 3\"",
       "imagePath": "winnebago-thrive/winnebago-thrive-29rlo.png",
       "status": "A",
-      "brochure": "brochures/thrive-brochure.pdf"
+      "brochure": "brochures/thrive-brochure.pdf",
+      "keyFeatures": [
+        "Rear Living",
+        "4-Point Power Stabilizer Jacks",
+        "Inverter Prepped",
+        "Tandem Axle",
+        "15K A/C",
+        "Olympic Queen Bed"
+      ]
     }
   ],
   "arrivalTrackingSince": "2026-10-18T01:07:49.068Z"
