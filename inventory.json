@@ -255,7 +255,7 @@
         "50\" Smart TV"
       ],
       "stock": "3647",
-      "webPrice": 75991,
+      "webPrice": 63495,
       "unlockPrice": "",
       "availability": "active",
       "lotArrivalDate": "2026-11-10",
@@ -545,7 +545,7 @@
         "Queen Bed"
       ],
       "stock": "3639",
-      "webPrice": 65624,
+      "webPrice": 55995,
       "unlockPrice": "",
       "availability": "on-order",
       "liveYear": "2027"
@@ -644,7 +644,7 @@
         "Queen Bed"
       ],
       "stock": "3609",
-      "webPrice": 47586,
+      "webPrice": 40995,
       "unlockPrice": "",
       "availability": "active",
       "liveYear": "2027",
@@ -766,7 +766,7 @@
         "Queen Bed"
       ],
       "stock": "3608",
-      "webPrice": 52588,
+      "webPrice": 44495,
       "unlockPrice": "",
       "availability": "active",
       "liveYear": "2027",
@@ -892,7 +892,7 @@
         "King Bed"
       ],
       "stock": "3611",
-      "webPrice": 183843,
+      "webPrice": 121995,
       "unlockPrice": "",
       "availability": "on-order",
       "liveYear": "2027"
@@ -1778,12 +1778,10 @@
         "XL Bathroom",
         "King Bed"
       ],
-      "stock": "3546",
-      "webPrice": 110845,
-      "unlockPrice": 109995,
-      "availability": "active",
-      "liveYear": "2027",
-      "lotArrivalDate": "2026-10-06"
+      "stock": "",
+      "webPrice": "",
+      "unlockPrice": "",
+      "availability": ""
     },
     {
       "id": "grand-design-influence-3904bh",
@@ -1826,11 +1824,10 @@
       "imagePath": "lineage-series-e/lineage-30dc.png",
       "status": "A",
       "brochure": "brochures/lineage-series-e-30dc.pdf",
-      "stock": "3598",
-      "webPrice": 151294,
-      "unlockPrice": 149994,
-      "availability": "on-order",
-      "liveYear": "2027"
+      "stock": "",
+      "webPrice": "",
+      "unlockPrice": "",
+      "availability": ""
     },
     {
       "id": "grand-design-lineage-series-f-31zw",
@@ -3738,9 +3735,10 @@
       "stock": "3571",
       "webPrice": 22095,
       "unlockPrice": 20995,
-      "availability": "on-order",
+      "availability": "active",
       "liveYear": "2027",
-      "brochure": "brochures/access-single-axle-brochure.pdf"
+      "brochure": "brochures/access-single-axle-brochure.pdf",
+      "lotArrivalDate": "2026-11-24T14:00:05.966Z"
     },
     {
       "id": "winnebago-access-18dbh",
