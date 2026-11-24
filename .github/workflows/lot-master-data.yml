@@ -1,0 +1,61 @@
+# Keeps Lot Master's data in step with what you upload:
+#   - upload inv.xlsx            -> inventory.json is rebuilt (pricing-sync data is kept)
+#   - upload a PDF to brochures/ -> its page images in brochure-pages/ are rendered
+# Results are committed back to the repo; GitHub Pages then publishes them like any other change.
+# Run it by hand from the Actions tab ("Run workflow") at any time.
+name: Lot Master data
+
+on:
+  push:
+    paths:
+      - 'inv.xlsx'
+      - 'brochures/**.pdf'
+      - 'scripts/build_inventory.py'
+      - 'scripts/build_brochure_pages.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lot-master-data
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          pip install --quiet openpyxl==3.1.5 pillow==11.0.0
+
+      - name: Rebuild inventory.json from inv.xlsx
+        if: hashFiles('inv.xlsx') != ''
+        run: python scripts/build_inventory.py inv.xlsx inventory.json | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Render brochure page images
+        run: python scripts/build_brochure_pages.py brochures brochure-pages | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit changes
+        run: |
+          git config user.name "lot-master-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add inventory.json brochure-pages
+          if git diff --cached --quiet; then
+            echo "Nothing changed." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git commit -m "Update Lot Master data from uploads"
+          # the pricing sync may have committed meanwhile: replay on top of it, then push
+          for i in 1 2 3; do
+            git pull --rebase --quiet origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep 5
+          done
+          echo "Push failed after 3 tries" >&2; exit 1
