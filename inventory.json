@@ -3995,7 +3995,12 @@
         "15K A/C",
         "Olympic Queen Bed"
       ],
-      "brochure": "brochures/access-tandem-axle-brochure.pdf"
+      "brochure": "brochures/access-tandem-axle-brochure.pdf",
+      "stock": "3660",
+      "webPrice": 51751,
+      "unlockPrice": "",
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "winnebago-access-32jw",
