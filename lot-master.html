@@ -782,6 +782,7 @@ img[data-loading]{background:linear-gradient(90deg,var(--card-2) 25%,color-mix(i
 .lf[open] .lf-head .lf-cv{transform:rotate(180deg)}
 .lf-body{padding:2px 13px 12px;background:var(--card)}
 .lf-intro{font-size:12.5px;font-style:italic;color:var(--muted);padding:11px 2px 4px;line-height:1.4}
+.lf-yearnote{margin:12px 0 2px;padding:10px 12px;border-radius:10px;background:var(--amber-soft);color:var(--amber-ink);font-size:13px;font-weight:500;line-height:1.4}
 .lf-cat{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-deep);margin:16px 2px 6px;padding-top:10px;border-top:1px solid var(--line)}
 .lf-cat-first{margin-top:2px;padding-top:0;border-top:0}
 .lf-main{min-width:0}
@@ -1535,6 +1536,7 @@ const MOMENTUM_FW_TOP10={
 // (facts only from those pages; "say" lines in the Grand Design voice), reviewed and approved by Clear Creek on 2026-11-24.
 // Source doc: "Winnebago Access: Top Features (Pilot)".
 const ACCESS_FEATURES={
+  my:2027,
   intro:'Start underneath, then go inside. The frame and the heated underbelly are the story; the bigger beds and new Apex furniture close it.',
   items:[
     {ic:'truck',   t:'Built on a bolted, e-coated frame', s:'A BAL by Norco NXG frame, huck-bolted and e-coated. Tandems add Norco rack-and-pinion slides that run through the frame and sit flush with the floor. Winnebago’s 3-year structural warranty covers the frame, sidewalls, roof and slide boxes, and Norco adds its own 5-year frame warranty.', say:'Before we go in, look underneath. Norco NXG frame, bolted and e-coated, and Winnebago backs the frame, walls, roof and slide boxes for three years. Norco adds five more on the frame.'},
@@ -1546,6 +1548,23 @@ const ACCESS_FEATURES={
     {ic:'snow',    t:'Comfort controls', s:'Tandems get a 15,000 BTU ducted main A/C, with an optional 10,000 BTU bedroom unit. Single axles get a 10,000 BTU roof A/C, now with a wall-mounted thermostat (new for 2027).', say:'The air is ducted, so it comes out of vents through the whole coach instead of one box in the ceiling. And if you like the bedroom cold, there’s a second A/C available.'},
     {ic:'fridge',  t:'A kitchen built for real meals', s:'A standard 10 cu ft 12-volt fridge on every Access. Tandems add a standard convection microwave, soft-close drawers with foil-topped drawer boxes, removable utensil storage and a pantry motion light (both new), and a dedicated waste-bin spot with the bin supplied.', say:'The fridge is 12-volt, so it runs off the battery. Open a drawer: soft-close. The microwave is convection, so it bakes too, and even the trash can has its own spot.'},
     {ic:'shield',  t:'A real shower, and details that last', s:'A 30"×36" shower with a roll-up door, surround and skylight, quad-sealed sidewall corners, solid composite entrance steps and flush-mount residential ceiling lights. Single axles add Tough Coat exterior metal; tandems add slam-latch baggage doors and a 2" accessory receiver rated 350 lbs.', say:'Step into the shower: 30 by 36, a skylight overhead and a roll-up door, no curtain sticking to you. On the way out, check the corners: every sidewall corner is quad-sealed.'},
+  ]
+};
+// Winnebago Thrive: written by Claude from Winnebago's 2027 Thrive "Story Features" brochure (facts only from it; "say"
+// lines in the Grand Design voice), reviewed by Clear Creek on 2026-11-24. Source doc: "Winnebago Thrive: Pitch Scripts".
+const THRIVE_FEATURES={
+  my:2027,
+  intro:'Start at the front window and the walls; that’s what’s new and what only Thrive gets. Then show how it camps off the grid.',
+  items:[
+    {ic:'shield',  t:'Glass only Thrive gets', s:'New for 2027: the large front viewing window is heat-strengthened laminated glass, a Winnebago exclusive to Thrive. Winnebago says it’s 2.5× stronger than standard laminated glass, stays intact even if cracked, and handles heat and cold without stress cracks.', say:'Start with that big front window. It’s heat-strengthened laminated glass, and Winnebago only puts it on Thrive. It’s two and a half times stronger than standard laminated glass, and if a rock does crack it, it stays in one piece.'},
+    {ic:'shield',  t:'Fully composite walls and a fiberglass cap', s:'New for 2027: fully composite laminated walls, Azdel outside and NTXT inside, a molded fiberglass front cap, and wheel wells protected with galvanized steel.', say:'Knock on the wall. New this year, it’s fully composite and laminated: Azdel outside, NTXT inside. Up front, a molded fiberglass cap, and the wheel wells are lined with galvanized steel.'},
+    {ic:'truck',   t:'Built on a bolted, e-coated frame', s:'A BAL by Norco NXG frame, huck-bolted and e-coated. Every slide is a Norco rack-and-pinion slide with a flush floor (the 18FBS has no slide). Winnebago’s 3-year structural warranty covers the frame, sidewalls, roof, slide boxes and fiberglass front cap.', say:'Underneath is a Norco NXG frame, bolted and e-coated. The slides are rack-and-pinion with a flush floor, so no step when they’re out. Winnebago backs the frame, walls, roof and front cap for three years.'},
+    {ic:'sun',     t:'Ready to camp off the grid', s:'A 200W solar panel with a 30-amp controller is standard, and every Thrive is inverter-prepped (new for 2027).', say:'There’s already 200 watts of solar on the roof with a 30-amp controller, and it’s prepped for an inverter. Add batteries and an inverter, and you’re running off the sun.'},
+    {ic:'plug',    t:'Set up in minutes, from either side', s:'Independent 4-point power stabilization jacks. New 3-way switches run the slides and awnings from inside or outside. New slide topper prep, with toppers optional. Front-profile fusion accent lights.', say:'Setup is all buttons. Four power jacks, each one independent, and you can run the slides and awning from inside or outside, whichever side you’re standing on.'},
+    {ic:'snow',    t:'Comfort and hot water', s:'A 15,000 BTU ducted main A/C, with an optional 10,000 BTU bedroom unit. A 60,000 BTU tankless water heater with altitude adjustment.', say:'The air is ducted, so it comes out of vents through the whole coach. And the water heater is tankless, so the last shower is as hot as the first, even up in the mountains.'},
+    {ic:'star',    t:'Sleep and sit better', s:'A 66"×80" Olympic queen with an upgraded mattress (new for 2027) in every floorplan, and custom designer furniture from Apex Custom Furniture.', say:'Lie down: 66 by 80 Olympic queen, six inches wider than a regular queen, with the upgraded mattress that’s new this year. The furniture is custom-built by Apex.'},
+    {ic:'fridge',  t:'A kitchen with no seams', s:'Seamless one-piece fiberglass countertops in the kitchen and bath. All doors and drawers are soft-close. A removable utensil organizer drawer and pull-out waste and recycling bins. Flush-mount residential ceiling lights, now with a dimmer on the main lights.', say:'Run your hand along the counter. It’s one piece of fiberglass, kitchen and bath, so there’s no seam to stain. Every door and drawer is soft-close, and the trash and recycling pull right out.'},
+    {ic:'award',   t:'The step up from Access', s:'Same Norco NXG frame as Access, but Thrive adds composite laminated walls (Access lists Tough Coat metal), glass only Thrive gets plus a molded fiberglass cap, 200W solar, inverter prep and 4 power jacks as standard, and seamless fiberglass counters with every door and drawer soft-close.', say:'If you liked the Access, here’s what the step up buys you: composite walls instead of metal, glass only Thrive gets, solar and power jacks already on it, and a nicer kitchen. Same proven frame underneath.'},
   ]
 };
 const DEFAULT_LINE_FEATURES={
@@ -1580,8 +1599,9 @@ const DEFAULT_LINE_FEATURES={
   influence: INFLUENCE_FEATURES,
   // Winnebago (scripted from brochures, see ACCESS_FEATURES)
   access: ACCESS_FEATURES,
+  thrive: THRIVE_FEATURES,
 };
-const LF_SEED_VERSION='gd-2026.11-11';
+const LF_SEED_VERSION='gd-2026.11-12';
 
 /* ---------- Pitch & Feature drill: item indexer ----------
    DEFAULT_LINE_FEATURES has several alias keys pointing at the SAME shared sheet
@@ -1753,7 +1773,7 @@ function renderQuestionCard(item){
 }
 const FEATURE_LINE_LABELS={ transcend:'Transcend', imagine:'Imagine', reflection:'Reflection',
   delta:'Delta', deltaultralite:'Delta Ultra Lite', avenue:'Avenue', paradigm:'Paradigm', influence:'Influence',
-  access:'Access',
+  access:'Access', thrive:'Thrive',
   core:'Alliance Brand Core', deltasolo:'Delta Solo' };
 // "deltasolo" isn't a real line key in either content registry — the 2 Solo-specific
 // questions are stored under "deltaultralite" with subcategory:'Solo' (Phase 1
@@ -3401,11 +3421,18 @@ function figBlock(u,big){
 }
 /* ---------- Top features (line-scoped) ---------- */
 function lineFeaturesFor(u){ const k=nrm(u&&u.productLine); return (state.lineFeatures&&state.lineFeatures[k])||[]; }
+// Brochure-built sheets carry the model year they describe (my). On an older unit, warn that features marked new may not apply.
+function sheetYearNote(u){
+  const def=DEFAULT_LINE_FEATURES[nrm(u&&u.productLine)], my=def&&def.my, uy=parseInt(unitYear(u),10);
+  if(!my||!uy||uy>=my) return '';
+  return `<div class="lf-yearnote" role="note">These scripts describe the ${my} ${esc(u.productLine||'')}. This unit is a ${uy}, so features new for ${my} may not be on it. Check the unit before you pitch them.</div>`;
+}
 function lineIntroFor(u){ const k=nrm(u&&u.productLine); return (state.lineIntros&&state.lineIntros[k])||''; }
 function featuresPanel(u,opts){
   opts=opts||{};
   const f=lineFeaturesFor(u); if(!f.length) return '';
   const intro=lineIntroFor(u);
+  const yrNote=sheetYearNote(u);
   const isScripted=f.some(x=>x.say);   // content-driven: scripted sheets always carry a "say" line, plain feature lists never do — still used for the section label below
   let seenCat=false;
   const renderRow=(x,cardMode)=>{
@@ -3430,11 +3457,11 @@ function featuresPanel(u,opts){
     // header, since the tab button itself already carries the label
     let lastCat=null;
     const cards=f.map(x=>{ const show=x.cat&&x.cat!==lastCat; lastCat=x.cat; return renderRow({...x,cat:show?x.cat:null},true); }).join('');
-    return `${intro?`<div class="lf-intro">${esc(intro)}</div>`:''}${cards}`;
+    return `${yrNote}${intro?`<div class="lf-intro">${esc(intro)}</div>`:''}${cards}`;
   }
   let lastCat=null;
   const rows=f.map(x=>{ const show=x.cat&&x.cat!==lastCat; lastCat=x.cat; return renderRow({...x,cat:show?x.cat:null},false); }).join('');
-  const body=`${intro?`<div class="lf-intro">${esc(intro)}</div>`:''}${rows}`;
+  const body=`${yrNote}${intro?`<div class="lf-intro">${esc(intro)}</div>`:''}${rows}`;
   const label=`${svg(I.speech)}<span>${isScripted&&f.length===10?'Top 10':'Top Features'}</span><em>${esc(u.productLine||'')}</em>`;
   return opts.open
     ? `<div class="lf lf-static"><div class="lf-head lf-head-static">${label}</div><div class="lf-body">${body}</div></div>`
