@@ -2092,7 +2092,56 @@ function imgFallback(el){ el.onerror=null; el.src=NOIMG_SVG_DATAURI; el.classLis
 const IMAGE_CACHE_NAME='lot-master-images-v1';
 let freshImageFetch=false;   // set by Force Sync for the rest of this session
 const IMG_PLACEHOLDER_SRC='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';   // 1x1 transparent
+/* Floorplan WebP copies. The lot-master-data Action writes a small WebP of each floorplan PNG to floorplans-web/ (same
+   path, .webp: ~28 MB for the lot instead of ~590 MB) and lists it in floorplans-web/manifest.json as
+   {"<png path>": "<hash>"}. A listed floorplan loads its WebP (hash busts the cache when the PNG is replaced); anything
+   unlisted, or a WebP that fails, falls back to the original PNG. Callers keep using the PNG URL as the key. The manifest
+   is read cache-first and refreshed in the background, so it never holds up the first image on launch or offline. */
+const FP_WEB_DIR='floorplans-web';
+let fpManifest=null, fpManifestP=null, fpRetryAt=0;
+function loadFloorplanManifest(){
+  if(fpManifest) return Promise.resolve(fpManifest);
+  if(fpManifestP) return fpManifestP;
+  if(Date.now()<fpRetryAt) return Promise.resolve({});
+  const url=`${GITHUB_CONFIG.baseUrl}/${FP_WEB_DIR}/manifest.json`;
+  const fromNet=async()=>{
+    try{
+      const res=await Promise.race([fetch(url,{cache:'no-cache'}),new Promise((_,rej)=>setTimeout(()=>rej(new Error('timeout')),5000))]);
+      if(res.ok){ const d=await res.clone().json(); try{ await (await caches.open(IMAGE_CACHE_NAME)).put(url,res); }catch(_){} return d&&typeof d==='object'?d:null; }
+    }catch(_){}
+    return null;
+  };
+  fpManifestP=(async()=>{
+    let data=null;
+    try{ if('caches' in window){ const hit=await (await caches.open(IMAGE_CACHE_NAME)).match(url); if(hit) data=await hit.json(); } }catch(_){}
+    if(data) fromNet().then(d=>{ if(d) fpManifest=d; });   // use the saved copy now; pick up new floorplans for next time
+    else data=await fromNet();
+    fpManifestP=null;
+    if(data&&typeof data==='object'){ fpManifest=data; return data; }
+    fpRetryAt=Date.now()+60000;                              // offline / not published yet: PNGs for a minute, then try again
+    return {};
+  })();
+  return fpManifestP;
+}
+function fpWebp(url){
+  const pre=GITHUB_CONFIG.baseUrl+'/';
+  if(!fpManifest||!url||!url.startsWith(pre)) return null;
+  let path; try{ path=decodeURIComponent(url.slice(pre.length).split(/[?#]/)[0]); }catch(_){ return null; }
+  const v=fpManifest[path]; if(!v) return null;
+  return `${pre}${FP_WEB_DIR}/${encodeGhPath(path.replace(/\.(png|jpe?g)$/i,''))}.webp?v=${encodeURIComponent(v)}`;
+}
 async function fetchAndCacheImage(url){
+  if(url&&url.startsWith(GITHUB_CONFIG.baseUrl+'/')&&/\.(png|jpe?g)([?#]|$)/i.test(url)){
+    await loadFloorplanManifest();
+    const w=fpWebp(url);
+    if(w){
+      const res=await fetchAndCacheOne(w);
+      if(res){ try{ caches.open(IMAGE_CACHE_NAME).then(c=>c.delete(url)).catch(()=>{}); }catch(_){} return res; }   // free the old full-size copy
+    }
+  }
+  return fetchAndCacheOne(url);
+}
+async function fetchAndCacheOne(url){
   if(!url || !('caches' in window)) return null;
   try{
     const cache=await caches.open(IMAGE_CACHE_NAME);
@@ -2180,7 +2229,7 @@ function prefetchStudyQueueImages(queue,currentIndex){
   for(const id of ids){
     const u=state.units.find(x=>x.id===id); if(!u) continue;
     const url=unitImg(u); if(!url||url.startsWith('data:')||url.startsWith('blob:')) continue;
-    fetchAndCacheImage(url).then(res=>{ if(res) new Image().src=url; });   // cache first, then warm the browser's own decode cache
+    zbWarm(url);   // into the cache + an in-memory blob URL, so the card renders it straight away (never re-downloads the PNG)
   }
 }
 // schema check before ANY reconciliation runs — a malformed or unexpected payload
@@ -2328,7 +2377,7 @@ async function clearImageCache(){
   try{ if('caches' in window) await caches.delete(IMAGE_CACHE_NAME); }catch(_){}
   for(const u of hydratedUrlCache.values()){ try{ URL.revokeObjectURL(u); }catch(_){} }
   hydratedUrlCache.clear();
-  freshImageFetch=true;   // re-downloads skip the browser's HTTP cache too, so they come back current rather than a copy GitHub Pages' CDN cached minutes ago
+  freshImageFetch=true; fpManifest=null; fpRetryAt=0;   // re-downloads skip the browser's HTTP cache too, so they come back current rather than a copy GitHub Pages' CDN cached minutes ago
 }
 // Force Sync = clear stored images + pull the latest inventory/pricing in one action. Images then
 // re-download (fresh) as each one is viewed, rather than pulling ~200 floorplans at once over cellular.
@@ -4729,7 +4778,7 @@ function openDetailZoom(e){
   const el=vp&&vp.querySelector('.slide-active img');
   let url=null;
   if(el&&!el.classList.contains('img-fallback')&&!el.hasAttribute('data-loading')) url=el.currentSrc||el.src;
-  if(!url||url===IMG_PLACEHOLDER_SRC){ const raw=unitImg(u); url=(raw&&hydratedUrlCache.get(raw))||raw; }
+  if(!url||url===IMG_PLACEHOLDER_SRC){ const raw=unitImg(u); url=(raw&&(hydratedUrlCache.get(raw)||fpWebp(raw)))||raw; }
   if(!url) return;
   openZoom(url,(unitYear(u)?unitYear(u)+' ':'')+unitTitle(u));
 }
