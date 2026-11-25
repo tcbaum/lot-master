@@ -1,6 +1,7 @@
 # Keeps Lot Master's data in step with what you upload:
 #   - upload inv.xlsx            -> inventory.json is rebuilt (pricing-sync data is kept)
 #   - upload a PDF to brochures/ -> its page images in brochure-pages/ are rendered
+#   - upload a floorplan image   -> a small WebP copy is made in floorplans-web/ (the app loads that; your PNG is kept)
 # Results are committed back to the repo; GitHub Pages then publishes them like any other change.
 # Run it by hand from the Actions tab ("Run workflow") at any time.
 name: Lot Master data
@@ -10,8 +11,13 @@ on:
     paths:
       - 'inv.xlsx'
       - 'brochures/**.pdf'
+      - '**.png'
+      - '**.jpg'
+      - '**.jpeg'
+      - '!logos/**'
       - 'scripts/build_inventory.py'
       - 'scripts/build_brochure_pages.py'
+      - 'scripts/build_floorplan_images.py'
   workflow_dispatch:
 
 permissions:
@@ -43,11 +49,14 @@ jobs:
       - name: Render brochure page images
         run: python scripts/build_brochure_pages.py brochures brochure-pages | tee -a "$GITHUB_STEP_SUMMARY"
 
+      - name: Make floorplan WebP copies
+        run: python scripts/build_floorplan_images.py . floorplans-web | tee -a "$GITHUB_STEP_SUMMARY"
+
       - name: Commit changes
         run: |
           git config user.name "lot-master-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add inventory.json brochure-pages
+          git add inventory.json brochure-pages floorplans-web
           if git diff --cached --quiet; then
             echo "Nothing changed." | tee -a "$GITHUB_STEP_SUMMARY"
             exit 0
