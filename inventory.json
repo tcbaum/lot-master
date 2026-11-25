@@ -1206,7 +1206,7 @@
       "stock": "3511",
       "webPrice": 49695,
       "unlockPrice": 48995,
-      "availability": "active",
+      "availability": "pending",
       "liveYear": "2027",
       "lotArrivalDate": "2026-09-10"
     },
@@ -1389,11 +1389,12 @@
         "Bedroom Wardrobe",
         "Murphy Bed"
       ],
-      "stock": "3557",
-      "webPrice": 33795,
+      "stock": "3636",
+      "webPrice": 33645,
       "unlockPrice": 32995,
-      "availability": "on-order",
-      "liveYear": "2027"
+      "availability": "active",
+      "liveYear": "2027",
+      "lotArrivalDate": "2026-11-23"
     },
     {
       "id": "grand-design-imagine-aim-19mla",
@@ -2864,9 +2865,10 @@
       "stock": "3620",
       "webPrice": 86673,
       "unlockPrice": "",
-      "availability": "on-order",
+      "availability": "active",
       "liveYear": "2027",
-      "status": "A"
+      "status": "A",
+      "lotArrivalDate": "2026-11-24"
     },
     {
       "id": "grand-design-reflection-150-series-310rl",
@@ -3336,12 +3338,10 @@
         "Sleeps 5",
         "13.5K A/C"
       ],
-      "stock": "3457",
-      "webPrice": 17095,
-      "unlockPrice": 15995,
-      "availability": "pending",
-      "liveYear": "2027",
-      "lotArrivalDate": "2026-07-24"
+      "stock": "",
+      "webPrice": "",
+      "unlockPrice": "",
+      "availability": ""
     },
     {
       "id": "grand-design-transcend-one-151rb",
@@ -3662,12 +3662,10 @@
         "Queen Bed",
         "13.5K A/C"
       ],
-      "stock": "3449",
-      "webPrice": 32995,
-      "unlockPrice": 31995,
-      "availability": "pending",
-      "liveYear": "2027",
-      "lotArrivalDate": "2026-07-18"
+      "stock": "",
+      "webPrice": "",
+      "unlockPrice": "",
+      "availability": ""
     },
     {
       "id": "grand-design-transcend-xplor-26rbx",
