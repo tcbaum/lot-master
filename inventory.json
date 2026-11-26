@@ -894,7 +894,7 @@
       "stock": "3611",
       "webPrice": 121995,
       "unlockPrice": "",
-      "availability": "on-order",
+      "availability": "active",
       "liveYear": "2027"
     },
     {
@@ -1203,12 +1203,10 @@
         "Kitchen Island",
         "Queen Bed"
       ],
-      "stock": "3511",
-      "webPrice": 49695,
-      "unlockPrice": 48995,
-      "availability": "pending",
-      "liveYear": "2027",
-      "lotArrivalDate": "2026-09-10"
+      "stock": "",
+      "webPrice": "",
+      "unlockPrice": "",
+      "availability": ""
     },
     {
       "id": "grand-design-imagine-2700bs",
