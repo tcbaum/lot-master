@@ -1203,10 +1203,12 @@
         "Kitchen Island",
         "Queen Bed"
       ],
-      "stock": "",
-      "webPrice": "",
-      "unlockPrice": "",
-      "availability": ""
+      "stock": "3595",
+      "webPrice": 50545,
+      "unlockPrice": 49995,
+      "availability": "active",
+      "lotArrivalDate": "2026-11-23",
+      "liveYear": "2027"
     },
     {
       "id": "grand-design-imagine-2700bs",
@@ -1823,10 +1825,11 @@
       "imagePath": "lineage-series-e/lineage-30dc.png",
       "status": "A",
       "brochure": "brochures/lineage-series-e-30dc.pdf",
-      "stock": "",
-      "webPrice": "",
-      "unlockPrice": "",
-      "availability": ""
+      "stock": "3598",
+      "webPrice": 151694,
+      "unlockPrice": 149994,
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "grand-design-lineage-series-f-31zw",
@@ -1839,7 +1842,12 @@
       "weight": null,
       "length": "33' 9\"",
       "imagePath": "lineage-series-f/lineage-series-f-31zw.png",
-      "status": "A"
+      "status": "A",
+      "stock": "3663",
+      "webPrice": 336771,
+      "unlockPrice": "",
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "grand-design-lineage-series-f-31zw5",
@@ -1930,7 +1938,12 @@
       "price": null,
       "weight": null,
       "length": "20' 11\"",
-      "status": "A"
+      "status": "A",
+      "stock": "3665",
+      "webPrice": 171666,
+      "unlockPrice": "",
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "grand-design-lineage-series-vp-lvp2",
@@ -2000,7 +2013,12 @@
       "weight": 14250,
       "length": "41' 7\"",
       "imagePath": "grand-design-momentum-g-class-5th-wheel/momentum-g-class-363g.png",
-      "status": "A"
+      "status": "A",
+      "stock": "3664",
+      "webPrice": 147455,
+      "unlockPrice": "",
+      "availability": "on-order",
+      "liveYear": "2027"
     },
     {
       "id": "grand-design-momentum-g-class-394g",
